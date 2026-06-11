@@ -75,11 +75,12 @@ function SmartDashPage() {
             href="https://www.scania.com"
             target="_blank"
             rel="noreferrer noopener"
-            className="link-underline text-foreground"
+            className="link-underline link-external"
           >
             Read more about Smart Dash
           </a>
         </p>
+
       </CaseSection>
 
       <CaseSection title="Design Challenge">

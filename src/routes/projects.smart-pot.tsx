@@ -5,10 +5,13 @@ import {
   CaseHero,
   CaseSection,
   ChallengeList,
+  FullBleedImage,
   CaseFooterNav,
 } from "@/components/case-study";
 
 import hero from "@/assets/smart-pot.jpg.asset.json";
+import sketches from "@/assets/smart-pot-sketches.jpg.asset.json";
+
 
 export const Route = createFileRoute("/projects/smart-pot")({
   head: () => ({
@@ -48,17 +51,6 @@ function SmartPotPage() {
         tagline="An interactive plant pot that visualizes plant health through form, light and touch"
       />
 
-      <CaseSection>
-        <p>
-          <a
-            href="#"
-            className="link-underline text-foreground"
-          >
-            View promotion video
-          </a>
-        </p>
-      </CaseSection>
-
       <CaseSection title="About">
         <p>
           This was a two month long project included in the course "Tangible
@@ -73,7 +65,16 @@ function SmartPotPage() {
           pen and paper, Miro and ultimately Arduino to create a functional
           prototype.
         </p>
+        <p>
+          <a
+            href="#"
+            className="link-underline link-external"
+          >
+            View promotion video
+          </a>
+        </p>
       </CaseSection>
+
 
       <CaseSection title="Design Challenge">
         <ChallengeList
@@ -106,6 +107,9 @@ function SmartPotPage() {
           merged concept using an Arduino board.
         </p>
       </CaseSection>
+
+      <FullBleedImage src={sketches.url} alt="Hand-drawn pencil sketches exploring smart plant pot concepts" />
+
 
       <CaseSection title="Solution">
         <p>

@@ -120,8 +120,8 @@ function Home() {
         </section>
 
         {/* INTRO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-20 sm:pb-28">
-          <div className="max-w-3xl space-y-6 text-balance text-xl sm:text-2xl font-medium leading-snug">
+        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-4 sm:pt-8 pb-28 sm:pb-36">
+          <div className="max-w-4xl space-y-8 text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
             <p>
               Product designer with 4 years experience. Based in Stockholm.
             </p>
@@ -132,6 +132,7 @@ function Home() {
             </p>
           </div>
         </section>
+
 
         {/* WHAT I DO */}
         <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-20 sm:pb-28">
