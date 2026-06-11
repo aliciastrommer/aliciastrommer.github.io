@@ -10,33 +10,77 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsSmartPotRouteImport } from './routes/projects.smart-pot'
+import { Route as ProjectsSmartDashRouteImport } from './routes/projects.smart-dash'
+import { Route as ProjectsAccessibilityGuideRouteImport } from './routes/projects.accessibility-guide'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsSmartPotRoute = ProjectsSmartPotRouteImport.update({
+  id: '/projects/smart-pot',
+  path: '/projects/smart-pot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsSmartDashRoute = ProjectsSmartDashRouteImport.update({
+  id: '/projects/smart-dash',
+  path: '/projects/smart-dash',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsAccessibilityGuideRoute =
+  ProjectsAccessibilityGuideRouteImport.update({
+    id: '/projects/accessibility-guide',
+    path: '/projects/accessibility-guide',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/projects/accessibility-guide': typeof ProjectsAccessibilityGuideRoute
+  '/projects/smart-dash': typeof ProjectsSmartDashRoute
+  '/projects/smart-pot': typeof ProjectsSmartPotRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/projects/accessibility-guide': typeof ProjectsAccessibilityGuideRoute
+  '/projects/smart-dash': typeof ProjectsSmartDashRoute
+  '/projects/smart-pot': typeof ProjectsSmartPotRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/projects/accessibility-guide': typeof ProjectsAccessibilityGuideRoute
+  '/projects/smart-dash': typeof ProjectsSmartDashRoute
+  '/projects/smart-pot': typeof ProjectsSmartPotRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/projects/accessibility-guide'
+    | '/projects/smart-dash'
+    | '/projects/smart-pot'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/projects/accessibility-guide'
+    | '/projects/smart-dash'
+    | '/projects/smart-pot'
+  id:
+    | '__root__'
+    | '/'
+    | '/projects/accessibility-guide'
+    | '/projects/smart-dash'
+    | '/projects/smart-pot'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProjectsAccessibilityGuideRoute: typeof ProjectsAccessibilityGuideRoute
+  ProjectsSmartDashRoute: typeof ProjectsSmartDashRoute
+  ProjectsSmartPotRoute: typeof ProjectsSmartPotRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +92,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/smart-pot': {
+      id: '/projects/smart-pot'
+      path: '/projects/smart-pot'
+      fullPath: '/projects/smart-pot'
+      preLoaderRoute: typeof ProjectsSmartPotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/smart-dash': {
+      id: '/projects/smart-dash'
+      path: '/projects/smart-dash'
+      fullPath: '/projects/smart-dash'
+      preLoaderRoute: typeof ProjectsSmartDashRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/accessibility-guide': {
+      id: '/projects/accessibility-guide'
+      path: '/projects/accessibility-guide'
+      fullPath: '/projects/accessibility-guide'
+      preLoaderRoute: typeof ProjectsAccessibilityGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProjectsAccessibilityGuideRoute: ProjectsAccessibilityGuideRoute,
+  ProjectsSmartDashRoute: ProjectsSmartDashRoute,
+  ProjectsSmartPotRoute: ProjectsSmartPotRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
