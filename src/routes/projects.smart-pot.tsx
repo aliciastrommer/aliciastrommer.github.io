@@ -51,17 +51,6 @@ function SmartPotPage() {
         tagline="An interactive plant pot that visualizes plant health through form, light and touch"
       />
 
-      <CaseSection>
-        <p>
-          <a
-            href="#"
-            className="link-underline text-foreground"
-          >
-            View promotion video
-          </a>
-        </p>
-      </CaseSection>
-
       <CaseSection title="About">
         <p>
           This was a two month long project included in the course "Tangible
@@ -76,7 +65,16 @@ function SmartPotPage() {
           pen and paper, Miro and ultimately Arduino to create a functional
           prototype.
         </p>
+        <p>
+          <a
+            href="#"
+            className="link-underline link-external"
+          >
+            View promotion video
+          </a>
+        </p>
       </CaseSection>
+
 
       <CaseSection title="Design Challenge">
         <ChallengeList
