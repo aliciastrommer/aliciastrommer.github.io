@@ -51,18 +51,6 @@ function AccessibilityPage() {
         ]}
         title="Accessibility Guide"
         tagline="Created to help designers and developers interpret and comply with WCAG guidelines"
-        callout={
-          <p className="text-center">
-            <a
-              href="https://daresay.co"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-primary link-underline font-medium"
-            >
-              Find the guide here
-            </a>
-          </p>
-        }
       />
 
       <CaseSection title="About">
@@ -73,6 +61,16 @@ function AccessibilityPage() {
           assignments, the roles and responsibilities shifted throughout the
           process. The work included user research, benchmarking, co-design
           workshops, concept development, and user testing.
+        </p>
+        <p>
+          <a
+            href="https://daresay.co"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="link-underline text-foreground"
+          >
+            Find the guide here
+          </a>
         </p>
         <div className="pt-2">
           <ChipRow items={["Accessibility", "UX Design", "UI Design", "User Research", "Figma", "UX Writing"]} />
@@ -108,7 +106,13 @@ function AccessibilityPage() {
         </p>
       </CaseSection>
 
-      <FullBleedImage src={laptop1.url} alt="Laptop showing the Accessibility Guide on a wooden desk" />
+      <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
+        <img
+          src={laptop1.url}
+          alt="Laptop showing the Accessibility Guide on a wooden desk"
+          className="w-full h-[38vw] max-h-[420px] min-h-[220px] object-cover"
+        />
+      </div>
 
       <CaseSection title="Deliverables & Impact">
         <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
