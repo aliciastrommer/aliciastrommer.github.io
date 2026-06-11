@@ -75,7 +75,7 @@ function SmartDashPage() {
             href="https://www.scania.com"
             target="_blank"
             rel="noreferrer noopener"
-            className="text-primary link-underline font-medium"
+            className="link-underline text-foreground"
           >
             Read more about Smart Dash
           </a>
