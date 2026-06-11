@@ -108,6 +108,9 @@ function SmartPotPage() {
         </p>
       </CaseSection>
 
+      <FullBleedImage src={sketches.url} alt="Hand-drawn pencil sketches exploring smart plant pot concepts" />
+
+
       <CaseSection title="Solution">
         <p>
           The final concept was a shape-changing plant pot designed to help
