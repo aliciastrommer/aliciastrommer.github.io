@@ -236,25 +236,14 @@
   font-weight: 500;
 }
 
-/* Living header animation */
-@keyframes shimmer-text {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+/* Living header — subtle breathing color shift, text stays fully readable */
+@keyframes heading-hue {
+  0%, 100% { color: var(--color-foreground); }
+  50% { color: oklch(0.36 0.21 282); }
 }
 @utility heading-shimmer {
-  background: linear-gradient(
-    100deg,
-    var(--color-foreground) 0%,
-    var(--color-foreground) 35%,
-    oklch(0.36 0.21 282) 50%,
-    var(--color-foreground) 65%,
-    var(--color-foreground) 100%
-  );
-  background-size: 220% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer-text 7s ease-in-out infinite;
+  color: var(--color-foreground);
+  animation: heading-hue 8s ease-in-out infinite;
 }
 
 @keyframes float-soft {

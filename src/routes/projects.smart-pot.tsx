@@ -5,7 +5,6 @@ import {
   CaseHero,
   CaseSection,
   ChallengeList,
-  ChipRow,
   CaseFooterNav,
 } from "@/components/case-study";
 
@@ -18,13 +17,13 @@ export const Route = createFileRoute("/projects/smart-pot")({
       {
         name: "description",
         content:
-          "Case study: an interactive pot encouraging sustainable habits through tangible interactions.",
+          "Case study: an interactive plant pot that visualizes plant health through form, light and touch.",
       },
       { property: "og:title", content: "Smart Pot — Alicia Strömmer" },
       {
         property: "og:description",
         content:
-          "Case study: an interactive pot encouraging sustainable habits through tangible interactions.",
+          "Case study: an interactive plant pot that visualizes plant health through form, light and touch.",
       },
       { property: "og:image", content: hero.url },
       { name: "twitter:image", content: hero.url },
@@ -40,27 +39,40 @@ function SmartPotPage() {
         heroImage={hero.url}
         heroAlt="Hands holding a glowing white origami-textured plant pot with basil"
         meta={[
-          { label: "Course", value: "Interaction Design" },
+          { label: "Company", value: "Chalmers University of Technology" },
           { label: "Role", value: "Interaction Designer" },
-          { label: "Time frame", value: "2021" },
-          { label: "Team", value: "Student project" },
+          { label: "Time frame", value: "Feb 2021 – March 2021" },
+          { label: "Team", value: "5 students" },
         ]}
         title="Smart Pot"
-        tagline="An interactive pot that encourages sustainable habits through engaging and caring tangible interactions"
+        tagline="An interactive plant pot that visualizes plant health through form, light and touch"
       />
+
+      <CaseSection>
+        <p>
+          <a
+            href="#"
+            className="link-underline text-foreground"
+          >
+            View promotion video
+          </a>
+        </p>
+      </CaseSection>
 
       <CaseSection title="About">
         <p>
-          Smart Pot is an exploration of how tangible, expressive products can
-          nudge everyday sustainable behaviour. The pot communicates the
-          plant's needs through soft light, texture and movement — turning
-          plant care into a small, reciprocal relationship rather than a chore.
+          This was a two month long project included in the course "Tangible
+          Interaction" during my master's programme, carried out in a project
+          team.
         </p>
-        <div className="pt-2">
-          <ChipRow
-            items={["Interaction Design", "Prototyping", "Tangible Interaction", "Sustainability", "Concept Design"]}
-          />
-        </div>
+        <p>
+          The purpose of the project was to explore interactions beyond digital
+          interfaces through tangible interaction. Throughout the process, we
+          used a range of methods, including focus groups, photo journals,
+          interviews and surveys. To develop the concept, we used tools such as
+          pen and paper, Miro and ultimately Arduino to create a functional
+          prototype.
+        </p>
       </CaseSection>
 
       <CaseSection title="Design Challenge">
@@ -68,30 +80,108 @@ function SmartPotPage() {
           items={[
             {
               icon: <Sprout className="h-6 w-6" />,
-              title: "Encouraging sustainable habits through caring interaction",
-              body: "Sustainable behaviour often fails because it feels abstract and effortful. The challenge was to design a product that makes care feel intuitive and rewarding by giving the plant a clear, expressive voice the user can read at a glance.",
+              title: "Encouraging sustainable habits through interactive plant care design",
+              body: "The project explored how design can be used to encourage more sustainable behaviours. This was refined into a concept centered on supporting users in growing herbs and plants at home.",
             },
           ]}
         />
       </CaseSection>
 
-      <CaseSection title="My Contribution">
+      <CaseSection title="Research & Exploration">
         <p>
-          I led the interaction design — defining the pot's expressive states,
-          mapping plant needs to light and motion cues, and prototyping the
-          tangible behaviours that make the object feel alive and responsive.
+          To gain a better understanding of the problem space, we recruited six
+          participants to take part in interviews and photo journals. The
+          purpose was to frame their experience of growing herbs and other
+          edibles at home. This taught us that all participants were positive
+          towards the idea of growing edibles at home, but they all experienced
+          problems keeping them alive. Analyzing the results, we figured that
+          the problem stems from a lack of knowledge on what the plants need as
+          well as a weak relationship towards plants.
         </p>
         <p>
-          The result is a small object with a big presence: a pot that
-          encourages presence, attention and consistent care, supporting a
-          calmer and more sustainable everyday routine.
+          This led us to identifying requirements, serving as a basis for
+          ideation and concept development. After evaluating the first round of
+          concepts in a focus group, we were able to merge the concepts into
+          one. Further on, we developed a partly functional prototype of the
+          merged concept using an Arduino board.
+        </p>
+      </CaseSection>
+
+      <CaseSection title="Solution">
+        <p>
+          The final concept was a shape-changing plant pot designed to help
+          people keep their herbs or plants alive by encouraging more engaging
+          and caring interactions. Rather than relying on notifications or
+          traditional status indicators, the design explores how physical form
+          and touch can communicate the needs of a living plant and foster an
+          emotional connection between the owner and their herbs.
+        </p>
+        <p>
+          The pot is designed for a single plant and consists of two chambers:
+          one containing the plant itself and a separate water reservoir.
+        </p>
+
+        <h3 className="text-lg font-semibold text-foreground pt-4">
+          Interaction Design
+        </h3>
+        <p>
+          The concept uses natural and playful interactions to communicate the
+          plant's needs:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 marker:text-primary">
+          <li>
+            <strong className="text-foreground font-semibold">
+              Checking the herb's well-being:
+            </strong>{" "}
+            The user gently tickles the leaves to receive feedback. The pot
+            illuminates in green when the herb has sufficient water and blue
+            when it needs watering.
+          </li>
+          <li>
+            <strong className="text-foreground font-semibold">
+              Checking the water reservoir:
+            </strong>{" "}
+            The physical shape of the pot reflects the amount of water
+            available. As the reservoir fills, the pot expands, making the
+            water level visible without requiring a display or measurement
+            scale.
+          </li>
+          <li>
+            <strong className="text-foreground font-semibold">
+              Watering the herb:
+            </strong>{" "}
+            By holding the sides of the pot, the user activates the watering
+            mechanism, creating a direct and tactile interaction between the
+            owner and the plant.
+          </li>
+        </ul>
+      </CaseSection>
+
+      <CaseSection title="My Contribution">
+        <p>
+          As the project was part of a course at university, the team
+          intentionally shared responsibilities to give everyone exposure to
+          the full design process. I contributed across several stages of the
+          project, including conducting user interviews, generating concept
+          sketches, and creating low-fidelity prototypes.
+        </p>
+        <p>
+          As the concept matured and the team moved into building a functional
+          prototype, I took the lead on the technical implementation. I
+          programmed the Arduino board that controlled the pot's illumination,
+          simulating different lighting behaviours based on the product's
+          functional states and enabling us to test and demonstrate the
+          interaction concept.
         </p>
       </CaseSection>
 
       <CaseSection title="Key Learnings">
         <ul className="list-disc pl-5 space-y-2 marker:text-primary">
-          <li>Tangible interaction can make abstract goals like sustainability feel personal and immediate.</li>
-          <li>Designing for emotion is as important as designing for function when the goal is long-term behaviour change.</li>
+          <li>Gained hands-on experience with tangible interaction design and physical prototyping.</li>
+          <li>Learned to integrate electronics into a physical artifact, an area I had no prior experience in.</li>
+          <li>Developed foundational skills in building circuits and programming Arduino boards.</li>
+          <li>Navigated a steep learning curve in working with electronics, which was the most challenging aspect of the project.</li>
+          <li>Expanded my understanding of the possibilities within interaction design, particularly in combining hardware and digital behaviour.</li>
         </ul>
       </CaseSection>
 

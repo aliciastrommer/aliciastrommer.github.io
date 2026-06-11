@@ -106,17 +106,13 @@ function Home() {
               </div>
             </div>
 
-            <div className="reveal-up [animation-delay:120ms] flex justify-center md:justify-end">
-              <div className="relative">
-                <div
-                  aria-hidden
-                  className="absolute -inset-3 rounded-[2rem] bg-primary-soft float-soft"
-                />
+            <div className="reveal-up [animation-delay:120ms] hidden md:flex justify-end">
+              <div className="rounded-[1.75rem] bg-muted p-3">
                 <img
                   src={portrait.url}
                   alt="Portrait of Alicia Strömmer"
                   loading="eager"
-                  className="relative w-[240px] sm:w-[280px] md:w-[320px] aspect-[3/4] object-cover rounded-[1.75rem] bg-muted"
+                  className="w-[260px] md:w-[300px] aspect-[3/4] object-cover rounded-[1.5rem]"
                 />
               </div>
             </div>
