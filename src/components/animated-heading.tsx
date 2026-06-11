@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
 /**
- * Animated headline for the hero:
- * Types out the name, holds it, then continually animates a subtle
- * indigo shimmer across the gradient text via the heading-shimmer
- * utility.
+ * Hero headline: types out the name, then reveals the role line.
+ * Both lines share the same size and color for visual consistency
+ * with the Figma prototype.
  */
 export function AnimatedHeading() {
   const fullName = "Alicia Strömmer";
@@ -27,11 +26,13 @@ export function AnimatedHeading() {
 
   return (
     <h1 className="font-display text-balance text-[clamp(2.4rem,6vw,4.25rem)] font-bold leading-[1.05] tracking-tight">
-      <span className={done ? "heading-shimmer" : ""}>
-        {typed || "\u00a0"}
-      </span>
-      {!done && <span className="blink-caret text-primary">|</span>}
-      <span className="block mt-1 text-foreground/75 font-medium text-[clamp(1.5rem,4vw,2.75rem)]">
+      <span>{typed || "\u00a0"}</span>
+      {!done && <span className="blink-caret text-foreground">|</span>}
+      <span
+        className={`block mt-1 transition-opacity duration-500 ${
+          done ? "opacity-100" : "opacity-0"
+        }`}
+      >
         {role}
       </span>
     </h1>

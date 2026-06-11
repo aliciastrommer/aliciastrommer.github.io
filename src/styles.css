@@ -292,6 +292,17 @@
   }
 }
 
+/* External link — purple as in the Figma prototype */
+@utility link-external {
+  color: var(--color-primary);
+  transition: color 200ms ease;
+
+  &:hover {
+    color: oklch(0.32 0.22 282);
+  }
+}
+
+
 @utility card-hover {
   transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 350ms ease;
