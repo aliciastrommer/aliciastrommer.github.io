@@ -5,10 +5,13 @@ import {
   CaseHero,
   CaseSection,
   ChallengeList,
+  FullBleedImage,
   CaseFooterNav,
 } from "@/components/case-study";
 
 import hero from "@/assets/smart-pot.jpg.asset.json";
+import sketches from "@/assets/smart-pot-sketches.jpg.asset.json";
+
 
 export const Route = createFileRoute("/projects/smart-pot")({
   head: () => ({
