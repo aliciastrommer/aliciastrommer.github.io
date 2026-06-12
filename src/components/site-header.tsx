@@ -2,8 +2,8 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 backdrop-blur-md bg-background/75 border-b border-border/60">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-30 backdrop-blur-md bg-background/75">
+      <div className="px-5 sm:px-8 h-16 flex items-center justify-between">
         <Link
           to="/"
           aria-label="Alicia Strömmer — home"

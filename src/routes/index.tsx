@@ -3,6 +3,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { AnimatedHeading } from "@/components/animated-heading";
+import { Reveal } from "@/components/reveal";
 
 import portrait from "@/assets/alicia-portrait-v2.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cab.jpg.asset.json";
@@ -86,9 +87,9 @@ function Home() {
       <SiteHeader />
       <main>
         {/* HERO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-16 sm:pb-24">
+        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-20 sm:pb-32">
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
-            <div className="reveal-up">
+            <Reveal>
               <AnimatedHeading />
               <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
                 I specialize in simplifying complex systems through
@@ -104,9 +105,9 @@ function Home() {
                   View Projects
                 </a>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="reveal-up [animation-delay:120ms] hidden md:flex justify-end">
+            <Reveal delay={120} className="hidden md:flex justify-end">
               <div
                 className="rounded-[1.75rem] overflow-hidden"
                 style={{ backgroundColor: "#e9e9e9" }}
@@ -118,13 +119,13 @@ function Home() {
                   className="w-[260px] md:w-[300px] aspect-[3/4] object-contain"
                 />
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
 
         {/* INTRO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-4 sm:pt-8 pb-28 sm:pb-36">
-          <div className="max-w-4xl space-y-8 text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-36 sm:pb-48">
+          <div className="max-w-4xl space-y-10 text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
             <p>
               Product designer with 4 years experience. Based in Stockholm.
             </p>
@@ -134,15 +135,15 @@ function Home() {
               execution.
             </p>
           </div>
-        </section>
+        </Reveal>
 
 
         {/* WHAT I DO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-20 sm:pb-28">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
           <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
             What I do
           </h2>
-          <div className="mt-10 sm:mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+          <div className="mt-12 sm:mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2">
             {skills.map((s) => (
               <div key={s.title}>
                 <h3 className="text-base font-semibold">{s.title}</h3>
@@ -152,81 +153,80 @@ function Home() {
               </div>
             ))}
           </div>
-        </section>
+        </Reveal>
 
         {/* PROJECTS */}
-        <section id="projects" className="mx-auto max-w-6xl px-5 sm:px-8 pb-20 sm:pb-28">
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
-            Projects
-          </h2>
-          <div className="mt-10 sm:mt-14 space-y-8 sm:space-y-10">
-            {projects.map((p) => (
-              <article
-                key={p.title}
-                className="grid gap-5 sm:gap-8 sm:grid-cols-[1.4fr_1fr] items-stretch group"
-              >
-                <Link
-                  to={p.to}
-                  className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[4/3] bg-muted card-hover"
-                  aria-label={`Open ${p.title} case study`}
-                >
-                  <img
-                    src={p.image}
-                    alt={p.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
-                  />
-                </Link>
-                <div className="flex flex-col justify-center">
-                  <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-                    {p.title}
-                  </h3>
-                  <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-sm text-muted-foreground">
-                    <span className="truncate">{p.role}</span>
-                    <span className="shrink-0">{p.period}</span>
+        <section id="projects" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
+          <Reveal>
+            <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+              Projects
+            </h2>
+          </Reveal>
+          <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
+            {projects.map((p, i) => (
+              <Reveal key={p.title} delay={i * 80}>
+                <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.4fr_1fr] items-stretch group">
+                  <Link
+                    to={p.to}
+                    className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[4/3] bg-muted card-hover"
+                    aria-label={`Open ${p.title} case study`}
+                  >
+                    <img
+                      src={p.image}
+                      alt={p.alt}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
+                    />
+                  </Link>
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-base font-semibold">{p.title}</h3>
+                    <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-base text-muted-foreground">
+                      <span className="truncate">{p.role}</span>
+                      <span className="shrink-0">{p.period}</span>
+                    </div>
+                    <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-md">
+                      {p.body}
+                    </p>
+                    <div className="mt-6">
+                      <Link
+                        to={p.to}
+                        aria-label={`Open ${p.title} case study`}
+                        className="icon-pill"
+                      >
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    </div>
                   </div>
-                  <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
-                    {p.body}
-                  </p>
-                  <div className="mt-6">
-                    <Link
-                      to={p.to}
-                      aria-label={`Open ${p.title} case study`}
-                      className="icon-pill"
-                    >
-                      <ArrowRight className="h-5 w-5" />
-                    </Link>
-                  </div>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         {/* CLIENTS */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pb-20 sm:pb-28">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
           <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
             Clients
           </h2>
-          <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-muted-foreground">
+          <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-muted-foreground">
             {clients.map((c) => (
               <li
                 key={c}
-                className="text-sm font-semibold tracking-wide uppercase transition-colors hover:text-foreground"
+                className="text-base font-semibold tracking-wide uppercase transition-colors hover:text-foreground"
               >
                 {c}
               </li>
             ))}
           </ul>
-        </section>
+        </Reveal>
 
         {/* CONTACT CTA */}
-        <section id="contact" className="mx-auto max-w-6xl px-5 sm:px-8 pb-24 text-center">
-          <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 text-center">
+          <a href="mailto:alicia@strommer.se" id="contact" className="btn-pill btn-pill-primary">
             Get In Touch
             <ArrowDown className="h-4 w-4" />
           </a>
-        </section>
+        </Reveal>
       </main>
       <SiteFooter />
     </div>

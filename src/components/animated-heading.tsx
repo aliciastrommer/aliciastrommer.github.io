@@ -1,40 +1,13 @@
-import { useEffect, useState } from "react";
-
 /**
- * Hero headline: types out the name, then reveals the role line.
- * Both lines share the same size and color for visual consistency
- * with the Figma prototype.
+ * Hero headline. Static text with a slow, irregular shimmer that sweeps
+ * across both lines. Both lines share the same H1 styling for visual
+ * consistency with the Figma prototype.
  */
 export function AnimatedHeading() {
-  const fullName = "Alicia Strömmer";
-  const role = "Product Designer";
-  const [typed, setTyped] = useState("");
-  const [done, setDone] = useState(false);
-
-  useEffect(() => {
-    let i = 0;
-    const id = setInterval(() => {
-      i += 1;
-      setTyped(fullName.slice(0, i));
-      if (i >= fullName.length) {
-        clearInterval(id);
-        setDone(true);
-      }
-    }, 60);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <h1 className="font-display text-balance text-[clamp(2.4rem,6vw,4.25rem)] font-semibold leading-[1.05] tracking-tight">
-      <span className={done ? "shimmer-text" : undefined}>{typed || "\u00a0"}</span>
-      {!done && <span className="blink-caret text-foreground">|</span>}
-      <span
-        className={`block mt-1 transition-opacity duration-500 ${
-          done ? "opacity-100 shimmer-text" : "opacity-0"
-        }`}
-      >
-        {role}
-      </span>
+      <span className="shimmer-text">Alicia Strömmer</span>
+      <span className="block mt-1 shimmer-text">Product Designer</span>
     </h1>
   );
 }

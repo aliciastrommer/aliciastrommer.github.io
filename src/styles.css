@@ -167,7 +167,6 @@
 @utility btn-pill-primary {
   background-color: var(--color-primary);
   color: var(--color-primary-foreground);
-  box-shadow: var(--shadow-primary);
 
   &:hover {
     transform: translateY(-2px);
@@ -182,13 +181,13 @@
 
 @utility btn-pill-outline {
   background-color: transparent;
-  color: var(--color-foreground);
-  border: 1px solid var(--color-foreground);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
 
   &:hover {
     transform: translateY(-2px);
-    background-color: var(--color-foreground);
-    color: var(--color-background);
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
   }
   &:active {
     transform: translateY(0);
@@ -206,7 +205,6 @@
   background-color: var(--color-primary);
   color: var(--color-primary-foreground);
   transition: transform 250ms ease, box-shadow 250ms ease, background-color 200ms ease;
-  box-shadow: var(--shadow-primary);
 
   & svg {
     transition: transform 250ms ease;
@@ -214,6 +212,7 @@
   &:hover {
     transform: translateY(-2px);
     background-color: oklch(0.32 0.22 282);
+    box-shadow: var(--shadow-primary);
   }
   &:hover svg {
     transform: translateX(4px);
@@ -236,50 +235,46 @@
   font-weight: 500;
 }
 
-/* Slow shimmer that sweeps a soft highlight across the heading */
+/* Slow, irregular shimmer that drifts a wide soft highlight across the heading */
 @keyframes shimmer-sweep {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0%   { background-position: 220% 0; }
+  35%  { background-position: 110% 0; }
+  55%  { background-position: 40% 0; }
+  80%  { background-position: -80% 0; }
+  100% { background-position: -220% 0; }
 }
 @utility shimmer-text {
   background-image: linear-gradient(
     100deg,
     var(--color-foreground) 0%,
-    var(--color-foreground) 42%,
-    oklch(0.55 0.22 282) 50%,
-    var(--color-foreground) 58%,
+    var(--color-foreground) 35%,
+    oklch(0.58 0.24 282) 50%,
+    var(--color-foreground) 65%,
     var(--color-foreground) 100%
   );
-  background-size: 200% 100%;
+  background-size: 300% 100%;
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shimmer-sweep 12s linear infinite;
+  animation: shimmer-sweep 22s cubic-bezier(0.65, 0.05, 0.35, 0.95) infinite;
 }
 
-@keyframes float-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+/* Reveal-on-scroll: subtle fade + rise the first time an element appears */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
-@utility float-soft {
-  animation: float-soft 6s ease-in-out infinite;
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-@keyframes reveal-up {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@utility reveal-up {
-  animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes blink-caret {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-@utility blink-caret {
-  animation: blink-caret 1s steps(1) infinite;
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .shimmer-text { animation: none; }
 }
 
 @utility link-underline {
