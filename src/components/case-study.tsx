@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { Reveal } from "@/components/reveal";
 
 type MetaItem = { label: string; value: string };
 
@@ -67,7 +68,7 @@ export function CaseSection({
 }) {
   return (
     <section className="mx-auto max-w-5xl px-5 sm:px-8 mt-16 sm:mt-20">
-      <div className="max-w-3xl mx-auto">
+      <Reveal className="max-w-3xl mx-auto">
         {title && (
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             {title}
@@ -76,7 +77,7 @@ export function CaseSection({
         <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
           {children}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
