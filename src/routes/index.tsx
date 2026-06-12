@@ -145,8 +145,8 @@ function Home() {
           <div className="mt-10 sm:mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
             {skills.map((s) => (
               <div key={s.title}>
-                <h3 className="text-lg font-semibold">{s.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">
+                <h3 className="text-base font-semibold">{s.title}</h3>
+                <p className="mt-3 text-base text-muted-foreground leading-relaxed">
                   {s.body}
                 </p>
               </div>
