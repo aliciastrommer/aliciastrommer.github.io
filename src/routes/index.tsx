@@ -98,7 +98,7 @@ function ClientsReveal({ items }: { items: string[] }) {
 
   return (
     <ul
-      className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12"
+      className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 sm:gap-x-12"
       aria-label="Clients I have worked with"
     >
       {items.map((c, i) => {
@@ -137,7 +137,7 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={[
-                  "text-left text-base font-semibold transition-colors duration-200",
+                  "text-left text-xl font-semibold tracking-tight transition-colors duration-200",
                   isActive
                     ? "text-primary link-underline"
                     : "text-foreground/70 hover:text-foreground",
@@ -240,11 +240,11 @@ function Home() {
 
         {/* TESTIMONIAL */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <figure className="mx-auto max-w-4xl text-center">
+          <figure className="max-w-4xl">
             <svg
               aria-hidden="true"
               viewBox="0 0 40 32"
-              className="mx-auto h-8 w-8 text-primary/40"
+              className="h-8 w-8 text-primary/40"
               fill="currentColor"
             >
               <path d="M12.6 0C5.7 0 0 5.7 0 12.6V32h16V16H8c0-4.4 3.6-8 8-8V0h-3.4zm22 0C27.7 0 22 5.7 22 12.6V32h16V16h-8c0-4.4 3.6-8 8-8V0h-3.4z" />
@@ -259,12 +259,14 @@ function Home() {
               Colleague at Scania
             </figcaption>
           </figure>
+
         </Reveal>
 
         {/* PROJECTS */}
         <section id="projects" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
           <Reveal>
-            <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+
               Projects
             </h2>
           </Reveal>
@@ -313,7 +315,7 @@ function Home() {
 
         {/* CLIENTS */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             Experience From
           </h2>
           <ClientsReveal items={clients} />
