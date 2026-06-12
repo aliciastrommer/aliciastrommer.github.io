@@ -125,7 +125,7 @@ function ClientsReveal({ items }: { items: string[] }) {
 function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
   const [active, setActive] = useState(0);
   return (
-    <div className="mt-12 sm:mt-16 grid gap-10 sm:gap-16 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-start">
+    <div className="mt-12 sm:mt-16 grid gap-6 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-start">
       <ul className="flex flex-col gap-4 sm:border-r sm:border-primary/30 sm:pr-8">
         {items.map((s, i) => {
           const isActive = i === active;
@@ -137,10 +137,10 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={[
-                  "text-left text-xl font-semibold tracking-tight transition-colors duration-200",
+                  "text-left text-xl font-semibold tracking-tight text-foreground transition-colors duration-200",
                   isActive
                     ? "text-primary link-underline"
-                    : "text-foreground/70 hover:text-foreground",
+                    : "hover:text-primary",
                 ].join(" ")}
               >
                 {s.title}
