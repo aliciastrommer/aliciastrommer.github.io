@@ -237,8 +237,8 @@ function Home() {
         </section>
 
         {/* CLIENTS */}
-        <Reveal as="section" className="pb-28 sm:pb-36">
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight px-5 sm:px-8">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
+          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
             Clients
           </h2>
           <div className="marquee mt-12">
@@ -259,7 +259,7 @@ function Home() {
                 <li
                   key={`spacer-${setIdx}`}
                   aria-hidden="true"
-                  className="shrink-0 w-[60vw]"
+                  className="shrink-0 w-[40%]"
                 />,
               ])}
             </ul>
