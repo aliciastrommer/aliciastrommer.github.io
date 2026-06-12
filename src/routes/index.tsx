@@ -199,7 +199,7 @@ function Home() {
 
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.7fr_1fr] items-start group">
+                <article className="grid gap-3 sm:gap-4 sm:grid-cols-[1.7fr_1fr] items-start group">
                   <Link
                     to={p.to}
                     className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted card-hover"
