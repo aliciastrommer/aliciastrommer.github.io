@@ -168,7 +168,6 @@ export function CaseFooterNav({
 export function CaseLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <ReadingProgress />
       <SiteHeader />
       <main className="pb-10">{children}</main>
       <SiteFooter />
