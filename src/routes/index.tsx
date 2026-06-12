@@ -122,6 +122,45 @@ function ClientsReveal({ items }: { items: string[] }) {
   );
 }
 
+function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
+  const [active, setActive] = useState(0);
+  return (
+    <div className="mt-12 sm:mt-16 grid gap-10 sm:gap-16 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-start">
+      <ul className="flex flex-col gap-5 sm:border-l sm:border-primary/30 sm:pl-8">
+        {items.map((s, i) => {
+          const isActive = i === active;
+          return (
+            <li key={s.title}>
+              <button
+                type="button"
+                onMouseEnter={() => setActive(i)}
+                onFocus={() => setActive(i)}
+                onClick={() => setActive(i)}
+                className={[
+                  "text-left text-lg sm:text-xl font-medium transition-colors duration-200",
+                  isActive
+                    ? "text-primary link-underline"
+                    : "text-foreground/70 hover:text-foreground",
+                ].join(" ")}
+              >
+                {s.title}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <div className="min-h-[10rem]">
+        <p
+          key={active}
+          className="text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug fade-in-soft"
+        >
+          {items[active].body}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -191,20 +230,12 @@ function Home() {
 
         {/* WHAT I DO */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             What I do
           </h2>
-          <div className="mt-12 sm:mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2">
-            {skills.map((s) => (
-              <div key={s.title}>
-                <h3 className="text-base font-semibold">{s.title}</h3>
-                <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-                  {s.body}
-                </p>
-              </div>
-            ))}
-          </div>
+          <WhatIDo items={skills} />
         </Reveal>
+
 
         {/* TESTIMONIAL */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">

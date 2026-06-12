@@ -357,3 +357,12 @@
     box-shadow: var(--shadow-card);
   }
 }
+
+@utility fade-in-soft {
+  animation: fadeInSoft 280ms ease-out both;
+}
+
+@keyframes fadeInSoft {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
