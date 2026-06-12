@@ -125,7 +125,7 @@ function SmartDashPage() {
       <CaseSection title="My Contribution">
         <div className="space-y-10">
           <div>
-            <h3 className="text-lg font-semibold text-foreground">Year 1</h3>
+            <h3 className="text-base font-semibold text-foreground">Year 1</h3>
             <p className="mt-3">
               Initially, my role was centred on designing and delivering
               individual HMI features. My responsibility was to translate
@@ -147,7 +147,7 @@ function SmartDashPage() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground">Year 1–2</h3>
+            <h3 className="text-base font-semibold text-foreground">Year 1–2</h3>
             <p className="mt-3">
               As my experience grew, my role expanded to contributing beyond
               single features, towards patterns, consistency, and shared ways of
@@ -160,7 +160,7 @@ function SmartDashPage() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground">Year 3–4</h3>
+            <h3 className="text-base font-semibold text-foreground">Year 3–4</h3>
             <p className="mt-3">
               The past year my role has transitioned into a lead role within a
               defined area. I help drive direction, facilitate alignment, and

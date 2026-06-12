@@ -125,7 +125,7 @@ function SmartPotPage() {
           one containing the plant itself and a separate water reservoir.
         </p>
 
-        <h3 className="text-lg font-semibold text-foreground pt-4">
+        <h3 className="text-base font-semibold text-foreground pt-4">
           Interaction Design
         </h3>
         <p>
