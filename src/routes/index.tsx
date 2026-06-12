@@ -90,7 +90,7 @@ function Home() {
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
             <div className="reveal-up">
               <AnimatedHeading />
-              <p className="mt-6 max-w-xl text-pretty text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
                 I specialize in simplifying complex systems through
                 user-centered design, combining strategic thinking with
                 attention to detail to create products that work in the real
@@ -145,8 +145,8 @@ function Home() {
           <div className="mt-10 sm:mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2">
             {skills.map((s) => (
               <div key={s.title}>
-                <h3 className="text-lg font-semibold">{s.title}</h3>
-                <p className="mt-3 text-muted-foreground leading-relaxed">
+                <h3 className="text-base font-semibold">{s.title}</h3>
+                <p className="mt-3 text-base text-muted-foreground leading-relaxed">
                   {s.body}
                 </p>
               </div>
@@ -212,7 +212,7 @@ function Home() {
             {clients.map((c) => (
               <li
                 key={c}
-                className="text-sm sm:text-base font-semibold tracking-wide uppercase transition-colors hover:text-foreground"
+                className="text-sm font-semibold tracking-wide uppercase transition-colors hover:text-foreground"
               >
                 {c}
               </li>

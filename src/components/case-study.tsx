@@ -41,10 +41,10 @@ export function CaseHero({
           ))}
         </dl>
 
-        <h1 className="mt-12 text-center text-balance font-bold tracking-tight text-[clamp(2rem,5vw,3.25rem)] leading-[1.1]">
+        <h1 className="mt-12 text-center text-balance font-semibold tracking-tight text-[clamp(2.4rem,6vw,4.25rem)] leading-[1.05]">
           {title}
         </h1>
-        <p className="mt-5 text-center max-w-2xl mx-auto text-balance text-lg sm:text-xl text-muted-foreground leading-snug">
+        <p className="mt-5 text-center max-w-2xl mx-auto text-balance text-base text-muted-foreground leading-snug">
           {tagline}
         </p>
 

@@ -26,11 +26,11 @@ export function AnimatedHeading() {
 
   return (
     <h1 className="font-display text-balance text-[clamp(2.4rem,6vw,4.25rem)] font-semibold leading-[1.05] tracking-tight">
-      <span>{typed || "\u00a0"}</span>
+      <span className={done ? "shimmer-text" : undefined}>{typed || "\u00a0"}</span>
       {!done && <span className="blink-caret text-foreground">|</span>}
       <span
         className={`block mt-1 transition-opacity duration-500 ${
-          done ? "opacity-100" : "opacity-0"
+          done ? "opacity-100 shimmer-text" : "opacity-0"
         }`}
       >
         {role}
