@@ -169,14 +169,6 @@ function Home() {
           </div>
         </Reveal>
 
-        {/* PROJECTS */}
-        <section id="projects" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <Reveal>
-            <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
-              Projects
-            </h2>
-        </Reveal>
-
         {/* TESTIMONIAL */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
           <figure className="mx-auto max-w-4xl text-center">
@@ -199,7 +191,16 @@ function Home() {
             </figcaption>
           </figure>
         </Reveal>
+
+        {/* PROJECTS */}
+        <section id="projects" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
+          <Reveal>
+            <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+              Projects
+            </h2>
+          </Reveal>
           <div className="mt-10 sm:mt-12 space-y-4 sm:space-y-6">
+
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.7fr_1fr] items-start group">
