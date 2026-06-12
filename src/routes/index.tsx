@@ -87,7 +87,7 @@ function Home() {
       <SiteHeader />
       <main>
         {/* HERO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-20 sm:pb-32">
+        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-20 pb-20 sm:pb-32">
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
             <div>
               <AnimatedHeading />
@@ -109,14 +109,14 @@ function Home() {
 
             <Reveal delay={120} className="hidden md:flex justify-end">
               <div
-                className="rounded-[1.75rem] overflow-hidden"
+                className="overflow-hidden rounded-tl-[1.75rem] rounded-tr-[1.75rem] rounded-br-[1.75rem]"
                 style={{ backgroundColor: "#e9e9e9" }}
               >
                 <img
                   src={portrait.url}
                   alt="Portrait of Alicia Strömmer"
                   loading="eager"
-                  className="w-[260px] md:w-[300px] aspect-[3/4] object-contain"
+                  className="w-[320px] md:w-[360px] aspect-[3/4] object-contain"
                 />
               </div>
             </Reveal>
@@ -162,13 +162,13 @@ function Home() {
               Projects
             </h2>
           </Reveal>
-          <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
+          <div className="mt-12 sm:mt-16 space-y-8 sm:space-y-12">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.7fr_1fr] items-start group">
                   <Link
                     to={p.to}
-                    className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted card-hover"
+                    className="relative overflow-hidden rounded-l-2xl rounded-r-none aspect-[16/10] sm:aspect-[16/11] bg-muted card-hover"
                     aria-label={`Open ${p.title} case study`}
                   >
                     <img
