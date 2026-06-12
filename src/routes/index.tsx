@@ -89,7 +89,7 @@ function Home() {
         {/* HERO */}
         <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-20 sm:pb-32">
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
-            <Reveal>
+            <div>
               <AnimatedHeading />
               <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
                 I specialize in simplifying complex systems through
@@ -105,7 +105,7 @@ function Home() {
                   View Projects
                 </a>
               </div>
-            </Reveal>
+            </div>
 
             <Reveal delay={120} className="hidden md:flex justify-end">
               <div
