@@ -12,6 +12,7 @@ import {
 
 import hero from "@/assets/smart-dash-cab.jpg.asset.json";
 import display from "@/assets/smart-dash-display.jpg.asset.json";
+import displays from "@/assets/smart-dash-displays.jpg.asset.json";
 
 export const Route = createFileRoute("/projects/smart-dash")({
   head: () => ({
@@ -82,6 +83,12 @@ function SmartDashPage() {
         </p>
 
       </CaseSection>
+
+      <FullBleedImage
+        src={displays.url}
+        alt="Scania truck cab dashboard with the Driver Display behind the steering wheel and the Center Information Display to the right"
+      />
+
 
       <CaseSection title="Design Challenge">
         <ChallengeList

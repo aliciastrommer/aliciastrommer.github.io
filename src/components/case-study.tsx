@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { ReadingProgress } from "@/components/reading-progress";
 
 type MetaItem = { label: string; value: string };
 
@@ -167,6 +168,7 @@ export function CaseFooterNav({
 export function CaseLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <ReadingProgress />
       <SiteHeader />
       <main className="pb-10">{children}</main>
       <SiteFooter />
