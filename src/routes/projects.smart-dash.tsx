@@ -46,8 +46,8 @@ function SmartDashPage() {
         title="Smart Dash"
         tagline="Scania's digital driver platform designed for professional truck and bus drivers"
         callout={
-          <div className="flex items-start gap-3">
-            <Info className="h-5 w-5 mt-0.5 shrink-0 text-primary" />
+          <div className="flex items-start gap-3 rounded-2xl border border-destructive/30 bg-destructive/10 px-5 py-4 text-foreground/90 -mx-5 sm:mx-0">
+            <Info className="h-5 w-5 mt-0.5 shrink-0 text-destructive" />
             <p>
               Due to confidentiality, this case study focuses on my professional
               development and overall contribution instead of specific examples.

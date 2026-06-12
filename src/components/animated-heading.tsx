@@ -25,7 +25,7 @@ export function AnimatedHeading() {
   }, []);
 
   return (
-    <h1 className="font-display text-balance text-[clamp(2.4rem,6vw,4.25rem)] font-bold leading-[1.05] tracking-tight">
+    <h1 className="font-display text-balance text-[clamp(2.4rem,6vw,4.25rem)] font-semibold leading-[1.05] tracking-tight">
       <span>{typed || "\u00a0"}</span>
       {!done && <span className="blink-caret text-foreground">|</span>}
       <span
