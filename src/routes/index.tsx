@@ -322,7 +322,7 @@ function Home() {
         </Reveal>
 
         {/* CONTACT CTA */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 text-center">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28">
           <a href="mailto:alicia@strommer.se" id="contact" className="btn-pill btn-pill-primary">
             Get In Touch
           </a>
