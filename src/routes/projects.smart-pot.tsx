@@ -10,7 +10,8 @@ import {
 } from "@/components/case-study";
 
 import hero from "@/assets/smart-pot.jpg.asset.json";
-import sketches from "@/assets/smart-pot-sketches.jpg.asset.json";
+import sketches from "@/assets/smart-pot-sketches-real.png.asset.json";
+import watering from "@/assets/smart-pot-watering.png.asset.json";
 
 
 export const Route = createFileRoute("/projects/smart-pot")({
