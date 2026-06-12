@@ -126,21 +126,21 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
   const [active, setActive] = useState(0);
   return (
     <div className="mt-12 sm:mt-16 grid gap-6 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-start">
-      <ul className="flex flex-col gap-4 sm:border-r-2 sm:border-primary/40 sm:pr-8">
+      <ul className="flex flex-row gap-6 overflow-x-auto -mx-5 px-5 sm:mx-0 sm:px-0 sm:flex-col sm:gap-4 sm:overflow-visible sm:border-r-2 sm:border-primary/40 sm:pr-8">
         {items.map((s, i) => {
           const isActive = i === active;
           return (
-            <li key={s.title}>
+            <li key={s.title} className="shrink-0 sm:shrink">
               <button
                 type="button"
                 onMouseEnter={() => setActive(i)}
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={[
-                  "text-left text-xl font-semibold tracking-tight text-foreground transition-colors duration-200",
+                  "text-left text-xl font-semibold tracking-tight whitespace-nowrap sm:whitespace-normal transition-colors duration-200",
                   isActive
                     ? "text-primary link-underline"
-                    : "hover:text-primary",
+                    : "text-foreground hover:text-primary",
                 ].join(" ")}
               >
                 {s.title}
@@ -150,11 +150,12 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
         })}
       </ul>
       <div key={active} className="fade-in-soft min-h-[8rem]">
-        <p className="text-base text-foreground leading-relaxed max-w-xl">
+        <p className="text-base text-muted-foreground leading-relaxed max-w-xl">
           {items[active].body}
         </p>
       </div>
     </div>
+
   );
 }
 
