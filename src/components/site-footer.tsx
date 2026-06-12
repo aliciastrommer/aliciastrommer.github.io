@@ -14,10 +14,6 @@ export function SiteFooter() {
         >
           +46 72-206 80 63
         </a>
-        <div className="flex flex-col sm:items-center gap-0.5 mt-6 sm:mt-0">
-          <span>Designed in Figma</span>
-          <span>Implemented with Lovable</span>
-        </div>
       </div>
     </footer>
   );
