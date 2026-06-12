@@ -67,13 +67,15 @@ export function CaseSection({
 }) {
   return (
     <section className="mx-auto max-w-5xl px-5 sm:px-8 mt-16 sm:mt-20">
-      {title && (
-        <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight max-w-3xl">
-          {title}
-        </h2>
-      )}
-      <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed max-w-3xl">
-        {children}
+      <div className="max-w-3xl mx-auto">
+        {title && (
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+            {title}
+          </h2>
+        )}
+        <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
+          {children}
+        </div>
       </div>
     </section>
   );
@@ -117,13 +119,23 @@ export function ChipRow({ items }: { items: string[] }) {
   );
 }
 
-export function FullBleedImage({ src, alt }: { src: string; alt: string }) {
+export function FullBleedImage({
+  src,
+  alt,
+  fit = "cover",
+}: {
+  src: string;
+  alt: string;
+  fit?: "cover" | "contain";
+}) {
   return (
     <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
       <img
         src={src}
         alt={alt}
-        className="w-full h-[38vw] max-h-[420px] min-h-[220px] object-cover"
+        className={`w-full h-[52vw] max-h-[620px] min-h-[300px] ${
+          fit === "contain" ? "object-contain" : "object-cover"
+        }`}
       />
     </div>
   );
