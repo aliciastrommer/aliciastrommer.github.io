@@ -313,7 +313,7 @@ function Home() {
         </section>
 
         {/* CLIENTS */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36 text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             Experience From
           </h2>
@@ -321,7 +321,7 @@ function Home() {
         </Reveal>
 
         {/* CONTACT CTA */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 text-center">
           <a href="mailto:alicia@strommer.se" id="contact" className="btn-pill btn-pill-primary">
             Get In Touch
           </a>
