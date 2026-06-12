@@ -256,7 +256,7 @@ function Home() {
               seeing the big picture."
             </blockquote>
             <figcaption className="mt-6 text-base text-muted-foreground">
-              Colleague at Scania
+              - Colleague at Scania
             </figcaption>
           </figure>
 
