@@ -162,13 +162,13 @@ function Home() {
               Projects
             </h2>
           </Reveal>
-          <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
+          <div className="mt-12 sm:mt-16 space-y-8 sm:space-y-12">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.7fr_1fr] items-start group">
                   <Link
                     to={p.to}
-                    className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted card-hover"
+                    className="relative overflow-hidden rounded-l-2xl rounded-r-none aspect-[16/10] sm:aspect-[16/11] bg-muted card-hover"
                     aria-label={`Open ${p.title} case study`}
                   >
                     <img
