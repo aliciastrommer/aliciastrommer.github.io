@@ -283,7 +283,7 @@ function Home() {
         {/* CLIENTS */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
           <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
-            Clients
+            Experience From
           </h2>
           <ClientsReveal items={clients} />
         </Reveal>
