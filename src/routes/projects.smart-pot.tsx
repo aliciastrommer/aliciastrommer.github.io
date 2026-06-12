@@ -11,7 +11,8 @@ import {
 
 import hero from "@/assets/smart-pot.jpg.asset.json";
 import sketches from "@/assets/smart-pot-sketches-real.png.asset.json";
-import watering from "@/assets/smart-pot-watering.png.asset.json";
+import interactionsVideo from "@/assets/smart-pot-interactions.mp4.asset.json";
+import interactionsPoster from "@/assets/smart-pot-interactions-poster.jpg.asset.json";
 
 
 export const Route = createFileRoute("/projects/smart-pot")({
