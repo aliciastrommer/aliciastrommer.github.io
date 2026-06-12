@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { AnimatedHeading } from "@/components/animated-heading";
 import { Reveal } from "@/components/reveal";
 
-import portrait from "@/assets/alicia-portrait-v2.png.asset.json";
+import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cab.jpg.asset.json";
 import accessibilityImg from "@/assets/accessibility-desk.jpg.asset.json";
 import smartPotImg from "@/assets/smart-pot.jpg.asset.json";
