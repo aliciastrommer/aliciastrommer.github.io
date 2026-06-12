@@ -126,7 +126,7 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
   const [active, setActive] = useState(0);
   return (
     <div className="mt-12 sm:mt-16 grid gap-10 sm:gap-16 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-start">
-      <ul className="flex flex-col gap-5 sm:border-l sm:border-primary/30 sm:pl-8">
+      <ul className="flex flex-col gap-4 sm:border-r sm:border-primary/30 sm:pr-8">
         {items.map((s, i) => {
           const isActive = i === active;
           return (
@@ -137,7 +137,7 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={[
-                  "text-left text-lg sm:text-xl font-medium transition-colors duration-200",
+                  "text-left text-base font-semibold transition-colors duration-200",
                   isActive
                     ? "text-primary link-underline"
                     : "text-foreground/70 hover:text-foreground",
@@ -149,10 +149,11 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
           );
         })}
       </ul>
-      <div className="min-h-[10rem]">
+      <div className="min-h-[8rem]">
         <p
           key={active}
-          className="text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug fade-in-soft"
+          className="text-base text-muted-foreground leading-relaxed fade-in-soft max-w-xl"
+
         >
           {items[active].body}
         </p>
