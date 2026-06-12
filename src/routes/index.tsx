@@ -137,14 +137,11 @@ function Home() {
 
         {/* INTRO */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-36 sm:pb-48">
-          <div className="max-w-4xl space-y-10 text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
+          <div className="max-w-4xl text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
             <p>
-              Product designer with 4 years experience. Based in Stockholm.
-            </p>
-            <p>
-              Currently working with digital in-vehicle interfaces at Scania as
-              UX/UI Designer and Area Lead. Balancing strategy with hands-on
-              execution.
+              4 years experience. Currently working with digital in-vehicle
+              interfaces as UX/UI Designer and Area Lead. Balancing strategy
+              with hands-on execution.
             </p>
           </div>
         </Reveal>
