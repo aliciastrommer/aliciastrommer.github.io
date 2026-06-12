@@ -235,6 +235,21 @@
   font-weight: 500;
 }
 
+/* Outlined pill chip used on project cards (role / period) */
+@utility chip-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 /* Slow, irregular shimmer — a deep-purple highlight drifts across the heading.
    Gradient is repeating, so the foreground colour always covers the text. */
 @keyframes shimmer-sweep {
