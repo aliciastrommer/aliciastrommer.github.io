@@ -89,7 +89,7 @@ function Home() {
         {/* HERO */}
         <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-20 sm:pb-32">
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
-            <Reveal>
+            <div>
               <AnimatedHeading />
               <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
                 I specialize in simplifying complex systems through
@@ -105,7 +105,7 @@ function Home() {
                   View Projects
                 </a>
               </div>
-            </Reveal>
+            </div>
 
             <Reveal delay={120} className="hidden md:flex justify-end">
               <div
@@ -165,10 +165,10 @@ function Home() {
           <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.4fr_1fr] items-stretch group">
+                <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.7fr_1fr] items-stretch group">
                   <Link
                     to={p.to}
-                    className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[4/3] bg-muted card-hover"
+                    className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[5/4] bg-muted card-hover"
                     aria-label={`Open ${p.title} case study`}
                   >
                     <img
