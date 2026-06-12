@@ -245,29 +245,7 @@ function Home() {
           <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
             Clients
           </h2>
-          <div className="marquee mt-12">
-            <ul
-              className="marquee-track gap-x-12 sm:gap-x-16 text-muted-foreground"
-              aria-label="Clients I have worked with"
-            >
-              {[0, 1].flatMap((setIdx) => [
-                ...clients.map((c) => (
-                  <li
-                    key={`${setIdx}-${c}`}
-                    aria-hidden={setIdx === 1 ? "true" : undefined}
-                    className="text-base font-semibold tracking-wide uppercase whitespace-nowrap"
-                  >
-                    {c}
-                  </li>
-                )),
-                <li
-                  key={`spacer-${setIdx}`}
-                  aria-hidden="true"
-                  className="shrink-0 w-[40%]"
-                />,
-              ])}
-            </ul>
-          </div>
+          <ClientsReveal items={clients} />
         </Reveal>
 
         {/* CONTACT CTA */}
