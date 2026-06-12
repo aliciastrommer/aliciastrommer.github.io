@@ -51,7 +51,7 @@ export function CaseHero({
         </p>
 
         {callout && (
-          <div className="mt-10 text-sm max-w-3xl mx-auto">
+          <div className="mt-10 text-base max-w-3xl mx-auto">
             {callout}
           </div>
         )}
