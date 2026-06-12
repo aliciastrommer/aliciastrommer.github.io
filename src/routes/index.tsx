@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { AnimatedHeading } from "@/components/animated-heading";
@@ -80,6 +81,46 @@ const projects = [
 ];
 
 const clients = ["TRATON GROUP", "SCANIA", "Knightec Group", "ABB", "UMEÅ ENERGI"];
+
+function ClientsReveal({ items }: { items: string[] }) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % items.length);
+    }, 1600);
+    return () => window.clearInterval(id);
+  }, [items.length]);
+
+  return (
+    <ul
+      className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12"
+      aria-label="Clients I have worked with"
+    >
+      {items.map((c, i) => {
+        const isActive = i === active;
+        return (
+          <li
+            key={c}
+            className={[
+              "text-base font-semibold tracking-wide uppercase whitespace-nowrap",
+              "transition-all duration-700 ease-out will-change-transform",
+              isActive
+                ? "text-foreground opacity-100 scale-105"
+                : "text-muted-foreground opacity-50 scale-100",
+            ].join(" ")}
+          >
+            {c}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
 
 function Home() {
   return (
@@ -244,29 +285,7 @@ function Home() {
           <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
             Clients
           </h2>
-          <div className="marquee mt-12">
-            <ul
-              className="marquee-track gap-x-12 sm:gap-x-16 text-muted-foreground"
-              aria-label="Clients I have worked with"
-            >
-              {[0, 1].flatMap((setIdx) => [
-                ...clients.map((c) => (
-                  <li
-                    key={`${setIdx}-${c}`}
-                    aria-hidden={setIdx === 1 ? "true" : undefined}
-                    className="text-base font-semibold tracking-wide uppercase whitespace-nowrap"
-                  >
-                    {c}
-                  </li>
-                )),
-                <li
-                  key={`spacer-${setIdx}`}
-                  aria-hidden="true"
-                  className="shrink-0 w-[40%]"
-                />,
-              ])}
-            </ul>
-          </div>
+          <ClientsReveal items={clients} />
         </Reveal>
 
         {/* CONTACT CTA */}
