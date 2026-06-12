@@ -243,7 +243,7 @@ function Home() {
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-2xl transition-shadow duration-300 hover:shadow-[var(--shadow-card)]"
+                  className="group block rounded-2xl"
                 >
                   <article className="grid gap-3 sm:gap-4 sm:grid-cols-[1.7fr_1fr] items-stretch">
                     <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted">
