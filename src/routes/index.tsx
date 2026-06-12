@@ -218,17 +218,19 @@ function Home() {
                       <span className="truncate">{p.role}</span>
                       <span className="shrink-0">{p.period}</span>
                     </div>
-                    <p className="mt-2 text-base text-muted-foreground leading-relaxed max-w-md">
-                      {p.body}
-                    </p>
-                    <div className="mt-3">
-                      <Link
-                        to={p.to}
-                        aria-label={`Open ${p.title} case study`}
-                        className="icon-pill"
-                      >
-                        <ArrowRight className="h-5 w-5" />
-                      </Link>
+                    <div className="mt-2 flex items-end gap-4 sm:block">
+                      <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+                        {p.body}
+                      </p>
+                      <div className="shrink-0 sm:mt-3">
+                        <Link
+                          to={p.to}
+                          aria-label={`Open ${p.title} case study`}
+                          className="icon-pill"
+                        >
+                          <ArrowRight className="h-5 w-5" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </article>
