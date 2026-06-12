@@ -137,7 +137,7 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={[
-                  "text-left text-base font-semibold transition-colors duration-200",
+                  "text-left text-xl font-semibold tracking-tight transition-colors duration-200",
                   isActive
                     ? "text-primary link-underline"
                     : "text-foreground/70 hover:text-foreground",
