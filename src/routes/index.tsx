@@ -98,7 +98,7 @@ function Home() {
                 world.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#contact" className="btn-pill btn-pill-primary">
+                <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
                   Get In Touch
                 </a>
                 <a href="#projects" className="btn-pill btn-pill-outline">
