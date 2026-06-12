@@ -34,7 +34,7 @@ export function CaseHero({
       </div>
 
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <dl className="mt-8 max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-y-4 gap-x-6 text-sm">
+        <dl className="mt-8 max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-y-4 gap-x-6 text-base">
           {meta.map((m) => (
             <div key={m.label} className="text-center">
               <dt className="text-muted-foreground">{m.label}</dt>
@@ -51,7 +51,7 @@ export function CaseHero({
         </p>
 
         {callout && (
-          <div className="mt-10 text-sm max-w-3xl mx-auto">
+          <div className="mt-10 text-base max-w-3xl mx-auto">
             {callout}
           </div>
         )}
