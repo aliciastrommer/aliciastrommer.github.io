@@ -149,12 +149,11 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
           );
         })}
       </ul>
-      <div className="min-h-[8rem]">
-        <p
-          key={active}
-          className="text-base text-muted-foreground leading-relaxed fade-in-soft max-w-xl"
-
-        >
+      <div
+        key={active}
+        className="fade-in-soft rounded-2xl bg-primary-soft/60 border border-primary/10 p-5 sm:p-6 min-h-[8rem]"
+      >
+        <p className="text-base text-foreground leading-relaxed max-w-xl">
           {items[active].body}
         </p>
       </div>
