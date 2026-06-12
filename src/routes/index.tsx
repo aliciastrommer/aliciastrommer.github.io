@@ -165,10 +165,10 @@ function Home() {
           <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.7fr_1fr] items-stretch group">
+                <article className="grid gap-5 sm:gap-8 sm:grid-cols-[1.7fr_1fr] items-start group">
                   <Link
                     to={p.to}
-                    className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[5/4] bg-muted card-hover"
+                    className="relative overflow-hidden rounded-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted card-hover"
                     aria-label={`Open ${p.title} case study`}
                   >
                     <img
@@ -178,7 +178,7 @@ function Home() {
                       className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
                     />
                   </Link>
-                  <div className="flex flex-col justify-center">
+                  <div className="flex flex-col">
                     <h3 className="text-base font-semibold">{p.title}</h3>
                     <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-base text-muted-foreground">
                       <span className="truncate">{p.role}</span>
