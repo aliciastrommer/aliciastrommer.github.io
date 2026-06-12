@@ -224,7 +224,6 @@ function Home() {
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 text-center">
           <a href="mailto:alicia@strommer.se" id="contact" className="btn-pill btn-pill-primary">
             Get In Touch
-            <ArrowDown className="h-4 w-4" />
           </a>
         </Reveal>
       </main>
