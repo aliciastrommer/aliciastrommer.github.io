@@ -240,41 +240,40 @@ function Home() {
 
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <article className="grid gap-3 sm:gap-4 sm:grid-cols-[1.7fr_1fr] items-start group">
-                  <Link
-                    to={p.to}
-                    className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted card-hover"
-                    aria-label={`Open ${p.title} case study`}
-                  >
-                    <img
-                      src={p.image}
-                      alt={p.alt}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
-                    />
-                  </Link>
-                  <div className="flex flex-col">
-                    <h3 className="text-base font-semibold">{p.title}</h3>
-                    <div className="mt-1 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-base text-muted-foreground">
-                      <span className="truncate">{p.role}</span>
-                      <span className="shrink-0">{p.period}</span>
+                <Link
+                  to={p.to}
+                  aria-label={`Open ${p.title} case study`}
+                  className="group block rounded-2xl transition-shadow duration-300 hover:shadow-[var(--shadow-card)]"
+                >
+                  <article className="grid gap-3 sm:gap-4 sm:grid-cols-[1.7fr_1fr] items-stretch">
+                    <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted">
+                      <img
+                        src={p.image}
+                        alt={p.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
+                      />
                     </div>
-                    <div className="mt-2 flex items-end gap-4 sm:block">
-                      <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+                    <div className="flex flex-col sm:py-2">
+                      <h3 className="text-xl font-semibold tracking-tight">{p.title}</h3>
+                      <p className="mt-3 text-base text-muted-foreground leading-relaxed max-w-md">
                         {p.body}
                       </p>
-                      <div className="shrink-0 sm:mt-3">
-                        <Link
-                          to={p.to}
-                          aria-label={`Open ${p.title} case study`}
-                          className="icon-pill"
+                      <div className="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="chip-outline">{p.role}</span>
+                          <span className="chip-outline">{p.period}</span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:-translate-y-0.5 group-hover:shadow-[var(--shadow-primary)]"
                         >
-                          <ArrowRight className="h-5 w-5" />
-                        </Link>
+                          <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                        </span>
                       </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               </Reveal>
             ))}
           </div>
