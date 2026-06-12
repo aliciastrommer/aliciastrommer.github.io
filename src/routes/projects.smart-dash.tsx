@@ -121,11 +121,10 @@ function SmartDashPage() {
           contributing to shared design systems and patterns, and finally to
           Area Lead with responsibility for direction, alignment, and long-term
           quality within a defined domain. During this time, I have worked in
-          four agile teams with different parts of the platform.
+          different teams in a global context. Regardless of team, my work has
+          been carried out in an agile environment.&nbsp;
         </p>
         <p>
-          The work has been carried out in 10 week increments in a global
-          context.
         </p>
       </CaseSection>
 
