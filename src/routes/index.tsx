@@ -214,14 +214,14 @@ function Home() {
                   </Link>
                   <div className="flex flex-col">
                     <h3 className="text-base font-semibold">{p.title}</h3>
-                    <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-base text-muted-foreground">
+                    <div className="mt-1 grid grid-cols-[minmax(0,1fr)_auto] gap-3 text-base text-muted-foreground">
                       <span className="truncate">{p.role}</span>
                       <span className="shrink-0">{p.period}</span>
                     </div>
-                    <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-md">
+                    <p className="mt-2 text-base text-muted-foreground leading-relaxed max-w-md">
                       {p.body}
                     </p>
-                    <div className="mt-6">
+                    <div className="mt-3">
                       <Link
                         to={p.to}
                         aria-label={`Open ${p.title} case study`}
