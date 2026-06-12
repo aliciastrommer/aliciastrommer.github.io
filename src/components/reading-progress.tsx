@@ -27,11 +27,11 @@ export function ReadingProgress() {
   return (
     <div
       aria-hidden="true"
-      className="fixed top-0 left-0 right-0 z-50 h-1 bg-primary/10 pointer-events-none"
+      className="fixed top-0 right-0 bottom-0 z-50 w-1 bg-primary/10 pointer-events-none"
     >
       <div
-        className="h-full bg-primary shadow-[0_0_8px_oklch(0.36_0.21_282/0.6)] transition-[width] duration-100 ease-out"
-        style={{ width: `${progress}%` }}
+        className="w-full bg-primary shadow-[0_0_8px_oklch(0.36_0.21_282/0.6)] transition-[height] duration-100 ease-out"
+        style={{ height: `${progress}%` }}
       />
     </div>
   );

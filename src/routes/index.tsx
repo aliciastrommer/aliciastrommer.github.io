@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { AnimatedHeading } from "@/components/animated-heading";
 import { Reveal } from "@/components/reveal";
 
-import portrait from "@/assets/alicia-portrait-v2.png.asset.json";
+import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cab.jpg.asset.json";
 import accessibilityImg from "@/assets/accessibility-desk.jpg.asset.json";
 import smartPotImg from "@/assets/smart-pot.jpg.asset.json";
@@ -87,9 +87,9 @@ function Home() {
       <SiteHeader />
       <main>
         {/* HERO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-20 pb-20 sm:pb-32">
+        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-20 pb-20 sm:pb-28">
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
-            <div>
+            <div className="text-center md:text-left flex flex-col items-center md:items-start">
               <AnimatedHeading />
               <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
                 I specialize in simplifying complex systems through
@@ -97,15 +97,7 @@ function Home() {
                 attention to detail to create products that work in the real
                 world.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
-                  Get In Touch
-                </a>
-                <a href="#projects" className="btn-pill btn-pill-outline">
-                  View Projects
-                </a>
-              </div>
-              <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+              <div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
                   <span className="relative inline-flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
@@ -116,6 +108,14 @@ function Home() {
                 <span>Designing for Scania</span>
                 <span aria-hidden="true">·</span>
                 <span>Based in Stockholm</span>
+              </div>
+              <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
+                <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
+                  Get In Touch
+                </a>
+                <a href="#projects" className="btn-pill btn-pill-outline">
+                  View Projects
+                </a>
               </div>
             </div>
 
@@ -128,7 +128,7 @@ function Home() {
                   src={portrait.url}
                   alt="Portrait of Alicia Strömmer, product designer"
                   loading="eager"
-                  className="w-[320px] md:w-[360px] aspect-[3/4] object-cover object-center scale-110"
+                  className="w-[320px] md:w-[360px] aspect-[3/4] object-cover object-top"
                 />
               </div>
             </Reveal>
@@ -237,8 +237,8 @@ function Home() {
         </section>
 
         {/* CLIENTS */}
-        <Reveal as="section" className="pb-28 sm:pb-36">
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight px-5 sm:px-8">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
+          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
             Clients
           </h2>
           <div className="marquee mt-12">
@@ -259,7 +259,7 @@ function Home() {
                 <li
                   key={`spacer-${setIdx}`}
                   aria-hidden="true"
-                  className="shrink-0 w-[60vw]"
+                  className="shrink-0 w-[40%]"
                 />,
               ])}
             </ul>
