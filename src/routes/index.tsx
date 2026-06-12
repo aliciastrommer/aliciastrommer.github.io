@@ -126,7 +126,7 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
   const [active, setActive] = useState(0);
   return (
     <div className="mt-12 sm:mt-16 grid gap-6 sm:gap-10 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-start">
-      <ul className="flex flex-col gap-4 sm:border-r sm:border-primary/30 sm:pr-8">
+      <ul className="flex flex-col gap-4 sm:border-r-2 sm:border-primary/40 sm:pr-8">
         {items.map((s, i) => {
           const isActive = i === active;
           return (
@@ -149,10 +149,7 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
           );
         })}
       </ul>
-      <div
-        key={active}
-        className="fade-in-soft rounded-2xl bg-primary-soft/60 border border-primary/10 p-5 sm:p-6 min-h-[8rem]"
-      >
+      <div key={active} className="fade-in-soft min-h-[8rem]">
         <p className="text-base text-foreground leading-relaxed max-w-xl">
           {items[active].body}
         </p>
@@ -217,8 +214,8 @@ function Home() {
         </section>
 
         {/* INTRO */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-36 sm:pb-48">
-          <div className="max-w-4xl text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-36 sm:pb-48 text-center">
+          <div className="mx-auto max-w-4xl text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
             <p>
               4 years experience. Currently working with digital in-vehicle
               interfaces as UX/UI Designer and Area Lead. Balancing strategy
