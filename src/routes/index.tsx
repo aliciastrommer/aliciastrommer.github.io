@@ -265,7 +265,8 @@ function Home() {
         {/* PROJECTS */}
         <section id="projects" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
           <Reveal>
-            <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+
               Projects
             </h2>
           </Reveal>
