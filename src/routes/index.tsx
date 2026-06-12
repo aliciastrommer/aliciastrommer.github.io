@@ -242,20 +242,26 @@ function Home() {
         </section>
 
         {/* CLIENTS */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+        <Reveal as="section" className="pb-28 sm:pb-36">
+          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight px-5 sm:px-8">
             Clients
           </h2>
-          <ul className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-muted-foreground">
-            {clients.map((c) => (
-              <li
-                key={c}
-                className="text-base font-semibold tracking-wide uppercase transition-colors hover:text-foreground"
-              >
-                {c}
-              </li>
-            ))}
-          </ul>
+          <div className="marquee mt-12">
+            <ul
+              className="marquee-track gap-x-12 sm:gap-x-16 text-muted-foreground"
+              aria-label="Clients I have worked with"
+            >
+              {[...clients, ...clients].map((c, i) => (
+                <li
+                  key={`${c}-${i}`}
+                  aria-hidden={i >= clients.length ? "true" : undefined}
+                  className="text-base font-semibold tracking-wide uppercase whitespace-nowrap"
+                >
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
 
         {/* CONTACT CTA */}
