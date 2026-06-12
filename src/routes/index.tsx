@@ -98,7 +98,7 @@ function ClientsReveal({ items }: { items: string[] }) {
 
   return (
     <ul
-      className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 sm:gap-x-12"
+      className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12"
       aria-label="Clients I have worked with"
     >
       {items.map((c, i) => {
@@ -149,12 +149,11 @@ function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
           );
         })}
       </ul>
-      <div className="min-h-[8rem]">
-        <p
-          key={active}
-          className="text-base text-muted-foreground leading-relaxed fade-in-soft max-w-xl"
-
-        >
+      <div
+        key={active}
+        className="fade-in-soft rounded-2xl bg-primary-soft/60 border border-primary/10 p-5 sm:p-6 min-h-[8rem]"
+      >
+        <p className="text-base text-foreground leading-relaxed max-w-xl">
           {items[active].body}
         </p>
       </div>
@@ -240,11 +239,11 @@ function Home() {
 
         {/* TESTIMONIAL */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <figure className="max-w-4xl">
+          <figure className="mx-auto max-w-4xl text-center">
             <svg
               aria-hidden="true"
               viewBox="0 0 40 32"
-              className="h-8 w-8 text-primary/40"
+              className="mx-auto h-8 w-8 text-primary/40"
               fill="currentColor"
             >
               <path d="M12.6 0C5.7 0 0 5.7 0 12.6V32h16V16H8c0-4.4 3.6-8 8-8V0h-3.4zm22 0C27.7 0 22 5.7 22 12.6V32h16V16h-8c0-4.4 3.6-8 8-8V0h-3.4z" />
@@ -314,7 +313,7 @@ function Home() {
         </section>
 
         {/* CLIENTS */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36 text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             Experience From
           </h2>
@@ -322,7 +321,7 @@ function Home() {
         </Reveal>
 
         {/* CONTACT CTA */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28">
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 text-center">
           <a href="mailto:alicia@strommer.se" id="contact" className="btn-pill btn-pill-primary">
             Get In Touch
           </a>
