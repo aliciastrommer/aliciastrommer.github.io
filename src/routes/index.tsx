@@ -87,8 +87,9 @@ function Home() {
       <SiteHeader />
       <main>
         {/* HERO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-20 pb-20 sm:pb-28">
-          <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
+        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-0 pb-20 sm:pb-0 md:min-h-screen md:flex md:items-center md:justify-center">
+          <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center w-full">
+
             <div className="text-center md:text-left flex flex-col items-center md:items-start">
               <AnimatedHeading />
               <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
