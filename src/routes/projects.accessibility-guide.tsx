@@ -64,7 +64,7 @@ function AccessibilityPage() {
         </p>
         <p>
           <a
-            href="https://daresay.co"
+            href="https://a11y.daresay.io"
             target="_blank"
             rel="noreferrer noopener"
             className="link-underline link-external"

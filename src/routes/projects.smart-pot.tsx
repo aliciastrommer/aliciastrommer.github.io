@@ -68,7 +68,9 @@ function SmartPotPage() {
         </p>
         <p>
           <a
-            href="#"
+            href="https://www.youtube.com/watch?v=Q1_rXJEkQSQ&t=1s"
+            target="_blank"
+            rel="noreferrer noopener"
             className="link-underline link-external"
           >
             View promotion video
