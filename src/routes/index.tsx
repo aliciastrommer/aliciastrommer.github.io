@@ -98,7 +98,7 @@ function ClientsReveal({ items }: { items: string[] }) {
 
   return (
     <ul
-      className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 sm:gap-x-12"
+      className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12"
       aria-label="Clients I have worked with"
     >
       {items.map((c, i) => {
