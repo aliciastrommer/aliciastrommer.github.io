@@ -105,6 +105,20 @@ function Home() {
                   View Projects
                 </a>
               </div>
+              <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-2">
+                  <span className="relative inline-flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                  </span>
+                  <span className="font-medium text-foreground">Currently</span>
+                </span>
+                <span>Designing for Scania</span>
+                <span aria-hidden="true">·</span>
+                <span>Based in Stockholm</span>
+                <span aria-hidden="true">·</span>
+                <span>Open to conversations</span>
+              </div>
             </div>
 
             <Reveal delay={120} className="hidden md:flex justify-end">
@@ -161,7 +175,30 @@ function Home() {
             <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
               Projects
             </h2>
-          </Reveal>
+        </Reveal>
+
+        {/* TESTIMONIAL */}
+        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
+          <figure className="mx-auto max-w-4xl text-center">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 40 32"
+              className="mx-auto h-8 w-8 text-primary/40"
+              fill="currentColor"
+            >
+              <path d="M12.6 0C5.7 0 0 5.7 0 12.6V32h16V16H8c0-4.4 3.6-8 8-8V0h-3.4zm22 0C27.7 0 22 5.7 22 12.6V32h16V16h-8c0-4.4 3.6-8 8-8V0h-3.4z" />
+            </svg>
+            <blockquote className="mt-6 text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
+              "Alicia is driven, fearless, takes responsibility and has
+              leadership qualities. Always with a smile on her face. Such an
+              energizing person. She is good at both delving into details and
+              seeing the big picture."
+            </blockquote>
+            <figcaption className="mt-6 text-sm text-muted-foreground">
+              Colleague at Scania
+            </figcaption>
+          </figure>
+        </Reveal>
           <div className="mt-10 sm:mt-12 space-y-4 sm:space-y-6">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
