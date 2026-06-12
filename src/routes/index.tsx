@@ -191,20 +191,12 @@ function Home() {
 
         {/* WHAT I DO */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <h2 className="text-center text-2xl sm:text-3xl font-semibold tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
             What I do
           </h2>
-          <div className="mt-12 sm:mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2">
-            {skills.map((s) => (
-              <div key={s.title}>
-                <h3 className="text-base font-semibold">{s.title}</h3>
-                <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-                  {s.body}
-                </p>
-              </div>
-            ))}
-          </div>
+          <WhatIDo items={skills} />
         </Reveal>
+
 
         {/* TESTIMONIAL */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
