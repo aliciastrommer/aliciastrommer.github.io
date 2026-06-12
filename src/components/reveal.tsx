@@ -35,9 +35,8 @@ export function Reveal({
   }, []);
 
   return (
-    // @ts-expect-error – dynamic tag
     <Tag
-      ref={ref}
+      ref={ref as never}
       style={{ transitionDelay: `${delay}ms` }}
       className={`reveal ${visible ? "reveal-in" : ""} ${className}`}
     >
