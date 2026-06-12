@@ -219,8 +219,8 @@ function Home() {
           <div className="mx-auto max-w-4xl text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
             <p>
               4 years experience. Currently working with digital in-vehicle
-              interfaces as UX/UI Designer and Area Lead. Balancing strategy
-              with hands-on execution.
+              interfaces as UX/UI Designer and Area Lead, where I balance
+              strategy with hands-on execution.
             </p>
           </div>
         </Reveal>
