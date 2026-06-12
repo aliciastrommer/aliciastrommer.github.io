@@ -165,7 +165,19 @@ function SmartPotPage() {
         </ul>
       </CaseSection>
 
-      <FullBleedImage src={watering.url} alt="Hand watering a basil plant in the origami-textured Smart Pot prototype" />
+      <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
+        <video
+          src={interactionsVideo.url}
+          poster={interactionsPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Demonstration of the Smart Pot prototype interactions: watering, touch and illumination"
+          className="w-full h-[52vw] max-h-[620px] min-h-[300px] object-cover"
+        />
+      </div>
 
       <CaseSection title="My Contribution">
         <p>
