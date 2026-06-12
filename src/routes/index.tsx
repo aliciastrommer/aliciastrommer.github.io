@@ -266,9 +266,9 @@ function Home() {
                         </div>
                         <span
                           aria-hidden="true"
-                          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:-translate-y-0.5 group-hover:shadow-[var(--shadow-primary)]"
+                          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-[var(--shadow-primary)]"
                         >
-                          <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                          <ArrowRight className="h-5 w-5" />
                         </span>
                       </div>
                     </div>
