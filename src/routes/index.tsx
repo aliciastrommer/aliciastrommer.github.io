@@ -246,21 +246,22 @@ function Home() {
               className="marquee-track gap-x-12 sm:gap-x-16 text-muted-foreground"
               aria-label="Clients I have worked with"
             >
-              {[0, 1].map((setIdx) => (
-                <li key={`set-${setIdx}`} aria-hidden={setIdx === 1 ? "true" : undefined} className="contents">
-                  <ul className="flex items-center gap-x-12 sm:gap-x-16">
-                    {clients.map((c) => (
-                      <li
-                        key={`${setIdx}-${c}`}
-                        className="text-base font-semibold tracking-wide uppercase whitespace-nowrap"
-                      >
-                        {c}
-                      </li>
-                    ))}
-                  </ul>
-                  <li aria-hidden="true" className="shrink-0 w-[60vw]" />
-                </li>
-              ))}
+              {[0, 1].flatMap((setIdx) => [
+                ...clients.map((c) => (
+                  <li
+                    key={`${setIdx}-${c}`}
+                    aria-hidden={setIdx === 1 ? "true" : undefined}
+                    className="text-base font-semibold tracking-wide uppercase whitespace-nowrap"
+                  >
+                    {c}
+                  </li>
+                )),
+                <li
+                  key={`spacer-${setIdx}`}
+                  aria-hidden="true"
+                  className="shrink-0 w-[60vw]"
+                />,
+              ])}
             </ul>
           </div>
         </Reveal>
