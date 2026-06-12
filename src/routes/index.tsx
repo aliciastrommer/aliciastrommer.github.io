@@ -90,7 +90,7 @@ function Home() {
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center">
             <div className="reveal-up">
               <AnimatedHeading />
-              <p className="mt-6 max-w-xl text-pretty text-base sm:text-lg text-muted-foreground leading-relaxed">
+              <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
                 I specialize in simplifying complex systems through
                 user-centered design, combining strategic thinking with
                 attention to detail to create products that work in the real
