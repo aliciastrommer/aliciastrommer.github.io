@@ -11,7 +11,8 @@ import {
 
 import hero from "@/assets/smart-pot.jpg.asset.json";
 import sketches from "@/assets/smart-pot-sketches-real.png.asset.json";
-import watering from "@/assets/smart-pot-watering.png.asset.json";
+import interactionsVideo from "@/assets/smart-pot-interactions.mp4.asset.json";
+import interactionsPoster from "@/assets/smart-pot-interactions-poster.jpg.asset.json";
 
 
 export const Route = createFileRoute("/projects/smart-pot")({
@@ -164,7 +165,19 @@ function SmartPotPage() {
         </ul>
       </CaseSection>
 
-      <FullBleedImage src={watering.url} alt="Hand watering a basil plant in the origami-textured Smart Pot prototype" />
+      <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
+        <video
+          src={interactionsVideo.url}
+          poster={interactionsPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Demonstration of the Smart Pot prototype interactions: watering, touch and illumination"
+          className="w-full h-[52vw] max-h-[620px] min-h-[300px] object-cover"
+        />
+      </div>
 
       <CaseSection title="My Contribution">
         <p>

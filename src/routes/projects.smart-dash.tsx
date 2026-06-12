@@ -123,6 +123,10 @@ function SmartDashPage() {
           quality within a defined domain. During this time, I have worked in
           four agile teams with different parts of the platform.
         </p>
+        <p>
+          The work has been carried out in 10 week increments in a global
+          context.
+        </p>
       </CaseSection>
 
       <FullBleedImage src={display.url} alt="Scania driver display showing speedometer, load status and trip data" />
