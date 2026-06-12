@@ -73,7 +73,7 @@ function SmartDashPage() {
         </p>
         <p>
           <a
-            href="https://www.scania.com"
+            href="https://www.scania.com/se/sv/home/newsroom/campaigns/digital-dash.html"
             target="_blank"
             rel="noreferrer noopener"
             className="link-underline link-external"
