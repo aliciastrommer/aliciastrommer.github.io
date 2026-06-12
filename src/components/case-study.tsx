@@ -33,7 +33,7 @@ export function CaseHero({
       </div>
 
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-y-4 gap-x-6 text-sm">
+        <dl className="mt-8 max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-y-4 gap-x-6 text-sm">
           {meta.map((m) => (
             <div key={m.label} className="text-center">
               <dt className="text-muted-foreground">{m.label}</dt>
