@@ -162,6 +162,8 @@ function SmartPotPage() {
         </ul>
       </CaseSection>
 
+      <FullBleedImage src={watering.url} alt="Hand watering a basil plant in the origami-textured Smart Pot prototype" />
+
       <CaseSection title="My Contribution">
         <p>
           As the project was part of a course at university, the team
