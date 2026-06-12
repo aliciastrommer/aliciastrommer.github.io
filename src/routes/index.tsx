@@ -90,7 +90,7 @@ function Home() {
         <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-0 pb-20 sm:pb-0 min-h-screen flex items-center justify-center">
           <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center w-full">
 
-            <div className="text-center md:text-left flex flex-col items-center md:items-start">
+            <div className="text-left flex flex-col items-start">
               <AnimatedHeading />
               <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
                 I specialize in simplifying complex systems through
@@ -98,7 +98,7 @@ function Home() {
                 attention to detail to create products that work in the real
                 world.
               </p>
-              <div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1 text-sm text-muted-foreground">
+              <div className="mt-6 flex flex-wrap items-center justify-start gap-x-3 gap-y-1 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
                   <span className="relative inline-flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
@@ -110,7 +110,7 @@ function Home() {
                 <span aria-hidden="true">·</span>
                 <span>Based in Stockholm</span>
               </div>
-              <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
+              <div className="mt-8 flex flex-wrap justify-start gap-3">
                 <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
                   Get In Touch
                 </a>
