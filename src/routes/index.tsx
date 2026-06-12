@@ -116,8 +116,6 @@ function Home() {
                 <span>Designing for Scania</span>
                 <span aria-hidden="true">·</span>
                 <span>Based in Stockholm</span>
-                <span aria-hidden="true">·</span>
-                <span>Open to conversations</span>
               </div>
             </div>
 
