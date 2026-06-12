@@ -98,7 +98,7 @@ function Home() {
                 attention to detail to create products that work in the real
                 world.
               </p>
-              <div className="mt-6 flex flex-wrap items-center justify-start gap-x-3 gap-y-1 text-sm text-muted-foreground">
+              <div className="mt-6 flex flex-wrap items-center justify-start gap-x-3 gap-y-1 text-base text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
                   <span className="relative inline-flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
@@ -182,7 +182,7 @@ function Home() {
               energizing person. She is good at both delving into details and
               seeing the big picture."
             </blockquote>
-            <figcaption className="mt-6 text-sm text-muted-foreground">
+            <figcaption className="mt-6 text-base text-muted-foreground">
               Colleague at Scania
             </figcaption>
           </figure>

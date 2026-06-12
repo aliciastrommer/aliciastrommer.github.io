@@ -1,7 +1,7 @@
 export function SiteFooter() {
   return (
     <footer className="mt-24">
-      <div className="px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-sm text-muted-foreground">
+      <div className="px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 text-base text-muted-foreground">
         <a
           href="mailto:alicia@strommer.se"
           className="link-underline hover:text-foreground transition-colors"
