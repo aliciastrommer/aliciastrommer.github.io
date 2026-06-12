@@ -186,8 +186,8 @@
 
   &:hover {
     transform: translateY(-2px);
-    background-color: var(--color-primary);
-    color: var(--color-primary-foreground);
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
   }
   &:active {
     transform: translateY(0);
