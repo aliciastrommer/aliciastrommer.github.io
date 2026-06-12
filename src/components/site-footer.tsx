@@ -8,6 +8,9 @@ export function SiteFooter() {
         >
           alicia@strommer.se
         </a>
+        <span className="mt-4 sm:mt-0 text-xs text-muted-foreground/80">
+          Designed in Figma, implemented with Lovable
+        </span>
         <a
           href="tel:+46722068063"
           className="link-underline hover:text-foreground transition-colors"
