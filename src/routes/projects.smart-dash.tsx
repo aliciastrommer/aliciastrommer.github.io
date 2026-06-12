@@ -64,7 +64,7 @@ function SmartDashPage() {
         </p>
         <p>
           The platform functions as a digital workspace for the driver, through
-          two main displays — the Driver Display and the Center Information
+          functions in a common platform, through two main displays, the Driver Display and the Center Information
           Display. It holds features such as Navigation, Advanced Driver
           Assistance Systems (ADAS), Voice Control, Infotainment, Camera
           Features, Safety Information and Vehicle Data. It is built within an
@@ -223,7 +223,7 @@ function SmartDashPage() {
           <li>I have strengthened my ability to build alignment across disciplines through continuous collaboration.</li>
           <li>
             I have gained confidence in advocating for the user and making
-            difficult design decisions — sometimes it is as important to say no
+            difficult design decisions, sometimes it is as important to say no
             to protect the user, as it is to say yes to add value for the user.
           </li>
         </ul>
