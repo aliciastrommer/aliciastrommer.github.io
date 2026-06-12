@@ -13,7 +13,7 @@ import {
 import hero from "@/assets/accessibility-desk.jpg.asset.json";
 import team from "@/assets/accessibility-team.jpg.asset.json";
 import laptop1 from "@/assets/accessibility-laptop1.jpg.asset.json";
-import laptop2 from "@/assets/accessibility-laptop2.jpg.asset.json";
+import laptop2 from "@/assets/accessibility-laptop2-v2.png.asset.json";
 
 export const Route = createFileRoute("/projects/accessibility-guide")({
   head: () => ({
@@ -84,7 +84,7 @@ function AccessibilityPage() {
             {
               icon: <CheckCheck className="h-6 w-6" />,
               title: "Bridging the gap between guidelines and practical application",
-              body: "As the demand for accessible websites grew, we recognized a need amongst clients, designers, and developers to get help interpreting WCAG guidelines and applying them in real-world projects. Accessibility shouldn't be difficult to get right — which is why we found this important.",
+              body: "As the demand for accessible websites grew, we recognized a need amongst clients, designers, and developers to get help interpreting WCAG guidelines and applying them in real-world projects. Accessibility shouldn't be difficult to get right, which is why we found this important.",
             },
           ]}
         />
@@ -136,7 +136,13 @@ function AccessibilityPage() {
         </div>
       </CaseSection>
 
-      <FullBleedImage src={laptop2.url} alt="Laptop displaying do's and don'ts in the Accessibility Guide" />
+      <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
+        <img
+          src={laptop2.url}
+          alt="Laptop displaying the Accessibility Guide's do's and don'ts page"
+          className="w-full h-auto block"
+        />
+      </div>
 
       <CaseSection title="Key Learnings">
         <ul className="list-disc pl-5 space-y-2 marker:text-primary">
