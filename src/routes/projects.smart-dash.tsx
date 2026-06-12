@@ -64,7 +64,7 @@ function SmartDashPage() {
         </p>
         <p>
           The platform functions as a digital workspace for the driver, through
-          functions in a common platform, through two main displays, the Driver Display and the Center Information
+          two main displays, the Driver Display and the Center Information
           Display. It holds features such as Navigation, Advanced Driver
           Assistance Systems (ADAS), Voice Control, Infotainment, Camera
           Features, Safety Information and Vehicle Data. It is built within an
