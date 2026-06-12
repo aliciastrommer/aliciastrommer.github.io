@@ -239,11 +239,11 @@ function Home() {
 
         {/* TESTIMONIAL */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <figure className="max-w-4xl">
+          <figure className="mx-auto max-w-4xl text-center">
             <svg
               aria-hidden="true"
               viewBox="0 0 40 32"
-              className="h-8 w-8 text-primary/40"
+              className="mx-auto h-8 w-8 text-primary/40"
               fill="currentColor"
             >
               <path d="M12.6 0C5.7 0 0 5.7 0 12.6V32h16V16H8c0-4.4 3.6-8 8-8V0h-3.4zm22 0C27.7 0 22 5.7 22 12.6V32h16V16h-8c0-4.4 3.6-8 8-8V0h-3.4z" />
