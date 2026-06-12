@@ -136,7 +136,13 @@ function AccessibilityPage() {
         </div>
       </CaseSection>
 
-      <FullBleedImage src={laptop2.url} alt="Laptop displaying do's and don'ts in the Accessibility Guide" />
+      <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
+        <img
+          src={laptop2.url}
+          alt="Laptop displaying the Accessibility Guide's do's and don'ts page"
+          className="w-full h-auto block"
+        />
+      </div>
 
       <CaseSection title="Key Learnings">
         <ul className="list-disc pl-5 space-y-2 marker:text-primary">
