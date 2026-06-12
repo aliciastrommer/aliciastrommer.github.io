@@ -116,8 +116,6 @@ function Home() {
                 <span>Designing for Scania</span>
                 <span aria-hidden="true">·</span>
                 <span>Based in Stockholm</span>
-                <span aria-hidden="true">·</span>
-                <span>Open to conversations</span>
               </div>
             </div>
 
@@ -139,14 +137,11 @@ function Home() {
 
         {/* INTRO */}
         <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-36 sm:pb-48">
-          <div className="max-w-4xl space-y-10 text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
+          <div className="max-w-4xl text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
             <p>
-              Product designer with 4 years experience. Based in Stockholm.
-            </p>
-            <p>
-              Currently working with digital in-vehicle interfaces at Scania as
-              UX/UI Designer and Area Lead. Balancing strategy with hands-on
-              execution.
+              4 years experience. Currently working with digital in-vehicle
+              interfaces as UX/UI Designer and Area Lead. Balancing strategy
+              with hands-on execution.
             </p>
           </div>
         </Reveal>
@@ -251,15 +246,22 @@ function Home() {
               className="marquee-track gap-x-12 sm:gap-x-16 text-muted-foreground"
               aria-label="Clients I have worked with"
             >
-              {[...clients, ...clients].map((c, i) => (
+              {[0, 1].flatMap((setIdx) => [
+                ...clients.map((c) => (
+                  <li
+                    key={`${setIdx}-${c}`}
+                    aria-hidden={setIdx === 1 ? "true" : undefined}
+                    className="text-base font-semibold tracking-wide uppercase whitespace-nowrap"
+                  >
+                    {c}
+                  </li>
+                )),
                 <li
-                  key={`${c}-${i}`}
-                  aria-hidden={i >= clients.length ? "true" : undefined}
-                  className="text-base font-semibold tracking-wide uppercase whitespace-nowrap"
-                >
-                  {c}
-                </li>
-              ))}
+                  key={`spacer-${setIdx}`}
+                  aria-hidden="true"
+                  className="shrink-0 w-[60vw]"
+                />,
+              ])}
             </ul>
           </div>
         </Reveal>

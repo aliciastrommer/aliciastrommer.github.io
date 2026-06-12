@@ -5,9 +5,9 @@
  */
 export function AnimatedHeading() {
   return (
-    <h1 className="font-display text-balance text-[clamp(2.4rem,6vw,4.25rem)] font-semibold leading-[1.05] tracking-tight">
-      <span className="shimmer-text">Alicia Strömmer</span>
-      <span className="block mt-1 shimmer-text">Product Designer</span>
+    <h1 className="font-display text-balance text-[clamp(2.4rem,6vw,4.25rem)] font-semibold leading-[1.1] tracking-tight">
+      <span className="shimmer-text inline-block pb-[0.08em]">Alicia Strömmer</span>
+      <span className="block mt-1 shimmer-text pb-[0.12em]">Product Designer</span>
     </h1>
   );
 }
