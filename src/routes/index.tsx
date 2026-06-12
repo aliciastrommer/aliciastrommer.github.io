@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { AnimatedHeading } from "@/components/animated-heading";
 
-import portrait from "@/assets/alicia-portrait.jpg.asset.json";
+import portrait from "@/assets/alicia-portrait-v2.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cab.jpg.asset.json";
 import accessibilityImg from "@/assets/accessibility-desk.jpg.asset.json";
 import smartPotImg from "@/assets/smart-pot.jpg.asset.json";
@@ -107,12 +107,15 @@ function Home() {
             </div>
 
             <div className="reveal-up [animation-delay:120ms] hidden md:flex justify-end">
-              <div className="rounded-[1.75rem] bg-muted p-3">
+              <div
+                className="rounded-[1.75rem] overflow-hidden"
+                style={{ backgroundColor: "#e9e9e9" }}
+              >
                 <img
                   src={portrait.url}
                   alt="Portrait of Alicia Strömmer"
                   loading="eager"
-                  className="w-[260px] md:w-[300px] aspect-[3/4] object-cover rounded-[1.5rem]"
+                  className="w-[260px] md:w-[300px] aspect-[3/4] object-contain"
                 />
               </div>
             </div>
