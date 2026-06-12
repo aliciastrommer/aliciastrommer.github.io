@@ -56,7 +56,7 @@ const projects = [
     title: "Smart Dash",
     role: "UX/UI Designer",
     period: "2023 – Present",
-    body: "Design of features, patterns and guidelines for Scania's digital driver platform designed for professional truck and bus drivers.",
+    body: "Design of features, patterns and frameworks for Scania's digital driver platform designed for professional truck and bus drivers.",
     image: smartDashImg.url,
     alt: "Scania truck cab with two digital driver displays glowing in cyan",
   },
