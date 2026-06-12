@@ -49,7 +49,7 @@ export function CaseHero({
         </p>
 
         {callout && (
-          <div className="mt-10 rounded-2xl bg-primary-soft border border-primary/15 px-5 py-4 text-sm text-foreground/85 max-w-2xl mx-auto">
+          <div className="mt-10 text-sm max-w-2xl mx-auto">
             {callout}
           </div>
         )}
