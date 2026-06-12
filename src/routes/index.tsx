@@ -212,7 +212,7 @@ function Home() {
             {clients.map((c) => (
               <li
                 key={c}
-                className="text-sm sm:text-base font-semibold tracking-wide uppercase transition-colors hover:text-foreground"
+                className="text-sm font-semibold tracking-wide uppercase transition-colors hover:text-foreground"
               >
                 {c}
               </li>
