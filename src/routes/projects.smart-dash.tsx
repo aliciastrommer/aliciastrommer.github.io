@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Eye, Shuffle, ScrollText, Info } from "lucide-react";
+import { Eye, Shuffle, ScrollText, Info, ArrowUpRight } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
@@ -67,9 +67,10 @@ function SmartDashPage() {
             href="https://www.scania.com/se/sv/home/newsroom/campaigns/digital-dash.html"
             target="_blank"
             rel="noreferrer noopener"
-            className="link-underline link-external"
+            className="link-underline link-external inline-flex items-center gap-1"
           >
             Read more about Smart Dash
+            <ArrowUpRight className="h-4 w-4" />
           </a>
         </p>
 

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCheck } from "lucide-react";
+import { CheckCheck, ArrowUpRight } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
@@ -67,9 +67,10 @@ function AccessibilityPage() {
             href="https://a11y.daresay.io"
             target="_blank"
             rel="noreferrer noopener"
-            className="link-underline link-external"
+            className="link-underline link-external inline-flex items-center gap-1"
           >
             Find the guide here
+            <ArrowUpRight className="h-4 w-4" />
           </a>
         </p>
 
