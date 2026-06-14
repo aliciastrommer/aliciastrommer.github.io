@@ -80,7 +80,7 @@ const projects = [
   },
 ];
 
-const clients = ["TRATON GROUP", "SCANIA", "Knightec Group", "ABB", "UMEÅ ENERGI"];
+const clients = ["Traton Group", "Scania", "Knightec Group", "ABB", "Umeå Energi"];
 
 function ClientsReveal({ items }: { items: string[] }) {
   const [active, setActive] = useState(0);

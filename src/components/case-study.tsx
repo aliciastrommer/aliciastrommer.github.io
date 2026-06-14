@@ -29,7 +29,7 @@ export function CaseHero({
         <img
           src={heroImage}
           alt={heroAlt}
-          className="w-full h-[44vw] max-h-[520px] min-h-[260px] object-cover"
+          className="w-full h-[85vh] max-h-[900px] min-h-[380px] object-cover"
         />
       </div>
 
