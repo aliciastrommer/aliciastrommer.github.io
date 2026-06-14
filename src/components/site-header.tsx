@@ -72,7 +72,7 @@ export function SiteHeader() {
             </svg>
           </a>
           <a
-            href="https://www.linkedin.com/in/alicia-str%C3%B6mmer"
+            href="https://www.linkedin.com/in/alicia-str%C3%B6mmer-45691215a/"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Alicia on LinkedIn"

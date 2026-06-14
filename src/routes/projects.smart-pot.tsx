@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Sprout } from "lucide-react";
+import { Sprout, ArrowUpRight } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
@@ -72,9 +72,10 @@ function SmartPotPage() {
             href="https://www.youtube.com/watch?v=Q1_rXJEkQSQ&t=1s"
             target="_blank"
             rel="noreferrer noopener"
-            className="link-underline link-external"
+            className="link-underline link-external inline-flex items-center gap-1"
           >
             View promotion video
+            <ArrowUpRight className="h-4 w-4" />
           </a>
         </p>
       </CaseSection>
