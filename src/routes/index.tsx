@@ -107,7 +107,7 @@ function ClientsReveal({ items }: { items: string[] }) {
           <li
             key={c}
             className={[
-              "text-base font-semibold tracking-wide uppercase whitespace-nowrap",
+              "text-base font-semibold tracking-tight whitespace-nowrap",
               "transition-all duration-700 ease-out will-change-transform",
               isActive
                 ? "text-foreground opacity-100 scale-105"
