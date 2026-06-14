@@ -17,7 +17,7 @@ export function SiteFooter() {
             +46 72-206 80 63
           </a>
           <p className="mt-4">Designed in Figma</p>
-          <p>Implemented with Lovable</p>
+          <p>Implemented by Elliot</p>
         </div>
 
         {/* Desktop: three columns */}
@@ -29,7 +29,7 @@ export function SiteFooter() {
             alicia@strommer.se
           </a>
           <p className="justify-self-center text-center">
-            Designed in Figma <span aria-hidden="true">·</span> Implemented with Lovable
+            Designed in Figma <span aria-hidden="true">·</span> Implemented by Elliot
           </p>
           <a
             href="tel:+46722068063"
