@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Alicia Strömmer — Product Designer" },
+      { name: "description", content: "Builds responsive websites from Figma designs, transforming your visual prototypes into functional, interactive web pages." },
+      { property: "og:description", content: "Builds responsive websites from Figma designs, transforming your visual prototypes into functional, interactive web pages." },
+      { name: "twitter:description", content: "Builds responsive websites from Figma designs, transforming your visual prototypes into functional, interactive web pages." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/de999e4d-2af7-496e-9c36-12cc5318fab0/id-preview-7544fcaa--3d5c65b6-7458-4307-8e6b-e963ad5c7668.lovable.app-1781278073823.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/de999e4d-2af7-496e-9c36-12cc5318fab0/id-preview-7544fcaa--3d5c65b6-7458-4307-8e6b-e963ad5c7668.lovable.app-1781278073823.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
