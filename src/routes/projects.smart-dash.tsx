@@ -254,8 +254,7 @@ function SmartDashPage() {
               Working across several teams, I have helped define collaboration
               models for newly formed functional teams, co-created onboarding
               material and introduced new designers to established HMI
-              workflows. I have also facilitated alignment across teams through
-              knowledge sharing sessions and communication structures.
+              workflows.
             </p>
           </div>
           <div>
