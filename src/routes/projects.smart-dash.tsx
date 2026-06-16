@@ -206,7 +206,7 @@ function SmartDashPage() {
               {
                 title: "Understand",
                 body:
-                  "Investigate the problem space through user research, stakeholder alignment, benchmarking, use case mapping, and formulation of problem statements.",
+                  "An essential first step for me is gaining a clear understanding of the problem space. The approach varies depending on how well understood the problem is. Sometimes it requires in-depth user research, while in other cases it’s more about stakeholder alignment and benchmarking to establish a shared understanding.",
               },
               {
                 title: "Explore",
