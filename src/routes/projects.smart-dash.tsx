@@ -167,7 +167,9 @@ function SmartDashPage() {
               As my experience grew, my role expanded to contributing beyond
               single features, towards patterns, consistency, and shared ways of
               working. I contributed to emerging design patterns, frameworks,
-              and shared solutions.
+              and shared solutions. Additionally, I contributed to new ways of
+              working and collaboration models when I was part of forming a new
+              team.&nbsp;
             </p>
             <div className="mt-4">
               <ChipRow items={["Design Patterns", "Design Systems", "Scalability", "Knowledge Sharing", "Quality Assurance"]} />
