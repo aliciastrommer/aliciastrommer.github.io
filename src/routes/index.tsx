@@ -251,12 +251,12 @@ function Home() {
 
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <Link
-                  to={p.to}
-                  aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-2xl"
-                >
-                  <article className="grid gap-3 sm:gap-4 sm:grid-cols-[1.7fr_1fr] items-stretch">
+                  <Link
+                    to={p.to}
+                    aria-label={`Open ${p.title} case study`}
+                    className="group block"
+                  >
+                    <article className="grid gap-0 sm:grid-cols-[1.7fr_1fr] items-stretch rounded-2xl bg-muted overflow-hidden">
                     <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted">
                       <img
                         src={p.image}
@@ -265,12 +265,12 @@ function Home() {
                         className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
                       />
                     </div>
-                    <div className="flex flex-col sm:py-2">
+                    <div className="flex flex-col p-5 sm:p-6">
                       <h3 className="text-xl font-semibold tracking-tight">{p.title}</h3>
-                      <p className="mt-3 text-base text-muted-foreground leading-relaxed max-w-md">
+                      <p className="mt-2 text-base text-muted-foreground leading-relaxed max-w-md">
                         {p.body}
                       </p>
-                      <div className="mt-auto pt-6 flex items-center justify-between gap-3 flex-wrap">
+                      <div className="mt-auto pt-4 flex items-center justify-between gap-3 flex-wrap">
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="chip-outline">{p.role}</span>
                           <span className="chip-outline">{p.period}</span>
