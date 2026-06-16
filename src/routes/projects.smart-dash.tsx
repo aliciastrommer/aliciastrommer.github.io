@@ -127,9 +127,9 @@ function SmartDashPage() {
         <p>
           During this time, I have worked in several teams with different parts
           of the platform. I have belonged to pure design teams, but also been
-          in teams with other competences as the only designers. The work has
-          been carried out in an agile environment, following SAFe, and a global
-          context.&nbsp;
+          in teams with other competences as the only designer. The work has
+          been carried out in an agile environment, following SAFe, and in a global
+          context, where cross-functional collaboration has been key.&nbsp;
         </p>
         <p>
         </p>
