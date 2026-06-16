@@ -172,7 +172,7 @@ function SmartDashPage() {
               team.&nbsp;
             </p>
             <div className="mt-4">
-              <ChipRow items={["Design Patterns", "Design Systems", "Scalability", "Knowledge Sharing", "Quality Assurance"]} />
+              <ChipRow items={["Design Patterns", "Design System", "Scalability", "Knowledge Sharing", "Quality Assurance"]} />
             </div>
           </div>
 
