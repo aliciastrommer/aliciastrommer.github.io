@@ -40,7 +40,7 @@ function SmartDashPage() {
         heroImage={hero.url}
         heroAlt="Scania truck cab with two glowing digital driver displays"
         meta={[
-          { label: "Company", value: "Scania / Traton" },
+          { label: "Company", value: "Scania/Traton" },
           { label: "Role", value: "UX/UI Designer" },
           { label: "Time frame", value: "Jan 2023 – Present" },
           { label: "Team", value: "4 Agile Design Teams" },
