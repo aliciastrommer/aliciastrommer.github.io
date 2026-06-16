@@ -122,9 +122,14 @@ function SmartDashPage() {
           Since then, my role has evolved from hands-on feature delivery, to
           contributing to shared design systems and patterns, and finally to
           Area Lead with responsibility for direction, alignment, and long-term
-          quality within a defined domain. During this time, I have worked in
-          different teams in a global context. Regardless of team, my work has
-          been carried out in an agile environment.&nbsp;
+          quality within a defined domain.&nbsp;
+        </p>
+        <p>
+          During this time, I have worked in several teams with different parts
+          of the platform. I have belonged to pure design teams, but also been
+          in teams with other competences as the only designers. The work has
+          been carried out in an agile environment, following SAFe, and a global
+          context.&nbsp;
         </p>
         <p>
         </p>
