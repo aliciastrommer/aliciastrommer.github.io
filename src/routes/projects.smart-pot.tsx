@@ -189,7 +189,7 @@ function SmartPotPage() {
           sketches, and creating low-fidelity prototypes.
         </p>
         <p>
-          As the concept matured and the team moved into building a functional
+          When the concept matured and the team moved into building a functional
           prototype, I took the lead on the technical implementation. I
           programmed the Arduino board that controlled the pot's illumination,
           simulating different lighting behaviours based on the product's
