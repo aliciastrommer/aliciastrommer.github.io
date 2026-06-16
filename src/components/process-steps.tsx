@@ -63,7 +63,7 @@ export function ProcessSteps({ steps }: Props) {
                 ].join(" ")}
               >
                 <div className="overflow-hidden">
-                  <p className="text-foreground">
+                  <p className="text-muted-foreground">
                     {step.body}
                   </p>
                 </div>
