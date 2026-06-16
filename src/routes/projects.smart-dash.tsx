@@ -226,7 +226,7 @@ function SmartDashPage() {
               {
                 title: "Document & deliver",
                 body:
-                  "Present concept for cross-functional approval. Document design feature specification and communicate delivery to stakeholders.",
+                  "The next step is to prepare the design for implementation. This involves creating clear design specifications and documentation, and ensuring alignment with the relevant stakeholders to support an efficient and successful delivery.\n",
               },
               {
                 title: "Implement & validate",
