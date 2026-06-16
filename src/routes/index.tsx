@@ -180,8 +180,7 @@ function Home() {
 
             <Reveal delay={120} className="hidden md:flex justify-end">
               <div
-                className="overflow-hidden rounded-tl-[1.75rem] rounded-tr-[1.75rem] rounded-br-[1.75rem]"
-                style={{ backgroundColor: "#e9e9e9" }}
+                className="overflow-hidden rounded-tl-[1.75rem] rounded-tr-[1.75rem] rounded-br-[1.75rem] bg-surface"
               >
                 <img
                   src={portrait.url}
