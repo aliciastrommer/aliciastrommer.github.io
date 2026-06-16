@@ -47,7 +47,7 @@ function SmartPotPage() {
           { label: "Company", value: "Chalmers University of Technology" },
           { label: "Role", value: "Interaction Designer" },
           { label: "Time frame", value: "Feb 2021 – March 2021" },
-          { label: "Team", value: "5 students" },
+          { label: "Team", value: "5 Interaction Design Students" },
         ]}
         title="Smart Pot"
         tagline="An interactive plant pot that visualizes plant health through form, light and touch"
