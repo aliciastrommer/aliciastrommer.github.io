@@ -203,7 +203,7 @@ function SmartPotPage() {
           <li>Gained hands-on experience with tangible interaction design and physical prototyping.</li>
           <li>Learned to integrate electronics into a physical artifact, an area I had no prior experience in.</li>
           <li>Developed foundational skills in building circuits and programming Arduino boards.</li>
-          <li>Navigated a steep learning curve in working with electronics, which was the most challenging aspect of the project.</li>
+          
           <li>Expanded my understanding of the possibilities within interaction design, particularly in combining hardware and digital behaviour.</li>
         </ul>
       </CaseSection>
