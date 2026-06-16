@@ -221,7 +221,7 @@ function SmartDashPage() {
               {
                 title: "Iterate & refine",
                 body:
-                  "Iterate and tweak design concepts and details such as icons and copy.",
+                  "Once a concept direction has been validated, I progress to higher-fidelity design, focusing on refining and polishing the experience. This often involves collaboration with for example technical writer and visual designers, to ensure the solution is cohesive and ready for implementation.\n",
               },
               {
                 title: "Document & deliver",
