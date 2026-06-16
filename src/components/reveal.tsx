@@ -1,8 +1,16 @@
-import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
+import {
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ElementType,
+  type ReactNode,
+} from "react";
 
 /**
  * Reveal-on-scroll wrapper. Subtle fade + rise the first time the element
- * enters the viewport. Respects prefers-reduced-motion via the CSS rule.
+ * enters the viewport. Elements already in view on page load are shown
+ * immediately so the page doesn't jump.
+ * Respects prefers-reduced-motion via the CSS rule.
  */
 export function Reveal({
   children,
@@ -18,9 +26,18 @@ export function Reveal({
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Show immediately if already in the viewport so the page doesn't jump
+    const rect = el.getBoundingClientRect();
+    const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inViewport) {
+      setVisible(true);
+      return;
+    }
+
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
