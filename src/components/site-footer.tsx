@@ -17,7 +17,7 @@ export function SiteFooter() {
             +46 72-206 80 63
           </a>
           <p className="mt-4 text-sm">Designed in Figma</p>
-          <p className="text-sm">Implemented by Elliot</p>
+          <p className="text-sm">Implemented by Elli</p>
         </div>
 
         {/* Desktop: three columns */}
@@ -29,7 +29,7 @@ export function SiteFooter() {
             alicia@strommer.se
           </a>
           <p className="justify-self-center text-center text-sm">
-            Designed in Figma <span aria-hidden="true">·</span> Implemented by Elliot
+            Designed in Figma <span aria-hidden="true">·</span> Implemented by Elli
           </p>
           <a
             href="tel:+46722068063"
