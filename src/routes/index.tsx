@@ -45,7 +45,7 @@ const skills = [
     body: "I draw on experience across product domains to design interactions that make complex systems understandable, usable, and effective.",
   },
   {
-    title: "Design Systems",
+    title: "Design System",
     body: "I contribute to scalable design systems that combine components, patterns, and guidelines to create consistency, efficiency, and quality.",
   },
 ];
