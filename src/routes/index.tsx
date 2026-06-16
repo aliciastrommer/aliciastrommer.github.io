@@ -34,19 +34,19 @@ export const Route = createFileRoute("/")({
 const skills = [
   {
     title: "Product Thinking",
-    body: "I approach design from a product perspective, connecting user needs, business objectives, and technical feasibility to create solutions that deliver long-term value.",
-  },
-  {
-    title: "Interaction Design",
-    body: "I design intuitive and accessible interfaces for complex products, turning complexity into clear and meaningful user experiences.",
+    body: "I bring a product perspective that looks beyond individual features, helping teams make strategic decisions that align user needs, business goals, and long-term product direction.",
   },
   {
     title: "User Research",
-    body: "I use research to understand user behaviour and validate decisions. By combining analytical thinking with empathy, I turn insights into clear design opportunities.",
+    body: "Combining user research with a background in Cognitive Science, I bring evidence and behavioural understanding into the design process to ensure we're solving the right problems in the right way.",
+  },
+  {
+    title: "Interaction Design",
+    body: "I draw on experience across products and domains to design interactions that make complex systems understandable, usable, and effective.",
   },
   {
     title: "Design Systems",
-    body: "I believe consistency and scalability are essential for great products. I enjoy creating reusable patterns, establishing guidelines, and designing solutions that work across features and teams.",
+    body: "I contribute to scalable design systems that combine components, patterns, and guidelines to create consistency, efficiency, and quality across products.",
   },
 ];
 
