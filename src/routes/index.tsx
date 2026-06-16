@@ -65,7 +65,7 @@ const projects = [
     title: "Accessibility Guide",
     role: "UX/UI Designer",
     period: "2022 – 2023",
-    body: "Design of a guide that helps designers and developers interpret and adopt accessibility practices through concrete applications and visual examples.",
+    body: "Design of a guide that helps designers and developers interpret and adopt accessibility practices.",
     image: accessibilityImg.url,
     alt: "Desk with a monitor showing the Accessibility Guide welcome page",
   },
