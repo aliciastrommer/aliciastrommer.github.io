@@ -42,7 +42,7 @@ const skills = [
   },
   {
     title: "Interaction Design",
-    body: "I draw on experience across products and domains to design interactions that make complex systems understandable, usable, and effective.",
+    body: "I draw on experience across product domains to design interactions that make complex systems understandable, usable, and effective.",
   },
   {
     title: "Design Systems",
