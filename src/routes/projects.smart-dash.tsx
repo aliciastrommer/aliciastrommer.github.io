@@ -278,7 +278,7 @@ function SmartDashPage() {
 
       <CaseSection title="Key Learnings">
         <ul className="list-disc pl-5 space-y-2 marker:text-primary">
-          <li>I have learned that my biggest contribution is driving change, not only delivering solutions.</li>
+          <li>I have come to realize that my strongest contribution is not limited to the solutions I deliver, but lies in communication and alignment. Where I once measured my value through outputs, I now see greater impact in sharing knowledge, communicating clearly, and helping shape direction and drive meaningful change.</li>
           <li>I have developed a passion for combining long-term strategy with hands-on design craft.</li>
           <li>I have strengthened my ability to build alignment across disciplines through continuous collaboration.</li>
           <li>
