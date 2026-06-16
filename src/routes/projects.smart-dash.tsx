@@ -231,7 +231,7 @@ function SmartDashPage() {
               {
                 title: "Implement & validate",
                 body:
-                  "Support implementation team throughout development to ensure quality and address bugs.",
+                  "Throughout development, I collaborate with the implementation team to address uncertainties and help ensure a high-quality final solution. I remain available to provide additional support as new needs or questions arise.\n",
               },
             ]}
           />
