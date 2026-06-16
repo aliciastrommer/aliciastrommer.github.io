@@ -187,6 +187,50 @@ function SmartDashPage() {
         </div>
       </CaseSection>
 
+      <CaseSection title="Way of Working">
+        <p>
+          My design process is iterative and collaborative, structured around
+          six steps that take a feature from problem framing to validated
+          implementation.
+        </p>
+        <div className="mt-8">
+          <ProcessSteps
+            steps={[
+              {
+                title: "Understand",
+                body:
+                  "Investigate the problem space through user research, stakeholder alignment, benchmarking, use case mapping, and formulation of problem statements.",
+              },
+              {
+                title: "Explore",
+                body:
+                  "Explore how the problem could be solved by sketching, wireframing, and prototyping, guided by feedback from stakeholders and other designers.",
+              },
+              {
+                title: "Test & evaluate",
+                body:
+                  "Test concept directions with users and analyze findings to guide continued direction.",
+              },
+              {
+                title: "Iterate & refine",
+                body:
+                  "Iterate and tweak design concepts and details such as icons and copy.",
+              },
+              {
+                title: "Document & deliver",
+                body:
+                  "Present concept for cross-functional approval. Document design feature specification and communicate delivery to stakeholders.",
+              },
+              {
+                title: "Implement & validate",
+                body:
+                  "Support implementation team throughout development to ensure quality and address bugs.",
+              },
+            ]}
+          />
+        </div>
+      </CaseSection>
+
       <CaseSection title="Deliverables & Impact">
         <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
           <div>
