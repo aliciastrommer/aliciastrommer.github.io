@@ -24,7 +24,7 @@ export function ProcessSteps({ steps }: Props) {
         const isActive = i === active;
         const num = String(i + 1).padStart(2, "0");
         return (
-          <li key={step.title} className="relative grid grid-cols-[2.5rem_1fr] gap-5 sm:gap-7 pb-4 last:pb-0">
+          <li key={step.title} className="relative grid grid-cols-[2.5rem_1fr] items-start gap-5 sm:gap-7 pb-4 last:pb-0">
             {/* Step marker */}
             <button
               type="button"
@@ -33,7 +33,7 @@ export function ProcessSteps({ steps }: Props) {
               aria-current={isActive ? "step" : undefined}
               aria-label={`Step ${i + 1}: ${step.title}`}
               className={[
-                "relative z-10 mt-1 flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold transition-all",
+                "relative z-10 flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold transition-all",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 isActive
                   ? "bg-primary text-primary-foreground border-primary shadow-sm"
@@ -44,15 +44,12 @@ export function ProcessSteps({ steps }: Props) {
             </button>
 
             {/* Content */}
-            <div className="min-w-0">
+            <div className="min-w-0 pt-2">
               <button
                 type="button"
                 onClick={() => setActive(i)}
                 onMouseEnter={() => setActive(i)}
-                className={[
-                  "text-left font-semibold transition-colors",
-                  isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground",
-                ].join(" ")}
+                className="text-left font-semibold text-foreground transition-colors"
               >
                 {step.title}
               </button>
@@ -66,9 +63,9 @@ export function ProcessSteps({ steps }: Props) {
                 ].join(" ")}
               >
                 <div className="overflow-hidden">
-                  <div className="rounded-2xl bg-surface p-5 text-foreground/80">
+                  <p className="text-foreground/80">
                     {step.body}
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
