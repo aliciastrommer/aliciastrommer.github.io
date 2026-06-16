@@ -46,7 +46,7 @@ const skills = [
   },
   {
     title: "Design Systems",
-    body: "I contribute to scalable design systems that combine components, patterns, and guidelines to create consistency, efficiency, and quality across products.",
+    body: "I contribute to scalable design systems that combine components, patterns, and guidelines to create consistency, efficiency, and quality.",
   },
 ];
 
