@@ -43,7 +43,7 @@ function SmartDashPage() {
           { label: "Company", value: "Scania/Traton" },
           { label: "Role", value: "UX/UI Designer" },
           { label: "Time frame", value: "Jan 2023 – Present" },
-          { label: "Team", value: "4 Agile Design Teams" },
+          { label: "Team", value: "Several" },
         ]}
         title="Smart Dash"
         tagline="Scania's digital driver platform designed for professional truck and bus drivers"
