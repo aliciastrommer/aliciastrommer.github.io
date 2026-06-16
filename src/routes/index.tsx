@@ -74,7 +74,7 @@ const projects = [
     title: "Smart Pot",
     role: "Interaction Designer",
     period: "2021",
-    body: "Design of an interactive pot to encourage sustainable habits through engaging and caring tangible interactions.",
+    body: "Design of an interactive pot to encourage sustainable habits through engaging, tangible interactions.",
     image: smartPotImg.url,
     alt: "Hands holding a glowing white origami-textured plant pot",
   },
