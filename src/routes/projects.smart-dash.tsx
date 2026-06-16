@@ -216,7 +216,7 @@ function SmartDashPage() {
               {
                 title: "Test & evaluate",
                 body:
-                  "Test concept directions with users and analyze findings to guide continued direction.",
+                  "Because I often explore several directions in parallel, testing plays an important role in helping identify the strongest solution. However, the level of testing depends on factors such as timelines and the novelty of the concept. When a solution builds on familiar patterns and established components, formal user testing may not always be required. Even so, I always make sure the work is evaluated, whether through user feedback or reviews with stakeholders and peers.\n",
               },
               {
                 title: "Iterate & refine",
