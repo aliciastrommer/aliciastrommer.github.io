@@ -283,8 +283,8 @@ function SmartDashPage() {
           <li>I have strengthened my ability to build alignment across disciplines through continuous collaboration.</li>
           <li>
             I have gained confidence in advocating for the user and making
-            difficult design decisions, sometimes it is as important to say no
-            to protect the user, as it is to say yes to add value for the user.
+            difficult design decisions. Saying no can be as important as saying
+            yes.&nbsp;
           </li>
         </ul>
       </CaseSection>
