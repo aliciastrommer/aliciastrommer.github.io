@@ -256,8 +256,8 @@ function Home() {
                     aria-label={`Open ${p.title} case study`}
                     className="group block"
                   >
-                    <article className="grid gap-0 sm:grid-cols-[1.7fr_1fr] items-stretch rounded-2xl bg-[oklch(0.955_0.006_80)] overflow-hidden">
-                    <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-[oklch(0.955_0.006_80)]">
+                    <article className="grid gap-0 sm:grid-cols-[1.7fr_1fr] items-stretch rounded-2xl bg-surface overflow-hidden">
+                    <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-surface">
                       <img
                         src={p.image}
                         alt={p.alt}

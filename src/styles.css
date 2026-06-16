@@ -58,7 +58,7 @@
   --background: oklch(0.978 0.004 80);
   --foreground: oklch(0.16 0.02 270);
 
-  --surface: oklch(0.97 0.004 80);
+  --surface: oklch(0.955 0.006 80);
   --surface-foreground: oklch(0.16 0.02 270);
 
   --card: oklch(1 0 0);
@@ -241,9 +241,9 @@
   align-items: center;
   padding: 0.55rem 1.1rem;
   border-radius: 9999px;
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  background-color: var(--color-surface);
+  color: var(--color-foreground);
+  border: 1px solid transparent;
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1;

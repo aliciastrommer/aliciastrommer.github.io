@@ -189,9 +189,9 @@ function SmartDashPage() {
 
       <CaseSection title="Way of Working">
         <p>
-          My design process is iterative and collaborative, structured around
-          six steps that take a feature from problem framing to validated
-          implementation.
+          My design process within this project is iterative and collaborative,
+          and can look slightly different depending on what I'm working on.
+          Generally speaking, these are the steps I follow.
         </p>
         <div className="mt-8">
           <ProcessSteps
