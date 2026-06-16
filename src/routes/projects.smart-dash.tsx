@@ -9,6 +9,7 @@ import {
   FullBleedImage,
   CaseFooterNav,
 } from "@/components/case-study";
+import { ProcessSteps } from "@/components/process-steps";
 
 import hero from "@/assets/smart-dash-cab.jpg.asset.json";
 import display from "@/assets/smart-dash-display.jpg.asset.json";
