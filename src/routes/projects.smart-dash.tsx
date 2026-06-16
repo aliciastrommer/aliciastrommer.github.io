@@ -211,7 +211,7 @@ function SmartDashPage() {
               {
                 title: "Explore",
                 body:
-                  "Explore how the problem could be solved by sketching, wireframing, and prototyping, guided by feedback from stakeholders and other designers.",
+                  "Once the problem space is well understood, I move into exploration. Depending on the context, this may involve sketching, wireframing, or prototyping, with ideas iteratively refined through stakeholder feedback and design reviews.",
               },
               {
                 title: "Test & evaluate",
