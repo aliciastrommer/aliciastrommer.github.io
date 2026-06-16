@@ -256,8 +256,8 @@ function Home() {
                     aria-label={`Open ${p.title} case study`}
                     className="group block"
                   >
-                    <article className="grid gap-0 sm:grid-cols-[1.7fr_1fr] items-stretch rounded-2xl bg-muted overflow-hidden">
-                    <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-muted">
+                    <article className="grid gap-0 sm:grid-cols-[1.7fr_1fr] items-stretch rounded-2xl bg-surface overflow-hidden">
+                    <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-surface">
                       <img
                         src={p.image}
                         alt={p.alt}
@@ -271,9 +271,9 @@ function Home() {
                         {p.body}
                       </p>
                       <div className="mt-auto pt-4 flex items-center justify-between gap-3 flex-wrap">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="chip-outline">{p.role}</span>
-                          <span className="chip-outline">{p.period}</span>
+                        <div className="flex flex-wrap items-center gap-3 text-base text-foreground">
+                          <span>{p.role}</span>
+                          <span>{p.period}</span>
                         </div>
                         <span
                           aria-hidden="true"
