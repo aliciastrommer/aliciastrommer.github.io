@@ -94,9 +94,9 @@ export function ChallengeList({
       {items.map((it) => (
         <li
           key={it.title}
-          className="grid grid-cols-[auto_1fr] gap-5 sm:gap-7 items-start rounded-2xl bg-primary-soft/60 border border-primary/10 p-5 sm:p-6"
+          className="grid grid-cols-[auto_1fr] gap-5 sm:gap-7 items-start rounded-2xl bg-surface p-5 sm:p-6"
         >
-          <div className="grid h-12 w-12 sm:h-14 sm:w-14 shrink-0 place-items-center rounded-xl bg-background text-primary border border-primary/20">
+          <div className="grid h-12 w-12 sm:h-14 sm:w-14 shrink-0 place-items-center rounded-xl bg-background text-primary">
             {it.icon}
           </div>
           <div className="min-w-0">
