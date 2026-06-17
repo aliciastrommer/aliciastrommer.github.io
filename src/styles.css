@@ -55,7 +55,7 @@
   --radius: 0.875rem;
 
   /* Warm off-white surface from the prototype */
-  --background: oklch(0.985 0.005 282);
+  --background: oklch(0.972 0 0);
   --foreground: oklch(0.16 0.02 270);
 
   --surface: oklch(0.955 0 0);
