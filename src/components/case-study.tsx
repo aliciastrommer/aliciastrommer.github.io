@@ -37,7 +37,7 @@ export function CaseHero({
         />
       </div>
 
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 mt-12 sm:mt-16">
+      <div className="mx-auto max-w-7xl px-5 sm:px-10 mt-12 sm:mt-16">
         <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-stretch">
           <div className="flex flex-col h-full">
             <h1 className="type-h1">{title}</h1>
