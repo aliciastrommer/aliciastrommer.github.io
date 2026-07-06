@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Leaf } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
@@ -84,6 +84,7 @@ function SmartPotPage() {
         <ChallengeList
           items={[
             {
+              icon: <Leaf className="h-5 w-5" />,
               title: "Encouraging sustainable habits through interactive plant care design",
               body: "The project explored how design can be used to encourage more sustainable behaviours. This was refined into a concept centered on supporting users in growing herbs and plants at home.",
             },

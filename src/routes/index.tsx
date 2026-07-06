@@ -1,7 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { ScrollFade } from "@/components/scroll-fade";
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cab.jpg.asset.json";
@@ -95,7 +97,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <main className="mx-auto max-w-6xl px-5 sm:px-8">
+      <main className="mx-auto max-w-7xl px-5 sm:px-10">
         {/* HERO — covers the viewport, only a hint of the lavender card peeks below */}
         <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center pt-8 pb-12 sm:pb-16">
           <div aria-hidden="true" className="text-3xl sm:text-4xl mb-6">👋</div>
@@ -174,30 +176,32 @@ function Home() {
           <div className="mt-8 space-y-12 sm:space-y-16">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
-                  <article className="grid gap-6 sm:gap-10 sm:grid-cols-2 items-start">
-                    <div>
-                      <h3 className="type-h2">{p.title}</h3>
-                      <div className="mt-3 type-small text-foreground/60">{p.period}</div>
-                      <p className="mt-4 type-body text-foreground/85 max-w-md">
-                        {p.body}
-                      </p>
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
-                          <span key={t} className="chip-outline">{t}</span>
-                        ))}
+                <ScrollFade min={0.35}>
+                  <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
+                    <article className="grid gap-6 sm:gap-10 sm:grid-cols-2 items-start">
+                      <div>
+                        <h3 className="type-h2">{p.title}</h3>
+                        <div className="mt-3 type-small text-foreground/60">{p.period}</div>
+                        <p className="mt-4 type-body text-foreground/85 max-w-md">
+                          {p.body}
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-2">
+                          {p.tags.map((t) => (
+                            <span key={t} className="chip-outline">{t}</span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <div className="overflow-hidden rounded-2xl bg-surface aspect-[4/3]">
-                      <img
-                        src={p.image}
-                        alt={p.alt}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  </article>
-                </Link>
+                      <div className="overflow-hidden rounded-2xl bg-surface aspect-[4/3]">
+                        <img
+                          src={p.image}
+                          alt={p.alt}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    </article>
+                  </Link>
+                </ScrollFade>
               </Reveal>
             ))}
           </div>
@@ -225,8 +229,8 @@ function Home() {
         {/* [04] ABOUT */}
         <section id="about" className="pb-20 sm:pb-28 scroll-mt-24">
           <SectionLabel label="ABOUT" number="[04]" />
-          <div className="mt-8 grid gap-8 sm:gap-12 sm:grid-cols-[280px_1fr] md:grid-cols-[320px_1fr] items-start">
-            <div className="overflow-hidden rounded-full bg-surface aspect-square w-full max-w-[320px]">
+          <div className="mt-8 grid gap-8 sm:gap-12 sm:grid-cols-[260px_1fr] md:grid-cols-[300px_1fr] items-start">
+            <div className="overflow-hidden rounded-2xl bg-surface aspect-[3/4] w-full max-w-[300px]">
               <img
                 src={portrait.url}
                 alt="Portrait of Alicia Strömmer"
@@ -272,8 +276,9 @@ function Home() {
           </div>
 
           <div className="mt-14 flex justify-center">
-            <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
+            <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
               Let's Talk
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </section>

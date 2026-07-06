@@ -1,8 +1,8 @@
 export function SiteFooter() {
   return (
     <footer className="mt-24">
-      <div className="px-5 sm:px-8 py-8 text-base text-muted-foreground">
-        {/* Mobile: two stacked lines, left-aligned */}
+      <div className="mx-auto max-w-7xl px-5 sm:px-10 py-8 type-small text-muted-foreground">
+        {/* Mobile: stacked, left-aligned */}
         <div className="flex flex-col gap-1 sm:hidden">
           <a
             href="mailto:alicia@strommer.se"
@@ -16,24 +16,19 @@ export function SiteFooter() {
           >
             +46 72-206 80 63
           </a>
-          <p className="mt-4 text-sm">Designed in Figma</p>
-          <p className="text-sm">Implemented with Lovable</p>
         </div>
 
-        {/* Desktop: three columns */}
-        <div className="hidden sm:grid grid-cols-3 items-center gap-2">
+        {/* Desktop: two ends */}
+        <div className="hidden sm:flex items-center justify-between gap-4">
           <a
             href="mailto:alicia@strommer.se"
-            className="link-underline hover:text-foreground transition-colors justify-self-start"
+            className="link-underline hover:text-foreground transition-colors"
           >
             alicia@strommer.se
           </a>
-          <p className="justify-self-center text-center text-sm">
-            Designed in Figma <span aria-hidden="true">·</span> Implemented with Lovable
-          </p>
           <a
             href="tel:+46722068063"
-            className="link-underline hover:text-foreground transition-colors justify-self-end"
+            className="link-underline hover:text-foreground transition-colors"
           >
             +46 72-206 80 63
           </a>

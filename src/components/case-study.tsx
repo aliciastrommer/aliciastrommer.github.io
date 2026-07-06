@@ -37,7 +37,7 @@ export function CaseHero({
         />
       </div>
 
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 mt-12 sm:mt-16">
+      <div className="mx-auto max-w-7xl px-5 sm:px-10 mt-12 sm:mt-16">
         <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-stretch">
           <div className="flex flex-col h-full">
             <h1 className="type-h1">{title}</h1>
@@ -108,10 +108,19 @@ export function ChallengeList({
     <div className="space-y-4">
       {items.map((it) => (
         <div key={it.title} className="rounded-2xl bg-lavender p-6 sm:p-7">
-          <h3 className="type-h3 text-foreground">{it.title}</h3>
-          <p className="mt-2 type-body text-foreground/85">
-            {it.body}
-          </p>
+          <div className="flex items-start gap-4">
+            {it.icon && (
+              <div className="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-primary/10 text-primary">
+                {it.icon}
+              </div>
+            )}
+            <div className="min-w-0">
+              <h3 className="type-h3 text-foreground">{it.title}</h3>
+              <p className="mt-2 type-body text-foreground/85">
+                {it.body}
+              </p>
+            </div>
+          </div>
         </div>
       ))}
     </div>
