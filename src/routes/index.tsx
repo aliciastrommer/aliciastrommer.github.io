@@ -96,212 +96,196 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — subtle lavender bloom on off-white */}
-      <div className="relative bg-hero-gradient">
+    <div className="min-h-screen bg-background text-foreground snap-y snap-proximity">
+      {/* HERO — animated colorful bloom */}
+      <div className="relative bg-hero-gradient snap-start">
         <SiteHeader />
-        <main className="mx-auto max-w-7xl px-5 sm:px-10">
-          <section className="min-h-[calc(100svh-4rem)] flex flex-col pt-16 sm:pt-20 pb-10">
-            {/* Primary block — sits a bit above center */}
-            <div className="flex-1 flex flex-col justify-center max-w-3xl">
-              <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
-              <h1 className="type-h1">Hi, I'm Alicia Strömmer</h1>
-              <p className="mt-6 type-h3-reg text-[color:var(--muted-ink)]">
-                I design thoughtful products for complex systems by combining
-                systems thinking, hands-on craft, strategic perspective, and an
-                understanding of human perception, reasoning and behavior.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-small">
-                <span className="inline-flex items-center gap-2">
-                  <span className="pulse-dot" aria-hidden="true" />
-                  <span className="font-medium">Currently</span>
-                </span>
-                <span className="text-[color:var(--muted-ink)]">Designing for Scania</span>
-                <span className="text-[color:var(--muted-ink)]">Based in Stockholm</span>
-              </div>
+        <section className="container-wide min-h-[calc(100svh-4rem)] flex flex-col pt-16 sm:pt-20 pb-16">
+          <div className="flex-1 flex flex-col justify-center max-w-4xl">
+            <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
+            <h1 className="type-h1">Hi, I'm Alicia Strömmer</h1>
+            <p className="mt-8 type-lead text-foreground">
+              I design thoughtful products for complex systems by combining
+              systems thinking, hands-on craft, strategic perspective, and an
+              understanding of human perception, reasoning and behavior.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small">
+              <span className="inline-flex items-center gap-2">
+                <span className="pulse-dot" aria-hidden="true" />
+                <span className="font-medium">Currently</span>
+              </span>
+              <span className="text-[color:var(--muted-ink)]">Designing for Scania</span>
+              <span className="text-[color:var(--muted-ink)]">Based in Stockholm</span>
             </div>
-            {/* Contact block — pinned lower for a more interesting layout */}
-            <div className="mt-auto pt-16 type-small text-[color:var(--muted-ink)] space-y-1">
-              <div>
-                <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
-              </div>
-              <div>
-                <a href="tel:+46722068063" className="link-underline">+4672–206 80 63</a>
-              </div>
+          </div>
+          <div className="mt-auto pt-16 type-small text-[color:var(--muted-ink)] space-y-1">
+            <div>
+              <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
             </div>
-          </section>
-        </main>
+            <div>
+              <a href="tel:+46722068063" className="link-underline">+4672–206 80 63</a>
+            </div>
+          </div>
+        </section>
       </div>
 
+      {/* [01] PROOF — outlined purple card, no fill */}
+      <Reveal as="section" className="container-wide min-h-screen flex items-center py-24 sm:py-32 snap-start">
+        <div className="card-outline p-6 sm:p-10 w-full">
+          <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
+            <div className="type-caption sm:col-span-2 md:col-span-1">[01]</div>
 
-      <main className="mx-auto max-w-7xl px-5 sm:px-10">
-        {/* [01] LAVENDER INFO CARD — with purple border */}
-        <Reveal as="section" className="pt-20 sm:pt-28 pb-20 sm:pb-28">
-          <div className="card-lavender p-6 sm:p-10">
-            <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
-              <div className="type-caption sm:col-span-2 md:col-span-1">
-                [01]
+            <div className="space-y-5">
+              <div>
+                <div className="type-small text-foreground/70">Years of experience</div>
+                <div className="mt-1 type-h3">4+</div>
               </div>
-
-
-
-              <div className="space-y-5">
-                <div>
-                  <div className="type-small text-foreground/70">Years of experience</div>
-                  <div className="mt-1 type-h3">4+</div>
-                </div>
-                <div>
-                  <div className="type-small text-foreground/70">Current role</div>
-                  <div className="mt-1 type-h3">UX/UI Designer</div>
-                  <div className="type-h3">Area Lead</div>
-                </div>
-                <div>
-                  <div className="type-small text-foreground/70">Focus</div>
-                  <div className="mt-1 type-h3">Product &amp; System Thinking</div>
-                  <div className="type-h3">Accessibility-Driven Design</div>
-                  <div className="type-h3">Usability in Complex Products</div>
-                </div>
+              <div>
+                <div className="type-small text-foreground/70">Current role</div>
+                <div className="mt-1 type-h3">UX/UI Designer</div>
+                <div className="type-h3">Area Lead</div>
               </div>
+              <div>
+                <div className="type-small text-foreground/70">Focus</div>
+                <div className="mt-1 type-h3">Product &amp; System Thinking</div>
+                <div className="type-h3">Accessibility-Driven Design</div>
+                <div className="type-h3">Usability in Complex Products</div>
+              </div>
+            </div>
 
-              <div className="space-y-5">
-                <div>
-                  <div className="type-small text-foreground/70">Experience from</div>
-                  <div className="mt-1 type-h3">Traton Group</div>
-                  <div className="type-h3">Scania</div>
-                  <div className="type-h3">Daresay by Knightec</div>
-                  <div className="type-h3">ABB</div>
-                  <div className="type-h3">Umeå Energi</div>
-                </div>
-                <div>
-                  <div className="type-small text-foreground/70">Education in</div>
-                  <div className="mt-1 type-h3">Cognitive Science</div>
-                  <div className="type-h3">Interaction Design</div>
-                </div>
+            <div className="space-y-5">
+              <div>
+                <div className="type-small text-foreground/70">Experience from</div>
+                <div className="mt-1 type-h3">Traton Group</div>
+                <div className="type-h3">Scania</div>
+                <div className="type-h3">Daresay by Knightec</div>
+                <div className="type-h3">ABB</div>
+                <div className="type-h3">Umeå Energi</div>
+              </div>
+              <div>
+                <div className="type-small text-foreground/70">Education in</div>
+                <div className="mt-1 type-h3">Cognitive Science</div>
+                <div className="type-h3">Interaction Design</div>
               </div>
             </div>
           </div>
-        </Reveal>
+        </div>
+      </Reveal>
 
-        {/* [02] FEATURED WORK — image 2/3, text 1/3 */}
-        <section id="work" className="pb-20 sm:pb-28 scroll-mt-24">
-          <SectionLabel label="FEATURED WORK" number="[02]" />
-          <div className="mt-8 space-y-16 sm:space-y-24">
-            {projects.map((p, i) => (
-              <Reveal key={p.title} delay={i * 80}>
-                <ScrollFade min={0.35}>
-                  <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
-                    <article className="grid gap-6 sm:gap-10 sm:grid-cols-3 items-start">
-                      <div className="sm:col-span-1">
-                        <h3 className="type-h2">{p.title}</h3>
-                        <div className="mt-3 type-small text-foreground/60">{p.period}</div>
-                        <p className="mt-4 type-small text-foreground/85">
-                          {p.body}
-                        </p>
-                        <div className="mt-6 flex flex-wrap gap-2">
-                          {p.tags.map((t) => (
-                            <span key={t} className="chip-outline">{t}</span>
-                          ))}
-                        </div>
+      {/* [02] FEATURED WORK — wide */}
+      <section id="work" className="container-wide min-h-screen py-24 sm:py-32 scroll-mt-24 snap-start">
+        <SectionLabel label="FEATURED WORK" number="[02]" />
+        <div className="mt-10 space-y-20 sm:space-y-28">
+          {projects.map((p, i) => (
+            <Reveal key={p.title} delay={i * 80}>
+              <ScrollFade min={0.35}>
+                <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
+                  <article className="grid gap-6 sm:gap-10 sm:grid-cols-3 items-start">
+                    <div className="sm:col-span-1">
+                      <h3 className="type-h2">{p.title}</h3>
+                      <div className="mt-3 type-small text-foreground/60">{p.period}</div>
+                      <p className="mt-4 type-small text-foreground/85">{p.body}</p>
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {p.tags.map((t) => (
+                          <span key={t} className="chip-outline">{t}</span>
+                        ))}
                       </div>
-                      <div className="sm:col-span-2 overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
-                        <img
-                          src={p.image}
-                          alt={p.alt}
-                          loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
-                        />
-                      </div>
-                    </article>
-                  </Link>
-                </ScrollFade>
+                    </div>
+                    <div className="sm:col-span-2 overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                      <img
+                        src={p.image}
+                        alt={p.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  </article>
+                </Link>
+              </ScrollFade>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* [03] HOW I WORK */}
+      <section className="mx-auto max-w-5xl px-5 sm:px-10 min-h-screen flex items-center py-24 sm:py-32 snap-start">
+        <div className="grid gap-10 sm:grid-cols-[1fr_2fr] w-full">
+          <div className="flex flex-col justify-between min-h-[220px]">
+            <span className="type-caption">HOW I WORK</span>
+            <span className="type-caption">[03]</span>
+          </div>
+          <div className="space-y-8">
+            {howIWork.map((h) => (
+              <Reveal key={h.title}>
+                <h3 className="type-h3">{h.title}</h3>
+                <p className="mt-2 type-body text-[color:var(--muted-ink)] max-w-lg">
+                  {h.body}
+                </p>
               </Reveal>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-
-        {/* [03] HOW I WORK — left column: heading top, [03] bottom */}
-        <section className="pb-20 sm:pb-28">
-          <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
-            <div className="flex flex-col justify-between min-h-[220px]">
-              <span className="type-caption">HOW I WORK</span>
-              <span className="type-caption">[03]</span>
-            </div>
-            <div className="space-y-8">
-              {howIWork.map((h) => (
-                <Reveal key={h.title}>
-                  <h3 className="type-h3">{h.title}</h3>
-                  <p className="mt-2 type-body text-[color:var(--muted-ink)] max-w-lg">
-                    {h.body}
-                  </p>
-                </Reveal>
-              ))}
+      {/* [04] ABOUT */}
+      <section id="about" className="mx-auto max-w-6xl px-5 sm:px-10 min-h-screen py-24 sm:py-32 scroll-mt-24 snap-start">
+        <SectionLabel label="ABOUT" number="[04]" />
+        <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
+          <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[520px]">
+            <img
+              src={portrait.url}
+              alt="Portrait of Alicia Strömmer"
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
+          <div className="flex flex-col">
+            <h2 className="type-h2">
+              Shaped by the north, living down south
+              <br />
+              Understanding people, designing experiences
+            </h2>
+            <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
+              <p>
+                I grew up in Umeå and moved south roughly six years ago. I now
+                live in Stockholm together with my fiancé.
+              </p>
+              <p>
+                Whenever I can, I return north to our summer house by the coast
+                outside Umeå. I love the slower pace there — morning coffee
+                overlooking the sea, long walks, swims, berry picking, and days
+                that aren't in a hurry. It's where I feel most at home.
+              </p>
+              <p>
+                I've always been fascinated by how people think and experience
+                the world differently. Growing up around different cognitive
+                perspectives sparked that curiosity early, and it eventually
+                led me to cognitive science and interaction design.
+              </p>
+              <p>
+                Creativity has always been part of my life through writing,
+                photography, and small personal projects. Those interests have
+                changed over the years, but they've always given me a way to
+                explore ideas and make sense of the world.
+              </p>
+              <p>
+                Today, I combine an understanding of human behaviour with a
+                creative mindset to design experiences that are intuitive,
+                thoughtful, and grounded in the people they're made for.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
 
+        <div className="mt-14 flex justify-center">
+          <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
+            Let's Talk
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </div>
+      </section>
 
-
-        {/* [04] ABOUT */}
-        <section id="about" className="pb-20 sm:pb-28 scroll-mt-24">
-          <SectionLabel label="ABOUT" number="[04]" />
-          <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
-            <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[520px]">
-              <img
-                src={portrait.url}
-                alt="Portrait of Alicia Strömmer"
-                className="h-full w-full object-cover object-top"
-              />
-            </div>
-            <div className="flex flex-col">
-              <h2 className="type-h2">
-                Shaped by the north, living down south
-                <br />
-                Understanding people, designing experiences
-              </h2>
-              <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
-                <p>
-                  I grew up in Umeå and moved south roughly six years ago. I now
-                  live in Stockholm together with my fiancé.
-                </p>
-                <p>
-                  Whenever I can, I return north to our summer house by the coast
-                  outside Umeå. I love the slower pace there — morning coffee
-                  overlooking the sea, long walks, swims, berry picking, and days
-                  that aren't in a hurry. It's where I feel most at home.
-                </p>
-                <p>
-                  I've always been fascinated by how people think and experience
-                  the world differently. Growing up around different cognitive
-                  perspectives sparked that curiosity early, and it eventually
-                  led me to cognitive science and interaction design.
-                </p>
-                <p>
-                  Creativity has always been part of my life through writing,
-                  photography, and small personal projects. Those interests have
-                  changed over the years, but they've always given me a way to
-                  explore ideas and make sense of the world.
-                </p>
-                <p>
-                  Today, I combine an understanding of human behaviour with a
-                  creative mindset to design experiences that are intuitive,
-                  thoughtful, and grounded in the people they're made for.
-                </p>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div className="mt-14 flex justify-center">
-            <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
-              Let's Talk
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          </div>
-        </section>
-      </main>
       <SiteFooter />
     </div>
   );
 }
+
