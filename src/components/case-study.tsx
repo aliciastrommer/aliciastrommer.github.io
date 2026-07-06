@@ -107,7 +107,7 @@ export function ChallengeList({
   return (
     <div className="space-y-4">
       {items.map((it) => (
-        <div key={it.title} className="rounded-2xl bg-lavender p-6 sm:p-7">
+        <div key={it.title} className="card-lavender p-6 sm:p-7">
           <div className="flex items-start gap-4">
             {it.icon && (
               <div className="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-primary/10 text-primary">
