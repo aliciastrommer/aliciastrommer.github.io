@@ -142,25 +142,33 @@ export function ChallengeList({
   variant = "lavender",
 }: {
   items: { title: string; body: string; icon?: ReactNode }[];
-  variant?: "lavender" | "plain";
+  variant?: "lavender" | "plain" | "dark";
 }) {
   const isPlain = variant === "plain";
-  const itemClass = isPlain
-    ? "py-2"
-    : "card-lavender p-6 sm:p-7";
+  const isDark = variant === "dark";
+  const itemClass = isPlain || isDark ? "py-2" : "card-lavender p-6 sm:p-7";
+  const dividerClass = isDark
+    ? "divide-y divide-white/10"
+    : isPlain
+    ? "divide-y divide-foreground/10"
+    : "space-y-4";
   return (
-    <div className={isPlain ? "divide-y divide-foreground/10" : "space-y-4"}>
+    <div className={dividerClass}>
       {items.map((it) => (
         <div key={it.title} className={itemClass}>
           <div className="flex items-start gap-4 py-4">
             {it.icon && (
-              <div className="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-primary/10 text-primary">
+              <div
+                className={`shrink-0 grid place-items-center h-10 w-10 rounded-xl ${
+                  isDark ? "bg-white/10 text-white" : "bg-primary/10 text-primary"
+                }`}
+              >
                 {it.icon}
               </div>
             )}
             <div className="min-w-0">
-              <h3 className="type-h3 text-foreground">{it.title}</h3>
-              <p className="mt-2 type-body text-foreground/85">
+              <h3 className={`type-h3 ${isDark ? "text-white" : "text-foreground"}`}>{it.title}</h3>
+              <p className={`mt-2 type-body ${isDark ? "text-hero-muted" : "text-foreground/85"}`}>
                 {it.body}
               </p>
             </div>
