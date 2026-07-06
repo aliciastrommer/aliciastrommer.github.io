@@ -308,59 +308,60 @@
 }
 
 /* ---------- Typography system ----------
- * Display (H1, H2): Plus Jakarta Sans
- * Body & everything else: Inter
- * Sizes: H1 64 / H2 36 / H3 24 (bold + reg) / Caption 24 / P Medium 20 / P Small 16
- * Body min is 20px. 16px reserved for long paragraphs & captions.
+ * Only 4 sizes: 40 / 24 / 18 / 16 — variations come from weight.
+ * Display (H1, H2): Plus Jakarta Sans. Everything else: Inter.
+ * Primary text #070707 (--foreground). Secondary text #515151 (--muted-ink).
  */
 
 @utility type-h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.5rem, 5.2vw, 4rem); /* up to 64px */
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.6vw, 2.75rem); /* up to 44px on desktop */
+  line-height: 1.08;
   letter-spacing: -0.02em;
 }
 @utility type-h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.75rem, 3vw, 2.25rem); /* up to 36px */
-  line-height: 1.15;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.2;
   letter-spacing: -0.015em;
 }
 @utility type-h3 {
   font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.3;
+  font-weight: 600;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.35;
   letter-spacing: -0.005em;
 }
 @utility type-h3-reg {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.4;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5;
   letter-spacing: -0.005em;
 }
 @utility type-caption {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 1.5rem; /* 24px */
-  letter-spacing: 0.02em;
-  line-height: 1.2;
+  font-weight: 500;
+  font-size: 1rem; /* 16px — captions/labels, not bold */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-ink);
 }
 @utility type-body {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1.25rem; /* 20px = P Medium */
-  line-height: 1.55;
+  font-size: 1rem; /* 16px body */
+  line-height: 1.6;
 }
 @utility type-small {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1rem; /* 16px = P Small — for long paragraphs / meta */
+  font-size: 1rem; /* 16px meta */
   line-height: 1.55;
 }
+
 
 /* WCAG-compliant disclaimer color (contrast > 4.5:1 on white and on light red) */
 @utility text-disclaimer {
