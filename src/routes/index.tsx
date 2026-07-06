@@ -139,9 +139,10 @@ function Home() {
         <Reveal as="section" className="pt-20 sm:pt-28 pb-20 sm:pb-28">
           <div className="card-lavender p-6 sm:p-10">
             <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
-              <div className="type-caption text-primary sm:col-span-2 md:col-span-1">
+              <div className="type-caption text-primary sm:col-span-2 md:col-span-1" style={{ color: "var(--color-primary)" }}>
                 [01]
               </div>
+
 
               <div className="space-y-5">
                 <div>
