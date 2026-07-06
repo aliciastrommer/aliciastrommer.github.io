@@ -87,7 +87,7 @@ function AccessibilityPage() {
         />
       </CaseSection>
 
-      <FullBleedImage src={team.url} alt="Design team collaborating around laptops at a workshop table" />
+      <FullBleedImage flush src={team.url} alt="Design team collaborating around laptops at a workshop table" />
 
       <CaseSection title="My Contribution">
         <p>
