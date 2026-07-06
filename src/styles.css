@@ -182,19 +182,35 @@
   }
 }
 
-/* Tag chip used on project cards */
+/* Tag chip used on project cards — purple outline & label */
 @utility chip-outline {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.9rem;
+  padding: 0.4rem 1rem;
   border-radius: 9999px;
   background-color: transparent;
-  color: var(--color-foreground);
-  border: 1px solid var(--color-border);
-  font-size: 0.8rem;
-  font-weight: 400;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.1;
   white-space: nowrap;
+}
+
+/* Lavender info/challenge card — outlined in the same primary purple */
+@utility card-lavender {
+  background-color: var(--color-lavender);
+  border: 1px solid var(--color-primary);
+  border-radius: 1rem;
+}
+
+/* Hero gradient — soft blurry purple/black, light text on top */
+@utility bg-hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 20%, oklch(0.42 0.18 285 / 0.85), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 85% 80%, oklch(0.35 0.14 300 / 0.9), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 60% 40%, oklch(0.28 0.1 275 / 0.7), transparent 60%),
+    linear-gradient(135deg, oklch(0.14 0.03 285) 0%, oklch(0.09 0.02 285) 100%);
 }
 
 /* Reveal-on-scroll */
