@@ -1,9 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { AnimatedHeading } from "@/components/animated-heading";
 import { Reveal } from "@/components/reveal";
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
@@ -18,123 +15,78 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Product designer based in Stockholm specialising in simplifying complex systems through user-centered design.",
+          "I design thoughtful products for complex systems by combining systems thinking, hands-on craft, strategic perspective, and an understanding of human perception, reasoning and behavior.",
       },
       { property: "og:title", content: "Alicia Strömmer — Product Designer" },
       {
         property: "og:description",
         content:
-          "Product designer based in Stockholm specialising in simplifying complex systems through user-centered design.",
+          "Product designer based in Stockholm — thoughtful products for complex systems.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
 });
 
-const skills = [
-  {
-    title: "Product Thinking",
-    body: "I bring a product perspective that looks beyond individual features, helping teams make strategic decisions that align user needs, business goals, and long-term product direction.",
-  },
-  {
-    title: "User Research",
-    body: "Combining user research with a background in Cognitive Science, I bring evidence and behavioural understanding into the design process to ensure we're solving the right problems in the right way.",
-  },
-  {
-    title: "Interaction Design",
-    body: "I draw on experience across product domains to design interactions that make complex systems understandable, usable, and effective.",
-  },
-  {
-    title: "Design System",
-    body: "I contribute to scalable design systems that combine components, patterns, and guidelines to create consistency, efficiency, and quality.",
-  },
-];
-
 const projects = [
   {
     to: "/projects/smart-dash" as const,
-    title: "Smart Dash",
-    role: "UX/UI Designer",
+    title: "Designing a Driver Experience That Keeps Attention on the Road",
     period: "2023 – Present",
-    body: "Design of features, patterns and frameworks for Scania's digital driver platform, used by professional truck and bus drivers.",
+    body:
+      "I design HMI experiences that reduce cognitive effort and simplify complex workflows for professional truck and bus drivers in demanding environments. In parallel, I drive the strategic direction of a key domain, ensuring design decisions support both user needs and product goals.",
+    tags: ["Interaction Design", "UX/UI Design", "Product Thinking", "System Thinking", "Design System"],
     image: smartDashImg.url,
-    alt: "Scania truck cab with two digital driver displays glowing in cyan",
+    alt: "Scania truck cab with two digital driver displays",
   },
   {
     to: "/projects/accessibility-guide" as const,
-    title: "Accessibility Guide",
-    role: "UX/UI Designer",
+    title: "Bridging the Gap Between Accessibility Standards and Everyday Design",
     period: "2022 – 2023",
-    body: "Design of a guide that helps designers and developers interpret and adopt accessibility practices.",
+    body:
+      "Design of an accessibility guide for designers and developers, that lowered the barrier to designing accessible products.",
+    tags: ["UX/UI Design", "User Research", "UX Writing", "Accessibility"],
     image: accessibilityImg.url,
-    alt: "Desk with a monitor showing the Accessibility Guide welcome page",
+    alt: "Monitor showing the Accessibility Guide welcome page",
   },
   {
     to: "/projects/smart-pot" as const,
-    title: "Smart Pot",
-    role: "Interaction Designer",
+    title: "Using Tangible Interaction to Inspire Sustainable Behavior",
     period: "2021",
-    body: "Concept design of an interactive pot to encourage sustainable habits through engaging, tangible interactions.",
+    body:
+      "Concept design of an interactive pot, used to demonstrate how tangible interaction can be used to increase engagement with sustainable behaviour.",
+    tags: ["User Research", "Interaction Design", "User Testing"],
     image: smartPotImg.url,
     alt: "Hands holding a glowing white origami-textured plant pot",
   },
 ];
 
-const clients = ["Traton Group", "Scania", "Knightec Group", "ABB", "Umeå Energi"];
+const howIWork = [
+  {
+    title: "I bring clarity",
+    body: "I simplify complex systems by making sure that solutions are designed based on an understanding of how users think and act.",
+  },
+  {
+    title: "I create alignment",
+    body: "I connect user needs, business goals, and technical constraints.",
+  },
+  {
+    title: "I drive progress",
+    body: "I help teams move forward through structure, collaboration, and iterative problem solving.",
+  },
+  {
+    title: "I sweat the details",
+    body: "Because great products depend on thousands of thoughtful decisions.",
+  },
+];
 
-function ClientsReveal({ items }: { items: string[] }) {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
-    const id = window.setInterval(() => {
-      setActive((i) => (i + 1) % items.length);
-    }, 1600);
-    return () => window.clearInterval(id);
-  }, [items.length]);
-
+function SectionLabel({ label, number }: { label: string; number: string }) {
   return (
-    <ul
-      className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12"
-      aria-label="Clients I have worked with"
-    >
-      {items.map((c, i) => {
-        const isActive = i === active;
-        return (
-          <li
-            key={c}
-            className={[
-              "text-xl font-semibold tracking-tight whitespace-nowrap",
-              "transition-all duration-700 ease-out will-change-transform",
-              isActive
-                ? "text-foreground opacity-100 scale-105"
-                : "text-muted-foreground opacity-50 scale-100",
-            ].join(" ")}
-          >
-            {c}
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
-
-function WhatIDo({ items }: { items: { title: string; body: string }[] }) {
-  return (
-    <div className="mt-10 sm:mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 items-start">
-      {items.map((s) => (
-        <div key={s.title}>
-          <h3 className="text-xl font-semibold tracking-tight">
-            {s.title}
-          </h3>
-          <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-            {s.body}
-          </p>
-        </div>
-      ))}
+    <div className="flex items-center justify-between text-[0.7rem] tracking-[0.15em] text-foreground/60 font-medium">
+      <span>{label}</span>
+      <span>{number}</span>
     </div>
   );
 }
@@ -143,144 +95,111 @@ function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <main>
+      <main className="mx-auto max-w-6xl px-5 sm:px-8">
         {/* HERO */}
-        <section className="mx-auto max-w-6xl px-5 sm:px-8 pt-24 sm:pt-0 pb-20 sm:pb-0 min-h-screen flex items-center justify-center">
-          <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.1fr_auto] md:items-center w-full">
-
-            <div className="text-left flex flex-col items-start">
-              <AnimatedHeading />
-              <p className="mt-6 max-w-xl text-pretty text-base text-muted-foreground leading-relaxed">
-                I specialize in simplifying complex systems through
-                user-centered design, combining strategic thinking with
-                attention to detail to create products that work in the real
-                world.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center justify-start gap-x-3 gap-y-1 text-base text-muted-foreground">
-                <span className="inline-flex items-center gap-2">
-                  <span className="relative inline-flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-                  </span>
-                  <span className="font-medium text-foreground">Currently</span>
-                </span>
-                <span>Designing for Scania</span>
-                <span aria-hidden="true">·</span>
-                <span>Based in Stockholm</span>
-              </div>
-              <div className="mt-8 flex flex-wrap justify-start gap-3">
-                <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
-                  Get In Touch
-                </a>
-                <a href="#projects" className="btn-pill btn-pill-outline">
-                  View Projects
-                </a>
-              </div>
+        <section className="pt-8 sm:pt-14 pb-12 sm:pb-16">
+          <div aria-hidden="true" className="text-3xl sm:text-4xl mb-6">👋</div>
+          <h1 className="text-[clamp(2.4rem,6vw,4rem)] font-semibold tracking-tight leading-[1.05]">
+            Hi, I'm Alicia Strömmer
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-[1.4] text-foreground">
+            I design thoughtful products for complex systems by combining
+            systems thinking, hands-on craft, strategic perspective, and an
+            understanding of human perception, reasoning and behavior.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-foreground/80">
+            <span className="inline-flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-primary" />
+              <span className="font-medium text-foreground">Currently</span>
+            </span>
+            <span>Designing for Scania</span>
+            <span>Based in Stockholm</span>
+          </div>
+          <div className="mt-6 text-sm text-foreground/80 space-y-0.5">
+            <div>
+              <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
             </div>
-
-            <Reveal delay={120} className="hidden md:flex justify-end">
-              <div
-                className="overflow-hidden rounded-tl-[1.75rem] rounded-tr-[1.75rem] rounded-br-[1.75rem] bg-surface"
-              >
-                <img
-                  src={portrait.url}
-                  alt="Portrait of Alicia Strömmer, product designer"
-                  loading="eager"
-                  className="w-[320px] md:w-[360px] aspect-[3/4] object-cover object-top"
-                />
-              </div>
-            </Reveal>
+            <div>
+              <a href="tel:+46722068063" className="link-underline">+4672–206 80 63</a>
+            </div>
           </div>
         </section>
 
-        {/* INTRO */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-36 sm:pb-48 text-center">
-          <div className="mx-auto max-w-4xl text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
-            <p>
-              4+ years of experience. Currently working with digital in-vehicle
-              interfaces as UX/UI Designer and Area Lead. Balancing strategy
-              with hands-on execution.
-            </p>
+        {/* [01] LAVENDER INFO CARD */}
+        <Reveal as="section" className="pb-20 sm:pb-28">
+          <SectionLabel label="" number="[01]" />
+          <div className="mt-3 rounded-2xl bg-lavender p-6 sm:p-10">
+            <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
+              <div className="text-xs tracking-[0.14em] text-foreground/60 font-medium sm:col-span-2 md:col-span-1">
+                [01]
+              </div>
+
+              <div className="space-y-5">
+                <div>
+                  <div className="text-sm text-foreground/70">Years of experience</div>
+                  <div className="mt-1 font-medium">4+</div>
+                </div>
+                <div>
+                  <div className="text-sm text-foreground/70">Current role</div>
+                  <div className="mt-1 font-medium">UX/UI Designer</div>
+                  <div className="font-medium">Area Lead</div>
+                </div>
+                <div>
+                  <div className="text-sm text-foreground/70">Focus</div>
+                  <div className="mt-1 font-medium">Product &amp; System Thinking</div>
+                  <div className="font-medium">Accessibility-Driven Design</div>
+                  <div className="font-medium">Usability in Complex Products</div>
+                </div>
+              </div>
+
+              <div className="space-y-5">
+                <div>
+                  <div className="text-sm text-foreground/70">Experience from</div>
+                  <div className="mt-1 font-medium">Traton Group</div>
+                  <div className="font-medium">Scania</div>
+                  <div className="font-medium">Daresay by Knightec</div>
+                  <div className="font-medium">ABB</div>
+                  <div className="font-medium">Umeå Energi</div>
+                </div>
+                <div>
+                  <div className="text-sm text-foreground/70">Education in</div>
+                  <div className="mt-1 font-medium">Cognitive Science</div>
+                  <div className="font-medium">Interaction Design</div>
+                </div>
+              </div>
+            </div>
           </div>
         </Reveal>
 
-
-        {/* WHAT I DO */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            What I do
-          </h2>
-          <WhatIDo items={skills} />
-        </Reveal>
-
-
-        {/* TESTIMONIAL */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <figure className="mx-auto max-w-4xl text-center">
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 40 32"
-              className="mx-auto h-8 w-8 text-primary/40"
-              fill="currentColor"
-            >
-              <path d="M12.6 0C5.7 0 0 5.7 0 12.6V32h16V16H8c0-4.4 3.6-8 8-8V0h-3.4zm22 0C27.7 0 22 5.7 22 12.6V32h16V16h-8c0-4.4 3.6-8 8-8V0h-3.4z" />
-            </svg>
-            <blockquote className="mt-6 text-balance text-2xl sm:text-3xl font-semibold tracking-tight leading-snug">
-              "Alicia is driven, fearless, takes responsibility and has
-              leadership qualities. Always with a smile on her face. Such an
-              energizing person. She is good at both delving into details and
-              seeing the big picture."
-            </blockquote>
-            <figcaption className="mt-6 text-base text-muted-foreground">
-              —&nbsp;Colleague at Scania
-            </figcaption>
-          </figure>
-
-        </Reveal>
-
-        {/* PROJECTS */}
-        <section id="projects" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36">
-          <Reveal>
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-
-              Projects
-            </h2>
-          </Reveal>
-          <div className="mt-10 sm:mt-12 space-y-4 sm:space-y-6">
-
+        {/* [02] FEATURED WORK */}
+        <section id="work" className="pb-20 sm:pb-28 scroll-mt-24">
+          <SectionLabel label="FEATURED WORK" number="[02]" />
+          <div className="mt-8 space-y-12 sm:space-y-16">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                  <Link
-                    to={p.to}
-                    aria-label={`Open ${p.title} case study`}
-                    className="group block"
-                  >
-                    <article className="grid gap-0 sm:grid-cols-[1.7fr_1fr] items-stretch rounded-2xl bg-surface overflow-hidden">
-                    <div className="relative overflow-hidden rounded-t-2xl sm:rounded-t-none sm:rounded-l-2xl aspect-[16/10] sm:aspect-[16/11] bg-surface">
+                <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
+                  <article className="grid gap-6 sm:gap-10 sm:grid-cols-2 items-start">
+                    <div>
+                      <h3 className="text-[clamp(1.35rem,2.4vw,1.75rem)] font-semibold tracking-tight leading-[1.15]">
+                        {p.title}
+                      </h3>
+                      <div className="mt-3 text-sm text-foreground/60">{p.period}</div>
+                      <p className="mt-4 text-[15px] leading-[1.55] text-foreground/85 max-w-md">
+                        {p.body}
+                      </p>
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {p.tags.map((t) => (
+                          <span key={t} className="chip-outline">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="overflow-hidden rounded-2xl bg-surface aspect-[4/3]">
                       <img
                         src={p.image}
                         alt={p.alt}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
+                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
                       />
-                    </div>
-                    <div className="flex flex-col p-5 sm:p-6">
-                      <h3 className="text-xl font-semibold tracking-tight">{p.title}</h3>
-                      <p className="mt-2 text-base text-muted-foreground leading-relaxed max-w-md">
-                        {p.body}
-                      </p>
-                      <div className="mt-auto pt-4 flex items-center justify-between gap-3 flex-wrap">
-                        <div className="flex flex-wrap items-center gap-3 text-base font-semibold text-foreground">
-                          <span>{p.role}</span>
-                          <span>{p.period}</span>
-                        </div>
-                        <span
-                          aria-hidden="true"
-                          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-[var(--shadow-primary)]"
-                        >
-                          <ArrowRight className="h-5 w-5" />
-                        </span>
-                      </div>
                     </div>
                   </article>
                 </Link>
@@ -289,20 +208,79 @@ function Home() {
           </div>
         </section>
 
-        {/* CLIENTS */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 sm:pb-36 text-center">
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            Experience From
-          </h2>
-          <ClientsReveal items={clients} />
-        </Reveal>
+        {/* [03] HOW I WORK */}
+        <section className="pb-20 sm:pb-28">
+          <SectionLabel label="HOW I WORK" number="[03]" />
+          <div className="mt-8 grid gap-10 sm:grid-cols-[1fr_2fr]">
+            <div aria-hidden="true" />
+            <div className="space-y-8">
+              {howIWork.map((h) => (
+                <Reveal key={h.title}>
+                  <h3 className="font-semibold text-foreground">{h.title}</h3>
+                  <p className="mt-2 text-[15px] leading-[1.55] text-foreground/85 max-w-lg">
+                    {h.body}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* CONTACT CTA */}
-        <Reveal as="section" className="mx-auto max-w-6xl px-5 sm:px-8 pb-28 text-center">
-          <a href="mailto:alicia@strommer.se" id="contact" className="btn-pill btn-pill-primary">
-            Get In Touch
-          </a>
-        </Reveal>
+        {/* [04] ABOUT */}
+        <section id="about" className="pb-20 sm:pb-28 scroll-mt-24">
+          <SectionLabel label="ABOUT" number="[04]" />
+          <div className="mt-8 grid gap-8 sm:gap-12 sm:grid-cols-[280px_1fr] md:grid-cols-[320px_1fr] items-start">
+            <div className="overflow-hidden rounded-full bg-surface aspect-square w-full max-w-[320px]">
+              <img
+                src={portrait.url}
+                alt="Portrait of Alicia Strömmer"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
+            <div>
+              <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold tracking-tight leading-[1.15]">
+                Shaped by the north, living down south
+                <br />
+                Understanding people, designing experiences
+              </h2>
+              <div className="mt-6 space-y-4 text-[15px] leading-[1.6] text-foreground/85 max-w-2xl">
+                <p>
+                  I grew up in Umeå and moved south roughly six years ago. I now
+                  live in Stockholm together with my fiancé.
+                </p>
+                <p>
+                  Whenever I can, I return north to our summer house by the coast
+                  outside Umeå. I love the slower pace there — morning coffee
+                  overlooking the sea, long walks, swims, berry picking, and days
+                  that aren't in a hurry. It's where I feel most at home.
+                </p>
+                <p>
+                  I've always been fascinated by how people think and experience
+                  the world differently. Growing up around different cognitive
+                  perspectives sparked that curiosity early, and it eventually
+                  led me to cognitive science and interaction design.
+                </p>
+                <p>
+                  Creativity has always been part of my life through writing,
+                  photography, and small personal projects. Those interests have
+                  changed over the years, but they've always given me a way to
+                  explore ideas and make sense of the world.
+                </p>
+                <p>
+                  Today, I combine an understanding of human behaviour with a
+                  creative mindset to design experiences that are intuitive,
+                  thoughtful, and grounded in the people they're made for.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14 flex justify-center">
+            <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
+              Let's Talk
+            </a>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Eye, Shuffle, ScrollText, Info, ArrowUpRight } from "lucide-react";
+import { Info, ArrowUpRight } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
@@ -40,73 +40,71 @@ function SmartDashPage() {
         heroImage={hero.url}
         heroAlt="Scania truck cab with two glowing digital driver displays"
         meta={[
-          { label: "Company", value: "Scania/Traton" },
-          { label: "Role", value: "UX/UI Designer" },
-          { label: "Time frame", value: "Jan 2023 – Present" },
-          { label: "Team", value: "Several" },
+          { label: "Launched in", value: "2024" },
+          { label: "Daily users", value: "100 000+" },
         ]}
         title="Smart Dash"
         tagline="Scania's digital driver platform designed for professional truck and bus drivers"
+        about={
+          <>
+            <p>
+              Smart Dash was launched to create a safer, smarter and more
+              connected driving experience by bringing together the vehicle's
+              digital functions in a common platform.
+            </p>
+            <p>
+              The platform functions as a digital workspace for the driver,
+              through two main displays — the Driver Display and the Center
+              Information Display. It holds features such as Navigation,
+              Advanced Driver Assistance Systems (ADAS), Voice Control,
+              Infotainment, Camera Features, Safety Information and Vehicle
+              Data. It is built within an ecosystem of services with modern
+              technical infrastructure.
+            </p>
+            <p>
+              <a
+                href="https://www.scania.com/se/sv/home/newsroom/campaigns/digital-dash.html"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link-underline link-external inline-flex items-center gap-1"
+              >
+                <ArrowUpRight className="h-4 w-4" />
+                Read more about Smart Dash
+              </a>
+            </p>
+          </>
+        }
       />
-
-      <CaseSection title="About">
-        <p>
-          Smart Dash was launched to create a safer, smarter and more connected
-          driving experience by bringing together the vehicle's digital
-          functions in a common platform.
-        </p>
-        <p>
-          The platform functions as a digital workspace for the driver, through
-          two main displays, the Driver Display and the Center Information
-          Display. It holds features such as Navigation, Advanced Driver
-          Assistance Systems (ADAS), Voice Control, Infotainment, Camera
-          Features, Safety Information and Vehicle Data. It is built within an
-          ecosystem of services with modern technical infrastructure.
-        </p>
-        <p>
-          <a
-            href="https://www.scania.com/se/sv/home/newsroom/campaigns/digital-dash.html"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="link-underline link-external inline-flex items-center gap-1"
-          >
-            Read more about Smart Dash
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </p>
-
-        <div className="flex items-start gap-3 rounded-2xl bg-destructive/10 px-5 py-4 text-foreground/90">
-          <Info className="h-5 w-5 mt-0.5 shrink-0 text-destructive" />
-          <p>
-            Due to confidentiality, this case study focuses on my professional
-            development and overall contribution instead of specific examples.
-          </p>
-        </div>
-      </CaseSection>
 
       <FullBleedImage
         src={displays.url}
         alt="Scania truck cab dashboard with the Driver Display behind the steering wheel and the Center Information Display to the right"
       />
 
+      <CaseSection>
+        <div className="flex items-start gap-3 rounded-2xl bg-lavender px-5 py-4 text-foreground/90 text-sm">
+          <Info className="h-5 w-5 mt-0.5 shrink-0 text-primary" />
+          <p className="!m-0">
+            Due to confidentiality, this case study focuses on my professional
+            development and overall contribution instead of specific examples.
+          </p>
+        </div>
+      </CaseSection>
 
       <CaseSection title="Design Challenge">
         <ChallengeList
           items={[
             {
-              icon: <Eye className="h-6 w-6" />,
               title: "Designing for drivers in safety-critical, attention-limited environments",
               body: "Professional truck and bus drivers operate in contexts where attention is scarce and safety is key. Every interaction must be carefully designed to minimize cognitive load and avoid distraction. This makes prioritization of information and clarity of interaction central to the design.",
             },
             {
-              icon: <Shuffle className="h-6 w-6" />,
-              title: "Designing for flexibility and consistency across applications",
-              body: "We design across a wide range of applications with significantly different user needs and use cases. Solutions must therefore be adaptable while maintaining consistency and usability.",
-            },
-            {
-              icon: <ScrollText className="h-6 w-6" />,
               title: "Navigating hardware constraints and regulatory complexity",
               body: "The domain is complex. Designs must account for varying hardware capabilities and constraints, as well as regulatory requirements and safety standards. This requires continuous input and alignment across multiple domains and teams over time.",
+            },
+            {
+              title: "Designing for flexibility and consistency across applications",
+              body: "We design across a wide range of applications with significantly different user needs and use cases. Solutions must therefore be adaptable while maintaining consistency and usability.",
             },
           ]}
         />

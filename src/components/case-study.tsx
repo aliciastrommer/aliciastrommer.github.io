@@ -5,23 +5,27 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 
-
 type MetaItem = { label: string; value: string };
 
+/**
+ * New case-study hero: full-bleed image, then a two-column split
+ * (title + meta on the left, About text on the right). The About slot
+ * is passed in as `about`.
+ */
 export function CaseHero({
   meta,
   title,
   tagline,
   heroImage,
   heroAlt,
-  callout,
+  about,
 }: {
   meta: MetaItem[];
   title: string;
-  tagline: ReactNode;
+  tagline?: ReactNode;
   heroImage: string;
   heroAlt: string;
-  callout?: ReactNode;
+  about?: ReactNode;
 }) {
   return (
     <>
@@ -29,32 +33,40 @@ export function CaseHero({
         <img
           src={heroImage}
           alt={heroAlt}
-          className="w-full h-[85vh] max-h-[900px] min-h-[380px] object-cover"
+          className="w-full h-[60vh] max-h-[620px] min-h-[300px] object-cover"
         />
       </div>
 
-      <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <dl className="mt-8 max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-y-4 gap-x-6 text-base">
-          {meta.map((m) => (
-            <div key={m.label} className="text-center">
-              <dt className="text-muted-foreground">{m.label}</dt>
-              <dd className="mt-1 font-medium">{m.value}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <h1 className="mt-12 text-center text-balance font-semibold tracking-tight text-[clamp(2.4rem,6vw,4.25rem)] leading-[1.05]">
-          {title}
-        </h1>
-        <p className="mt-5 text-center max-w-2xl mx-auto text-balance text-base text-muted-foreground leading-snug">
-          {tagline}
-        </p>
-
-        {callout && (
-          <div className="mt-10 text-base max-w-3xl mx-auto">
-            {callout}
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 mt-12 sm:mt-16">
+        <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-start">
+          <div>
+            <h1 className="text-[clamp(2.2rem,5.5vw,3.5rem)] font-semibold tracking-tight leading-[1.05]">
+              {title}
+            </h1>
+            {tagline && (
+              <p className="mt-5 text-[15px] leading-[1.55] text-foreground/80 max-w-md">
+                {tagline}
+              </p>
+            )}
+            <dl className="mt-10 space-y-4 text-[15px]">
+              {meta.map((m) => (
+                <div key={m.label}>
+                  <dt className="text-foreground/60">{m.label}</dt>
+                  <dd className="mt-0.5 font-medium">{m.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-        )}
+
+          {about && (
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">About</h2>
+              <div className="mt-5 space-y-4 text-[15px] leading-[1.6] text-foreground/85">
+                {about}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
@@ -62,20 +74,26 @@ export function CaseHero({
 
 export function CaseSection({
   title,
+  centered = true,
   children,
 }: {
   title?: string;
+  centered?: boolean;
   children: ReactNode;
 }) {
   return (
-    <section className="mx-auto max-w-5xl px-5 sm:px-8 mt-16 sm:mt-20">
-      <Reveal className="max-w-3xl mx-auto">
+    <section className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
+      <Reveal>
         {title && (
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+          <h2
+            className={`text-2xl sm:text-[1.7rem] font-semibold tracking-tight ${
+              centered ? "text-center" : ""
+            }`}
+          >
             {title}
           </h2>
         )}
-        <div className="mt-6 space-y-5 text-muted-foreground leading-relaxed">
+        <div className="mt-6 space-y-4 text-[15px] leading-[1.65] text-foreground/85">
           {children}
         </div>
       </Reveal>
@@ -83,29 +101,26 @@ export function CaseSection({
   );
 }
 
-
+/**
+ * Lavender challenge card(s), stacked. Icons are optional and hidden
+ * in the new layout — the card content is just title + body.
+ */
 export function ChallengeList({
   items,
 }: {
   items: { title: string; body: string; icon?: ReactNode }[];
 }) {
   return (
-    <ul className="space-y-4">
+    <div className="space-y-4">
       {items.map((it) => (
-        <li
-          key={it.title}
-          className="grid grid-cols-[auto_1fr] gap-5 sm:gap-7 items-start rounded-2xl bg-surface p-5 sm:p-6"
-        >
-          <div className="grid h-12 w-12 sm:h-14 sm:w-14 shrink-0 place-items-center rounded-xl bg-background text-primary">
-            {it.icon}
-          </div>
-          <div className="min-w-0">
-            <h3 className="font-semibold text-foreground">{it.title}</h3>
-            <p className="mt-2 text-muted-foreground leading-relaxed">{it.body}</p>
-          </div>
-        </li>
+        <div key={it.title} className="rounded-2xl bg-lavender p-6 sm:p-7">
+          <h3 className="font-semibold text-foreground">{it.title}</h3>
+          <p className="mt-2 text-[15px] leading-[1.6] text-foreground/85">
+            {it.body}
+          </p>
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 
@@ -131,7 +146,7 @@ export function FullBleedImage({
   fit?: "cover" | "contain";
 }) {
   return (
-    <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
+    <div className="mt-16 sm:mt-24 w-full overflow-hidden bg-muted">
       <img
         src={src}
         alt={alt}
@@ -143,7 +158,6 @@ export function FullBleedImage({
   );
 }
 
-
 export function CaseFooterNav({
   next,
   nextLabel = "View Next Project",
@@ -152,12 +166,12 @@ export function CaseFooterNav({
   nextLabel?: string;
 }) {
   return (
-    <div className="mx-auto max-w-5xl px-5 sm:px-8 mt-20 flex flex-wrap items-center justify-center gap-3">
-      <Link to="/" className="btn-pill btn-pill-outline">
+    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex items-center justify-between gap-3 text-[15px] font-medium">
+      <Link to="/" className="inline-flex items-center gap-2 hover:text-primary transition-colors">
         <ArrowLeft className="h-4 w-4" />
         Back Home
       </Link>
-      <Link to={next} className="btn-pill btn-pill-primary">
+      <Link to={next} className="inline-flex items-center gap-2 hover:text-primary transition-colors">
         {nextLabel}
         <ArrowRight className="h-4 w-4" />
       </Link>
@@ -169,7 +183,7 @@ export function CaseLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <main className="pb-10">{children}</main>
+      <main className="pb-16">{children}</main>
       <SiteFooter />
     </div>
   );
