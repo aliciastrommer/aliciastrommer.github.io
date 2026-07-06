@@ -82,7 +82,7 @@ function SmartDashPage() {
       />
 
       <CaseSection>
-        <div className="flex items-start gap-3 rounded-2xl border border-destructive/40 bg-destructive/10 px-5 py-4 text-destructive type-body">
+        <div className="flex items-start gap-3 rounded-2xl border border-disclaimer bg-disclaimer-soft px-5 py-4 text-disclaimer type-body">
           <Info className="h-5 w-5 mt-0.5 shrink-0" />
           <p className="!m-0">
             Due to confidentiality, this case study focuses on my professional
@@ -95,14 +95,17 @@ function SmartDashPage() {
         <ChallengeList
           items={[
             {
+              icon: <ShieldAlert className="h-5 w-5" />,
               title: "Designing for drivers in safety-critical, attention-limited environments",
               body: "Professional truck and bus drivers operate in contexts where attention is scarce and safety is key. Every interaction must be carefully designed to minimize cognitive load and avoid distraction. This makes prioritization of information and clarity of interaction central to the design.",
             },
             {
+              icon: <Layers className="h-5 w-5" />,
               title: "Navigating hardware constraints and regulatory complexity",
               body: "The domain is complex. Designs must account for varying hardware capabilities and constraints, as well as regulatory requirements and safety standards. This requires continuous input and alignment across multiple domains and teams over time.",
             },
             {
+              icon: <Boxes className="h-5 w-5" />,
               title: "Designing for flexibility and consistency across applications",
               body: "We design across a wide range of applications with significantly different user needs and use cases. Solutions must therefore be adaptable while maintaining consistency and usability.",
             },
