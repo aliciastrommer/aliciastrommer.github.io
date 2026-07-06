@@ -6,8 +6,8 @@
 
 /*
  * Alicia Strömmer — Product Designer portfolio
- * Tokens reflect the Figma prototype: warm off-white surfaces,
- * deep indigo primary, and one expressive accent for highlights.
+ * Editorial minimal: pure white surface, near-black type,
+ * lavender info card + deep purple accent button.
  */
 
 @theme inline {
@@ -33,6 +33,7 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-soft: var(--primary-soft);
+  --color-lavender: var(--lavender);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -45,73 +46,72 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-
-  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px oklch(0.2 0.04 280 / 0.06);
-  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.05), 0 12px 40px oklch(0.2 0.06 280 / 0.08);
-  --shadow-primary: 0 8px 24px oklch(0.32 0.18 282 / 0.28);
 }
 
 :root {
-  --radius: 0.875rem;
+  --radius: 0.75rem;
 
-  /* Warm off-white surface from the prototype */
-  --background: oklch(0.972 0 0);
-  --foreground: oklch(0.16 0.02 270);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.15 0 0);
 
-  --surface: oklch(0.955 0 0);
-  --surface-foreground: oklch(0.16 0.02 270);
+  --surface: oklch(0.97 0 0);
+  --surface-foreground: oklch(0.15 0 0);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.16 0.02 270);
+  --card-foreground: oklch(0.15 0 0);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.16 0.02 270);
+  --popover-foreground: oklch(0.15 0 0);
 
-  /* Deep indigo button colour from the design */
-  --primary: oklch(0.36 0.21 282);
+  /* Deep purple button */
+  --primary: oklch(0.44 0.19 285);
   --primary-foreground: oklch(0.99 0.005 80);
-  --primary-soft: oklch(0.95 0.03 282);
+  --primary-soft: oklch(0.94 0.04 285);
 
-  --secondary: oklch(0.94 0.01 80);
-  --secondary-foreground: oklch(0.2 0.02 270);
+  /* Lavender card background from the design */
+  --lavender: oklch(0.9 0.045 285);
 
-  --muted: oklch(0.94 0.008 80);
-  --muted-foreground: oklch(0.45 0.02 270);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.15 0 0);
 
-  --accent: oklch(0.93 0.04 282);
-  --accent-foreground: oklch(0.32 0.18 282);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0.005 285);
+
+  --accent: oklch(0.94 0.04 285);
+  --accent-foreground: oklch(0.44 0.19 285);
 
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.99 0.005 80);
 
-  --border: oklch(0.9 0.008 80);
-  --input: oklch(0.9 0.008 80);
-  --ring: oklch(0.36 0.21 282);
+  --border: oklch(0.9 0.005 285);
+  --input: oklch(0.9 0.005 285);
+  --ring: oklch(0.44 0.19 285);
 }
 
 .dark {
-  --background: oklch(0.16 0.02 270);
-  --foreground: oklch(0.97 0.005 80);
-  --surface: oklch(0.2 0.02 270);
-  --surface-foreground: oklch(0.97 0.005 80);
-  --card: oklch(0.22 0.02 270);
-  --card-foreground: oklch(0.97 0.005 80);
-  --popover: oklch(0.22 0.02 270);
-  --popover-foreground: oklch(0.97 0.005 80);
-  --primary: oklch(0.72 0.18 282);
-  --primary-foreground: oklch(0.16 0.02 270);
-  --primary-soft: oklch(0.3 0.08 282);
-  --secondary: oklch(0.26 0.02 270);
-  --secondary-foreground: oklch(0.97 0.005 80);
-  --muted: oklch(0.26 0.02 270);
-  --muted-foreground: oklch(0.7 0.02 270);
-  --accent: oklch(0.3 0.08 282);
-  --accent-foreground: oklch(0.85 0.12 282);
+  --background: oklch(0.14 0.005 285);
+  --foreground: oklch(0.97 0 0);
+  --surface: oklch(0.19 0.005 285);
+  --surface-foreground: oklch(0.97 0 0);
+  --card: oklch(0.19 0.005 285);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.19 0.005 285);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.72 0.14 285);
+  --primary-foreground: oklch(0.14 0.005 285);
+  --primary-soft: oklch(0.28 0.08 285);
+  --lavender: oklch(0.32 0.08 285);
+  --secondary: oklch(0.24 0.005 285);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.24 0.005 285);
+  --muted-foreground: oklch(0.7 0.01 285);
+  --accent: oklch(0.28 0.08 285);
+  --accent-foreground: oklch(0.85 0.12 285);
   --destructive: oklch(0.65 0.2 27);
-  --destructive-foreground: oklch(0.97 0.005 80);
-  --border: oklch(1 0 0 / 10%);
+  --destructive-foreground: oklch(0.97 0 0);
+  --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.72 0.18 282);
+  --ring: oklch(0.72 0.14 285);
 }
 
 @layer base {
@@ -129,11 +129,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
   }
 
   ::selection {
-    background-color: oklch(0.36 0.21 282 / 0.2);
+    background-color: oklch(0.44 0.19 285 / 0.2);
   }
 }
 
@@ -147,21 +146,19 @@
   text-wrap: pretty;
 }
 
-/* Pill button (matches the Figma "Get In Touch" CTA) */
 @utility btn-pill {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding-inline: 1.5rem;
-  padding-block: 0.75rem;
+  padding-inline: 2rem;
+  padding-block: 0.85rem;
   border-radius: 9999px;
   font-weight: 500;
   font-size: 0.95rem;
   line-height: 1;
   transition: transform 200ms ease, background-color 200ms ease, color 200ms ease,
     box-shadow 250ms ease, border-color 200ms ease;
-  will-change: transform;
 }
 
 @utility btn-pill-primary {
@@ -169,142 +166,43 @@
   color: var(--color-primary-foreground);
 
   &:hover {
-    transform: translateY(-2px);
-    background-color: oklch(0.32 0.22 282);
-    box-shadow: 0 14px 32px oklch(0.32 0.18 282 / 0.38);
-  }
-  &:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px oklch(0.32 0.18 282 / 0.35);
+    transform: translateY(-1px);
+    background-color: oklch(0.39 0.2 285);
   }
 }
 
 @utility btn-pill-outline {
   background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-foreground);
 
   &:hover {
-    transform: translateY(-2px);
-    background-color: var(--color-primary-soft);
-    color: var(--color-primary);
-  }
-  &:active {
-    transform: translateY(0);
+    background-color: var(--color-foreground);
+    color: var(--color-background);
   }
 }
 
-/* Small circular icon button used on project cards */
-@utility icon-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 9999px;
-  background-color: var(--color-primary);
-  color: var(--color-primary-foreground);
-  transition: transform 250ms ease, box-shadow 250ms ease, background-color 200ms ease;
-
-  & svg {
-    transition: transform 250ms ease;
-  }
-  &:hover {
-    transform: translateY(-2px);
-    background-color: oklch(0.32 0.22 282);
-    box-shadow: var(--shadow-primary);
-  }
-  &:hover svg {
-    transform: translateX(4px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
-}
-
-/* Soft tag chip used on project pages */
-@utility chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.4rem 0.85rem;
-  border-radius: 9999px;
-  background-color: var(--color-primary-soft);
-  color: var(--color-primary);
-  border: 1px solid oklch(0.36 0.21 282 / 0.18);
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-/* Outlined pill chip used on project cards (role / period) */
+/* Tag chip used on project cards */
 @utility chip-outline {
   display: inline-flex;
   align-items: center;
-  padding: 0.55rem 1.1rem;
+  padding: 0.35rem 0.9rem;
   border-radius: 9999px;
-  background-color: var(--color-surface);
+  background-color: transparent;
   color: var(--color-foreground);
-  border: 1px solid transparent;
-  font-size: 0.95rem;
-  font-weight: 500;
-  line-height: 1;
+  border: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
-/* Slow, irregular shimmer — a deep-purple highlight drifts across the heading.
-   Gradient is repeating, so the foreground colour always covers the text. */
-@keyframes shimmer-sweep {
-  0%   { background-position: 0% 0; }
-  20%  { background-position: 70% 0; }
-  45%  { background-position: 140% 0; }
-  62%  { background-position: 180% 0; }
-  80%  { background-position: 250% 0; }
-  100% { background-position: 300% 0; }
-}
-@utility shimmer-text {
-  background-image: linear-gradient(
-    100deg,
-    var(--color-foreground) 0%,
-    var(--color-foreground) 42%,
-    oklch(0.34 0.22 282) 50%,
-    var(--color-foreground) 58%,
-    var(--color-foreground) 100%
-  );
-  background-size: 300% 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer-sweep 26s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
-}
-
-/* Horizontal marquee for the clients row */
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.marquee {
-  overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 38s linear infinite;
-}
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
-}
-
-/* Reveal-on-scroll: subtle fade + rise the first time an element appears */
+/* Reveal-on-scroll */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-              transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(14px);
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+              transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 .reveal-in {
@@ -313,7 +211,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .shimmer-text { animation: none; }
 }
 
 @utility link-underline {
@@ -326,7 +223,7 @@
     left: 0;
     bottom: -2px;
     width: 100%;
-    height: 1.5px;
+    height: 1px;
     background-color: currentColor;
     transform: scaleX(0);
     transform-origin: right;
@@ -338,31 +235,40 @@
   }
 }
 
-/* External link — purple as in the Figma prototype */
 @utility link-external {
   color: var(--color-primary);
   transition: color 200ms ease;
 
   &:hover {
-    color: oklch(0.32 0.22 282);
+    color: oklch(0.39 0.2 285);
   }
 }
 
+/* Nav link with active underline */
+@utility nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  transition: opacity 200ms ease;
 
-@utility card-hover {
-  transition: transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 350ms ease;
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-card);
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1.5px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease;
   }
-}
-
-@utility fade-in-soft {
-  animation: fadeInSoft 280ms ease-out both;
-}
-
-@keyframes fadeInSoft {
-  from { opacity: 0; transform: translateY(4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  &:hover::after,
+  &[data-active="true"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
