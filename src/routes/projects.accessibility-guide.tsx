@@ -9,9 +9,9 @@ import {
   CaseFooterNav,
 } from "@/components/case-study";
 
-import hero from "@/assets/accessibility-desk.jpg.asset.json";
+import hero from "@/assets/accessibility-laptop1.jpg.asset.json";
 import team from "@/assets/accessibility-team.jpg.asset.json";
-import laptop1 from "@/assets/accessibility-laptop1.jpg.asset.json";
+import deskShot from "@/assets/accessibility-desk.jpg.asset.json";
 import laptop2 from "@/assets/accessibility-laptop2-v2.png.asset.json";
 
 export const Route = createFileRoute("/projects/accessibility-guide")({
