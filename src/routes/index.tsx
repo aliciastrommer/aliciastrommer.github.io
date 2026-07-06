@@ -97,7 +97,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <main className="mx-auto max-w-6xl px-5 sm:px-8">
+      <main className="mx-auto max-w-7xl px-5 sm:px-10">
         {/* HERO — covers the viewport, only a hint of the lavender card peeks below */}
         <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center pt-8 pb-12 sm:pb-16">
           <div aria-hidden="true" className="text-3xl sm:text-4xl mb-6">👋</div>
