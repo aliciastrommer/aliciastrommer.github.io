@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCheck, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
   CaseSection,
   ChallengeList,
-  ChipRow,
   FullBleedImage,
   CaseFooterNav,
 } from "@/components/case-study";
