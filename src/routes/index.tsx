@@ -239,7 +239,7 @@ function Home() {
       <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">
         <SectionLabel label="ABOUT" number="[04]" />
         <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
-          <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[520px]">
+          <div className="overflow-hidden rounded-lg bg-surface h-full min-h-[320px] md:min-h-[520px]">
             <img
               src={portrait.url}
               alt="Portrait of Alicia Strömmer"
