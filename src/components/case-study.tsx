@@ -73,12 +73,32 @@ export function CaseHero({
 export function CaseSection({
   title,
   centered = true,
+  tone = "default",
   children,
 }: {
   title?: string;
   centered?: boolean;
+  tone?: "default" | "lavender";
   children: ReactNode;
 }) {
+  if (tone === "lavender") {
+    return (
+      <section className="bg-lavender-soft mt-16 sm:mt-24 py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
+          <Reveal>
+            {title && (
+              <h2 className={`type-h2 ${centered ? "text-center" : ""}`}>
+                {title}
+              </h2>
+            )}
+            <div className="mt-6 space-y-4 type-body text-foreground/85">
+              {children}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
       <Reveal>
@@ -96,18 +116,21 @@ export function CaseSection({
 }
 
 /**
- * Lavender challenge card(s), stacked. Icons are optional and hidden
- * in the new layout — the card content is just title + body.
+ * Challenge cards. Inside a lavender section they render as light
+ * plain cards; on white surfaces they keep the lavender fill.
  */
 export function ChallengeList({
   items,
+  variant = "lavender",
 }: {
   items: { title: string; body: string; icon?: ReactNode }[];
+  variant?: "lavender" | "plain";
 }) {
+  const cardClass = variant === "plain" ? "card-plain" : "card-lavender";
   return (
     <div className="space-y-4">
       {items.map((it) => (
-        <div key={it.title} className="card-lavender p-6 sm:p-7">
+        <div key={it.title} className={`${cardClass} p-6 sm:p-7`}>
           <div className="flex items-start gap-4">
             {it.icon && (
               <div className="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-primary/10 text-primary">
@@ -126,6 +149,7 @@ export function ChallengeList({
     </div>
   );
 }
+
 
 export function ChipRow({ items }: { items: string[] }) {
   return (
