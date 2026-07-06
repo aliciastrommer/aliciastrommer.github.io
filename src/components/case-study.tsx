@@ -197,14 +197,14 @@ export function CaseFooterNav({
   nextLabel?: string;
 }) {
   return (
-    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex items-center justify-between gap-3 text-[15px] font-medium">
-      <Link to="/" className="inline-flex items-center gap-2 hover:text-primary transition-colors">
-        <ArrowLeft className="h-4 w-4" />
+    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex items-center justify-between gap-4 type-h3">
+      <Link to="/" className="inline-flex items-center gap-3 hover:text-primary transition-colors">
+        <ArrowLeft className="h-6 w-6" />
         Back Home
       </Link>
-      <Link to={next} className="inline-flex items-center gap-2 hover:text-primary transition-colors">
+      <Link to={next} className="inline-flex items-center gap-3 hover:text-primary transition-colors">
         {nextLabel}
-        <ArrowRight className="h-4 w-4" />
+        <ArrowRight className="h-6 w-6" />
       </Link>
     </div>
   );
