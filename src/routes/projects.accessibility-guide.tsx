@@ -75,8 +75,8 @@ function AccessibilityPage() {
         }
       />
 
-      <CaseSection title="Design Challenge">
-        <ChallengeList
+      <CaseSection title="Design Challenge" tone="lavender">
+        <ChallengeList variant="plain"
           items={[
             {
               icon: <Accessibility className="h-5 w-5" />,

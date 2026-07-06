@@ -11,9 +11,10 @@ import {
 } from "@/components/case-study";
 import { ProcessSteps } from "@/components/process-steps";
 
-import hero from "@/assets/smart-dash-cab.jpg.asset.json";
+import hero from "@/assets/smart-dash-cockpit.jpg.asset.json";
 import display from "@/assets/smart-dash-display.jpg.asset.json";
 import displays from "@/assets/smart-dash-displays.jpg.asset.json";
+
 
 export const Route = createFileRoute("/projects/smart-dash")({
   head: () => ({
@@ -91,8 +92,9 @@ function SmartDashPage() {
         </div>
       </CaseSection>
 
-      <CaseSection title="Design Challenge">
+      <CaseSection title="Design Challenge" tone="lavender">
         <ChallengeList
+          variant="plain"
           items={[
             {
               icon: <ShieldAlert className="h-5 w-5" />,
@@ -112,6 +114,7 @@ function SmartDashPage() {
           ]}
         />
       </CaseSection>
+
 
       <CaseSection title="My Role">
         <p>
