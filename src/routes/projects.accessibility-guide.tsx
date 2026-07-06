@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Accessibility } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
