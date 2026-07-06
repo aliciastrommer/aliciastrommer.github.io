@@ -39,7 +39,7 @@ const projects = [
       "I design HMI experiences that reduce cognitive effort and simplify complex workflows for professional truck and bus drivers in demanding environments. In parallel, I drive the strategic direction of a key domain, ensuring design decisions support both user needs and product goals.",
     tags: ["Interaction Design", "UX/UI Design", "Product Thinking", "System Thinking", "Design System"],
     image: smartDashImg.url,
-    alt: "Scania truck cab with two digital driver displays",
+    alt: "Scania truck cab with the steering wheel and Center Information Display",
   },
   {
     to: "/projects/accessibility-guide" as const,
@@ -84,7 +84,7 @@ const howIWork = [
 
 function SectionLabel({ label, number }: { label: string; number: string }) {
   return (
-    <div className="flex items-center justify-between text-[0.7rem] tracking-[0.15em] text-foreground/60 font-medium">
+    <div className="flex items-center justify-between type-caption text-foreground/60">
       <span>{label}</span>
       <span>{number}</span>
     </div>
@@ -96,26 +96,24 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-5 sm:px-8">
-        {/* HERO */}
-        <section className="pt-8 sm:pt-14 pb-12 sm:pb-16">
+        {/* HERO — covers the viewport, only a hint of the lavender card peeks below */}
+        <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center pt-8 pb-12 sm:pb-16">
           <div aria-hidden="true" className="text-3xl sm:text-4xl mb-6">👋</div>
-          <h1 className="text-[clamp(2.4rem,6vw,4rem)] font-semibold tracking-tight leading-[1.05]">
-            Hi, I'm Alicia Strömmer
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-[1.4] text-foreground">
+          <h1 className="type-h1">Hi, I'm Alicia Strömmer</h1>
+          <p className="mt-6 max-w-2xl type-h3-reg text-foreground">
             I design thoughtful products for complex systems by combining
             systems thinking, hands-on craft, strategic perspective, and an
             understanding of human perception, reasoning and behavior.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-foreground/80">
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-foreground/80">
             <span className="inline-flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-primary" />
+              <span className="pulse-dot" aria-hidden="true" />
               <span className="font-medium text-foreground">Currently</span>
             </span>
             <span>Designing for Scania</span>
             <span>Based in Stockholm</span>
           </div>
-          <div className="mt-6 text-sm text-foreground/80 space-y-0.5">
+          <div className="mt-6 type-small text-foreground/80 space-y-0.5">
             <div>
               <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
             </div>
@@ -127,44 +125,43 @@ function Home() {
 
         {/* [01] LAVENDER INFO CARD */}
         <Reveal as="section" className="pb-20 sm:pb-28">
-          <SectionLabel label="" number="[01]" />
-          <div className="mt-3 rounded-2xl bg-lavender p-6 sm:p-10">
+          <div className="rounded-2xl bg-lavender p-6 sm:p-10">
             <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
-              <div className="text-xs tracking-[0.14em] text-foreground/60 font-medium sm:col-span-2 md:col-span-1">
+              <div className="type-caption text-foreground/60 sm:col-span-2 md:col-span-1">
                 [01]
               </div>
 
               <div className="space-y-5">
                 <div>
-                  <div className="text-sm text-foreground/70">Years of experience</div>
-                  <div className="mt-1 font-medium">4+</div>
+                  <div className="type-small text-foreground/70">Years of experience</div>
+                  <div className="mt-1 type-h3">4+</div>
                 </div>
                 <div>
-                  <div className="text-sm text-foreground/70">Current role</div>
-                  <div className="mt-1 font-medium">UX/UI Designer</div>
-                  <div className="font-medium">Area Lead</div>
+                  <div className="type-small text-foreground/70">Current role</div>
+                  <div className="mt-1 type-h3">UX/UI Designer</div>
+                  <div className="type-h3">Area Lead</div>
                 </div>
                 <div>
-                  <div className="text-sm text-foreground/70">Focus</div>
-                  <div className="mt-1 font-medium">Product &amp; System Thinking</div>
-                  <div className="font-medium">Accessibility-Driven Design</div>
-                  <div className="font-medium">Usability in Complex Products</div>
+                  <div className="type-small text-foreground/70">Focus</div>
+                  <div className="mt-1 type-h3">Product &amp; System Thinking</div>
+                  <div className="type-h3">Accessibility-Driven Design</div>
+                  <div className="type-h3">Usability in Complex Products</div>
                 </div>
               </div>
 
               <div className="space-y-5">
                 <div>
-                  <div className="text-sm text-foreground/70">Experience from</div>
-                  <div className="mt-1 font-medium">Traton Group</div>
-                  <div className="font-medium">Scania</div>
-                  <div className="font-medium">Daresay by Knightec</div>
-                  <div className="font-medium">ABB</div>
-                  <div className="font-medium">Umeå Energi</div>
+                  <div className="type-small text-foreground/70">Experience from</div>
+                  <div className="mt-1 type-h3">Traton Group</div>
+                  <div className="type-h3">Scania</div>
+                  <div className="type-h3">Daresay by Knightec</div>
+                  <div className="type-h3">ABB</div>
+                  <div className="type-h3">Umeå Energi</div>
                 </div>
                 <div>
-                  <div className="text-sm text-foreground/70">Education in</div>
-                  <div className="mt-1 font-medium">Cognitive Science</div>
-                  <div className="font-medium">Interaction Design</div>
+                  <div className="type-small text-foreground/70">Education in</div>
+                  <div className="mt-1 type-h3">Cognitive Science</div>
+                  <div className="type-h3">Interaction Design</div>
                 </div>
               </div>
             </div>
@@ -180,11 +177,9 @@ function Home() {
                 <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
                   <article className="grid gap-6 sm:gap-10 sm:grid-cols-2 items-start">
                     <div>
-                      <h3 className="text-[clamp(1.35rem,2.4vw,1.75rem)] font-semibold tracking-tight leading-[1.15]">
-                        {p.title}
-                      </h3>
-                      <div className="mt-3 text-sm text-foreground/60">{p.period}</div>
-                      <p className="mt-4 text-[15px] leading-[1.55] text-foreground/85 max-w-md">
+                      <h3 className="type-h2">{p.title}</h3>
+                      <div className="mt-3 type-small text-foreground/60">{p.period}</div>
+                      <p className="mt-4 type-body text-foreground/85 max-w-md">
                         {p.body}
                       </p>
                       <div className="mt-6 flex flex-wrap gap-2">
@@ -216,8 +211,8 @@ function Home() {
             <div className="space-y-8">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <h3 className="font-semibold text-foreground">{h.title}</h3>
-                  <p className="mt-2 text-[15px] leading-[1.55] text-foreground/85 max-w-lg">
+                  <h3 className="type-h3 text-foreground">{h.title}</h3>
+                  <p className="mt-2 type-body text-foreground/85 max-w-lg">
                     {h.body}
                   </p>
                 </Reveal>
@@ -225,6 +220,7 @@ function Home() {
             </div>
           </div>
         </section>
+
 
         {/* [04] ABOUT */}
         <section id="about" className="pb-20 sm:pb-28 scroll-mt-24">
@@ -238,12 +234,12 @@ function Home() {
               />
             </div>
             <div>
-              <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold tracking-tight leading-[1.15]">
+              <h2 className="type-h2">
                 Shaped by the north, living down south
                 <br />
                 Understanding people, designing experiences
               </h2>
-              <div className="mt-6 space-y-4 text-[15px] leading-[1.6] text-foreground/85 max-w-2xl">
+              <div className="mt-6 space-y-4 type-body text-foreground/85 max-w-2xl">
                 <p>
                   I grew up in Umeå and moved south roughly six years ago. I now
                   live in Stockholm together with my fiancé.

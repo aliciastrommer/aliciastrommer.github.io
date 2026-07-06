@@ -38,30 +38,28 @@ export function CaseHero({
       </div>
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8 mt-12 sm:mt-16">
-        <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-start">
-          <div>
-            <h1 className="text-[clamp(2.2rem,5.5vw,3.5rem)] font-semibold tracking-tight leading-[1.05]">
-              {title}
-            </h1>
+        <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-stretch">
+          <div className="flex flex-col h-full">
+            <h1 className="type-h1">{title}</h1>
             {tagline && (
-              <p className="mt-5 text-[15px] leading-[1.55] text-foreground/80 max-w-md">
+              <p className="mt-5 type-body text-foreground/80 max-w-md">
                 {tagline}
               </p>
             )}
-            <dl className="mt-10 space-y-4 text-[15px]">
+            <dl className="mt-auto pt-10 space-y-4 type-body">
               {meta.map((m) => (
                 <div key={m.label}>
-                  <dt className="text-foreground/60">{m.label}</dt>
-                  <dd className="mt-0.5 font-medium">{m.value}</dd>
+                  <dt className="type-small text-foreground/60">{m.label}</dt>
+                  <dd className="mt-0.5 type-h3">{m.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
 
           {about && (
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight">About</h2>
-              <div className="mt-5 space-y-4 text-[15px] leading-[1.6] text-foreground/85">
+            <div className="flex flex-col h-full">
+              <h2 className="type-h2">About</h2>
+              <div className="mt-5 flex-1 flex flex-col gap-4 type-body text-foreground/85 [&>p:last-child]:mt-auto [&>p:last-child]:pt-2">
                 {about}
               </div>
             </div>
@@ -85,15 +83,11 @@ export function CaseSection({
     <section className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
       <Reveal>
         {title && (
-          <h2
-            className={`text-2xl sm:text-[1.7rem] font-semibold tracking-tight ${
-              centered ? "text-center" : ""
-            }`}
-          >
+          <h2 className={`type-h2 ${centered ? "text-center" : ""}`}>
             {title}
           </h2>
         )}
-        <div className="mt-6 space-y-4 text-[15px] leading-[1.65] text-foreground/85">
+        <div className="mt-6 space-y-4 type-body text-foreground/85">
           {children}
         </div>
       </Reveal>
@@ -114,8 +108,8 @@ export function ChallengeList({
     <div className="space-y-4">
       {items.map((it) => (
         <div key={it.title} className="rounded-2xl bg-lavender p-6 sm:p-7">
-          <h3 className="font-semibold text-foreground">{it.title}</h3>
-          <p className="mt-2 text-[15px] leading-[1.6] text-foreground/85">
+          <h3 className="type-h3 text-foreground">{it.title}</h3>
+          <p className="mt-2 type-body text-foreground/85">
             {it.body}
           </p>
         </div>

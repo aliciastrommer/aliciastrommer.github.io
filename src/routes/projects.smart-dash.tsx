@@ -38,7 +38,7 @@ function SmartDashPage() {
     <CaseLayout>
       <CaseHero
         heroImage={hero.url}
-        heroAlt="Scania truck cab with two glowing digital driver displays"
+        heroAlt="Scania truck cab with the steering wheel and Center Information Display"
         meta={[
           { label: "Launched in", value: "2024" },
           { label: "Daily users", value: "100 000+" },
@@ -82,8 +82,8 @@ function SmartDashPage() {
       />
 
       <CaseSection>
-        <div className="flex items-start gap-3 rounded-2xl bg-lavender px-5 py-4 text-foreground/90 text-sm">
-          <Info className="h-5 w-5 mt-0.5 shrink-0 text-primary" />
+        <div className="flex items-start gap-3 rounded-2xl border border-destructive/40 bg-destructive/10 px-5 py-4 text-destructive type-body">
+          <Info className="h-5 w-5 mt-0.5 shrink-0" />
           <p className="!m-0">
             Due to confidentiality, this case study focuses on my professional
             development and overall contribution instead of specific examples.
