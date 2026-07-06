@@ -78,9 +78,27 @@ export function CaseSection({
 }: {
   title?: string;
   centered?: boolean;
-  tone?: "default" | "lavender";
+  tone?: "default" | "lavender" | "dark";
   children: ReactNode;
 }) {
+  if (tone === "dark") {
+    return (
+      <section className="bg-hero-gradient mt-16 sm:mt-24 min-h-screen flex items-center py-20 sm:py-28">
+        <div className="mx-auto max-w-3xl w-full px-5 sm:px-8">
+          <Reveal>
+            {title && (
+              <h2 className={`type-h2 text-white ${centered ? "text-center" : ""}`}>
+                {title}
+              </h2>
+            )}
+            <div className="mt-8 space-y-4 type-body text-hero-muted">
+              {children}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
   if (tone === "lavender") {
     return (
       <section className="bg-lavender-soft mt-16 sm:mt-24 py-16 sm:py-24">
@@ -124,25 +142,33 @@ export function ChallengeList({
   variant = "lavender",
 }: {
   items: { title: string; body: string; icon?: ReactNode }[];
-  variant?: "lavender" | "plain";
+  variant?: "lavender" | "plain" | "dark";
 }) {
   const isPlain = variant === "plain";
-  const itemClass = isPlain
-    ? "py-2"
-    : "card-lavender p-6 sm:p-7";
+  const isDark = variant === "dark";
+  const itemClass = isPlain || isDark ? "py-2" : "card-lavender p-6 sm:p-7";
+  const dividerClass = isDark
+    ? "divide-y divide-white/10"
+    : isPlain
+    ? "divide-y divide-foreground/10"
+    : "space-y-4";
   return (
-    <div className={isPlain ? "divide-y divide-foreground/10" : "space-y-4"}>
+    <div className={dividerClass}>
       {items.map((it) => (
         <div key={it.title} className={itemClass}>
           <div className="flex items-start gap-4 py-4">
             {it.icon && (
-              <div className="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-primary/10 text-primary">
+              <div
+                className={`shrink-0 grid place-items-center h-10 w-10 rounded-xl ${
+                  isDark ? "bg-white/10 text-white" : "bg-primary/10 text-primary"
+                }`}
+              >
                 {it.icon}
               </div>
             )}
             <div className="min-w-0">
-              <h3 className="type-h3 text-foreground">{it.title}</h3>
-              <p className="mt-2 type-body text-foreground/85">
+              <h3 className={`type-h3 ${isDark ? "text-white" : "text-foreground"}`}>{it.title}</h3>
+              <p className={`mt-2 type-body ${isDark ? "text-hero-muted" : "text-foreground/85"}`}>
                 {it.body}
               </p>
             </div>

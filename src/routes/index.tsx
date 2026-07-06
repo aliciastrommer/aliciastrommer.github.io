@@ -178,11 +178,11 @@ function Home() {
         <div className="mt-8 space-y-6 sm:space-y-8">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
-              <ScrollFade min={0.35}>
+              <ScrollFade min={0.75}>
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-colors duration-200 hover:border-primary"
+                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-colors duration-200 hover:border-primary/25"
                 >
                   <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
                     <div className="order-2 sm:order-none sm:col-span-1 flex flex-col">
@@ -215,25 +215,27 @@ function Home() {
         </div>
       </section>
 
-      {/* [03] HOW I WORK */}
-      <section className="container-wide py-20 sm:py-28">
-        <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
-          <div className="flex flex-col justify-between sm:min-h-[220px]">
-            <span className="type-caption">HOW I WORK</span>
-            <span className="type-caption hidden sm:inline">[03]</span>
+      {/* [03] HOW I WORK — dark section mirroring the hero */}
+      <div className="bg-hero-gradient" data-header-theme="dark">
+        <section className="container-wide py-24 sm:py-32">
+          <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
+            <div className="flex flex-col justify-between sm:min-h-[220px]">
+              <span className="type-caption text-white/70">HOW I WORK</span>
+              <span className="type-caption hidden sm:inline text-white/70">[03]</span>
+            </div>
+            <div className="space-y-8">
+              {howIWork.map((h) => (
+                <Reveal key={h.title}>
+                  <h3 className="type-h3 text-white">{h.title}</h3>
+                  <p className="mt-2 type-body text-hero-muted max-w-lg">
+                    {h.body}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
           </div>
-          <div className="space-y-8">
-            {howIWork.map((h) => (
-              <Reveal key={h.title}>
-                <h3 className="type-h3">{h.title}</h3>
-                <p className="mt-2 type-body text-[color:var(--muted-ink)] max-w-lg">
-                  {h.body}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* [04] ABOUT */}
       <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">

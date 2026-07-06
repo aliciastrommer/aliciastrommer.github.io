@@ -65,15 +65,15 @@ export function SiteHeader() {
           >
             HOME
           </Link>
-          <a href="/#work" className="nav-link">WORK</a>
-          <a href="/#about" className="nav-link">ABOUT</a>
+          <a href="/#work" className="nav-link opacity-60 hover:opacity-100">WORK</a>
+          <a href="/#about" className="nav-link opacity-60 hover:opacity-100">ABOUT</a>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity">
           <a
             href="mailto:alicia@strommer.se"
             aria-label="Email Alicia"
-            className="inline-flex items-center justify-center hover:opacity-70 transition-opacity"
+            className="inline-flex items-center justify-center"
           >
             <MailFilled className="h-[22px] w-[22px]" />
           </a>
@@ -82,7 +82,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Alicia on LinkedIn"
-            className="inline-flex items-center justify-center hover:opacity-70 transition-opacity"
+            className="inline-flex items-center justify-center"
           >
             <LinkedInFilled className="h-5 w-5" />
           </a>

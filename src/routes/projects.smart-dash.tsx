@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Info, ArrowUpRight, ShieldAlert, Layers, Boxes } from "lucide-react";
+import { ArrowUpRight, ShieldAlert, Layers, Boxes } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
@@ -73,6 +73,10 @@ function SmartDashPage() {
                 Read more about Smart Dash
               </a>
             </p>
+            <p className="type-small text-foreground/55 italic pt-2">
+              Due to confidentiality, this case study focuses on my professional
+              development and overall contribution instead of specific examples.
+            </p>
           </>
         }
       />
@@ -82,19 +86,9 @@ function SmartDashPage() {
         alt="Scania truck cab dashboard with the Driver Display behind the steering wheel and the Center Information Display to the right"
       />
 
-      <CaseSection>
-        <div className="flex items-start gap-3 rounded-2xl border border-disclaimer bg-disclaimer-soft px-5 py-4 text-disclaimer type-body">
-          <Info className="h-5 w-5 mt-0.5 shrink-0" />
-          <p className="!m-0">
-            Due to confidentiality, this case study focuses on my professional
-            development and overall contribution instead of specific examples.
-          </p>
-        </div>
-      </CaseSection>
-
-      <CaseSection title="Design Challenge" tone="lavender">
+      <CaseSection title="Design Challenge" tone="dark">
         <ChallengeList
-          variant="plain"
+          variant="dark"
           items={[
             {
               icon: <ShieldAlert className="h-5 w-5" />,

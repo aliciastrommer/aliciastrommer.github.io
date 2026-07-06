@@ -80,8 +80,8 @@ function SmartPotPage() {
         }
       />
 
-      <CaseSection title="Design Challenge" tone="lavender">
-        <ChallengeList variant="plain"
+      <CaseSection title="Design Challenge" tone="dark">
+        <ChallengeList variant="dark"
           items={[
             {
               icon: <Leaf className="h-5 w-5" />,

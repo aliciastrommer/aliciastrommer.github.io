@@ -9,7 +9,7 @@ export function ScrollFade({
   children,
   className = "",
   as: Tag = "div",
-  min = 0.2,
+  min = 0.75,
 }: {
   children: ReactNode;
   className?: string;
