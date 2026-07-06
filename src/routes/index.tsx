@@ -106,8 +106,8 @@ function Home() {
             <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
             <p className="mt-8 type-lead text-white">
               I design thoughtful products for complex systems by combining
-              systems thinking, hands-on craft, strategic perspective, and an
-              understanding of human perception, reasoning and behavior.
+              system thinking, hands-on craft, and an understanding of human
+              perception, reasoning and behavior
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-hero-muted">
               <span className="inline-flex items-center gap-2 text-white">
