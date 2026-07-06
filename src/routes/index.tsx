@@ -175,17 +175,25 @@ function Home() {
       {/* [02] FEATURED WORK */}
       <section id="work" className="container-wide py-20 sm:py-28 scroll-mt-24">
         <SectionLabel label="FEATURED WORK" number="[02]" />
-        <div className="mt-10 space-y-12 sm:space-y-14">
+        <div className="mt-8 space-y-6 sm:space-y-8">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
               <ScrollFade min={0.35}>
-                <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
-                  <article className="grid gap-6 sm:gap-10 sm:grid-cols-3 items-start">
-                    <div className="sm:col-span-1">
-                      <h3 className="type-h2">{p.title}</h3>
-                      <div className="mt-3 type-small text-foreground/60">{p.period}</div>
-                      <p className="mt-4 type-small text-foreground/85">{p.body}</p>
-                      <div className="mt-6 flex flex-wrap gap-2">
+                <Link
+                  to={p.to}
+                  aria-label={`Open ${p.title} case study`}
+                  className="group block rounded-2xl -m-3 p-3 transition-colors duration-200 hover:bg-surface/70"
+                >
+                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
+                    <div className="sm:col-span-1 flex flex-col">
+                      <div>
+                        <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                          {p.title}
+                        </h3>
+                        <div className="mt-2 type-small text-foreground/60">{p.period}</div>
+                        <p className="mt-3 type-small text-foreground/85">{p.body}</p>
+                      </div>
+                      <div className="mt-auto pt-6 flex flex-wrap gap-2">
                         {p.tags.map((t) => (
                           <span key={t} className="chip-outline">{t}</span>
                         ))}
