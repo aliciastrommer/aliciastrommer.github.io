@@ -291,7 +291,7 @@ function Home() {
             </div>
           </div>
 
-          </div>
+
 
           <div className="mt-14 flex justify-center">
             <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
