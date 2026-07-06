@@ -278,7 +278,8 @@
   padding-bottom: 2px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-foreground);
+  color: currentColor;
+
   transition: opacity 200ms ease;
 
   &::after {
