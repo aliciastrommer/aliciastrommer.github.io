@@ -51,7 +51,7 @@ const projects = [
       "Design of an accessibility guide for designers and developers, that lowered the barrier to designing accessible products.",
     tags: ["UX/UI Design", "User Research", "UX Writing", "Accessibility"],
     image: accessibilityImg.url,
-    alt: "Monitor showing the Accessibility Guide welcome page",
+    alt: "Laptop showing the Daresay Accessibility Guide on a wooden desk",
   },
   {
     to: "/projects/smart-pot" as const,
