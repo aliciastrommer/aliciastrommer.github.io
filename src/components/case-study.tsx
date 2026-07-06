@@ -126,12 +126,15 @@ export function ChallengeList({
   items: { title: string; body: string; icon?: ReactNode }[];
   variant?: "lavender" | "plain";
 }) {
-  const cardClass = variant === "plain" ? "card-plain" : "card-lavender";
+  const isPlain = variant === "plain";
+  const itemClass = isPlain
+    ? "py-2"
+    : "card-lavender p-6 sm:p-7";
   return (
-    <div className="space-y-4">
+    <div className={isPlain ? "divide-y divide-foreground/10" : "space-y-4"}>
       {items.map((it) => (
-        <div key={it.title} className={`${cardClass} p-6 sm:p-7`}>
-          <div className="flex items-start gap-4">
+        <div key={it.title} className={itemClass}>
+          <div className="flex items-start gap-4 py-4">
             {it.icon && (
               <div className="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-primary/10 text-primary">
                 {it.icon}
@@ -149,6 +152,7 @@ export function ChallengeList({
     </div>
   );
 }
+
 
 
 export function ChipRow({ items }: { items: string[] }) {
