@@ -83,15 +83,11 @@ export function CaseSection({
     <section className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
       <Reveal>
         {title && (
-          <h2
-            className={`text-2xl sm:text-[1.7rem] font-semibold tracking-tight ${
-              centered ? "text-center" : ""
-            }`}
-          >
+          <h2 className={`type-h2 ${centered ? "text-center" : ""}`}>
             {title}
           </h2>
         )}
-        <div className="mt-6 space-y-4 text-[15px] leading-[1.65] text-foreground/85">
+        <div className="mt-6 space-y-4 type-body text-foreground/85">
           {children}
         </div>
       </Reveal>
@@ -112,8 +108,8 @@ export function ChallengeList({
     <div className="space-y-4">
       {items.map((it) => (
         <div key={it.title} className="rounded-2xl bg-lavender p-6 sm:p-7">
-          <h3 className="font-semibold text-foreground">{it.title}</h3>
-          <p className="mt-2 text-[15px] leading-[1.6] text-foreground/85">
+          <h3 className="type-h3 text-foreground">{it.title}</h3>
+          <p className="mt-2 type-body text-foreground/85">
             {it.body}
           </p>
         </div>
