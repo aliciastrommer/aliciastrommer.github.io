@@ -215,25 +215,27 @@ function Home() {
         </div>
       </section>
 
-      {/* [03] HOW I WORK */}
-      <section className="container-wide py-20 sm:py-28">
-        <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
-          <div className="flex flex-col justify-between sm:min-h-[220px]">
-            <span className="type-caption">HOW I WORK</span>
-            <span className="type-caption hidden sm:inline">[03]</span>
+      {/* [03] HOW I WORK — dark section mirroring the hero */}
+      <div className="bg-hero-gradient" data-header-theme="dark">
+        <section className="container-wide py-24 sm:py-32">
+          <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
+            <div className="flex flex-col justify-between sm:min-h-[220px]">
+              <span className="type-caption text-white/70">HOW I WORK</span>
+              <span className="type-caption hidden sm:inline text-white/70">[03]</span>
+            </div>
+            <div className="space-y-8">
+              {howIWork.map((h) => (
+                <Reveal key={h.title}>
+                  <h3 className="type-h3 text-white">{h.title}</h3>
+                  <p className="mt-2 type-body text-hero-muted max-w-lg">
+                    {h.body}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
           </div>
-          <div className="space-y-8">
-            {howIWork.map((h) => (
-              <Reveal key={h.title}>
-                <h3 className="type-h3">{h.title}</h3>
-                <p className="mt-2 type-body text-[color:var(--muted-ink)] max-w-lg">
-                  {h.body}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* [04] ABOUT */}
       <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">
