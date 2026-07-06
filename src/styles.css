@@ -279,50 +279,61 @@
 @utility type-h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.75rem, 6.5vw, 4.75rem);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.9rem, 2.6vw, 2.35rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
 }
 @utility type-h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.15rem, 1.55vw, 1.35rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 @utility type-h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.0625rem;
+  font-size: 0.9rem;
   line-height: 1.4;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.003em;
 }
 @utility type-h3-reg {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 1.0625rem;
+  font-size: 0.9rem;
   line-height: 1.55;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.003em;
 }
 @utility type-caption {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   line-height: 1.2;
 }
 @utility type-body {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1.6;
 }
 @utility type-small {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   line-height: 1.5;
+}
+
+/* WCAG-compliant disclaimer color (contrast > 4.5:1 on white and on light red) */
+@utility text-disclaimer {
+  color: oklch(0.4 0.16 27);
+}
+@utility bg-disclaimer-soft {
+  background-color: oklch(0.96 0.03 27);
+}
+@utility border-disclaimer {
+  border-color: oklch(0.75 0.14 27);
 }
 
 /* ---------- Currently pulse dot ---------- */
