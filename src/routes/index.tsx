@@ -245,21 +245,21 @@ function Home() {
         {/* [04] ABOUT */}
         <section id="about" className="pb-20 sm:pb-28 scroll-mt-24">
           <SectionLabel label="ABOUT" number="[04]" />
-          <div className="mt-8 grid gap-8 sm:gap-12 sm:grid-cols-[260px_1fr] md:grid-cols-[300px_1fr] items-start">
-            <div className="overflow-hidden rounded-2xl bg-surface aspect-[3/4] w-full max-w-[300px]">
+          <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
+            <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[520px]">
               <img
                 src={portrait.url}
                 alt="Portrait of Alicia Strömmer"
                 className="h-full w-full object-cover object-top"
               />
             </div>
-            <div>
+            <div className="flex flex-col">
               <h2 className="type-h2">
                 Shaped by the north, living down south
                 <br />
                 Understanding people, designing experiences
               </h2>
-              <div className="mt-6 space-y-4 type-body text-foreground/85 max-w-2xl">
+              <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
                 <p>
                   I grew up in Umeå and moved south roughly six years ago. I now
                   live in Stockholm together with my fiancé.
@@ -289,6 +289,8 @@ function Home() {
                 </p>
               </div>
             </div>
+          </div>
+
           </div>
 
           <div className="mt-14 flex justify-center">
