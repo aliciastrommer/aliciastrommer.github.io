@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Eye, Shuffle, ScrollText, Info, ArrowUpRight } from "lucide-react";
+import { Info, ArrowUpRight } from "lucide-react";
 import {
   CaseLayout,
   CaseHero,
