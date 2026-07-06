@@ -47,45 +47,43 @@ function SmartPotPage() {
           { label: "Company", value: "Chalmers University of Technology" },
           { label: "Role", value: "Interaction Designer" },
           { label: "Time frame", value: "Feb 2021 – March 2021" },
-          { label: "Team", value: "5 Interaction Design Students" },
         ]}
         title="Smart Pot"
         tagline="An interactive plant pot that visualizes plant health through form, light and touch"
+        about={
+          <>
+            <p>
+              This was a two month long project included in the course "Tangible
+              Interaction" during my master's programme, carried out in a
+              project team.
+            </p>
+            <p>
+              The purpose of the project was to explore interactions beyond
+              digital interfaces through tangible interaction. Throughout the
+              process, we used a range of methods, including focus groups,
+              photo journals, interviews and surveys. To develop the concept,
+              we used tools such as pen and paper, Miro and ultimately Arduino
+              to create a functional prototype.
+            </p>
+            <p>
+              <a
+                href="https://www.youtube.com/watch?v=Q1_rXJEkQSQ&t=1s"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link-underline link-external inline-flex items-center gap-1"
+              >
+                <ArrowUpRight className="h-4 w-4" />
+                View promotion video
+              </a>
+            </p>
+          </>
+        }
       />
-
-      <CaseSection title="About">
-        <p>
-          This was a two month long project included in the course "Tangible
-          Interaction" during my master's programme, carried out in a project
-          team.
-        </p>
-        <p>
-          The purpose of the project was to explore interactions beyond digital
-          interfaces through tangible interaction. Throughout the process, we
-          used a range of methods, including focus groups, photo journals,
-          interviews and surveys. To develop the concept, we used tools such as
-          pen and paper, Miro and ultimately Arduino to create a functional
-          prototype.
-        </p>
-        <p>
-          <a
-            href="https://www.youtube.com/watch?v=Q1_rXJEkQSQ&t=1s"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="link-underline link-external inline-flex items-center gap-1"
-          >
-            View promotion video
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </p>
-      </CaseSection>
-
 
       <CaseSection title="Design Challenge">
         <ChallengeList
           items={[
             {
-              icon: <Sprout className="h-6 w-6" />,
               title: "Encouraging sustainable habits through interactive plant care design",
               body: "The project explored how design can be used to encourage more sustainable behaviours. This was refined into a concept centered on supporting users in growing herbs and plants at home.",
             },
