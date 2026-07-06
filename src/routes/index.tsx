@@ -178,11 +178,11 @@ function Home() {
         <div className="mt-8 space-y-6 sm:space-y-8">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
-              <ScrollFade min={0.35}>
+              <ScrollFade min={0.75}>
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-colors duration-200 hover:border-primary"
+                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-colors duration-200 hover:border-primary/25"
                 >
                   <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
                     <div className="order-2 sm:order-none sm:col-span-1 flex flex-col">
