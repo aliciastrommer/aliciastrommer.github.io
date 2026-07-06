@@ -59,7 +59,7 @@ export function CaseHero({
           {about && (
             <div className="flex flex-col h-full">
               <h2 className="type-h2">About</h2>
-              <div className="mt-5 space-y-4 type-body text-foreground/85 [&_a.link-external]:mt-auto [&>p:last-child]:mt-auto [&>p:last-child]:pt-4">
+              <div className="mt-5 flex-1 flex flex-col gap-4 type-body text-foreground/85 [&>p:last-child]:mt-auto [&>p:last-child]:pt-2">
                 {about}
               </div>
             </div>
