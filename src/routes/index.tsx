@@ -86,12 +86,13 @@ const howIWork = [
 
 function SectionLabel({ label, number }: { label: string; number: string }) {
   return (
-    <div className="flex items-center justify-between type-caption text-foreground/60">
+    <div className="flex items-center justify-between type-caption">
       <span>{label}</span>
       <span>{number}</span>
     </div>
   );
 }
+
 
 function Home() {
   return (
