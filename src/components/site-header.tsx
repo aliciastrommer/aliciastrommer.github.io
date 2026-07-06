@@ -21,7 +21,7 @@ export function SiteHeader() {
           <a
             href="mailto:alicia@strommer.se"
             aria-label="Email Alicia"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground hover:text-primary transition-colors"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-current hover:opacity-70 transition-colors"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true" className="h-5 w-5">
               <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -33,7 +33,7 @@ export function SiteHeader() {
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Alicia on LinkedIn"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground hover:text-primary transition-colors"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-current hover:opacity-70 transition-colors"
           >
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
               {/* Letter i — dot + stem as outlined shapes */}
