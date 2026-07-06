@@ -104,7 +104,7 @@ function AccessibilityPage() {
         </p>
       </CaseSection>
 
-      <FullBleedImage src={laptop1.url} alt="Laptop showing the Accessibility Guide on a wooden desk" />
+      <FullBleedImage src={deskShot.url} alt="Desk with monitor showing the Daresay Accessibility Guide welcome page" />
 
 
       <CaseSection title="Deliverables & Impact">
