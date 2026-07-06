@@ -234,12 +234,12 @@ function Home() {
               />
             </div>
             <div>
-              <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-semibold tracking-tight leading-[1.15]">
+              <h2 className="type-h2">
                 Shaped by the north, living down south
                 <br />
                 Understanding people, designing experiences
               </h2>
-              <div className="mt-6 space-y-4 text-[15px] leading-[1.6] text-foreground/85 max-w-2xl">
+              <div className="mt-6 space-y-4 type-body text-foreground/85 max-w-2xl">
                 <p>
                   I grew up in Umeå and moved south roughly six years ago. I now
                   live in Stockholm together with my fiancé.
