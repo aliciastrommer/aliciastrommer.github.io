@@ -43,46 +43,42 @@ function AccessibilityPage() {
         heroImage={hero.url}
         heroAlt="Desk with monitor showing the Daresay Accessibility Guide welcome page"
         meta={[
-          { label: "Company", value: "Daresay by Knightec" },
+          { label: "Company", value: "Daresay By Knightec" },
           { label: "Role", value: "UX/UI Designer" },
           { label: "Time frame", value: "2022 – 2023" },
-          { label: "Team", value: "Accessibility focus area" },
         ]}
         title="Accessibility Guide"
-        tagline="Created to help designers and developers interpret and comply with WCAG guidelines"
+        tagline="A guide created to help designers and developers interpret and comply with WCAG guidelines"
+        about={
+          <>
+            <p>
+              The accessibility guide was developed through an internal
+              initiative at Daresay by Knightec, driven by the "accessibility
+              competence area" that I was part of. Since the work was carried
+              out internally alongside client assignments, the roles and
+              responsibilities shifted throughout the process. The work
+              included user research, benchmarking, co-design workshops,
+              concept development, and user testing.
+            </p>
+            <p>
+              <a
+                href="https://a11y.daresay.io"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="link-underline link-external inline-flex items-center gap-1"
+              >
+                <ArrowUpRight className="h-4 w-4" />
+                Find the guide here
+              </a>
+            </p>
+          </>
+        }
       />
-
-      <CaseSection title="About">
-        <p>
-          The guide was developed as part of an internal initiative at Daresay
-          by Knightec, driven by the "accessibility competence area" that I was
-          part of. Since the work was carried out internally alongside client
-          assignments, the roles and responsibilities shifted throughout the
-          process. The work included user research, benchmarking, co-design
-          workshops, concept development, and user testing.
-        </p>
-        <p>
-          <a
-            href="https://a11y.daresay.io"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="link-underline link-external inline-flex items-center gap-1"
-          >
-            Find the guide here
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </p>
-
-        <div className="pt-2">
-          <ChipRow items={["Accessibility", "UX Design", "UI Design", "User Research", "Figma", "UX Writing"]} />
-        </div>
-      </CaseSection>
 
       <CaseSection title="Design Challenge">
         <ChallengeList
           items={[
             {
-              icon: <CheckCheck className="h-6 w-6" />,
               title: "Bridging the gap between guidelines and practical application",
               body: "As the demand for accessible websites grew, we recognized a need amongst clients, designers, and developers to get help interpreting WCAG guidelines and applying them in real-world projects. Accessibility shouldn't be difficult to get right, which is why we found this important.",
             },
