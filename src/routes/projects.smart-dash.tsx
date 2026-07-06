@@ -38,7 +38,7 @@ function SmartDashPage() {
     <CaseLayout>
       <CaseHero
         heroImage={hero.url}
-        heroAlt="Scania truck cab with two glowing digital driver displays"
+        heroAlt="Scania truck cab with the steering wheel and Center Information Display"
         meta={[
           { label: "Launched in", value: "2024" },
           { label: "Daily users", value: "100 000+" },
