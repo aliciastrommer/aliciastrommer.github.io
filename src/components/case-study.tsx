@@ -33,9 +33,10 @@ export function CaseHero({
         <img
           src={heroImage}
           alt={heroAlt}
-          className="w-full h-[60vh] max-h-[620px] min-h-[300px] object-cover"
+          className="w-full h-[85vh] max-h-[900px] min-h-[360px] object-cover"
         />
       </div>
+
 
       <div className="container-wide mt-12 sm:mt-16">
         <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-stretch">
@@ -83,7 +84,7 @@ export function CaseSection({
 }) {
   if (tone === "dark") {
     return (
-      <section className="bg-hero-gradient mt-16 sm:mt-24 min-h-screen flex items-center py-20 sm:py-28">
+      <section className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-28">
         <div className="mx-auto max-w-3xl w-full px-5 sm:px-8">
           <Reveal>
             {title && (
@@ -99,6 +100,7 @@ export function CaseSection({
       </section>
     );
   }
+
   if (tone === "lavender") {
     return (
       <section className="bg-lavender-soft mt-16 sm:mt-24 py-16 sm:py-24">
@@ -197,23 +199,26 @@ export function FullBleedImage({
   src,
   alt,
   fit = "cover",
+  flush = false,
 }: {
   src: string;
   alt: string;
   fit?: "cover" | "contain";
+  flush?: boolean;
 }) {
   return (
-    <div className="mt-16 sm:mt-24 w-full overflow-hidden bg-muted">
+    <div className={`${flush ? "" : "mt-16 sm:mt-24"} w-full overflow-hidden bg-muted`}>
       <img
         src={src}
         alt={alt}
-        className={`w-full h-[52vw] max-h-[620px] min-h-[300px] ${
+        className={`w-full h-[85vh] max-h-[900px] min-h-[360px] ${
           fit === "contain" ? "object-contain" : "object-cover"
         }`}
       />
     </div>
   );
 }
+
 
 export function CaseFooterNav({
   next,
