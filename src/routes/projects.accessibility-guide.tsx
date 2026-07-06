@@ -9,9 +9,9 @@ import {
   CaseFooterNav,
 } from "@/components/case-study";
 
-import hero from "@/assets/accessibility-desk.jpg.asset.json";
+import hero from "@/assets/accessibility-laptop1.jpg.asset.json";
 import team from "@/assets/accessibility-team.jpg.asset.json";
-import laptop1 from "@/assets/accessibility-laptop1.jpg.asset.json";
+import deskShot from "@/assets/accessibility-desk.jpg.asset.json";
 import laptop2 from "@/assets/accessibility-laptop2-v2.png.asset.json";
 
 export const Route = createFileRoute("/projects/accessibility-guide")({
@@ -41,7 +41,7 @@ function AccessibilityPage() {
     <CaseLayout>
       <CaseHero
         heroImage={hero.url}
-        heroAlt="Desk with monitor showing the Daresay Accessibility Guide welcome page"
+        heroAlt="Laptop showing the Daresay Accessibility Guide on a wooden desk"
         meta={[
           { label: "Company", value: "Daresay By Knightec" },
           { label: "Role", value: "UX/UI Designer" },
@@ -104,7 +104,7 @@ function AccessibilityPage() {
         </p>
       </CaseSection>
 
-      <FullBleedImage src={laptop1.url} alt="Laptop showing the Accessibility Guide on a wooden desk" />
+      <FullBleedImage src={deskShot.url} alt="Desk with monitor showing the Daresay Accessibility Guide welcome page" />
 
 
       <CaseSection title="Deliverables & Impact">

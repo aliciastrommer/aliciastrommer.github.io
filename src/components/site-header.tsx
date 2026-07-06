@@ -1,6 +1,28 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Mail, Linkedin } from "lucide-react";
+
+/**
+ * Filled mail glyph — silhouette envelope, no outlined rectangle.
+ */
+function MailFilled(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M3 5.75A2.75 2.75 0 0 1 5.75 3h12.5A2.75 2.75 0 0 1 21 5.75v.32l-9 5.4-9-5.4v-.32Z" />
+      <path d="M3 8.28V18.25A2.75 2.75 0 0 0 5.75 21h12.5A2.75 2.75 0 0 0 21 18.25V8.28l-8.61 5.17a.75.75 0 0 1-.78 0L3 8.28Z" />
+    </svg>
+  );
+}
+
+/**
+ * Filled LinkedIn brand mark (rounded square with "in").
+ */
+function LinkedInFilled(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M4.25 3h15.5A1.25 1.25 0 0 1 21 4.25v15.5A1.25 1.25 0 0 1 19.75 21H4.25A1.25 1.25 0 0 1 3 19.75V4.25A1.25 1.25 0 0 1 4.25 3ZM7.1 9.75H4.75v9.5H7.1v-9.5Zm.16-2.65a1.36 1.36 0 1 0-2.72 0 1.36 1.36 0 0 0 2.72 0Zm3.09 2.65H8.06v9.5H10.4v-4.87c0-1.29.24-2.53 1.83-2.53 1.57 0 1.59 1.47 1.59 2.61v4.79h2.34v-5.26c0-2.03-.44-3.6-2.82-3.6-1.14 0-1.9.63-2.22 1.22h-.03v-1.03h-.75Z" />
+    </svg>
+  );
+}
 
 /**
  * Sticky top navigation. Transparent when overlapping a dark themed
@@ -33,7 +55,7 @@ export function SiteHeader() {
           : "bg-background/90 border-b border-border/60 text-foreground backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-12 h-16 flex items-center justify-between">
+      <div className="container-wide h-16 flex items-center justify-between">
         <nav className="flex items-center gap-6 sm:gap-8">
           <Link
             to="/"
@@ -53,7 +75,7 @@ export function SiteHeader() {
             aria-label="Email Alicia"
             className="inline-flex items-center justify-center hover:opacity-70 transition-opacity"
           >
-            <Mail className="h-5 w-5" strokeWidth={1.75} />
+            <MailFilled className="h-[22px] w-[22px]" />
           </a>
           <a
             href="https://www.linkedin.com/in/alicia-str%C3%B6mmer-45691215a/"
@@ -62,10 +84,11 @@ export function SiteHeader() {
             aria-label="Alicia on LinkedIn"
             className="inline-flex items-center justify-center hover:opacity-70 transition-opacity"
           >
-            <Linkedin className="h-5 w-5" strokeWidth={1.75} />
+            <LinkedInFilled className="h-5 w-5" />
           </a>
         </div>
       </div>
     </header>
   );
 }
+

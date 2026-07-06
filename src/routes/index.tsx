@@ -7,7 +7,7 @@ import { ScrollFade } from "@/components/scroll-fade";
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cockpit.jpg.asset.json";
-import accessibilityImg from "@/assets/accessibility-desk.jpg.asset.json";
+import accessibilityImg from "@/assets/accessibility-laptop1.jpg.asset.json";
 import smartPotImg from "@/assets/smart-pot.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -51,7 +51,7 @@ const projects = [
       "Design of an accessibility guide for designers and developers, that lowered the barrier to designing accessible products.",
     tags: ["UX/UI Design", "User Research", "UX Writing", "Accessibility"],
     image: accessibilityImg.url,
-    alt: "Monitor showing the Accessibility Guide welcome page",
+    alt: "Laptop showing the Daresay Accessibility Guide on a wooden desk",
   },
   {
     to: "/projects/smart-pot" as const,
@@ -88,7 +88,7 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
   return (
     <div className="flex items-center justify-between type-caption">
       <span>{label}</span>
-      <span>{number}</span>
+      <span className="hidden sm:inline">{number}</span>
     </div>
   );
 }
@@ -132,7 +132,7 @@ function Home() {
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <Reveal as="section" className="container-wide py-20 sm:py-28">
         <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
-          <div className="type-caption">[01]</div>
+          <div className="type-caption hidden md:block">[01]</div>
 
           <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
             <div className="space-y-5">
@@ -182,10 +182,10 @@ function Home() {
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-2xl -m-3 p-3 transition-colors duration-200 hover:bg-surface/70"
+                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-colors duration-200 hover:border-primary"
                 >
                   <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
-                    <div className="sm:col-span-1 flex flex-col">
+                    <div className="order-2 sm:order-none sm:col-span-1 flex flex-col">
                       <div>
                         <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                           {p.title}
@@ -199,12 +199,12 @@ function Home() {
                         ))}
                       </div>
                     </div>
-                    <div className="sm:col-span-2 overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                    <div className="order-1 sm:order-none sm:col-span-2 overflow-hidden rounded-lg bg-surface aspect-[16/10]">
                       <img
                         src={p.image}
                         alt={p.alt}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
                       />
                     </div>
                   </article>
@@ -218,9 +218,9 @@ function Home() {
       {/* [03] HOW I WORK */}
       <section className="container-wide py-20 sm:py-28">
         <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
-          <div className="flex flex-col justify-between min-h-[220px]">
+          <div className="flex flex-col justify-between sm:min-h-[220px]">
             <span className="type-caption">HOW I WORK</span>
-            <span className="type-caption">[03]</span>
+            <span className="type-caption hidden sm:inline">[03]</span>
           </div>
           <div className="space-y-8">
             {howIWork.map((h) => (
@@ -239,7 +239,7 @@ function Home() {
       <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">
         <SectionLabel label="ABOUT" number="[04]" />
         <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
-          <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[520px]">
+          <div className="overflow-hidden rounded-lg bg-surface h-full min-h-[320px] md:min-h-[520px]">
             <img
               src={portrait.url}
               alt="Portrait of Alicia Strömmer"
