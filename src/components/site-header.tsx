@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-5 sm:px-10 h-16 flex items-center justify-between">
         <nav className="flex items-center gap-6 sm:gap-8">
           <Link
             to="/"
