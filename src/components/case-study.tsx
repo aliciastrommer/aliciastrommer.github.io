@@ -38,30 +38,28 @@ export function CaseHero({
       </div>
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8 mt-12 sm:mt-16">
-        <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-start">
-          <div>
-            <h1 className="text-[clamp(2.2rem,5.5vw,3.5rem)] font-semibold tracking-tight leading-[1.05]">
-              {title}
-            </h1>
+        <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-stretch">
+          <div className="flex flex-col h-full">
+            <h1 className="type-h1">{title}</h1>
             {tagline && (
-              <p className="mt-5 text-[15px] leading-[1.55] text-foreground/80 max-w-md">
+              <p className="mt-5 type-body text-foreground/80 max-w-md">
                 {tagline}
               </p>
             )}
-            <dl className="mt-10 space-y-4 text-[15px]">
+            <dl className="mt-10 space-y-4 type-body">
               {meta.map((m) => (
                 <div key={m.label}>
-                  <dt className="text-foreground/60">{m.label}</dt>
-                  <dd className="mt-0.5 font-medium">{m.value}</dd>
+                  <dt className="type-small text-foreground/60">{m.label}</dt>
+                  <dd className="mt-0.5 type-h3">{m.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
 
           {about && (
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight">About</h2>
-              <div className="mt-5 space-y-4 text-[15px] leading-[1.6] text-foreground/85">
+            <div className="flex flex-col h-full">
+              <h2 className="type-h2">About</h2>
+              <div className="mt-5 space-y-4 type-body text-foreground/85 [&_a.link-external]:mt-auto [&>p:last-child]:mt-auto [&>p:last-child]:pt-4">
                 {about}
               </div>
             </div>
