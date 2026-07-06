@@ -5,12 +5,13 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 bg-background/85 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
         <nav className="flex items-center gap-6 sm:gap-8">
-          <Link to="/" className="nav-link" activeOptions={{ exact: true }}>
-            {({ isActive }) => (
-              <span data-active={isActive ? "true" : "false"} className="nav-link">
-                HOME
-              </span>
-            )}
+          <Link
+            to="/"
+            className="nav-link"
+            data-active="true"
+            activeOptions={{ exact: true }}
+          >
+            HOME
           </Link>
           <a href="/#work" className="nav-link">WORK</a>
           <a href="/#about" className="nav-link">ABOUT</a>
