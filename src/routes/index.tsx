@@ -132,7 +132,7 @@ function Home() {
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <Reveal as="section" className="container-wide py-20 sm:py-28">
         <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
-          <div className="type-caption">[01]</div>
+          <div className="type-caption hidden md:block">[01]</div>
 
           <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
             <div className="space-y-5">
