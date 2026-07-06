@@ -86,37 +86,42 @@ const howIWork = [
 
 function SectionLabel({ label, number }: { label: string; number: string }) {
   return (
-    <div className="flex items-center justify-between type-caption text-foreground/60">
+    <div className="flex items-center justify-between type-caption">
       <span>{label}</span>
       <span>{number}</span>
     </div>
   );
 }
 
+
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO with dark blurry purple/black gradient — light text */}
-      <div className="relative bg-hero-gradient text-white">
+      {/* HERO — subtle lavender bloom on off-white */}
+      <div className="relative bg-hero-gradient">
         <SiteHeader />
         <main className="mx-auto max-w-7xl px-5 sm:px-10">
-          <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center pt-8 pb-12 sm:pb-16">
-            <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
-            <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
-            <p className="mt-8 max-w-3xl type-h3-reg text-white/90">
-              I design thoughtful products for complex systems by combining
-              systems thinking, hands-on craft, strategic perspective, and an
-              understanding of human perception, reasoning and behavior.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-white/85">
-              <span className="inline-flex items-center gap-2">
-                <span className="pulse-dot" aria-hidden="true" />
-                <span className="font-medium text-white">Currently</span>
-              </span>
-              <span>Designing for Scania</span>
-              <span>Based in Stockholm</span>
+          <section className="min-h-[calc(100svh-4rem)] flex flex-col pt-16 sm:pt-20 pb-10">
+            {/* Primary block — sits a bit above center */}
+            <div className="flex-1 flex flex-col justify-center max-w-3xl">
+              <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
+              <h1 className="type-h1">Hi, I'm Alicia Strömmer</h1>
+              <p className="mt-6 type-h3-reg text-[color:var(--muted-ink)]">
+                I design thoughtful products for complex systems by combining
+                systems thinking, hands-on craft, strategic perspective, and an
+                understanding of human perception, reasoning and behavior.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-small">
+                <span className="inline-flex items-center gap-2">
+                  <span className="pulse-dot" aria-hidden="true" />
+                  <span className="font-medium">Currently</span>
+                </span>
+                <span className="text-[color:var(--muted-ink)]">Designing for Scania</span>
+                <span className="text-[color:var(--muted-ink)]">Based in Stockholm</span>
+              </div>
             </div>
-            <div className="mt-6 type-small text-white/85 space-y-0.5">
+            {/* Contact block — pinned lower for a more interesting layout */}
+            <div className="mt-auto pt-16 type-small text-[color:var(--muted-ink)] space-y-1">
               <div>
                 <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
               </div>
@@ -128,14 +133,17 @@ function Home() {
         </main>
       </div>
 
+
       <main className="mx-auto max-w-7xl px-5 sm:px-10">
         {/* [01] LAVENDER INFO CARD — with purple border */}
         <Reveal as="section" className="pt-20 sm:pt-28 pb-20 sm:pb-28">
           <div className="card-lavender p-6 sm:p-10">
             <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
-              <div className="type-caption text-primary sm:col-span-2 md:col-span-1">
+              <div className="type-caption sm:col-span-2 md:col-span-1">
                 [01]
               </div>
+
+
 
               <div className="space-y-5">
                 <div>
@@ -212,16 +220,18 @@ function Home() {
         </section>
 
 
-        {/* [03] HOW I WORK */}
+        {/* [03] HOW I WORK — left column: heading top, [03] bottom */}
         <section className="pb-20 sm:pb-28">
-          <SectionLabel label="HOW I WORK" number="[03]" />
-          <div className="mt-8 grid gap-10 sm:grid-cols-[1fr_2fr]">
-            <div aria-hidden="true" />
+          <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
+            <div className="flex flex-col justify-between min-h-[220px]">
+              <span className="type-caption">HOW I WORK</span>
+              <span className="type-caption">[03]</span>
+            </div>
             <div className="space-y-8">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <h3 className="type-h3 text-foreground">{h.title}</h3>
-                  <p className="mt-2 type-body text-foreground/85 max-w-lg">
+                  <h3 className="type-h3">{h.title}</h3>
+                  <p className="mt-2 type-body text-[color:var(--muted-ink)] max-w-lg">
                     {h.body}
                   </p>
                 </Reveal>
@@ -231,24 +241,25 @@ function Home() {
         </section>
 
 
+
         {/* [04] ABOUT */}
         <section id="about" className="pb-20 sm:pb-28 scroll-mt-24">
           <SectionLabel label="ABOUT" number="[04]" />
-          <div className="mt-8 grid gap-8 sm:gap-12 sm:grid-cols-[260px_1fr] md:grid-cols-[300px_1fr] items-start">
-            <div className="overflow-hidden rounded-2xl bg-surface aspect-[3/4] w-full max-w-[300px]">
+          <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
+            <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[520px]">
               <img
                 src={portrait.url}
                 alt="Portrait of Alicia Strömmer"
                 className="h-full w-full object-cover object-top"
               />
             </div>
-            <div>
+            <div className="flex flex-col">
               <h2 className="type-h2">
                 Shaped by the north, living down south
                 <br />
                 Understanding people, designing experiences
               </h2>
-              <div className="mt-6 space-y-4 type-body text-foreground/85 max-w-2xl">
+              <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
                 <p>
                   I grew up in Umeå and moved south roughly six years ago. I now
                   live in Stockholm together with my fiancé.
@@ -279,6 +290,8 @@ function Home() {
               </div>
             </div>
           </div>
+
+
 
           <div className="mt-14 flex justify-center">
             <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">

@@ -24,6 +24,7 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted-ink: var(--muted-ink);
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
   --color-card: var(--card);
@@ -48,20 +49,24 @@
   --color-ring-offset-background: var(--background);
 }
 
+
 :root {
   --radius: 0.75rem;
 
   --background: oklch(1 0 0);
-  --foreground: oklch(0.15 0 0);
+  /* Primary text #070707 */
+  --foreground: oklch(0.145 0 0);
+  /* Secondary text #515151 */
+  --muted-ink: oklch(0.42 0 0);
 
   --surface: oklch(0.97 0 0);
-  --surface-foreground: oklch(0.15 0 0);
+  --surface-foreground: oklch(0.145 0 0);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0 0);
+  --card-foreground: oklch(0.145 0 0);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.145 0 0);
 
   /* Deep purple button */
   --primary: oklch(0.44 0.19 285);
@@ -69,13 +74,13 @@
   --primary-soft: oklch(0.94 0.04 285);
 
   /* Lavender card background from the design */
-  --lavender: oklch(0.9 0.045 285);
+  --lavender: oklch(0.92 0.035 285);
 
   --secondary: oklch(0.96 0 0);
-  --secondary-foreground: oklch(0.15 0 0);
+  --secondary-foreground: oklch(0.145 0 0);
 
   --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.45 0.005 285);
+  --muted-foreground: oklch(0.42 0 0);
 
   --accent: oklch(0.94 0.04 285);
   --accent-foreground: oklch(0.44 0.19 285);
@@ -87,6 +92,7 @@
   --input: oklch(0.9 0.005 285);
   --ring: oklch(0.44 0.19 285);
 }
+
 
 .dark {
   --background: oklch(0.14 0.005 285);
@@ -191,8 +197,9 @@
   background-color: transparent;
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
-  font-size: 1rem;
+  font-size: 0.8125rem;
   font-weight: 500;
+
   line-height: 1.1;
   white-space: nowrap;
 }
@@ -204,14 +211,14 @@
   border-radius: 1rem;
 }
 
-/* Hero gradient — soft blurry purple/black, light text on top */
+/* Hero gradient — subtle off-white with a soft lavender bloom */
 @utility bg-hero-gradient {
   background:
-    radial-gradient(ellipse 80% 60% at 15% 20%, oklch(0.42 0.18 285 / 0.85), transparent 60%),
-    radial-gradient(ellipse 70% 55% at 85% 80%, oklch(0.35 0.14 300 / 0.9), transparent 60%),
-    radial-gradient(ellipse 60% 60% at 60% 40%, oklch(0.28 0.1 275 / 0.7), transparent 60%),
-    linear-gradient(135deg, oklch(0.14 0.03 285) 0%, oklch(0.09 0.02 285) 100%);
+    radial-gradient(ellipse 70% 60% at 15% 20%, oklch(0.94 0.045 285 / 0.9), transparent 65%),
+    radial-gradient(ellipse 60% 60% at 90% 90%, oklch(0.93 0.05 300 / 0.7), transparent 65%),
+    linear-gradient(180deg, oklch(0.99 0.005 285) 0%, oklch(0.97 0.01 285) 100%);
 }
+
 
 /* Reveal-on-scroll */
 .reveal {
@@ -302,59 +309,60 @@
 }
 
 /* ---------- Typography system ----------
- * Display (H1, H2): Plus Jakarta Sans
- * Body & everything else: Inter
- * Sizes: H1 64 / H2 36 / H3 24 (bold + reg) / Caption 24 / P Medium 20 / P Small 16
- * Body min is 20px. 16px reserved for long paragraphs & captions.
+ * Only 4 sizes: 40 / 24 / 18 / 16 — variations come from weight.
+ * Display (H1, H2): Plus Jakarta Sans. Everything else: Inter.
+ * Primary text #070707 (--foreground). Secondary text #515151 (--muted-ink).
  */
 
 @utility type-h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.5rem, 5.2vw, 4rem); /* up to 64px */
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.6vw, 2.75rem); /* up to 44px on desktop */
+  line-height: 1.08;
   letter-spacing: -0.02em;
 }
 @utility type-h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.75rem, 3vw, 2.25rem); /* up to 36px */
-  line-height: 1.15;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.2;
   letter-spacing: -0.015em;
 }
 @utility type-h3 {
   font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.3;
+  font-weight: 600;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.35;
   letter-spacing: -0.005em;
 }
 @utility type-h3-reg {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.4;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5;
   letter-spacing: -0.005em;
 }
 @utility type-caption {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 1.5rem; /* 24px */
-  letter-spacing: 0.02em;
-  line-height: 1.2;
+  font-weight: 500;
+  font-size: 1rem; /* 16px — captions/labels, not bold */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-ink);
 }
 @utility type-body {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1.25rem; /* 20px = P Medium */
-  line-height: 1.55;
+  font-size: 1rem; /* 16px body */
+  line-height: 1.6;
 }
 @utility type-small {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1rem; /* 16px = P Small — for long paragraphs / meta */
+  font-size: 1rem; /* 16px meta */
   line-height: 1.55;
 }
+
 
 /* WCAG-compliant disclaimer color (contrast > 4.5:1 on white and on light red) */
 @utility text-disclaimer {

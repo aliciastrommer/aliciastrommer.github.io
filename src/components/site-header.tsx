@@ -35,13 +35,14 @@ export function SiteHeader() {
             aria-label="Alicia on LinkedIn"
             className="inline-flex h-9 w-9 items-center justify-center rounded-full text-current hover:opacity-70 transition-colors"
           >
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
-              {/* Letter i — dot + stem as outlined shapes */}
-              <circle cx="4" cy="4" r="3" />
-              <rect x="1" y="11" width="6" height="20" />
-              {/* Letter n — outlined stem + rounded top */}
-              <path d="M11 31 V11 h6 v2 c1.6-1.7 3.7-2.6 6-2.6 4.4 0 8 3.4 8 7.8 V31 h-6 V19.5 c0-2-1.6-3.6-3.6-3.6S17 17.5 17 19.5 V31 Z" />
+            <svg viewBox="0 0 512 512" fill="none" stroke="currentColor" strokeWidth="28" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
+              {/* Letter i */}
+              <circle cx="70" cy="60" r="42" />
+              <rect x="28" y="170" width="84" height="310" />
+              {/* Letter n — outlined stem + rounded arch */}
+              <path d="M170 480 V170 h84 v34 c22-26 55-40 92-40 68 0 122 54 122 122 V480 h-84 V318 c0-30-24-54-54-54s-54 24-54 54 V480 Z" />
             </svg>
+
           </a>
         </div>
       </div>
