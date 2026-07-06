@@ -97,27 +97,31 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO with dark blurry purple/black gradient — light text */}
-      <div className="relative bg-hero-gradient text-white">
+      {/* HERO — subtle lavender bloom on off-white */}
+      <div className="relative bg-hero-gradient">
         <SiteHeader />
         <main className="mx-auto max-w-7xl px-5 sm:px-10">
-          <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center pt-8 pb-12 sm:pb-16">
-            <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
-            <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
-            <p className="mt-8 max-w-3xl type-h3-reg text-white/90">
-              I design thoughtful products for complex systems by combining
-              systems thinking, hands-on craft, strategic perspective, and an
-              understanding of human perception, reasoning and behavior.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-white/85">
-              <span className="inline-flex items-center gap-2">
-                <span className="pulse-dot" aria-hidden="true" />
-                <span className="font-medium text-white">Currently</span>
-              </span>
-              <span>Designing for Scania</span>
-              <span>Based in Stockholm</span>
+          <section className="min-h-[calc(100svh-4rem)] flex flex-col pt-16 sm:pt-20 pb-10">
+            {/* Primary block — sits a bit above center */}
+            <div className="flex-1 flex flex-col justify-center max-w-3xl">
+              <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
+              <h1 className="type-h1">Hi, I'm Alicia Strömmer</h1>
+              <p className="mt-6 type-h3-reg text-[color:var(--muted-ink)]">
+                I design thoughtful products for complex systems by combining
+                systems thinking, hands-on craft, strategic perspective, and an
+                understanding of human perception, reasoning and behavior.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-small">
+                <span className="inline-flex items-center gap-2">
+                  <span className="pulse-dot" aria-hidden="true" />
+                  <span className="font-medium">Currently</span>
+                </span>
+                <span className="text-[color:var(--muted-ink)]">Designing for Scania</span>
+                <span className="text-[color:var(--muted-ink)]">Based in Stockholm</span>
+              </div>
             </div>
-            <div className="mt-6 type-small text-white/85 space-y-0.5">
+            {/* Contact block — pinned lower for a more interesting layout */}
+            <div className="mt-auto pt-16 type-small text-[color:var(--muted-ink)] space-y-1">
               <div>
                 <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
               </div>
@@ -128,6 +132,7 @@ function Home() {
           </section>
         </main>
       </div>
+
 
       <main className="mx-auto max-w-7xl px-5 sm:px-10">
         {/* [01] LAVENDER INFO CARD — with purple border */}
