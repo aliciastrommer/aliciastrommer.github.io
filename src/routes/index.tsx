@@ -227,8 +227,8 @@ function Home() {
         {/* [04] ABOUT */}
         <section id="about" className="pb-20 sm:pb-28 scroll-mt-24">
           <SectionLabel label="ABOUT" number="[04]" />
-          <div className="mt-8 grid gap-8 sm:gap-12 sm:grid-cols-[280px_1fr] md:grid-cols-[320px_1fr] items-start">
-            <div className="overflow-hidden rounded-full bg-surface aspect-square w-full max-w-[320px]">
+          <div className="mt-8 grid gap-8 sm:gap-12 sm:grid-cols-[260px_1fr] md:grid-cols-[300px_1fr] items-start">
+            <div className="overflow-hidden rounded-2xl bg-surface aspect-[3/4] w-full max-w-[300px]">
               <img
                 src={portrait.url}
                 alt="Portrait of Alicia Strömmer"
@@ -274,8 +274,9 @@ function Home() {
           </div>
 
           <div className="mt-14 flex justify-center">
-            <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary">
+            <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
               Let's Talk
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </section>
