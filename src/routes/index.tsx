@@ -88,7 +88,7 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
   return (
     <div className="flex items-center justify-between type-caption">
       <span>{label}</span>
-      <span>{number}</span>
+      <span className="hidden sm:inline">{number}</span>
     </div>
   );
 }
