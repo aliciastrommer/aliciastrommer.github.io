@@ -41,7 +41,7 @@ function AccessibilityPage() {
     <CaseLayout>
       <CaseHero
         heroImage={hero.url}
-        heroAlt="Desk with monitor showing the Daresay Accessibility Guide welcome page"
+        heroAlt="Laptop showing the Daresay Accessibility Guide on a wooden desk"
         meta={[
           { label: "Company", value: "Daresay By Knightec" },
           { label: "Role", value: "UX/UI Designer" },
