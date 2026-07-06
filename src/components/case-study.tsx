@@ -78,9 +78,27 @@ export function CaseSection({
 }: {
   title?: string;
   centered?: boolean;
-  tone?: "default" | "lavender";
+  tone?: "default" | "lavender" | "dark";
   children: ReactNode;
 }) {
+  if (tone === "dark") {
+    return (
+      <section className="bg-hero-gradient mt-16 sm:mt-24 min-h-screen flex items-center py-20 sm:py-28">
+        <div className="mx-auto max-w-3xl w-full px-5 sm:px-8">
+          <Reveal>
+            {title && (
+              <h2 className={`type-h2 text-white ${centered ? "text-center" : ""}`}>
+                {title}
+              </h2>
+            )}
+            <div className="mt-8 space-y-4 type-body text-hero-muted">
+              {children}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
   if (tone === "lavender") {
     return (
       <section className="bg-lavender-soft mt-16 sm:mt-24 py-16 sm:py-24">
