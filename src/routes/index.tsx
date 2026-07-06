@@ -182,10 +182,10 @@ function Home() {
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-2xl -m-3 p-3 transition-colors duration-200 hover:bg-surface/70"
+                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-colors duration-200 hover:border-primary"
                 >
                   <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
-                    <div className="sm:col-span-1 flex flex-col">
+                    <div className="order-2 sm:order-none sm:col-span-1 flex flex-col">
                       <div>
                         <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                           {p.title}
@@ -199,12 +199,12 @@ function Home() {
                         ))}
                       </div>
                     </div>
-                    <div className="sm:col-span-2 overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                    <div className="order-1 sm:order-none sm:col-span-2 overflow-hidden rounded-lg bg-surface aspect-[16/10]">
                       <img
                         src={p.image}
                         alt={p.alt}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
                       />
                     </div>
                   </article>
