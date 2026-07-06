@@ -219,40 +219,21 @@
   border-radius: 1rem;
 }
 
-/* Hero gradient — colorful animated lavender / peach / mint bloom */
+/* Hero background — deep dark purple with a subtle pixel/dot grid overlay
+   evoking a designer's pixel canvas. */
 @utility bg-hero-gradient {
-  background:
-    radial-gradient(ellipse 55% 55% at var(--bloom1-x) var(--bloom1-y), oklch(0.86 0.11 285 / 0.85), transparent 60%),
-    radial-gradient(ellipse 50% 55% at var(--bloom2-x) var(--bloom2-y), oklch(0.88 0.1 320 / 0.75), transparent 60%),
-    radial-gradient(ellipse 45% 45% at var(--bloom3-x) var(--bloom3-y), oklch(0.9 0.09 60 / 0.6), transparent 65%),
-    radial-gradient(ellipse 40% 40% at var(--bloom4-x) var(--bloom4-y), oklch(0.9 0.08 175 / 0.55), transparent 65%),
-    linear-gradient(180deg, oklch(0.99 0.005 285) 0%, oklch(0.97 0.01 285) 100%);
-  animation: heroBloom 22s ease-in-out infinite alternate;
+  background-color: #0f0722;
+  background-image:
+    radial-gradient(ellipse 60% 55% at 15% 15%, oklch(0.35 0.19 300 / 0.55), transparent 65%),
+    radial-gradient(ellipse 55% 50% at 90% 90%, oklch(0.32 0.17 275 / 0.55), transparent 65%),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: auto, auto, 6px 6px;
+  color: #f5f2ff;
+}
+@utility text-hero-muted {
+  color: #b8afd1;
 }
 
-@property --bloom1-x { syntax: "<percentage>"; inherits: false; initial-value: 12%; }
-@property --bloom1-y { syntax: "<percentage>"; inherits: false; initial-value: 18%; }
-@property --bloom2-x { syntax: "<percentage>"; inherits: false; initial-value: 88%; }
-@property --bloom2-y { syntax: "<percentage>"; inherits: false; initial-value: 82%; }
-@property --bloom3-x { syntax: "<percentage>"; inherits: false; initial-value: 78%; }
-@property --bloom3-y { syntax: "<percentage>"; inherits: false; initial-value: 20%; }
-@property --bloom4-x { syntax: "<percentage>"; inherits: false; initial-value: 20%; }
-@property --bloom4-y { syntax: "<percentage>"; inherits: false; initial-value: 85%; }
-
-@keyframes heroBloom {
-  0% {
-    --bloom1-x: 12%;  --bloom1-y: 18%;
-    --bloom2-x: 88%;  --bloom2-y: 82%;
-    --bloom3-x: 78%;  --bloom3-y: 20%;
-    --bloom4-x: 20%;  --bloom4-y: 85%;
-  }
-  100% {
-    --bloom1-x: 28%;  --bloom1-y: 38%;
-    --bloom2-x: 70%;  --bloom2-y: 65%;
-    --bloom3-x: 92%;  --bloom3-y: 10%;
-    --bloom4-x: 6%;   --bloom4-y: 70%;
-  }
-}
 
 /* Type: extra-large hero lead paragraph */
 @utility type-lead {
@@ -303,8 +284,8 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
   .scroll-fade { opacity: 1 !important; }
-  .bg-hero-gradient { animation: none !important; }
 }
+
 
 @utility link-underline {
   position: relative;
