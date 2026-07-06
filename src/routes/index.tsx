@@ -220,16 +220,18 @@ function Home() {
         </section>
 
 
-        {/* [03] HOW I WORK */}
+        {/* [03] HOW I WORK — left column: heading top, [03] bottom */}
         <section className="pb-20 sm:pb-28">
-          <SectionLabel label="HOW I WORK" number="[03]" />
-          <div className="mt-8 grid gap-10 sm:grid-cols-[1fr_2fr]">
-            <div aria-hidden="true" />
+          <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
+            <div className="flex flex-col justify-between min-h-[220px]">
+              <span className="type-caption">HOW I WORK</span>
+              <span className="type-caption">[03]</span>
+            </div>
             <div className="space-y-8">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <h3 className="type-h3 text-foreground">{h.title}</h3>
-                  <p className="mt-2 type-body text-foreground/85 max-w-lg">
+                  <h3 className="type-h3">{h.title}</h3>
+                  <p className="mt-2 type-body text-[color:var(--muted-ink)] max-w-lg">
                     {h.body}
                   </p>
                 </Reveal>
@@ -237,6 +239,7 @@ function Home() {
             </div>
           </div>
         </section>
+
 
 
         {/* [04] ABOUT */}
