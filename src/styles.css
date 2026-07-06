@@ -303,6 +303,7 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
   .scroll-fade { opacity: 1 !important; }
+  .bg-hero-gradient { animation: none !important; }
 }
 
 @utility link-underline {
