@@ -46,7 +46,7 @@ export function CaseHero({
                 {tagline}
               </p>
             )}
-            <dl className="mt-10 space-y-4 type-body">
+            <dl className="mt-auto pt-10 space-y-4 type-body">
               {meta.map((m) => (
                 <div key={m.label}>
                   <dt className="type-small text-foreground/60">{m.label}</dt>
