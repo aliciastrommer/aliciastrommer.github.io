@@ -176,30 +176,32 @@ function Home() {
           <div className="mt-8 space-y-12 sm:space-y-16">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
-                  <article className="grid gap-6 sm:gap-10 sm:grid-cols-2 items-start">
-                    <div>
-                      <h3 className="type-h2">{p.title}</h3>
-                      <div className="mt-3 type-small text-foreground/60">{p.period}</div>
-                      <p className="mt-4 type-body text-foreground/85 max-w-md">
-                        {p.body}
-                      </p>
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
-                          <span key={t} className="chip-outline">{t}</span>
-                        ))}
+                <ScrollFade min={0.35}>
+                  <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
+                    <article className="grid gap-6 sm:gap-10 sm:grid-cols-2 items-start">
+                      <div>
+                        <h3 className="type-h2">{p.title}</h3>
+                        <div className="mt-3 type-small text-foreground/60">{p.period}</div>
+                        <p className="mt-4 type-body text-foreground/85 max-w-md">
+                          {p.body}
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-2">
+                          {p.tags.map((t) => (
+                            <span key={t} className="chip-outline">{t}</span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                    <div className="overflow-hidden rounded-2xl bg-surface aspect-[4/3]">
-                      <img
-                        src={p.image}
-                        alt={p.alt}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  </article>
-                </Link>
+                      <div className="overflow-hidden rounded-2xl bg-surface aspect-[4/3]">
+                        <img
+                          src={p.image}
+                          alt={p.alt}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    </article>
+                  </Link>
+                </ScrollFade>
               </Reveal>
             ))}
           </div>
