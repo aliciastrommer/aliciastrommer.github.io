@@ -218,9 +218,9 @@ function Home() {
       {/* [03] HOW I WORK */}
       <section className="container-wide py-20 sm:py-28">
         <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
-          <div className="flex flex-col justify-between min-h-[220px]">
+          <div className="flex flex-col justify-between sm:min-h-[220px]">
             <span className="type-caption">HOW I WORK</span>
-            <span className="type-caption">[03]</span>
+            <span className="type-caption hidden sm:inline">[03]</span>
           </div>
           <div className="space-y-8">
             {howIWork.map((h) => (
