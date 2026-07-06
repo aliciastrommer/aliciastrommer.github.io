@@ -79,6 +79,7 @@ function AccessibilityPage() {
         <ChallengeList
           items={[
             {
+              icon: <Accessibility className="h-5 w-5" />,
               title: "Bridging the gap between guidelines and practical application",
               body: "As the demand for accessible websites grew, we recognized a need amongst clients, designers, and developers to get help interpreting WCAG guidelines and applying them in real-world projects. Accessibility shouldn't be difficult to get right, which is why we found this important.",
             },
