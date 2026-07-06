@@ -12,7 +12,7 @@
 
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -182,19 +182,35 @@
   }
 }
 
-/* Tag chip used on project cards */
+/* Tag chip used on project cards — purple outline & label */
 @utility chip-outline {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.9rem;
+  padding: 0.4rem 1rem;
   border-radius: 9999px;
   background-color: transparent;
-  color: var(--color-foreground);
-  border: 1px solid var(--color-border);
-  font-size: 0.8rem;
-  font-weight: 400;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  font-size: 1rem;
+  font-weight: 500;
   line-height: 1.1;
   white-space: nowrap;
+}
+
+/* Lavender info/challenge card — outlined in the same primary purple */
+@utility card-lavender {
+  background-color: var(--color-lavender);
+  border: 1px solid var(--color-primary);
+  border-radius: 1rem;
+}
+
+/* Hero gradient — soft blurry purple/black, light text on top */
+@utility bg-hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 20%, oklch(0.42 0.18 285 / 0.85), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 85% 80%, oklch(0.35 0.14 300 / 0.9), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 60% 40%, oklch(0.28 0.1 275 / 0.7), transparent 60%),
+    linear-gradient(135deg, oklch(0.14 0.03 285) 0%, oklch(0.09 0.02 285) 100%);
 }
 
 /* Reveal-on-scroll */
@@ -262,7 +278,8 @@
   padding-bottom: 2px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-foreground);
+  color: currentColor;
+
   transition: opacity 200ms ease;
 
   &::after {
@@ -284,56 +301,59 @@
   }
 }
 
-/* ---------- Typography system ---------- */
-/* One font (Inter). Limited variants: H1, H2, H3-bold, H3-reg, caption, body, small */
+/* ---------- Typography system ----------
+ * Display (H1, H2): Plus Jakarta Sans
+ * Body & everything else: Inter
+ * Sizes: H1 64 / H2 36 / H3 24 (bold + reg) / Caption 24 / P Medium 20 / P Small 16
+ * Body min is 20px. 16px reserved for long paragraphs & captions.
+ */
 
 @utility type-h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.9rem, 2.6vw, 2.35rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.5rem, 5.2vw, 4rem); /* up to 64px */
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 @utility type-h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.15rem, 1.55vw, 1.35rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.75rem, 3vw, 2.25rem); /* up to 36px */
+  line-height: 1.15;
+  letter-spacing: -0.015em;
 }
 @utility type-h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  letter-spacing: -0.003em;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.3;
+  letter-spacing: -0.005em;
 }
 @utility type-h3-reg {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.9rem;
-  line-height: 1.55;
-  letter-spacing: -0.003em;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.4;
+  letter-spacing: -0.005em;
 }
 @utility type-caption {
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem; /* 24px */
+  letter-spacing: 0.02em;
   line-height: 1.2;
 }
 @utility type-body {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.85rem;
-  line-height: 1.6;
+  font-size: 1.25rem; /* 20px = P Medium */
+  line-height: 1.55;
 }
 @utility type-small {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: 1rem; /* 16px = P Small — for long paragraphs / meta */
+  line-height: 1.55;
 }
 
 /* WCAG-compliant disclaimer color (contrast > 4.5:1 on white and on light red) */

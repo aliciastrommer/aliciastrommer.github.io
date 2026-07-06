@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-30 bg-transparent">
       <div className="mx-auto max-w-7xl px-5 sm:px-10 h-16 flex items-center justify-between">
         <nav className="flex items-center gap-6 sm:gap-8">
           <Link
@@ -21,7 +21,7 @@ export function SiteHeader() {
           <a
             href="mailto:alicia@strommer.se"
             aria-label="Email Alicia"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground hover:text-primary transition-colors"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-current hover:opacity-70 transition-colors"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true" className="h-5 w-5">
               <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -33,15 +33,14 @@ export function SiteHeader() {
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Alicia on LinkedIn"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground hover:text-primary transition-colors"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-current hover:opacity-70 transition-colors"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
-              {/* Letter i */}
-              <circle cx="6.5" cy="6" r="0.6" fill="currentColor" stroke="none" />
-              <path d="M6.5 10v10" />
-              {/* Letter n */}
-              <path d="M11.5 20v-10" />
-              <path d="M11.5 13.5c0-1.9 1.5-3.5 3.5-3.5s3.5 1.6 3.5 3.5V20" />
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true" className="h-5 w-5">
+              {/* Letter i — dot + stem as outlined shapes */}
+              <circle cx="4" cy="4" r="3" />
+              <rect x="1" y="11" width="6" height="20" />
+              {/* Letter n — outlined stem + rounded top */}
+              <path d="M11 31 V11 h6 v2 c1.6-1.7 3.7-2.6 6-2.6 4.4 0 8 3.4 8 7.8 V31 h-6 V19.5 c0-2-1.6-3.6-3.6-3.6S17 17.5 17 19.5 V31 Z" />
             </svg>
           </a>
         </div>

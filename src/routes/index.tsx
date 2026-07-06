@@ -96,40 +96,44 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader />
-      <main className="mx-auto max-w-7xl px-5 sm:px-10">
-        {/* HERO — covers the viewport, only a hint of the lavender card peeks below */}
-        <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center pt-8 pb-12 sm:pb-16">
-          <div aria-hidden="true" className="text-3xl sm:text-4xl mb-6">👋</div>
-          <h1 className="type-h1">Hi, I'm Alicia Strömmer</h1>
-          <p className="mt-6 max-w-2xl type-h3-reg text-foreground">
-            I design thoughtful products for complex systems by combining
-            systems thinking, hands-on craft, strategic perspective, and an
-            understanding of human perception, reasoning and behavior.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-foreground/80">
-            <span className="inline-flex items-center gap-2">
-              <span className="pulse-dot" aria-hidden="true" />
-              <span className="font-medium text-foreground">Currently</span>
-            </span>
-            <span>Designing for Scania</span>
-            <span>Based in Stockholm</span>
-          </div>
-          <div className="mt-6 type-small text-foreground/80 space-y-0.5">
-            <div>
-              <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
+      {/* HERO with dark blurry purple/black gradient — light text */}
+      <div className="relative bg-hero-gradient text-white">
+        <SiteHeader />
+        <main className="mx-auto max-w-7xl px-5 sm:px-10">
+          <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center pt-8 pb-12 sm:pb-16">
+            <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
+            <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
+            <p className="mt-8 max-w-3xl type-h3-reg text-white/90">
+              I design thoughtful products for complex systems by combining
+              systems thinking, hands-on craft, strategic perspective, and an
+              understanding of human perception, reasoning and behavior.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-white/85">
+              <span className="inline-flex items-center gap-2">
+                <span className="pulse-dot" aria-hidden="true" />
+                <span className="font-medium text-white">Currently</span>
+              </span>
+              <span>Designing for Scania</span>
+              <span>Based in Stockholm</span>
             </div>
-            <div>
-              <a href="tel:+46722068063" className="link-underline">+4672–206 80 63</a>
+            <div className="mt-6 type-small text-white/85 space-y-0.5">
+              <div>
+                <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
+              </div>
+              <div>
+                <a href="tel:+46722068063" className="link-underline">+4672–206 80 63</a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </main>
+      </div>
 
-        {/* [01] LAVENDER INFO CARD */}
-        <Reveal as="section" className="pb-20 sm:pb-28">
-          <div className="rounded-2xl bg-lavender p-6 sm:p-10">
+      <main className="mx-auto max-w-7xl px-5 sm:px-10">
+        {/* [01] LAVENDER INFO CARD — with purple border */}
+        <Reveal as="section" className="pt-20 sm:pt-28 pb-20 sm:pb-28">
+          <div className="card-lavender p-6 sm:p-10">
             <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
-              <div className="type-caption text-foreground/60 sm:col-span-2 md:col-span-1">
+              <div className="type-caption text-primary sm:col-span-2 md:col-span-1">
                 [01]
               </div>
 
@@ -170,19 +174,19 @@ function Home() {
           </div>
         </Reveal>
 
-        {/* [02] FEATURED WORK */}
+        {/* [02] FEATURED WORK — image 2/3, text 1/3 */}
         <section id="work" className="pb-20 sm:pb-28 scroll-mt-24">
           <SectionLabel label="FEATURED WORK" number="[02]" />
-          <div className="mt-8 space-y-12 sm:space-y-16">
+          <div className="mt-8 space-y-16 sm:space-y-24">
             {projects.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <ScrollFade min={0.35}>
                   <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
-                    <article className="grid gap-6 sm:gap-10 sm:grid-cols-2 items-start">
-                      <div>
+                    <article className="grid gap-6 sm:gap-10 sm:grid-cols-3 items-start">
+                      <div className="sm:col-span-1">
                         <h3 className="type-h2">{p.title}</h3>
                         <div className="mt-3 type-small text-foreground/60">{p.period}</div>
-                        <p className="mt-4 type-body text-foreground/85 max-w-md">
+                        <p className="mt-4 type-small text-foreground/85">
                           {p.body}
                         </p>
                         <div className="mt-6 flex flex-wrap gap-2">
@@ -191,7 +195,7 @@ function Home() {
                           ))}
                         </div>
                       </div>
-                      <div className="overflow-hidden rounded-2xl bg-surface aspect-[4/3]">
+                      <div className="sm:col-span-2 overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                         <img
                           src={p.image}
                           alt={p.alt}
@@ -206,6 +210,7 @@ function Home() {
             ))}
           </div>
         </section>
+
 
         {/* [03] HOW I WORK */}
         <section className="pb-20 sm:pb-28">
