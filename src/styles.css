@@ -24,6 +24,7 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted-ink: var(--muted-ink);
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
   --color-card: var(--card);
@@ -47,6 +48,7 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
 }
+
 
 :root {
   --radius: 0.75rem;
