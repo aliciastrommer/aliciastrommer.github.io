@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+
 
 type MetaItem = { label: string; value: string };
 
@@ -126,12 +126,15 @@ export function ChallengeList({
   items: { title: string; body: string; icon?: ReactNode }[];
   variant?: "lavender" | "plain";
 }) {
-  const cardClass = variant === "plain" ? "card-plain" : "card-lavender";
+  const isPlain = variant === "plain";
+  const itemClass = isPlain
+    ? "py-2"
+    : "card-lavender p-6 sm:p-7";
   return (
-    <div className="space-y-4">
+    <div className={isPlain ? "divide-y divide-foreground/10" : "space-y-4"}>
       {items.map((it) => (
-        <div key={it.title} className={`${cardClass} p-6 sm:p-7`}>
-          <div className="flex items-start gap-4">
+        <div key={it.title} className={itemClass}>
+          <div className="flex items-start gap-4 py-4">
             {it.icon && (
               <div className="shrink-0 grid place-items-center h-10 w-10 rounded-xl bg-primary/10 text-primary">
                 {it.icon}
@@ -149,6 +152,7 @@ export function ChallengeList({
     </div>
   );
 }
+
 
 
 export function ChipRow({ items }: { items: string[] }) {
@@ -193,14 +197,14 @@ export function CaseFooterNav({
   nextLabel?: string;
 }) {
   return (
-    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex items-center justify-between gap-3 text-[15px] font-medium">
-      <Link to="/" className="inline-flex items-center gap-2 hover:text-primary transition-colors">
-        <ArrowLeft className="h-4 w-4" />
+    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex items-center justify-between gap-4 type-h3">
+      <Link to="/" className="inline-flex items-center gap-3 hover:text-primary transition-colors">
+        <ArrowLeft className="h-6 w-6" />
         Back Home
       </Link>
-      <Link to={next} className="inline-flex items-center gap-2 hover:text-primary transition-colors">
+      <Link to={next} className="inline-flex items-center gap-3 hover:text-primary transition-colors">
         {nextLabel}
-        <ArrowRight className="h-4 w-4" />
+        <ArrowRight className="h-6 w-6" />
       </Link>
     </div>
   );
@@ -209,9 +213,9 @@ export function CaseFooterNav({
 export function CaseLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader />
       <main className="pb-16">{children}</main>
       <SiteFooter />
     </div>
   );
 }
+

@@ -231,19 +231,21 @@
 }
 
 
-/* Hero background — deep dark purple with a subtle pixel/dot grid overlay
-   evoking a designer's pixel canvas. */
+/* Hero background — subtle graphite with a hint of cool purple and a
+   fine pixel/dot grid overlay. Grayer and more senior than the previous
+   deep-purple version. */
 @utility bg-hero-gradient {
-  background-color: #0f0722;
+  background-color: #16171b;
   background-image:
-    radial-gradient(ellipse 60% 55% at 15% 15%, oklch(0.35 0.19 300 / 0.55), transparent 65%),
-    radial-gradient(ellipse 55% 50% at 90% 90%, oklch(0.32 0.17 275 / 0.55), transparent 65%),
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
+    radial-gradient(ellipse 60% 55% at 15% 15%, oklch(0.32 0.06 290 / 0.55), transparent 65%),
+    radial-gradient(ellipse 55% 50% at 90% 90%, oklch(0.30 0.05 270 / 0.55), transparent 65%),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: auto, auto, 6px 6px;
-  color: #f5f2ff;
+  color: #f2f3f5;
 }
+/* Muted hero text — contrast > 7:1 on #16171b (WCAG AAA) */
 @utility text-hero-muted {
-  color: #b8afd1;
+  color: #c8ccd4;
 }
 
 

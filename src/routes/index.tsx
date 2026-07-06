@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { ScrollFade } from "@/components/scroll-fade";
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
-import smartDashImg from "@/assets/smart-dash-cab.jpg.asset.json";
+import smartDashImg from "@/assets/smart-dash-cockpit.jpg.asset.json";
 import accessibilityImg from "@/assets/accessibility-desk.jpg.asset.json";
 import smartPotImg from "@/assets/smart-pot.jpg.asset.json";
 
@@ -129,42 +129,44 @@ function Home() {
         </section>
       </div>
 
-      {/* [01] PROOF — no card border/padding, sits directly on background */}
+      {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <Reveal as="section" className="container-wide py-20 sm:py-28">
-        <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
-          <div className="type-caption sm:col-span-2 md:col-span-1">[01]</div>
+        <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
+          <div className="type-caption">[01]</div>
 
-          <div className="space-y-5">
-            <div>
-              <div className="type-small text-foreground/70">Years of experience</div>
-              <div className="mt-1 type-h3">4+</div>
+          <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            <div className="space-y-5">
+              <div>
+                <div className="type-small text-foreground/70">Years of experience</div>
+                <div className="mt-1 type-h3">4+</div>
+              </div>
+              <div>
+                <div className="type-small text-foreground/70">Current role</div>
+                <div className="mt-1 type-h3">UX/UI Designer</div>
+                <div className="type-h3">Area Lead</div>
+              </div>
+              <div>
+                <div className="type-small text-foreground/70">Focus</div>
+                <div className="mt-1 type-h3">Product &amp; System Thinking</div>
+                <div className="type-h3">Accessibility-Driven Design</div>
+                <div className="type-h3">Usability in Complex Products</div>
+              </div>
             </div>
-            <div>
-              <div className="type-small text-foreground/70">Current role</div>
-              <div className="mt-1 type-h3">UX/UI Designer</div>
-              <div className="type-h3">Area Lead</div>
-            </div>
-            <div>
-              <div className="type-small text-foreground/70">Focus</div>
-              <div className="mt-1 type-h3">Product &amp; System Thinking</div>
-              <div className="type-h3">Accessibility-Driven Design</div>
-              <div className="type-h3">Usability in Complex Products</div>
-            </div>
-          </div>
 
-          <div className="space-y-5">
-            <div>
-              <div className="type-small text-foreground/70">Experience from</div>
-              <div className="mt-1 type-h3">Traton Group</div>
-              <div className="type-h3">Scania</div>
-              <div className="type-h3">Daresay by Knightec</div>
-              <div className="type-h3">ABB</div>
-              <div className="type-h3">Umeå Energi</div>
-            </div>
-            <div>
-              <div className="type-small text-foreground/70">Education in</div>
-              <div className="mt-1 type-h3">Cognitive Science</div>
-              <div className="type-h3">Interaction Design</div>
+            <div className="space-y-5">
+              <div>
+                <div className="type-small text-foreground/70">Experience from</div>
+                <div className="mt-1 type-h3">Traton Group</div>
+                <div className="type-h3">Scania</div>
+                <div className="type-h3">Daresay by Knightec</div>
+                <div className="type-h3">ABB</div>
+                <div className="type-h3">Umeå Energi</div>
+              </div>
+              <div>
+                <div className="type-small text-foreground/70">Education in</div>
+                <div className="mt-1 type-h3">Cognitive Science</div>
+                <div className="type-h3">Interaction Design</div>
+              </div>
             </div>
           </div>
         </div>
@@ -173,17 +175,25 @@ function Home() {
       {/* [02] FEATURED WORK */}
       <section id="work" className="container-wide py-20 sm:py-28 scroll-mt-24">
         <SectionLabel label="FEATURED WORK" number="[02]" />
-        <div className="mt-10 space-y-12 sm:space-y-14">
+        <div className="mt-8 space-y-6 sm:space-y-8">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
               <ScrollFade min={0.35}>
-                <Link to={p.to} aria-label={`Open ${p.title} case study`} className="group block">
-                  <article className="grid gap-6 sm:gap-10 sm:grid-cols-3 items-start">
-                    <div className="sm:col-span-1">
-                      <h3 className="type-h2">{p.title}</h3>
-                      <div className="mt-3 type-small text-foreground/60">{p.period}</div>
-                      <p className="mt-4 type-small text-foreground/85">{p.body}</p>
-                      <div className="mt-6 flex flex-wrap gap-2">
+                <Link
+                  to={p.to}
+                  aria-label={`Open ${p.title} case study`}
+                  className="group block rounded-2xl -m-3 p-3 transition-colors duration-200 hover:bg-surface/70"
+                >
+                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
+                    <div className="sm:col-span-1 flex flex-col">
+                      <div>
+                        <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                          {p.title}
+                        </h3>
+                        <div className="mt-2 type-small text-foreground/60">{p.period}</div>
+                        <p className="mt-3 type-small text-foreground/85">{p.body}</p>
+                      </div>
+                      <div className="mt-auto pt-6 flex flex-wrap gap-2">
                         {p.tags.map((t) => (
                           <span key={t} className="chip-outline">{t}</span>
                         ))}
