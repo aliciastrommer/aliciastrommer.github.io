@@ -96,86 +96,84 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground snap-y snap-proximity">
-      {/* HERO — animated colorful bloom */}
-      <div className="relative bg-hero-gradient snap-start">
+    <div className="min-h-screen bg-background text-foreground">
+      {/* HERO — dark purple with pixel grid */}
+      <div className="relative bg-hero-gradient" data-header-theme="dark">
         <SiteHeader />
         <section className="container-wide min-h-[calc(100svh-4rem)] flex flex-col pt-16 sm:pt-20 pb-16">
           <div className="flex-1 flex flex-col justify-center max-w-4xl">
             <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
-            <h1 className="type-h1">Hi, I'm Alicia Strömmer</h1>
-            <p className="mt-8 type-lead text-foreground">
+            <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
+            <p className="mt-8 type-lead text-white">
               I design thoughtful products for complex systems by combining
               systems thinking, hands-on craft, strategic perspective, and an
               understanding of human perception, reasoning and behavior.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small">
-              <span className="inline-flex items-center gap-2">
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-hero-muted">
+              <span className="inline-flex items-center gap-2 text-white">
                 <span className="pulse-dot" aria-hidden="true" />
                 <span className="font-medium">Currently</span>
               </span>
-              <span className="text-[color:var(--muted-ink)]">Designing for Scania</span>
-              <span className="text-[color:var(--muted-ink)]">Based in Stockholm</span>
+              <span>Designing for Scania</span>
+              <span>Based in Stockholm</span>
             </div>
           </div>
-          <div className="mt-auto pt-16 type-small text-[color:var(--muted-ink)] space-y-1">
+          <div className="mt-auto pt-16 type-small text-hero-muted space-y-1">
             <div>
-              <a href="mailto:alicia@strommer.se" className="link-underline">alicia@strommer.se</a>
+              <a href="mailto:alicia@strommer.se" className="link-underline text-white">alicia@strommer.se</a>
             </div>
             <div>
-              <a href="tel:+46722068063" className="link-underline">+4672–206 80 63</a>
+              <a href="tel:+46722068063" className="link-underline text-white">+4672–206 80 63</a>
             </div>
           </div>
         </section>
       </div>
 
-      {/* [01] PROOF — outlined purple card, no fill */}
-      <Reveal as="section" className="container-wide min-h-screen flex items-center py-24 sm:py-32 snap-start">
-        <div className="card-outline p-6 sm:p-10 w-full">
-          <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
-            <div className="type-caption sm:col-span-2 md:col-span-1">[01]</div>
+      {/* [01] PROOF — no card border/padding, sits directly on background */}
+      <Reveal as="section" className="container-wide py-20 sm:py-28">
+        <div className="grid gap-y-8 gap-x-10 sm:grid-cols-2 md:grid-cols-[1fr_1.5fr_1.5fr]">
+          <div className="type-caption sm:col-span-2 md:col-span-1">[01]</div>
 
-            <div className="space-y-5">
-              <div>
-                <div className="type-small text-foreground/70">Years of experience</div>
-                <div className="mt-1 type-h3">4+</div>
-              </div>
-              <div>
-                <div className="type-small text-foreground/70">Current role</div>
-                <div className="mt-1 type-h3">UX/UI Designer</div>
-                <div className="type-h3">Area Lead</div>
-              </div>
-              <div>
-                <div className="type-small text-foreground/70">Focus</div>
-                <div className="mt-1 type-h3">Product &amp; System Thinking</div>
-                <div className="type-h3">Accessibility-Driven Design</div>
-                <div className="type-h3">Usability in Complex Products</div>
-              </div>
+          <div className="space-y-5">
+            <div>
+              <div className="type-small text-foreground/70">Years of experience</div>
+              <div className="mt-1 type-h3">4+</div>
             </div>
+            <div>
+              <div className="type-small text-foreground/70">Current role</div>
+              <div className="mt-1 type-h3">UX/UI Designer</div>
+              <div className="type-h3">Area Lead</div>
+            </div>
+            <div>
+              <div className="type-small text-foreground/70">Focus</div>
+              <div className="mt-1 type-h3">Product &amp; System Thinking</div>
+              <div className="type-h3">Accessibility-Driven Design</div>
+              <div className="type-h3">Usability in Complex Products</div>
+            </div>
+          </div>
 
-            <div className="space-y-5">
-              <div>
-                <div className="type-small text-foreground/70">Experience from</div>
-                <div className="mt-1 type-h3">Traton Group</div>
-                <div className="type-h3">Scania</div>
-                <div className="type-h3">Daresay by Knightec</div>
-                <div className="type-h3">ABB</div>
-                <div className="type-h3">Umeå Energi</div>
-              </div>
-              <div>
-                <div className="type-small text-foreground/70">Education in</div>
-                <div className="mt-1 type-h3">Cognitive Science</div>
-                <div className="type-h3">Interaction Design</div>
-              </div>
+          <div className="space-y-5">
+            <div>
+              <div className="type-small text-foreground/70">Experience from</div>
+              <div className="mt-1 type-h3">Traton Group</div>
+              <div className="type-h3">Scania</div>
+              <div className="type-h3">Daresay by Knightec</div>
+              <div className="type-h3">ABB</div>
+              <div className="type-h3">Umeå Energi</div>
+            </div>
+            <div>
+              <div className="type-small text-foreground/70">Education in</div>
+              <div className="mt-1 type-h3">Cognitive Science</div>
+              <div className="type-h3">Interaction Design</div>
             </div>
           </div>
         </div>
       </Reveal>
 
-      {/* [02] FEATURED WORK — wide */}
-      <section id="work" className="container-wide min-h-screen py-24 sm:py-32 scroll-mt-24 snap-start">
+      {/* [02] FEATURED WORK */}
+      <section id="work" className="container-wide py-20 sm:py-28 scroll-mt-24">
         <SectionLabel label="FEATURED WORK" number="[02]" />
-        <div className="mt-10 space-y-20 sm:space-y-28">
+        <div className="mt-10 space-y-12 sm:space-y-14">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
               <ScrollFade min={0.35}>
@@ -208,8 +206,8 @@ function Home() {
       </section>
 
       {/* [03] HOW I WORK */}
-      <section className="mx-auto max-w-5xl px-5 sm:px-10 min-h-screen flex items-center py-24 sm:py-32 snap-start">
-        <div className="grid gap-10 sm:grid-cols-[1fr_2fr] w-full">
+      <section className="container-wide py-20 sm:py-28">
+        <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
           <div className="flex flex-col justify-between min-h-[220px]">
             <span className="type-caption">HOW I WORK</span>
             <span className="type-caption">[03]</span>
@@ -228,7 +226,7 @@ function Home() {
       </section>
 
       {/* [04] ABOUT */}
-      <section id="about" className="mx-auto max-w-6xl px-5 sm:px-10 min-h-screen py-24 sm:py-32 scroll-mt-24 snap-start">
+      <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">
         <SectionLabel label="ABOUT" number="[04]" />
         <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
           <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[520px]">
@@ -288,4 +286,5 @@ function Home() {
     </div>
   );
 }
+
 
