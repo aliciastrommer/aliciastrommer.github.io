@@ -252,9 +252,7 @@ function Home() {
           </div>
           <div className="flex flex-col">
             <h2 className="type-h2">
-              Shaped by the north, living down south
-              <br />
-              Understanding people, designing experiences
+              A little bit about me
             </h2>
             <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
               <p>
