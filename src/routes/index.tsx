@@ -164,8 +164,8 @@ function Home() {
               </div>
               <div>
                 <div className="type-small text-foreground/70">Education in</div>
-                <div className="mt-1 type-h3">Cognitive Science</div>
-                <div className="type-h3">Interaction Design</div>
+                <div className="mt-1 type-h3">Interaction Design</div>
+                <div className="type-h3">Cognitive Science</div>
               </div>
             </div>
 
