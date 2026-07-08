@@ -256,8 +256,12 @@ function Home() {
             </h2>
             <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
               <p>
-                I grew up in Umeå and moved south roughly six years ago. I now
-                live in Stockholm together with my fiancé.
+                I grew up in Umeå and now live in Stockholm with my fiancé.
+                Today, I work at the intersection of design, technology, and
+                human behaviour. What motivates me the most is working on
+                products that become part of people's routines. When something
+                is used every day, even the smallest design change can have a
+                lasting impact.
               </p>
               <p>
                 The path here started long before I knew it would become a
