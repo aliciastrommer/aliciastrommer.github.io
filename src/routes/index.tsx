@@ -38,7 +38,7 @@ const projects = [
     title: "Designing a Driver Experience That Keeps Attention on the Road",
     period: "2023 – Present",
     body:
-      "I design HMI experiences that reduce cognitive effort and simplify complex workflows for professional truck and bus drivers in demanding environments. In parallel, I drive the strategic direction of a key domain, ensuring design decisions support both user needs and product goals.",
+      "I design HMI experiences that reduce cognitive effort and simplify complex workflows for professional truck and bus drivers. In parallel, I drive the strategic direction of a key domain, ensuring design decisions support both user needs and product goals.",
     tags: ["Interaction Design", "UX/UI Design", "Product Thinking", "System Thinking", "Design System"],
     image: smartDashImg.url,
     alt: "Scania truck cab with the steering wheel and Center Information Display",
