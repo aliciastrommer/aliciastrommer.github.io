@@ -75,6 +75,8 @@ function AccessibilityPage() {
         }
       />
 
+      <FullBleedImage src={team.url} alt="Design team collaborating around laptops at a workshop table" />
+
       <CaseSection title="Design Challenge">
         <ChallengeList variant="lavender"
           items={[
@@ -86,8 +88,6 @@ function AccessibilityPage() {
           ]}
         />
       </CaseSection>
-
-      <FullBleedImage flush src={team.url} alt="Design team collaborating around laptops at a workshop table" />
 
       <CaseSection title="My Contribution">
         <p>
