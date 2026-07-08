@@ -49,7 +49,7 @@ const projects = [
     period: "2022 – 2023",
     body:
       "Design of an accessibility guide for designers and developers, that lowered the barrier to designing accessible products.",
-    tags: ["UX/UI Design", "User Research", "UX Writing", "Accessibility"],
+    tags: ["UX/UI Design", "UX Writing", "Accessibility"],
     image: accessibilityImg.url,
     alt: "Laptop showing the Daresay Accessibility Guide on a wooden desk",
   },
