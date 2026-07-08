@@ -260,27 +260,32 @@ function Home() {
                 live in Stockholm together with my fiancé.
               </p>
               <p>
-                Whenever I can, I return north to our summer house by the coast
-                outside Umeå. I love the slower pace there — morning coffee
-                overlooking the sea, long walks, swims, berry picking, and days
-                that aren't in a hurry. It's where I feel most at home.
+                The path here started long before I knew it would become a
+                career. Growing up alongside people with different cognitive
+                variations gave me firsthand insight into how differently we can
+                think, communicate, and experience the world. I learned early
+                that there is rarely a single solution that works for everyone,
+                and that perspective sparked a curiosity about human behaviour
+                that eventually led me to study cognitive science and
+                interaction design.
               </p>
               <p>
-                I've always been fascinated by how people think and experience
-                the world differently. Growing up around different cognitive
-                perspectives sparked that curiosity early, and it eventually
-                led me to cognitive science and interaction design.
+                Creativity has always been part of how I make sense of the
+                world. Over the years, it's taken different form - from writing
+                and photography, to small personal projects. Regardless, it's
+                always been a way to explore ideas, learn something new, and
+                bring thoughts to life. Today, I enjoy combining that creative
+                side with an understanding of people to design experiences that
+                are both useful and enjoyable.
               </p>
               <p>
-                Creativity has always been part of my life through writing,
-                photography, and small personal projects. Those interests have
-                changed over the years, but they've always given me a way to
-                explore ideas and make sense of the world.
-              </p>
-              <p>
-                Today, I combine an understanding of human behaviour with a
-                creative mindset to design experiences that are intuitive,
-                thoughtful, and grounded in the people they're made for.
+                Whenever I get the chance, I head back north to our summer house
+                on the coast outside Umeå. Life moves a little slower there.
+                Mornings begin with coffee overlooking the sea, the days are
+                filled with long walks, swims, berry picking, or simply spending
+                time outdoors, and there's rarely any rush to be anywhere. It's
+                where I find the space to recharge, reflect, and return with a
+                fresh perspective.
               </p>
             </div>
           </div>
