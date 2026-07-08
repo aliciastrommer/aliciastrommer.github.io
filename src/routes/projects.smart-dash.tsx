@@ -86,9 +86,9 @@ function SmartDashPage() {
         alt="Scania truck cab dashboard with the Driver Display behind the steering wheel and the Center Information Display to the right"
       />
 
-      <CaseSection title="Design Challenge" tone="dark">
+      <CaseSection title="Design Challenge">
         <ChallengeList
-          variant="dark"
+          variant="lavender"
           items={[
             {
               icon: <ShieldAlert className="h-5 w-5" />,
