@@ -97,10 +97,9 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — dark purple with pixel grid */}
+      {/* HERO — dark artwork background */}
       <div className="relative bg-hero-gradient" data-header-theme="dark">
-        <SiteHeader />
-        <section className="container-wide min-h-[calc(100svh-4rem)] flex flex-col pt-16 sm:pt-20 pb-16">
+        <section className="container-wide min-h-svh flex flex-col pt-24 sm:pt-28 pb-16">
           <div className="flex-1 flex flex-col justify-center max-w-4xl">
             <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
             <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
@@ -118,16 +117,26 @@ function Home() {
               <span>Based in Stockholm</span>
             </div>
           </div>
-          <div className="mt-auto pt-16 type-small text-hero-muted space-y-1">
-            <div>
-              <a href="mailto:alicia@strommer.se" className="link-underline text-white">alicia@strommer.se</a>
+          <div className="mt-auto pt-16 flex items-end justify-between gap-6">
+            <div className="type-small text-hero-muted space-y-1">
+              <div>
+                <a href="mailto:alicia@strommer.se" className="link-underline text-white">alicia@strommer.se</a>
+              </div>
+              <div>
+                <a href="tel:+46722068063" className="link-underline text-white">+4672–206 80 63</a>
+              </div>
             </div>
-            <div>
-              <a href="tel:+46722068063" className="link-underline text-white">+4672–206 80 63</a>
-            </div>
+            <a
+              href="#work"
+              aria-label="Scroll to featured work"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white/60 hover:text-white"
+            >
+              <ArrowDown className="scroll-cue h-5 w-5" />
+            </a>
           </div>
         </section>
       </div>
+
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <Reveal as="section" className="container-wide py-20 sm:py-28">
