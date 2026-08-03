@@ -196,7 +196,7 @@ function Home() {
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-all duration-300 ease-out hover:border-primary/25 hover:bg-primary/[0.02]"
+                  className="group block py-6 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
                 >
                   <article className="grid gap-5 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
                     <div className="order-2 sm:order-none min-w-0 flex flex-col">
