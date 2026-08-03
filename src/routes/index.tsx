@@ -227,27 +227,36 @@ function Home() {
         </div>
       </section>
 
-      {/* [03] HOW I WORK — dark section mirroring the hero */}
-      <div className="bg-hero-gradient" data-header-theme="dark">
+      {/* [03] HOW I WORK — flat dark section */}
+      <div className="bg-dark-flat" data-header-theme="dark">
         <section className="container-wide py-24 sm:py-32">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
             <div className="flex flex-col justify-between sm:min-h-[220px]">
               <span className="type-caption text-white/70">HOW I WORK</span>
               <span className="type-caption hidden sm:inline text-white/70">[03]</span>
             </div>
-            <div className="space-y-8">
+            <div className="space-y-2">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <h3 className="type-h3 text-white">{h.title}</h3>
-                  <p className="mt-2 type-body text-hero-muted max-w-lg">
-                    {h.body}
-                  </p>
+                  <div className="group relative rounded-lg border border-transparent px-4 py-4 -mx-4 transition-all duration-300 ease-out hover:border-white/15 hover:bg-white/[0.04] hover:translate-x-1">
+                    <span
+                      aria-hidden
+                      className="absolute left-0 top-4 bottom-4 w-px origin-top scale-y-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-y-100"
+                    />
+                    <h3 className="type-h3 text-white transition-colors duration-200 group-hover:text-primary">
+                      {h.title}
+                    </h3>
+                    <p className="mt-2 type-body text-hero-muted max-w-lg">
+                      {h.body}
+                    </p>
+                  </div>
                 </Reveal>
               ))}
             </div>
           </div>
         </section>
       </div>
+
 
       {/* [04] ABOUT */}
       <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">
