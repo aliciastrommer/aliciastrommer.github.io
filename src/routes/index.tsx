@@ -239,17 +239,11 @@ function Home() {
               <span className="type-caption text-white/70">HOW I WORK</span>
               <span className="type-caption hidden sm:inline text-white/70">[03]</span>
             </div>
-            <div className="space-y-2">
+            <div className="sm:-mx-6">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <div className="group relative rounded-lg border border-transparent px-4 py-4 -mx-4 transition-all duration-300 ease-out hover:border-white/15 hover:bg-white/[0.04] hover:translate-x-1">
-                    <span
-                      aria-hidden
-                      className="absolute left-0 top-4 bottom-4 w-px origin-top scale-y-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-y-100"
-                    />
-                    <h3 className="type-h3 text-white transition-colors duration-200 group-hover:text-primary">
-                      {h.title}
-                    </h3>
+                  <div className="rounded-lg px-4 sm:px-6 py-5 transition-colors duration-500 ease-out hover:bg-white/[0.06]">
+                    <h3 className="type-h3 text-white">{h.title}</h3>
                     <p className="mt-2 type-body text-hero-muted max-w-lg">
                       {h.body}
                     </p>
