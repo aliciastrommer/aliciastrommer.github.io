@@ -97,9 +97,21 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — dark artwork background */}
-      <div className="relative bg-hero-gradient" data-header-theme="dark">
-        <section className="container-wide min-h-svh flex flex-col pt-24 sm:pt-28 pb-16">
+      {/* HERO — dark artwork background with cursor-following spotlight */}
+      <div
+        className="relative overflow-hidden bg-hero-gradient spotlight-section"
+        data-header-theme="dark"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
+        }}
+      >
+        <section className="relative z-10 container-wide min-h-svh flex flex-col py-16">
           {/* Top contact bar */}
           <div className="flex items-center justify-between type-small text-hero-muted">
             <a
@@ -124,6 +136,28 @@ function Home() {
               system thinking and hands-on craft with a profound understanding
               of human cognition and behavior
             </p>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a
+                href="#work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("work")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="btn-pill btn-pill-primary group"
+              >
+                View work
+                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
+              </a>
+              <a
+                href="mailto:alicia@strommer.se"
+                className="btn-pill btn-pill-light-outline group"
+              >
+                Let's talk
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-hero-muted">
               <span className="inline-flex items-center gap-2 text-white">
                 <span className="pulse-dot" aria-hidden="true" />
@@ -132,17 +166,6 @@ function Home() {
               <span>Designing for Scania</span>
               <span>Based in Stockholm</span>
             </div>
-          </div>
-
-          {/* Scroll cue */}
-          <div className="mt-auto pt-16 flex justify-center">
-            <a
-              href="#work"
-              aria-label="Scroll to featured work"
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/5 text-white backdrop-blur-sm transition-all duration-300 hover:border-white/60 hover:bg-white/10"
-            >
-              <ArrowDown className="scroll-cue h-5 w-5" strokeWidth={1.5} />
-            </a>
           </div>
         </section>
       </div>
