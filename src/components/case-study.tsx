@@ -185,7 +185,7 @@ export function ChallengeList({
 
 export function CaseDivider() {
   return (
-    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
+    <div className="-mx-5 sm:-mx-12 lg:-mx-[4.5rem] mt-16 sm:mt-24">
       <hr className="border-0 h-px bg-foreground/10" />
     </div>
   );
