@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
-import { SiteHeader } from "@/components/site-header";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 import { ScrollFade } from "@/components/scroll-fade";
+
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cockpit.jpg.asset.json";
@@ -97,10 +97,9 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — dark purple with pixel grid */}
+      {/* HERO — dark artwork background */}
       <div className="relative bg-hero-gradient" data-header-theme="dark">
-        <SiteHeader />
-        <section className="container-wide min-h-[calc(100svh-4rem)] flex flex-col pt-16 sm:pt-20 pb-16">
+        <section className="container-wide min-h-svh flex flex-col pt-24 sm:pt-28 pb-16">
           <div className="flex-1 flex flex-col justify-center max-w-4xl">
             <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
             <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
@@ -118,16 +117,26 @@ function Home() {
               <span>Based in Stockholm</span>
             </div>
           </div>
-          <div className="mt-auto pt-16 type-small text-hero-muted space-y-1">
-            <div>
-              <a href="mailto:alicia@strommer.se" className="link-underline text-white">alicia@strommer.se</a>
+          <div className="mt-auto pt-16 flex items-end justify-between gap-6">
+            <div className="type-small text-hero-muted space-y-1">
+              <div>
+                <a href="mailto:alicia@strommer.se" className="link-underline text-white">alicia@strommer.se</a>
+              </div>
+              <div>
+                <a href="tel:+46722068063" className="link-underline text-white">+4672–206 80 63</a>
+              </div>
             </div>
-            <div>
-              <a href="tel:+46722068063" className="link-underline text-white">+4672–206 80 63</a>
-            </div>
+            <a
+              href="#work"
+              aria-label="Scroll to featured work"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white/60 hover:text-white"
+            >
+              <ArrowDown className="scroll-cue h-5 w-5" />
+            </a>
           </div>
         </section>
       </div>
+
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <Reveal as="section" className="container-wide py-20 sm:py-28">
@@ -185,8 +194,8 @@ function Home() {
                   aria-label={`Open ${p.title} case study`}
                   className="group block rounded-lg -m-3 p-3 border border-transparent transition-all duration-300 ease-out hover:border-primary/25 hover:bg-primary/[0.02]"
                 >
-                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
-                    <div className="order-2 sm:order-none sm:col-span-1 flex flex-col">
+                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
+                    <div className="order-2 sm:order-none min-w-0 flex flex-col">
                       <div>
                         <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                           {p.title}
@@ -200,15 +209,16 @@ function Home() {
                         ))}
                       </div>
                     </div>
-                    <div className="order-1 sm:order-none sm:col-span-2 overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                    <div className="order-1 sm:order-none min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
                       <img
                         src={p.image}
                         alt={p.alt}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                        className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
                       />
                     </div>
                   </article>
+
                 </Link>
               </ScrollFade>
             </Reveal>
@@ -217,27 +227,36 @@ function Home() {
         </div>
       </section>
 
-      {/* [03] HOW I WORK — dark section mirroring the hero */}
-      <div className="bg-hero-gradient" data-header-theme="dark">
+      {/* [03] HOW I WORK — flat dark section */}
+      <div className="bg-dark-flat" data-header-theme="dark">
         <section className="container-wide py-24 sm:py-32">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
             <div className="flex flex-col justify-between sm:min-h-[220px]">
               <span className="type-caption text-white/70">HOW I WORK</span>
               <span className="type-caption hidden sm:inline text-white/70">[03]</span>
             </div>
-            <div className="space-y-8">
+            <div className="space-y-2">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <h3 className="type-h3 text-white">{h.title}</h3>
-                  <p className="mt-2 type-body text-hero-muted max-w-lg">
-                    {h.body}
-                  </p>
+                  <div className="group relative rounded-lg border border-transparent px-4 py-4 -mx-4 transition-all duration-300 ease-out hover:border-white/15 hover:bg-white/[0.04] hover:translate-x-1">
+                    <span
+                      aria-hidden
+                      className="absolute left-0 top-4 bottom-4 w-px origin-top scale-y-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-y-100"
+                    />
+                    <h3 className="type-h3 text-white transition-colors duration-200 group-hover:text-primary">
+                      {h.title}
+                    </h3>
+                    <p className="mt-2 type-body text-hero-muted max-w-lg">
+                      {h.body}
+                    </p>
+                  </div>
                 </Reveal>
               ))}
             </div>
           </div>
         </section>
       </div>
+
 
       {/* [04] ABOUT */}
       <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">
