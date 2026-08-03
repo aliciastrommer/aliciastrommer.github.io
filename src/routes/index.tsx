@@ -194,8 +194,8 @@ function Home() {
                   aria-label={`Open ${p.title} case study`}
                   className="group block rounded-lg -m-3 p-3 border border-transparent transition-all duration-300 ease-out hover:border-primary/25 hover:bg-primary/[0.02]"
                 >
-                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
-                    <div className="order-2 sm:order-none sm:col-span-1 flex flex-col">
+                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
+                    <div className="order-2 sm:order-none min-w-0 flex flex-col">
                       <div>
                         <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                           {p.title}
@@ -209,15 +209,16 @@ function Home() {
                         ))}
                       </div>
                     </div>
-                    <div className="order-1 sm:order-none sm:col-span-2 overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                    <div className="order-1 sm:order-none min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
                       <img
                         src={p.image}
                         alt={p.alt}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                        className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
                       />
                     </div>
                   </article>
+
                 </Link>
               </ScrollFade>
             </Reveal>
