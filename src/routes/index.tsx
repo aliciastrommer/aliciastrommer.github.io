@@ -231,9 +231,21 @@ function Home() {
         </div>
       </section>
 
-      {/* [03] HOW I WORK — flat dark section */}
-      <div className="bg-dark-flat" data-header-theme="dark">
-        <section className="container-wide py-24 sm:py-32">
+      {/* [03] HOW I WORK — flat dark section with cursor-following spotlight */}
+      <div
+        className="bg-dark-flat relative overflow-hidden spotlight-section"
+        data-header-theme="dark"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
+        }}
+      >
+        <section className="container-wide relative z-10 py-24 sm:py-32">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
             <div className="flex flex-col justify-between sm:min-h-[220px]">
               <span className="type-caption text-white/70">HOW I WORK</span>
@@ -242,7 +254,7 @@ function Home() {
             <div className="sm:-mx-6">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <div className="work-item rounded-lg px-4 sm:px-6 py-5 cursor-default">
+                  <div className="rounded-lg px-4 sm:px-6 py-5 cursor-default">
                     <h3 className="type-h3 text-white">{h.title}</h3>
                     <p className="mt-2 type-body text-hero-muted max-w-lg">
                       {h.body}
