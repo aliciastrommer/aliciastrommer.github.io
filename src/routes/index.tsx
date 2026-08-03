@@ -242,7 +242,7 @@ function Home() {
             <div className="sm:-mx-6">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <div className="rounded-lg px-4 sm:px-6 py-5 transition-colors duration-500 ease-out hover:bg-white/[0.06]">
+                  <div className="work-item rounded-lg px-4 sm:px-6 py-5 cursor-default">
                     <h3 className="type-h3 text-white">{h.title}</h3>
                     <p className="mt-2 type-body text-hero-muted max-w-lg">
                       {h.body}
