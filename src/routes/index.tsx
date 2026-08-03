@@ -100,6 +100,22 @@ function Home() {
       {/* HERO — dark artwork background */}
       <div className="relative bg-hero-gradient" data-header-theme="dark">
         <section className="container-wide min-h-svh flex flex-col pt-24 sm:pt-28 pb-16">
+          {/* Top contact bar */}
+          <div className="flex items-center justify-between type-small text-hero-muted">
+            <a
+              href="mailto:alicia@strommer.se"
+              className="link-underline hover:text-white transition-colors"
+            >
+              alicia@strommer.se
+            </a>
+            <a
+              href="tel:+46722068063"
+              className="link-underline text-right hover:text-white transition-colors"
+            >
+              +46 72-206 80 63
+            </a>
+          </div>
+
           <div className="flex-1 flex flex-col justify-center max-w-4xl">
             <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
             <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
@@ -117,25 +133,15 @@ function Home() {
               <span>Based in Stockholm</span>
             </div>
           </div>
-          <div className="mt-auto pt-16 grid grid-cols-3 items-center gap-4 type-small text-hero-muted">
-            <a
-              href="mailto:alicia@strommer.se"
-              className="link-underline justify-self-start hover:text-white transition-colors"
-            >
-              alicia@strommer.se
-            </a>
+
+          {/* Scroll cue */}
+          <div className="mt-auto pt-16 flex justify-center">
             <a
               href="#work"
               aria-label="Scroll to featured work"
-              className="justify-self-center inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-white/50 text-white transition-colors hover:bg-white/10 hover:border-white"
+              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/5 text-white backdrop-blur-sm transition-all duration-300 hover:border-white/60 hover:bg-white/10"
             >
-              <ArrowDown className="scroll-cue h-7 w-7" />
-            </a>
-            <a
-              href="tel:+46722068063"
-              className="link-underline justify-self-end text-right hover:text-white transition-colors"
-            >
-              +46 72-206 80 63
+              <ArrowDown className="scroll-cue h-5 w-5" strokeWidth={1.5} />
             </a>
           </div>
         </section>
