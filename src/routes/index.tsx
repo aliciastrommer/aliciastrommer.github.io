@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
-import { SiteHeader } from "@/components/site-header";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 import { ScrollFade } from "@/components/scroll-fade";
+
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cockpit.jpg.asset.json";
