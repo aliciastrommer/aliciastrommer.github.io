@@ -117,21 +117,25 @@ function Home() {
               <span>Based in Stockholm</span>
             </div>
           </div>
-          <div className="mt-auto pt-16 flex items-end justify-between gap-6">
-            <div className="type-small text-hero-muted space-y-1">
-              <div>
-                <a href="mailto:alicia@strommer.se" className="link-underline text-white">alicia@strommer.se</a>
-              </div>
-              <div>
-                <a href="tel:+46722068063" className="link-underline text-white">+4672–206 80 63</a>
-              </div>
-            </div>
+          <div className="mt-auto pt-16 grid grid-cols-3 items-center gap-4 type-small text-hero-muted">
+            <a
+              href="mailto:alicia@strommer.se"
+              className="link-underline justify-self-start hover:text-white transition-colors"
+            >
+              alicia@strommer.se
+            </a>
             <a
               href="#work"
               aria-label="Scroll to featured work"
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white/60 hover:text-white"
+              className="justify-self-center inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-white/50 text-white transition-colors hover:bg-white/10 hover:border-white"
             >
-              <ArrowDown className="scroll-cue h-5 w-5" />
+              <ArrowDown className="scroll-cue h-7 w-7" />
+            </a>
+            <a
+              href="tel:+46722068063"
+              className="link-underline justify-self-end text-right hover:text-white transition-colors"
+            >
+              +46 72-206 80 63
             </a>
           </div>
         </section>
