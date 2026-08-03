@@ -188,6 +188,19 @@
   }
 }
 
+/* Secondary pill on dark surfaces (hero) */
+@utility btn-pill-light-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid oklch(1 0 0 / 0.45);
+
+  &:hover {
+    transform: translateY(-1px);
+    background-color: oklch(1 0 0 / 0.1);
+    border-color: oklch(1 0 0 / 0.8);
+  }
+}
+
 /* Tag chip used on project cards — purple outline & label */
 @utility chip-outline {
   display: inline-flex;
