@@ -6,6 +6,7 @@ import {
   CaseSection,
   ChallengeList,
   FullBleedImage,
+  CaseDivider,
   CaseFooterNav,
 } from "@/components/case-study";
 
@@ -79,6 +80,8 @@ function SmartPotPage() {
           </>
         }
       />
+
+      <CaseDivider />
 
       <CaseSection title="Design Challenge">
         <ChallengeList variant="lavender"

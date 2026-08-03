@@ -183,6 +183,14 @@ export function ChallengeList({
 
 
 
+export function CaseDivider() {
+  return (
+    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
+      <hr className="border-0 h-px bg-foreground/10" />
+    </div>
+  );
+}
+
 export function ChipRow({ items }: { items: string[] }) {
   return (
     <div className="flex flex-wrap gap-2">
