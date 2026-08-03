@@ -117,21 +117,25 @@ function Home() {
               <span>Based in Stockholm</span>
             </div>
           </div>
-          <div className="mt-auto pt-16 flex items-end justify-between gap-6">
-            <div className="type-small text-hero-muted space-y-1">
-              <div>
-                <a href="mailto:alicia@strommer.se" className="link-underline text-white">alicia@strommer.se</a>
-              </div>
-              <div>
-                <a href="tel:+46722068063" className="link-underline text-white">+4672–206 80 63</a>
-              </div>
-            </div>
+          <div className="mt-auto pt-16 grid grid-cols-3 items-center gap-4 type-small text-hero-muted">
+            <a
+              href="mailto:alicia@strommer.se"
+              className="link-underline justify-self-start hover:text-white transition-colors"
+            >
+              alicia@strommer.se
+            </a>
             <a
               href="#work"
               aria-label="Scroll to featured work"
-              className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 text-white/80 transition-colors hover:border-white/60 hover:text-white"
+              className="justify-self-center inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-white/50 text-white transition-colors hover:bg-white/10 hover:border-white"
             >
-              <ArrowDown className="scroll-cue h-5 w-5" />
+              <ArrowDown className="scroll-cue h-7 w-7" />
+            </a>
+            <a
+              href="tel:+46722068063"
+              className="link-underline justify-self-end text-right hover:text-white transition-colors"
+            >
+              +46 72-206 80 63
             </a>
           </div>
         </section>
@@ -192,7 +196,7 @@ function Home() {
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-all duration-300 ease-out hover:border-primary/25 hover:bg-primary/[0.02]"
+                  className="group block py-6 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
                 >
                   <article className="grid gap-5 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
                     <div className="order-2 sm:order-none min-w-0 flex flex-col">
@@ -235,17 +239,11 @@ function Home() {
               <span className="type-caption text-white/70">HOW I WORK</span>
               <span className="type-caption hidden sm:inline text-white/70">[03]</span>
             </div>
-            <div className="space-y-2">
+            <div className="sm:-mx-6">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <div className="group relative rounded-lg border border-transparent px-4 py-4 -mx-4 transition-all duration-300 ease-out hover:border-white/15 hover:bg-white/[0.04] hover:translate-x-1">
-                    <span
-                      aria-hidden
-                      className="absolute left-0 top-4 bottom-4 w-px origin-top scale-y-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-y-100"
-                    />
-                    <h3 className="type-h3 text-white transition-colors duration-200 group-hover:text-primary">
-                      {h.title}
-                    </h3>
+                  <div className="rounded-lg px-4 sm:px-6 py-5 transition-colors duration-500 ease-out hover:bg-white/[0.06]">
+                    <h3 className="type-h3 text-white">{h.title}</h3>
                     <p className="mt-2 type-body text-hero-muted max-w-lg">
                       {h.body}
                     </p>

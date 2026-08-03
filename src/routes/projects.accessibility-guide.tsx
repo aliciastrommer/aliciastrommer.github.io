@@ -6,11 +6,11 @@ import {
   CaseSection,
   ChallengeList,
   FullBleedImage,
+  CaseDivider,
   CaseFooterNav,
 } from "@/components/case-study";
 
 import hero from "@/assets/accessibility-laptop1.jpg.asset.json";
-import team from "@/assets/accessibility-team.jpg.asset.json";
 import deskShot from "@/assets/accessibility-desk.jpg.asset.json";
 import laptop2 from "@/assets/accessibility-laptop2-v2.png.asset.json";
 
@@ -75,7 +75,7 @@ function AccessibilityPage() {
         }
       />
 
-      <FullBleedImage src={team.url} alt="Design team collaborating around laptops at a workshop table" />
+      <CaseDivider />
 
       <CaseSection title="Design Challenge">
         <ChallengeList variant="lavender"

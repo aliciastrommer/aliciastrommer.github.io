@@ -206,9 +206,10 @@
 
 /* Lavender info/challenge card — outlined in the same primary purple */
 @utility card-lavender {
-  background-color: var(--color-lavender);
-  border: 1px solid var(--color-primary);
-  border-radius: 1rem;
+  background-color: color-mix(in oklab, var(--color-lavender) 45%, var(--color-background));
+  border: 1px solid color-mix(in oklab, var(--color-primary) 14%, transparent);
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 2px color-mix(in oklab, var(--color-primary) 6%, transparent);
 }
 
 /* Plain card used inside a lavender section — subtle white surface */
@@ -220,7 +221,7 @@
 
 /* Full-width lavender section background — used to group challenge cards */
 @utility bg-lavender-soft {
-  background-color: oklch(0.965 0.02 285);
+  background-color: color-mix(in oklab, var(--color-lavender) 22%, var(--color-background));
 }
 
 /* Same purple outline but with no fill — used for the hero-adjacent proof card */
@@ -446,23 +447,17 @@
 }
 
 /* ---------- Currently pulse dot ---------- */
-@keyframes pulseDot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.55); opacity: 0.75; }
-}
 @keyframes pulseRing {
-  0% { transform: scale(0.9); opacity: 0.85; }
-  80%, 100% { transform: scale(3.2); opacity: 0; }
+  0% { transform: scale(0.9); opacity: 0.6; }
+  80%, 100% { transform: scale(2.4); opacity: 0; }
 }
 .pulse-dot {
   position: relative;
   display: inline-block;
-  height: 0.7rem;
-  width: 0.7rem;
+  height: 0.55rem;
+  width: 0.55rem;
   border-radius: 9999px;
-  background-color: var(--color-primary);
-  box-shadow: 0 0 12px color-mix(in oklab, var(--color-primary) 70%, transparent);
-  animation: pulseDot 1.4s ease-in-out infinite;
+  background-color: oklch(0.72 0.15 292);
 }
 
 .pulse-dot::after {
@@ -470,8 +465,8 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  background-color: var(--color-primary);
-  animation: pulseRing 1.4s ease-out infinite;
+  background-color: oklch(0.72 0.15 292);
+  animation: pulseRing 2s ease-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
   .pulse-dot, .pulse-dot::after { animation: none; }
