@@ -231,20 +231,35 @@
 }
 
 
-/* Hero / accent background — a flat graphite with a fine pixel-grid
-   overlay. Solid color (no linear/radial gradients) for a calmer,
-   more editorial feel that matches the rest of the design language. */
+/* Hero background — user-supplied dark grid artwork. */
 @utility bg-hero-gradient {
   background-color: #16171b;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.055) 1px, transparent 0);
-  background-size: 6px 6px;
+  background-image: url("/__l5e/assets-v1/5c9a2039-b687-4b43-bbc2-504138c8f725/hero-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f2f3f5;
+}
+/* Flat dark surface (no pattern) used by the How I Work section. */
+@utility bg-dark-flat {
+  background-color: #16171b;
   color: #f2f3f5;
 }
 /* Muted hero text — #c8ccd4 on #16171b hits ~10.6:1 contrast (WCAG AAA). */
 @utility text-hero-muted {
   color: #c8ccd4;
 }
+
+/* Scroll cue arrow */
+@keyframes scrollNudge {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(7px); opacity: 1; }
+}
+.scroll-cue { animation: scrollNudge 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { animation: none; }
+}
+
 
 
 
