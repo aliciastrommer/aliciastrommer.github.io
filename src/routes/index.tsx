@@ -183,7 +183,7 @@ function Home() {
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group block rounded-lg -m-3 p-3 transition-shadow duration-300 ease-out hover:shadow-[0_18px_50px_-24px_rgba(15,15,25,0.22)]"
+                  className="group block rounded-lg -m-3 p-3 border border-transparent transition-all duration-300 ease-out hover:border-primary/25 hover:bg-primary/[0.02]"
                 >
                   <article className="grid gap-5 sm:gap-8 sm:grid-cols-3 items-stretch">
                     <div className="order-2 sm:order-none sm:col-span-1 flex flex-col">
