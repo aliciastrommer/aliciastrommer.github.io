@@ -7,7 +7,6 @@ import {
   ChallengeList,
   FullBleedImage,
   CaseDivider,
-  CaseFooterNav,
 } from "@/components/case-study";
 
 import hero from "@/assets/accessibility-laptop1.jpg.asset.json";
@@ -147,8 +146,6 @@ function AccessibilityPage() {
           <li>Improved ability to turn abstract requirements into actionable design guidance.</li>
         </ul>
       </CaseSection>
-
-      <CaseFooterNav next="/projects/smart-pot" />
     </CaseLayout>
   );
 }

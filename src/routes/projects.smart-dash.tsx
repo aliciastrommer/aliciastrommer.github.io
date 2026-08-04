@@ -7,7 +7,6 @@ import {
   ChallengeList,
   ChipRow,
   FullBleedImage,
-  CaseFooterNav,
 } from "@/components/case-study";
 import { ProcessSteps } from "@/components/process-steps";
 
@@ -286,8 +285,6 @@ function SmartDashPage() {
           </li>
         </ul>
       </CaseSection>
-
-      <CaseFooterNav next="/projects/accessibility-guide" />
     </CaseLayout>
   );
 }

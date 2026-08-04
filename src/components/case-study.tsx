@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
@@ -240,44 +240,50 @@ export function CaseTopNav({
   next: NextRoute;
   nextLabel?: string;
 }) {
-  return (
-    <div className="container-wide py-4 flex items-center justify-between gap-4 type-small">
-      <Link
-        to="/"
-        className="inline-flex items-center gap-2 text-muted-ink hover:text-primary transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back Home
-      </Link>
-      <Link
-        to={next}
-        className="inline-flex items-center gap-2 text-muted-ink hover:text-primary transition-colors"
-      >
-        {nextLabel}
-        <ArrowRight className="h-4 w-4" />
-      </Link>
-    </div>
-  );
-}
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
-export function CaseFooterNav({
-  next,
-  nextLabel = "View Next Project",
-}: {
-  next: NextRoute;
-  nextLabel?: string;
-}) {
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 10) {
+        setVisible(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex flex-wrap items-center justify-between gap-4">
-      <Link to="/" className="btn-pill btn-pill-outline group">
-        <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
-        Back Home
-      </Link>
-      <Link to={next} className="btn-pill btn-pill-primary group">
-        {nextLabel}
-        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-      </Link>
-    </div>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      } bg-background/95 backdrop-blur-md border-b border-foreground/10`}
+    >
+      <div className="container-wide py-4 flex items-center justify-between gap-4 type-small">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back Home
+        </Link>
+        <Link
+          to={next}
+          className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+        >
+          {nextLabel}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+    </header>
   );
 }
 
