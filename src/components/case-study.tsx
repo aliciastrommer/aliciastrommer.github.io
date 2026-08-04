@@ -240,23 +240,50 @@ export function CaseTopNav({
   next: NextRoute;
   nextLabel?: string;
 }) {
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 10) {
+        setVisible(true);
+      } else if (currentScrollY < lastScrollY.current) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="container-wide py-4 flex items-center justify-between gap-4 type-small">
-      <Link
-        to="/"
-        className="inline-flex items-center gap-2 text-muted-ink hover:text-primary transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back Home
-      </Link>
-      <Link
-        to={next}
-        className="inline-flex items-center gap-2 text-muted-ink hover:text-primary transition-colors"
-      >
-        {nextLabel}
-        <ArrowRight className="h-4 w-4" />
-      </Link>
-    </div>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      } bg-background/95 backdrop-blur-md border-b border-foreground/10`}
+    >
+      <div className="container-wide py-4 flex items-center justify-between gap-4 type-small">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back Home
+        </Link>
+        <Link
+          to={next}
+          className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+        >
+          {nextLabel}
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+    </header>
   );
 }
 
