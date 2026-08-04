@@ -414,45 +414,45 @@
 }
 
 /* ---------- Typography system ----------
- * Only 4 sizes: 40 / 24 / 18 / 16 — variations come from weight.
- * Display (H1, H2): Plus Jakarta Sans, semi-bold. Everything else: Inter.
- * Primary text #070707 (--foreground). Secondary text #515151 (--muted-ink).
+ * 3 roles only: H1 (32–48), H2/H3 (20–24), Body (16–18).
+ * Weights: 400 regular / 600 semibold / 700 for H1.
+ * Display (H1, H2): Plus Jakarta Sans. Everything else: Inter.
  */
 
 @utility type-h1 {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2rem, 4.6vw, 2.75rem); /* up to 44px on desktop */
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3rem); /* 32 → 48px */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+/* Hero display type — same scale as H1 */
+@utility type-hero {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem); /* 32 → 48px */
   line-height: 1.08;
   letter-spacing: -0.02em;
 }
-/* Oversized hero display type (index hero only) */
-@utility type-hero {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-}
-/* Larger body copy — hero lead & status line */
+/* Larger body copy — hero lead & status line (18px) */
 @utility type-body-lg {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
-  line-height: 1.5;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
 }
 
 @utility type-h2 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.5rem; /* 24px */
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.015em;
 }
 @utility type-h3 {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.25rem; /* 20px */
   line-height: 1.35;
   letter-spacing: -0.005em;
 }
@@ -460,14 +460,13 @@
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 1.125rem; /* 18px */
-  line-height: 1.5;
-  letter-spacing: -0.005em;
+  line-height: 1.6;
 }
 
 @utility type-caption {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 1rem; /* 16px — captions/labels, not bold */
+  font-size: 1rem; /* 16px — captions/labels */
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-muted-ink);
@@ -484,6 +483,7 @@
   font-size: 1rem; /* 16px meta */
   line-height: 1.55;
 }
+
 
 
 /* WCAG-compliant disclaimer color (contrast > 4.5:1 on white and on light red) */
