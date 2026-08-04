@@ -7,7 +7,6 @@ import {
   ChallengeList,
   ChipRow,
   FullBleedImage,
-  CaseFooterNav,
 } from "@/components/case-study";
 import { ProcessSteps } from "@/components/process-steps";
 
