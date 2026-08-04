@@ -191,12 +191,13 @@ function SmartDashPage() {
         </div>
       </CaseSection>
 
-      <CaseSection title="Way of Working">
+      <CaseSection title="Way of Working" tone="dark-flat">
         <p>
           My design process within this project is iterative and collaborative,
           and can look slightly different depending on what I'm working on.
           Generally speaking, these are the steps I follow.
         </p>
+
         <div className="mt-8">
           <ProcessSteps
             steps={[
