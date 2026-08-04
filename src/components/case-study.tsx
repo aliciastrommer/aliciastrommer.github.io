@@ -103,7 +103,7 @@ export function CaseSection({
 
   if (tone === "dark-flat") {
     return (
-      <section className="bg-dark-flat py-20 sm:py-28">
+      <section className="bg-dark-flat mt-16 sm:mt-24 py-20 sm:py-28">
         <div className="container-wide">
           <Reveal>
             {title && (
@@ -119,6 +119,7 @@ export function CaseSection({
       </section>
     );
   }
+
 
 
   if (tone === "lavender") {
