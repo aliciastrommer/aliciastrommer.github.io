@@ -254,7 +254,7 @@ function Home() {
               <span className="type-caption text-white/70">HOW I WORK</span>
               <span className="type-caption hidden sm:inline text-white/70">[03]</span>
             </div>
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-between gap-6">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
                   <div className="cursor-default">
