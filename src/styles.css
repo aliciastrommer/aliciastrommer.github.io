@@ -247,13 +247,10 @@
 }
 
 
-/* Hero background — user-supplied dark grid artwork. */
+/* Hero background — minimal dark field with an ultra-faint linear grid,
+   a soft central purple glow, and a vignette for depth. */
 @utility bg-hero-gradient {
-  background-color: #16171b;
-  background-image: url("/__l5e/assets-v1/5c9a2039-b687-4b43-bbc2-504138c8f725/hero-background.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #0a0a0c;
   color: #f2f3f5;
 }
 /* Flat dark surface (no pattern) used by the How I Work section. */
