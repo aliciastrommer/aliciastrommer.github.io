@@ -248,9 +248,10 @@
 
 
 /* Hero background — minimal dark field with an ultra-faint linear grid,
-   a soft central purple glow, and a vignette for depth. */
+   a soft central purple glow, and a vignette for depth.
+   Same darkness as the How I Work section (#16171b) so the grid is readable. */
 @utility bg-hero-gradient {
-  background-color: #0a0a0c;
+  background-color: #16171b;
   color: #f2f3f5;
 }
 /* Flat dark surface (no pattern) used by the How I Work section. */
