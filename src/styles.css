@@ -429,7 +429,7 @@
 /* Oversized hero display type (index hero only) */
 @utility type-hero {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(2.5rem, 7vw, 5rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
