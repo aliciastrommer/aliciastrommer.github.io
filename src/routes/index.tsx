@@ -96,32 +96,28 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — dark artwork background */}
+      {/* HERO — dark artwork background with a slow purple bloom */}
       <div
         className="relative overflow-hidden bg-hero-gradient"
         data-header-theme="dark"
       >
-        <section className="relative z-10 container-wide min-h-svh flex flex-col py-16">
-          <div className="flex-1 flex flex-col justify-center max-w-5xl">
-            <h1 className="type-hero text-white">
+        <div className="hero-bloom" aria-hidden="true" />
+        <section className="relative z-10 container-wide min-h-svh flex flex-col justify-center py-24">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 type-body text-hero-muted">
+              <span className="pulse-dot" aria-hidden="true" />
+              <span>Currently designing for Scania · Based in Stockholm</span>
+            </div>
+            <h1 className="mt-6 type-hero text-white">
               Alicia Strömmer
-              <span className="block">Product Designer</span>
+              <span className="block text-white/60">Product Designer</span>
             </h1>
-            <p className="mt-8 type-body-lg text-hero-muted max-w-3xl">
+            <p className="mt-6 type-body-lg text-hero-muted">
               I specialize in simplifying complex systems through user-centered
               design, combining strategic thinking with attention to detail to
               create products that work in the real world.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-body-lg text-hero-muted">
-              <span className="inline-flex items-center gap-3 text-white">
-                <span className="pulse-dot" aria-hidden="true" />
-                <span className="font-medium">Currently</span>
-              </span>
-              <span>Designing for Scania</span>
-              <span aria-hidden="true">·</span>
-              <span>Based in Stockholm</span>
-            </div>
-            <div className="mt-12 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="mailto:alicia@strommer.se"
                 className="btn-pill btn-pill-primary"
@@ -144,6 +140,7 @@ function Home() {
           </div>
         </section>
       </div>
+
 
 
 
