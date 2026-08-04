@@ -5,7 +5,6 @@ import {
   CaseHero,
   CaseSection,
   ChallengeList,
-  ChipRow,
   FullBleedImage,
 } from "@/components/case-study";
 import { ProcessSteps } from "@/components/process-steps";
@@ -144,18 +143,6 @@ function SmartDashPage() {
               requirements into clear, usable interaction design. I worked
               closely with development teams to deliver scoped functionality.
             </p>
-            <div className="mt-4">
-              <ChipRow
-                items={[
-                  "Interaction Design",
-                  "UI Design",
-                  "User Research",
-                  "Cross-functional Collaboration",
-                  "Prototyping",
-                  "User Testing",
-                ]}
-              />
-            </div>
           </div>
 
           <div>
@@ -168,9 +155,6 @@ function SmartDashPage() {
               working and collaboration models when I was part of forming a new
               team.&nbsp;
             </p>
-            <div className="mt-4">
-              <ChipRow items={["Design Patterns", "Design System", "Scalability", "Knowledge Sharing", "Quality Assurance"]} />
-            </div>
           </div>
 
           <div>
@@ -184,9 +168,6 @@ function SmartDashPage() {
               problems to defining principles, identifying the right challenges,
               and enabling coherent solutions across the area.
             </p>
-            <div className="mt-4">
-              <ChipRow items={["Product Thinking", "Mentorship", "Coordination", "Facilitation"]} />
-            </div>
           </div>
         </div>
       </CaseSection>
