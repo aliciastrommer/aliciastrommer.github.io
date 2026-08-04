@@ -145,7 +145,7 @@ function Home() {
 
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
-      <Reveal as="section" className="container-wide py-20 sm:py-28">
+      <Reveal as="section" className="container-wide py-20 sm:py-24">
         <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
           <div className="type-caption hidden md:block">[01]</div>
 
@@ -189,15 +189,15 @@ function Home() {
       </Reveal>
 
       {/* [02] FEATURED WORK */}
-      <section id="work" className="container-wide py-20 sm:py-28 scroll-mt-24">
+      <section id="work" className="container-wide py-20 sm:py-24 scroll-mt-24">
         <SectionLabel label="FEATURED WORK" number="[02]" />
-        <div className="mt-8 space-y-6 sm:space-y-8">
+        <div className="mt-6 space-y-4 sm:space-y-6">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
               <Link
                 to={p.to}
                 aria-label={`Open ${p.title} case study`}
-                className="group block py-6 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
+                className="group block py-4 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
               >
                 <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
                   <div className="order-2 sm:order-none min-w-0 flex flex-col">
@@ -208,7 +208,7 @@ function Home() {
                       <div className="mt-2 type-small text-muted-ink">{p.period}</div>
                       <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                     </div>
-                    <div className="mt-auto pt-6 flex flex-wrap gap-2">
+                    <div className="mt-auto pt-4 flex flex-wrap gap-2">
                       {p.tags.map((t) => (
                         <span key={t} className="chip-outline">{t}</span>
                       ))}
@@ -245,7 +245,7 @@ function Home() {
           e.currentTarget.style.setProperty("--spotlight-opacity", "0");
         }}
       >
-        <section className="container-wide relative z-10 py-24 sm:py-32">
+        <section className="container-wide relative z-10 py-20 sm:py-24">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
             <div className="flex flex-col justify-between">
               <span className="type-caption text-white/70">HOW I WORK</span>
@@ -269,9 +269,9 @@ function Home() {
 
 
       {/* [04] ABOUT */}
-      <section id="about" className="container-wide py-20 sm:py-28 scroll-mt-24">
+      <section id="about" className="container-wide py-20 sm:py-24 scroll-mt-24">
         <SectionLabel label="ABOUT" number="[04]" />
-        <div className="mt-8 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
+        <div className="mt-6 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
           <div className="overflow-hidden rounded-lg bg-surface h-full min-h-[320px] md:min-h-[520px]">
             <img
               src={portrait.url}
@@ -324,7 +324,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="mt-14 flex justify-center">
+        <div className="mt-16 flex justify-center">
           <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
             Let's Talk
             <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
