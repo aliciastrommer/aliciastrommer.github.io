@@ -1,9 +1,9 @@
 export function SiteFooter() {
   return (
-    <footer className="mt-24">
-      <div className="mx-auto max-w-7xl px-5 sm:px-10 py-8 type-small text-muted-foreground">
+    <footer className="mt-24 border-t border-foreground/10">
+      <div className="container-wide py-8 type-small text-muted-ink">
         {/* Mobile: stacked, left-aligned */}
-        <div className="flex flex-col gap-1 sm:hidden">
+        <div className="flex flex-col gap-2 sm:hidden">
           <a
             href="mailto:alicia@strommer.se"
             className="link-underline hover:text-foreground transition-colors self-start"

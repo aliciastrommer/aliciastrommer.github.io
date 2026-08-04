@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
-import { ScrollFade } from "@/components/scroll-fade";
 
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
@@ -174,16 +173,16 @@ function Home() {
           <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
             <div className="space-y-5">
               <div>
-                <div className="type-small text-foreground/70">Years of experience</div>
+                <div className="type-small text-muted-ink">Years of experience</div>
                 <div className="mt-1 type-h3">4+</div>
               </div>
               <div>
-                <div className="type-small text-foreground/70">Current role</div>
+                <div className="type-small text-muted-ink">Current role</div>
                 <div className="mt-1 type-h3">UX/UI Designer</div>
                 <div className="type-h3">Area Lead</div>
               </div>
               <div>
-                <div className="type-small text-foreground/70">Focus</div>
+                <div className="type-small text-muted-ink">Focus</div>
                 <div className="mt-1 type-h3">Product &amp; System Thinking</div>
                 <div className="type-h3">Accessibility-Driven Design</div>
                 <div className="type-h3">Usability in Complex Products</div>
@@ -192,7 +191,7 @@ function Home() {
 
             <div className="space-y-5">
               <div>
-                <div className="type-small text-foreground/70">Experience from</div>
+                <div className="type-small text-muted-ink">Experience from</div>
                 <div className="mt-1 type-h3">Traton Group</div>
                 <div className="type-h3">Scania</div>
                 <div className="type-h3">Daresay by Knightec</div>
@@ -200,7 +199,7 @@ function Home() {
                 <div className="type-h3">Umeå Energi</div>
               </div>
               <div>
-                <div className="type-small text-foreground/70">Education in</div>
+                <div className="type-small text-muted-ink">Education in</div>
                 <div className="mt-1 type-h3">Interaction Design</div>
                 <div className="type-h3">Cognitive Science</div>
               </div>
