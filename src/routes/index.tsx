@@ -161,7 +161,7 @@ function Home() {
                 }}
                 className="btn-pill btn-pill-light-outline"
               >
-                View Projects
+                View Work
               </a>
             </div>
           </div>
