@@ -129,22 +129,22 @@ function Home() {
           }}
           aria-hidden="true"
         />
-        <section className="relative z-10 container-wide min-h-svh flex flex-col justify-center py-24">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 type-body text-hero-muted">
+        <section className="relative z-10 container-wide min-h-svh flex flex-col items-center justify-center py-24 text-center">
+          <div className="max-w-4xl flex flex-col items-center">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm type-body text-hero-muted">
               <span className="pulse-dot" aria-hidden="true" />
               <span>Currently designing for Scania · Based in Stockholm</span>
             </div>
-            <h1 className="mt-6 type-hero text-white">
+            <h1 className="mt-8 type-hero text-white">
               <span className="inline-block pb-[0.06em]">Alicia Strömmer</span>
               <span className="block">Product Designer</span>
             </h1>
-            <p className="mt-6 type-body-lg text-hero-muted">
+            <p className="mt-6 max-w-2xl type-body-lg text-hero-muted">
               I specialize in simplifying complex systems through user-centered
               design, combining strategic thinking with attention to detail to
               create products that work in the real world.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="mailto:alicia@strommer.se"
                 className="btn-pill btn-pill-primary"
