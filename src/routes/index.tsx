@@ -109,8 +109,8 @@ function Home() {
               <span>Currently designing for Scania · Based in Stockholm</span>
             </div>
             <h1 className="mt-6 type-hero text-white">
-              <span className="shimmer-text inline-block pb-[0.06em]">Alicia Strömmer</span>
-              <span className="block text-white/55">Product Designer</span>
+              <span className="inline-block pb-[0.06em]">Alicia Strömmer</span>
+              <span className="block">Product Designer</span>
             </h1>
             <p className="mt-6 type-body-lg text-hero-muted">
               I specialize in simplifying complex systems through user-centered
