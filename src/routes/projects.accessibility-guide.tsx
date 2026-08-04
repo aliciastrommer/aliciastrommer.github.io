@@ -109,7 +109,7 @@ function AccessibilityPage() {
       <CaseSection title="Deliverables & Impact">
         <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
           <div>
-            <h3 className="text-foreground font-semibold">Deliverables</h3>
+            <h3 className="type-h3">Deliverables</h3>
             <p className="mt-2">
               My key deliverables included a visual framework for interpreting
               WCAG guidelines, benchmarked examples of accessible design
@@ -119,7 +119,7 @@ function AccessibilityPage() {
             </p>
           </div>
           <div>
-            <h3 className="text-foreground font-semibold">Impact</h3>
+            <h3 className="type-h3">Impact</h3>
             <p className="mt-2">
               The result was a practical resource that translated complex
               accessibility standards into actionable guidance for day-to-day

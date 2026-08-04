@@ -131,7 +131,7 @@ function SmartPotPage() {
           one containing the plant itself and a separate water reservoir.
         </p>
 
-        <h3 className="text-base font-semibold text-foreground pt-4">
+        <h3 className="type-h3 pt-4">
           Interaction Design
         </h3>
         <p>
@@ -140,7 +140,7 @@ function SmartPotPage() {
         </p>
         <ul className="list-disc pl-5 space-y-2 marker:text-primary">
           <li>
-            <strong className="text-foreground font-semibold">
+            <strong className="type-h3">
               Checking the herb's well-being:
             </strong>{" "}
             The user gently tickles the leaves to receive feedback. The pot
@@ -148,7 +148,7 @@ function SmartPotPage() {
             when it needs watering.
           </li>
           <li>
-            <strong className="text-foreground font-semibold">
+            <strong className="type-h3">
               Checking the water reservoir:
             </strong>{" "}
             The physical shape of the pot reflects the amount of water
@@ -157,7 +157,7 @@ function SmartPotPage() {
             scale.
           </li>
           <li>
-            <strong className="text-foreground font-semibold">
+            <strong className="type-h3">
               Watering the herb:
             </strong>{" "}
             By holding the sides of the pot, the user activates the watering

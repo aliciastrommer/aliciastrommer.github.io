@@ -137,7 +137,7 @@ function SmartDashPage() {
       <CaseSection title="My Contribution">
         <div className="space-y-10">
           <div>
-            <h3 className="text-base font-semibold text-foreground">Year 1</h3>
+            <h3 className="type-h3">Year 1</h3>
             <p className="mt-3">
               Initially, my role was centred on designing and delivering
               individual HMI features. My responsibility was to translate
@@ -159,7 +159,7 @@ function SmartDashPage() {
           </div>
 
           <div>
-            <h3 className="text-base font-semibold text-foreground">Year 1–2</h3>
+            <h3 className="type-h3">Year 1–2</h3>
             <p className="mt-3">
               As my experience grew, my role expanded to contributing beyond
               single features, towards patterns, consistency, and shared ways of
@@ -174,7 +174,7 @@ function SmartDashPage() {
           </div>
 
           <div>
-            <h3 className="text-base font-semibold text-foreground">Year 3–4</h3>
+            <h3 className="type-h3">Year 3–4</h3>
             <p className="mt-3">
               The past year my role has transitioned into a lead role within a
               defined area. I help drive direction, facilitate alignment, and
@@ -239,7 +239,7 @@ function SmartDashPage() {
       <CaseSection title="Deliverables & Impact">
         <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
           <div>
-            <h3 className="text-foreground font-semibold">Product</h3>
+            <h3 className="type-h3">Product</h3>
             <p className="mt-2">
               I have delivered, validated and improved numerous production-ready
               HMI experiences, now used by thousands of professional drivers
@@ -247,7 +247,7 @@ function SmartDashPage() {
             </p>
           </div>
           <div>
-            <h3 className="text-foreground font-semibold">Process</h3>
+            <h3 className="type-h3">Process</h3>
             <p className="mt-2">
               Working across several teams, I have helped define collaboration
               models for newly formed functional teams, co-created onboarding
@@ -256,7 +256,7 @@ function SmartDashPage() {
             </p>
           </div>
           <div>
-            <h3 className="text-foreground font-semibold">System</h3>
+            <h3 className="type-h3">System</h3>
             <p className="mt-2">
               I have established reusable interaction patterns and components
               adopted across multiple features, and created a new system
@@ -264,7 +264,7 @@ function SmartDashPage() {
             </p>
           </div>
           <div>
-            <h3 className="text-foreground font-semibold">Strategic</h3>
+            <h3 className="type-h3">Strategic</h3>
             <p className="mt-2">
               I have driven strategic development within a key HMI domain,
               coordinating upcoming work, supporting other designers, and acting
