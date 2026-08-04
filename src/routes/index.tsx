@@ -224,8 +224,12 @@ function Home() {
               <Link
                 to={p.to}
                 aria-label={`Open ${p.title} case study`}
-                className="group block py-4 pl-0 border-l-2 border-transparent transition-all duration-300 ease-out hover:border-primary hover:pl-5"
+                className="group relative block py-4 transition-all duration-300 ease-out"
               >
+                <span
+                  className="absolute -left-3 top-0 bottom-0 w-0.5 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  aria-hidden="true"
+                />
                 <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
                   <div className="order-2 sm:order-none min-w-0 flex flex-col">
                     <div>
