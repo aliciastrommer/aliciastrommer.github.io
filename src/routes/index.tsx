@@ -96,12 +96,39 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — dark artwork background with a slow purple bloom */}
+      {/* HERO — minimal dark field with faint grid, soft glow, vignette */}
       <div
         className="relative overflow-hidden bg-hero-gradient"
         data-header-theme="dark"
       >
-        <div className="hero-bloom" aria-hidden="true" />
+        {/* Ultra-faint linear grid */}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+          aria-hidden="true"
+        />
+        {/* Soft central purple glow */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+          style={{
+            background: "oklch(0.55 0.19 292 / 0.10)",
+            filter: "blur(120px)",
+          }}
+          aria-hidden="true"
+        />
+        {/* Vignette for depth */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle at center, transparent 0%, #0a0a0c 70%)",
+          }}
+          aria-hidden="true"
+        />
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-center py-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 type-body text-hero-muted">
