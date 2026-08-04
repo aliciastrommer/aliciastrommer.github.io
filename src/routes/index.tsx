@@ -264,7 +264,7 @@ function Home() {
 
       {/* [03] HOW I WORK — flat dark section with cursor-following spotlight */}
       <div
-        className="bg-dark-flat relative overflow-hidden spotlight-section"
+        className="bg-dark-flat relative overflow-hidden spotlight-section min-h-screen flex items-center"
         data-header-theme="dark"
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
