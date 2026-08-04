@@ -97,19 +97,10 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — dark artwork background with cursor-following spotlight */}
+      {/* HERO — dark artwork background */}
       <div
-        className="relative overflow-hidden bg-hero-gradient spotlight-section"
+        className="relative overflow-hidden bg-hero-gradient"
         data-header-theme="dark"
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect();
-          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
-          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
-          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
-        }}
       >
         <section className="relative z-10 container-wide min-h-svh flex flex-col py-16">
           {/* Top contact bar */}
@@ -128,15 +119,33 @@ function Home() {
             </a>
           </div>
 
-          <div className="flex-1 flex flex-col justify-center max-w-4xl">
-            <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
-            <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
-            <p className="mt-8 type-lead text-white">
-              I design thoughtful products for complex systems by combining
-              system thinking and hands-on craft with a profound understanding
-              of human cognition and behavior
+          <div className="flex-1 flex flex-col justify-center max-w-5xl">
+            <h1 className="type-hero text-white">
+              Alicia Strömmer
+              <span className="block">Product Designer</span>
+            </h1>
+            <p className="mt-8 type-body-lg text-hero-muted max-w-3xl">
+              I specialize in simplifying complex systems through user-centered
+              design, combining strategic thinking with attention to detail to
+              create products that work in the real world.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-body-lg text-hero-muted">
+              <span className="inline-flex items-center gap-3 text-white">
+                <span className="pulse-dot" aria-hidden="true" />
+                <span className="font-medium">Currently</span>
+              </span>
+              <span>Designing for Scania</span>
+              <span aria-hidden="true">·</span>
+              <span>Based in Stockholm</span>
+            </div>
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              <a
+                href="mailto:alicia@strommer.se"
+                className="btn-pill btn-pill-primary group"
+              >
+                Get In Touch
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
               <a
                 href="#work"
                 onClick={(e) => {
@@ -145,30 +154,16 @@ function Home() {
                     .getElementById("work")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="btn-pill btn-pill-primary group"
-              >
-                View work
-                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
-              </a>
-              <a
-                href="mailto:alicia@strommer.se"
                 className="btn-pill btn-pill-light-outline group"
               >
-                Let's talk
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                View Projects
+                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
               </a>
-            </div>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-hero-muted">
-              <span className="inline-flex items-center gap-2 text-white">
-                <span className="pulse-dot" aria-hidden="true" />
-                <span className="font-medium">Currently</span>
-              </span>
-              <span>Designing for Scania</span>
-              <span>Based in Stockholm</span>
             </div>
           </div>
         </section>
       </div>
+
 
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
