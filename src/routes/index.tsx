@@ -216,40 +216,38 @@ function Home() {
         <div className="mt-8 space-y-6 sm:space-y-8">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
-              <ScrollFade min={0.75}>
-                <Link
-                  to={p.to}
-                  aria-label={`Open ${p.title} case study`}
-                  className="group block py-6 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
-                >
-                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
-                    <div className="order-2 sm:order-none min-w-0 flex flex-col">
-                      <div>
-                        <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
-                          {p.title}
-                        </h3>
-                        <div className="mt-2 type-small text-foreground/70">{p.period}</div>
-                        <p className="mt-3 type-small text-foreground/85">{p.body}</p>
-                      </div>
-                      <div className="mt-auto pt-6 flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
-                          <span key={t} className="chip-outline">{t}</span>
-                        ))}
-                      </div>
+              <Link
+                to={p.to}
+                aria-label={`Open ${p.title} case study`}
+                className="group block py-6 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
+              >
+                <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
+                  <div className="order-2 sm:order-none min-w-0 flex flex-col">
+                    <div>
+                      <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                        {p.title}
+                      </h3>
+                      <div className="mt-2 type-small text-muted-ink">{p.period}</div>
+                      <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                     </div>
-                    <div className="order-1 sm:order-none min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
-                      <img
-                        src={p.image}
-                        alt={p.alt}
-                        loading="lazy"
-                        className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
-                      />
+                    <div className="mt-auto pt-6 flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <span key={t} className="chip-outline">{t}</span>
+                      ))}
                     </div>
-                  </article>
-
-                </Link>
-              </ScrollFade>
+                  </div>
+                  <div className="order-1 sm:order-none min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                    <img
+                      src={p.image}
+                      alt={p.alt}
+                      loading="lazy"
+                      className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                    />
+                  </div>
+                </article>
+              </Link>
             </Reveal>
+
 
           ))}
         </div>
