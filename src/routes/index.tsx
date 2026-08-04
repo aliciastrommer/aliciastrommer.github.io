@@ -249,15 +249,15 @@ function Home() {
         }}
       >
         <section className="container-wide relative z-10 py-24 sm:py-32">
-          <div className="grid gap-10 sm:grid-cols-[1fr_2fr]">
-            <div className="flex flex-col justify-between sm:min-h-[220px]">
+          <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
+            <div className="flex flex-col justify-between">
               <span className="type-caption text-white/70">HOW I WORK</span>
               <span className="type-caption hidden sm:inline text-white/70">[03]</span>
             </div>
-            <div className="sm:-mx-6">
+            <div className="flex flex-col justify-between">
               {howIWork.map((h) => (
                 <Reveal key={h.title}>
-                  <div className="rounded-lg px-4 sm:px-6 py-5 cursor-default">
+                  <div className="cursor-default">
                     <h3 className="type-h3 text-white">{h.title}</h3>
                     <p className="mt-2 type-body text-hero-muted max-w-lg">
                       {h.body}
