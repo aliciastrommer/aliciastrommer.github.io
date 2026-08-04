@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, ArrowDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 
@@ -124,10 +124,9 @@ function Home() {
             <div className="mt-12 flex flex-wrap items-center gap-4">
               <a
                 href="mailto:alicia@strommer.se"
-                className="btn-pill btn-pill-primary group"
+                className="btn-pill btn-pill-primary"
               >
                 Get In Touch
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a
                 href="#work"
@@ -137,10 +136,9 @@ function Home() {
                     .getElementById("work")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="btn-pill btn-pill-light-outline group"
+                className="btn-pill btn-pill-light-outline"
               >
                 View Projects
-                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
               </a>
             </div>
           </div>
