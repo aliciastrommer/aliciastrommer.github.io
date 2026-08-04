@@ -7,7 +7,6 @@ import {
   ChallengeList,
   FullBleedImage,
   CaseDivider,
-  CaseFooterNav,
 } from "@/components/case-study";
 
 import hero from "@/assets/smart-pot.jpg.asset.json";
@@ -209,8 +208,6 @@ function SmartPotPage() {
           <li>Expanded my understanding of the possibilities within interaction design, particularly in combining hardware and digital behaviour.</li>
         </ul>
       </CaseSection>
-
-      <CaseFooterNav next="/projects/smart-dash" />
     </CaseLayout>
   );
 }
