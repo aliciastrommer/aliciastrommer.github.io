@@ -37,7 +37,7 @@ const projects = [
     title: "Designing a Driver Experience That Keeps Attention on the Road",
     period: "2023 – Present",
     body:
-      "Designing digital driver experiences for professional truck and bus drivers that reduce cognitive effort and simply complex workflows.\u00a0",
+      "Designing digital driver experiences for professional truck and bus drivers that reduce cognitive effort and simplify complex workflows.\u00a0",
     tags: ["UX/UI Design", "Product Thinking", "Design System"],
     image: smartDashImg.url,
     alt: "Scania truck cab with the steering wheel and Center Information Display",
