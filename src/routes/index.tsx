@@ -102,22 +102,6 @@ function Home() {
         data-header-theme="dark"
       >
         <section className="relative z-10 container-wide min-h-svh flex flex-col py-16">
-          {/* Top contact bar */}
-          <div className="flex items-center justify-between type-small text-hero-muted">
-            <a
-              href="mailto:alicia@strommer.se"
-              className="link-underline hover:text-white transition-colors"
-            >
-              alicia@strommer.se
-            </a>
-            <a
-              href="tel:+46722068063"
-              className="link-underline text-right hover:text-white transition-colors"
-            >
-              +46 72-206 80 63
-            </a>
-          </div>
-
           <div className="flex-1 flex flex-col justify-center max-w-5xl">
             <h1 className="type-hero text-white">
               Alicia Strömmer
