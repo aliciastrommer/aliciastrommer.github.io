@@ -287,27 +287,6 @@ export function CaseTopNav({
   );
 }
 
-export function CaseFooterNav({
-  next,
-  nextLabel = "View Next Project",
-}: {
-  next: NextRoute;
-  nextLabel?: string;
-}) {
-  return (
-    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex flex-wrap items-center justify-between gap-4">
-      <Link to="/" className="btn-pill btn-pill-outline group">
-        <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
-        Back Home
-      </Link>
-      <Link to={next} className="btn-pill btn-pill-primary group">
-        {nextLabel}
-        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-      </Link>
-    </div>
-  );
-}
-
 export function CaseLayout({
   children,
   next,
