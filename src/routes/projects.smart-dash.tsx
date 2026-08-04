@@ -285,8 +285,6 @@ function SmartDashPage() {
           </li>
         </ul>
       </CaseSection>
-
-      <CaseFooterNav next="/projects/accessibility-guide" />
     </CaseLayout>
   );
 }
