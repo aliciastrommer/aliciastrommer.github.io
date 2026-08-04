@@ -43,15 +43,15 @@ export function CaseHero({
           <div className="flex flex-col h-full">
             <h1 className="type-h1">{title}</h1>
             {tagline && (
-              <p className="mt-5 type-body text-foreground/80 max-w-md">
+              <p className="mt-4 type-body text-muted-ink max-w-md">
                 {tagline}
               </p>
             )}
-            <dl className="mt-auto pt-10 space-y-4 type-body">
+            <dl className="mt-auto pt-8 space-y-4 type-body">
               {meta.map((m) => (
                 <div key={m.label}>
-                  <dt className="type-body text-foreground/60">{m.label}</dt>
-                  <dd className="mt-0.5 type-body font-semibold">{m.value}</dd>
+                  <dt className="type-body text-muted-ink">{m.label}</dt>
+                  <dd className="mt-1 type-body font-semibold">{m.value}</dd>
                 </div>
               ))}
             </dl>
@@ -60,7 +60,7 @@ export function CaseHero({
           {about && (
             <div className="flex flex-col h-full">
               <h2 className="type-h2">About</h2>
-              <div className="mt-5 flex-1 flex flex-col gap-4 type-body text-foreground/85 [&>p:last-child]:mt-auto [&>p:last-child]:pt-2">
+              <div className="mt-4 flex-1 flex flex-col gap-4 type-body text-foreground/85 [&>p:last-child]:mt-auto [&>p:last-child]:pt-2">
                 {about}
               </div>
             </div>
