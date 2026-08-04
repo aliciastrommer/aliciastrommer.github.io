@@ -227,7 +227,7 @@ function Home() {
                 className="group relative block py-4 transition-all duration-300 ease-out"
               >
                 <span
-                  className="absolute -left-3 top-0 bottom-0 w-0.5 bg-muted-ink/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute -left-3 top-0 bottom-0 w-0.5 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   aria-hidden="true"
                 />
                 <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
@@ -264,7 +264,7 @@ function Home() {
 
       {/* [03] HOW I WORK — flat dark section with cursor-following spotlight */}
       <div
-        className="bg-dark-flat relative overflow-hidden spotlight-section min-h-screen flex items-center"
+        className="bg-dark-flat relative overflow-hidden spotlight-section"
         data-header-theme="dark"
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
