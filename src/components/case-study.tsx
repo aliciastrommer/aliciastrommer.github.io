@@ -43,15 +43,15 @@ export function CaseHero({
           <div className="flex flex-col h-full">
             <h1 className="type-h1">{title}</h1>
             {tagline && (
-              <p className="mt-5 type-body text-foreground/80 max-w-md">
+              <p className="mt-4 type-body text-muted-ink max-w-md">
                 {tagline}
               </p>
             )}
-            <dl className="mt-auto pt-10 space-y-4 type-body">
+            <dl className="mt-auto pt-8 space-y-4 type-body">
               {meta.map((m) => (
                 <div key={m.label}>
-                  <dt className="type-body text-foreground/60">{m.label}</dt>
-                  <dd className="mt-0.5 type-body font-semibold">{m.value}</dd>
+                  <dt className="type-body text-muted-ink">{m.label}</dt>
+                  <dd className="mt-1 type-body font-semibold">{m.value}</dd>
                 </div>
               ))}
             </dl>
@@ -60,7 +60,7 @@ export function CaseHero({
           {about && (
             <div className="flex flex-col h-full">
               <h2 className="type-h2">About</h2>
-              <div className="mt-5 flex-1 flex flex-col gap-4 type-body text-foreground/85 [&>p:last-child]:mt-auto [&>p:last-child]:pt-2">
+              <div className="mt-4 flex-1 flex flex-col gap-4 type-body text-foreground/85 [&>p:last-child]:mt-auto [&>p:last-child]:pt-2">
                 {about}
               </div>
             </div>
@@ -228,33 +228,73 @@ export function FullBleedImage({
 }
 
 
-export function CaseFooterNav({
+type NextRoute =
+  | "/projects/smart-dash"
+  | "/projects/accessibility-guide"
+  | "/projects/smart-pot";
+
+export function CaseTopNav({
   next,
-  nextLabel = "View Next Project",
+  nextLabel = "Next Project",
 }: {
-  next: "/projects/smart-dash" | "/projects/accessibility-guide" | "/projects/smart-pot";
+  next: NextRoute;
   nextLabel?: string;
 }) {
   return (
-    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex items-center justify-between gap-4 type-h3">
-      <Link to="/" className="inline-flex items-center gap-3 hover:text-primary transition-colors">
-        <ArrowLeft className="h-6 w-6" />
+    <div className="container-wide py-4 flex items-center justify-between gap-4 type-small">
+      <Link
+        to="/"
+        className="inline-flex items-center gap-2 text-muted-ink hover:text-primary transition-colors"
+      >
+        <ArrowLeft className="h-4 w-4" />
         Back Home
       </Link>
-      <Link to={next} className="inline-flex items-center gap-3 hover:text-primary transition-colors">
+      <Link
+        to={next}
+        className="inline-flex items-center gap-2 text-muted-ink hover:text-primary transition-colors"
+      >
         {nextLabel}
-        <ArrowRight className="h-6 w-6" />
+        <ArrowRight className="h-4 w-4" />
       </Link>
     </div>
   );
 }
 
-export function CaseLayout({ children }: { children: ReactNode }) {
+export function CaseFooterNav({
+  next,
+  nextLabel = "View Next Project",
+}: {
+  next: NextRoute;
+  nextLabel?: string;
+}) {
+  return (
+    <div className="mx-auto max-w-3xl px-5 sm:px-8 mt-20 flex flex-wrap items-center justify-between gap-4">
+      <Link to="/" className="btn-pill btn-pill-outline group">
+        <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
+        Back Home
+      </Link>
+      <Link to={next} className="btn-pill btn-pill-primary group">
+        {nextLabel}
+        <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+      </Link>
+    </div>
+  );
+}
+
+export function CaseLayout({
+  children,
+  next,
+}: {
+  children: ReactNode;
+  next?: NextRoute;
+}) {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {next && <CaseTopNav next={next} />}
       <main className="pb-16">{children}</main>
       <SiteFooter />
     </div>
   );
 }
+
 

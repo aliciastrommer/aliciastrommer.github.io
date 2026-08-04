@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
-import { ScrollFade } from "@/components/scroll-fade";
 
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
@@ -97,19 +96,10 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — dark artwork background with cursor-following spotlight */}
+      {/* HERO — dark artwork background */}
       <div
-        className="relative overflow-hidden bg-hero-gradient spotlight-section"
+        className="relative overflow-hidden bg-hero-gradient"
         data-header-theme="dark"
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect();
-          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
-          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
-          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
-        }}
       >
         <section className="relative z-10 container-wide min-h-svh flex flex-col py-16">
           {/* Top contact bar */}
@@ -128,15 +118,33 @@ function Home() {
             </a>
           </div>
 
-          <div className="flex-1 flex flex-col justify-center max-w-4xl">
-            <div aria-hidden="true" className="text-4xl sm:text-5xl mb-6">👋</div>
-            <h1 className="type-h1 text-white">Hi, I'm Alicia Strömmer</h1>
-            <p className="mt-8 type-lead text-white">
-              I design thoughtful products for complex systems by combining
-              system thinking and hands-on craft with a profound understanding
-              of human cognition and behavior
+          <div className="flex-1 flex flex-col justify-center max-w-5xl">
+            <h1 className="type-hero text-white">
+              Alicia Strömmer
+              <span className="block">Product Designer</span>
+            </h1>
+            <p className="mt-8 type-body-lg text-hero-muted max-w-3xl">
+              I specialize in simplifying complex systems through user-centered
+              design, combining strategic thinking with attention to detail to
+              create products that work in the real world.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 type-body-lg text-hero-muted">
+              <span className="inline-flex items-center gap-3 text-white">
+                <span className="pulse-dot" aria-hidden="true" />
+                <span className="font-medium">Currently</span>
+              </span>
+              <span>Designing for Scania</span>
+              <span aria-hidden="true">·</span>
+              <span>Based in Stockholm</span>
+            </div>
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              <a
+                href="mailto:alicia@strommer.se"
+                className="btn-pill btn-pill-primary group"
+              >
+                Get In Touch
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
               <a
                 href="#work"
                 onClick={(e) => {
@@ -145,30 +153,16 @@ function Home() {
                     .getElementById("work")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="btn-pill btn-pill-primary group"
-              >
-                View work
-                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
-              </a>
-              <a
-                href="mailto:alicia@strommer.se"
                 className="btn-pill btn-pill-light-outline group"
               >
-                Let's talk
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                View Projects
+                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
               </a>
-            </div>
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 type-small text-hero-muted">
-              <span className="inline-flex items-center gap-2 text-white">
-                <span className="pulse-dot" aria-hidden="true" />
-                <span className="font-medium">Currently</span>
-              </span>
-              <span>Designing for Scania</span>
-              <span>Based in Stockholm</span>
             </div>
           </div>
         </section>
       </div>
+
 
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
@@ -179,16 +173,16 @@ function Home() {
           <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
             <div className="space-y-5">
               <div>
-                <div className="type-small text-foreground/70">Years of experience</div>
+                <div className="type-small text-muted-ink">Years of experience</div>
                 <div className="mt-1 type-h3">4+</div>
               </div>
               <div>
-                <div className="type-small text-foreground/70">Current role</div>
+                <div className="type-small text-muted-ink">Current role</div>
                 <div className="mt-1 type-h3">UX/UI Designer</div>
                 <div className="type-h3">Area Lead</div>
               </div>
               <div>
-                <div className="type-small text-foreground/70">Focus</div>
+                <div className="type-small text-muted-ink">Focus</div>
                 <div className="mt-1 type-h3">Product &amp; System Thinking</div>
                 <div className="type-h3">Accessibility-Driven Design</div>
                 <div className="type-h3">Usability in Complex Products</div>
@@ -197,7 +191,7 @@ function Home() {
 
             <div className="space-y-5">
               <div>
-                <div className="type-small text-foreground/70">Experience from</div>
+                <div className="type-small text-muted-ink">Experience from</div>
                 <div className="mt-1 type-h3">Traton Group</div>
                 <div className="type-h3">Scania</div>
                 <div className="type-h3">Daresay by Knightec</div>
@@ -205,7 +199,7 @@ function Home() {
                 <div className="type-h3">Umeå Energi</div>
               </div>
               <div>
-                <div className="type-small text-foreground/70">Education in</div>
+                <div className="type-small text-muted-ink">Education in</div>
                 <div className="mt-1 type-h3">Interaction Design</div>
                 <div className="type-h3">Cognitive Science</div>
               </div>
@@ -221,40 +215,38 @@ function Home() {
         <div className="mt-8 space-y-6 sm:space-y-8">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
-              <ScrollFade min={0.75}>
-                <Link
-                  to={p.to}
-                  aria-label={`Open ${p.title} case study`}
-                  className="group block py-6 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
-                >
-                  <article className="grid gap-5 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
-                    <div className="order-2 sm:order-none min-w-0 flex flex-col">
-                      <div>
-                        <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
-                          {p.title}
-                        </h3>
-                        <div className="mt-2 type-small text-foreground/70">{p.period}</div>
-                        <p className="mt-3 type-small text-foreground/85">{p.body}</p>
-                      </div>
-                      <div className="mt-auto pt-6 flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
-                          <span key={t} className="chip-outline">{t}</span>
-                        ))}
-                      </div>
+              <Link
+                to={p.to}
+                aria-label={`Open ${p.title} case study`}
+                className="group block py-6 border-y border-transparent transition-colors duration-300 ease-out hover:border-foreground/15"
+              >
+                <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
+                  <div className="order-2 sm:order-none min-w-0 flex flex-col">
+                    <div>
+                      <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                        {p.title}
+                      </h3>
+                      <div className="mt-2 type-small text-muted-ink">{p.period}</div>
+                      <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                     </div>
-                    <div className="order-1 sm:order-none min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
-                      <img
-                        src={p.image}
-                        alt={p.alt}
-                        loading="lazy"
-                        className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
-                      />
+                    <div className="mt-auto pt-6 flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <span key={t} className="chip-outline">{t}</span>
+                      ))}
                     </div>
-                  </article>
-
-                </Link>
-              </ScrollFade>
+                  </div>
+                  <div className="order-1 sm:order-none min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                    <img
+                      src={p.image}
+                      alt={p.alt}
+                      loading="lazy"
+                      className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                    />
+                  </div>
+                </article>
+              </Link>
             </Reveal>
+
 
           ))}
         </div>

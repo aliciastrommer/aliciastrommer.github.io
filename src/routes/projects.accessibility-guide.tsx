@@ -38,7 +38,7 @@ export const Route = createFileRoute("/projects/accessibility-guide")({
 
 function AccessibilityPage() {
   return (
-    <CaseLayout>
+    <CaseLayout next="/projects/smart-pot">
       <CaseHero
         heroImage={hero.url}
         heroAlt="Laptop showing the Daresay Accessibility Guide on a wooden desk"
