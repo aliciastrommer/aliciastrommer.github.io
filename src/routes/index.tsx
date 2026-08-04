@@ -101,9 +101,9 @@ function Home() {
         className="relative overflow-hidden bg-hero-gradient"
         data-header-theme="dark"
       >
-        {/* Ultra-faint linear grid */}
+        {/* Subtle linear grid — slightly more visible against the lighter dark field */}
         <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          className="absolute inset-0 opacity-[0.08] pointer-events-none"
           style={{
             backgroundImage:
               "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
@@ -120,12 +120,12 @@ function Home() {
           }}
           aria-hidden="true"
         />
-        {/* Vignette for depth */}
+        {/* Vignette for depth — matches the new hero background tone */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle at center, transparent 0%, #0a0a0c 70%)",
+              "radial-gradient(circle at center, transparent 0%, #16171b 70%)",
           }}
           aria-hidden="true"
         />
