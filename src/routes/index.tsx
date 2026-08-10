@@ -140,9 +140,9 @@ function Home() {
               <span className="block">Product Designer</span>
             </h1>
             <p className="mt-6 max-w-2xl type-body-lg text-hero-muted">
-              I specialize in simplifying complex systems through user-centered
-              design, combining strategic thinking with attention to detail to
-              create products that work in the real world.
+              I design thoughtful products for complex systems by combining systems
+              thinking and hands-on craft, with a deep understanding of how humans
+              process information.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
