@@ -57,7 +57,7 @@ const projects = [
     title: "Using Tangible Interaction to Inspire Sustainable Behavior",
     period: "2021",
     body:
-      "Concept design of an interactive pot, used to demonstrate how tangible interaction can increase engagement with sustainable behaviour.",
+      "Concept design of an interactive pot used to demonstrate how tangible interaction can increase engagement with sustainable behaviour.",
     tags: ["User Research", "Interaction Design", "User Testing"],
     image: smartPotImg.url,
     alt: "Hands holding a glowing white origami-textured plant pot",
