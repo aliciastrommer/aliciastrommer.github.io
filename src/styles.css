@@ -247,10 +247,10 @@
 }
 
 
-/* Hero background — cool light-grey field with a subtle linear grid
-   and a soft central lavender glow. Matches the light-mode page surface. */
+/* Hero background — clean neutral light field with a subtle dot grid.
+   No colored glow, so the surface stays calm and doesn't shift in hue. */
 @utility bg-hero-gradient {
-  background-color: #e6e6e9;
+  background-color: #f5f5f7;
   color: var(--foreground);
 }
 /* Flat dark surface (no pattern) used by the How I Work section. */

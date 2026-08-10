@@ -101,22 +101,22 @@ function Home() {
         className="relative overflow-hidden bg-hero-gradient"
         data-header-theme="light"
       >
-        {/* Subtle linear grid — light against the greige field */}
+        {/* Subtle dot grid — adds texture without color shift */}
         <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
           style={{
             backgroundImage:
-              "linear-gradient(#070707 1px, transparent 1px), linear-gradient(90deg, #070707 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+              "radial-gradient(circle, #070707 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
           }}
           aria-hidden="true"
         />
-        {/* Soft central lavender glow */}
+        {/* Very soft top/bottom vignette for depth, still neutral */}
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background: "oklch(0.55 0.19 292 / 0.08)",
-            filter: "blur(120px)",
+            background:
+              "radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.03) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.03) 0%, transparent 50%)",
           }}
           aria-hidden="true"
         />
