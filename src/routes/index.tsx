@@ -131,7 +131,7 @@ function Home() {
         />
         <section className="relative z-10 container-wide min-h-svh flex flex-col items-center justify-center py-24 text-center">
           <div className="max-w-4xl flex flex-col items-center">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm type-caption text-hero-muted">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm text-[0.875rem] font-medium tracking-wide text-hero-muted">
               <span className="pulse-dot" aria-hidden="true" />
               <span>Currently designing for Scania · Based in Stockholm</span>
             </div>
