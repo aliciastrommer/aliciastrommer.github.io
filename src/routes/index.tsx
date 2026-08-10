@@ -96,50 +96,41 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — minimal dark field with faint grid, soft glow, vignette */}
+      {/* HERO — light greige field with subtle grid and soft lavender glow */}
       <div
         className="relative overflow-hidden bg-hero-gradient"
-        data-header-theme="dark"
+        data-header-theme="light"
       >
-        {/* Subtle linear grid — slightly more visible against the lighter dark field */}
+        {/* Subtle linear grid — light against the greige field */}
         <div
-          className="absolute inset-0 opacity-[0.08] pointer-events-none"
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
             backgroundImage:
-              "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+              "linear-gradient(#070707 1px, transparent 1px), linear-gradient(90deg, #070707 1px, transparent 1px)",
             backgroundSize: "80px 80px",
           }}
           aria-hidden="true"
         />
-        {/* Soft central purple glow */}
+        {/* Soft central lavender glow */}
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{
-            background: "oklch(0.55 0.19 292 / 0.10)",
+            background: "oklch(0.55 0.19 292 / 0.08)",
             filter: "blur(120px)",
-          }}
-          aria-hidden="true"
-        />
-        {/* Vignette for depth — matches the new hero background tone */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle at center, transparent 0%, #16171b 70%)",
           }}
           aria-hidden="true"
         />
         <section className="relative z-10 container-wide min-h-svh flex flex-col items-center justify-center py-24 text-center">
           <div className="max-w-4xl flex flex-col items-center">
-            <div className="inline-flex items-center gap-3 type-body-lg text-hero-muted">
+            <div className="inline-flex items-center gap-3 type-body-lg text-muted-ink">
               <span className="pulse-dot" aria-hidden="true" />
               <span>Designing for Scania • Stockholm</span>
             </div>
-            <h1 className="mt-8 type-hero text-white">
+            <h1 className="mt-8 type-hero">
               <span className="inline-block pb-[0.06em]">Alicia Strömmer</span>
               <span className="block">Product Designer</span>
             </h1>
-            <p className="mt-6 max-w-2xl type-body-lg text-hero-muted">
+            <p className="mt-6 max-w-2xl type-body-lg text-muted-ink">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
@@ -147,7 +138,7 @@ function Home() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="mailto:alicia@strommer.se"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary/70 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-primary/80 hover:scale-105 transition-all duration-200"
+                className="btn-pill btn-pill-primary type-caption"
               >
                 Get In Touch
               </a>
@@ -159,7 +150,7 @@ function Home() {
                     .getElementById("work")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/[0.03] backdrop-blur-md text-white shadow-xl ring-1 ring-white/10 type-caption hover:bg-white/[0.08] hover:scale-105 transition-all duration-200"
+                className="btn-pill btn-pill-outline type-caption"
               >
                 View Work
               </a>
