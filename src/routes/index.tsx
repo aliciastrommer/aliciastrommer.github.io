@@ -226,10 +226,6 @@ function Home() {
                 aria-label={`Open ${p.title} case study`}
                 className="group relative block py-4 transition-all duration-300 ease-out"
               >
-                <span
-                  className="absolute -left-3 top-0 bottom-0 w-0.5 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  aria-hidden="true"
-                />
                 <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
                   <div className="order-2 sm:order-none min-w-0 flex flex-col">
                     <div>
@@ -245,13 +241,21 @@ function Home() {
                       ))}
                     </div>
                   </div>
-                  <div className="order-1 sm:order-none min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                  <div className="order-1 sm:order-none relative min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
                     <img
                       src={p.image}
                       alt={p.alt}
                       loading="lazy"
-                      className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                      className="block h-full w-full object-cover transition-all duration-[600ms] ease-out group-hover:scale-[1.02] group-hover:blur-[3px]"
                     />
+                    <div
+                      className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      aria-hidden="true"
+                    >
+                      <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white shadow-xl">
+                        <ArrowUpRight className="h-6 w-6" />
+                      </div>
+                    </div>
                   </div>
                 </article>
               </Link>
