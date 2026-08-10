@@ -246,14 +246,14 @@ function Home() {
                       src={p.image}
                       alt={p.alt}
                       loading="lazy"
-                      className="block h-full w-full object-cover transition-all duration-[600ms] ease-out group-hover:scale-[1.02] group-hover:blur-[3px]"
+                      className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
                     />
                     <div
-                      className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       aria-hidden="true"
                     >
-                      <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white shadow-xl">
-                        <ArrowUpRight className="h-6 w-6" />
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20">
+                        <ArrowUpRight className="h-5 w-5" />
                       </div>
                     </div>
                   </div>
