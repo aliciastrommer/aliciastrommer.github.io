@@ -147,7 +147,7 @@ function Home() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="mailto:alicia@strommer.se"
-                className="btn-pill btn-pill-primary"
+                className="btn-pill btn-pill-primary type-caption"
               >
                 Get In Touch
               </a>
@@ -159,7 +159,7 @@ function Home() {
                     .getElementById("work")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="btn-pill btn-pill-light-outline"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/70 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-black/80 hover:scale-105 transition-all duration-200"
               >
                 View Work
               </a>
@@ -349,7 +349,7 @@ function Home() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
+          <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary type-caption group">
             Let's Talk
             <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
