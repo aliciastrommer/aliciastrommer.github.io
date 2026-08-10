@@ -320,40 +320,29 @@ function Home() {
             </h2>
             <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
               <p>
-                I grew up in Umeå and now live in Stockholm with my fiancé.
-                Today, I work at the intersection of design, technology, and
-                human behaviour. What motivates me the most is working on
-                products that become part of people's routines. When something
-                is used every day, even the smallest design change can have a
-                lasting impact.
+                I grew up in Umeå and now live in Stockholm with my fiancé. Today,
+                I work at the intersection of design, technology, and human behaviour,
+                with a particular interest in creating products that become a natural
+                part of people’s everyday lives. I find it especially rewarding to
+                see how small design decisions can make a meaningful difference over time.
               </p>
               <p>
-                The path here started long before I knew it would become a
-                career. Growing up alongside people with different cognitive
-                variations gave me firsthand insight into how differently we can
-                think, communicate, and experience the world. I learned early
-                that there is rarely a single solution that works for everyone,
-                and that perspective sparked a curiosity about human behaviour
-                that eventually led me to study cognitive science and
-                interaction design.
+                My interest in human behaviour started early. Growing up alongside
+                people with different cognitive variations gave me a firsthand
+                understanding of how differently we can think, communicate, and
+                experience the world. It made me curious about people and eventually
+                led me to study cognitive science and interaction design.
               </p>
               <p>
-                Creativity has always been part of how I make sense of the
-                world. Over the years, it's taken different form - from writing
-                and photography, to small personal projects. Regardless, it's
-                always been a way to explore ideas, learn something new, and
-                bring thoughts to life. Today, I enjoy combining that creative
-                side with an understanding of people to design experiences that
-                are both useful and enjoyable.
+                Creativity has always been an important part of my life, from writing
+                and photography to various personal projects. Today, I bring that
+                creative side into my work, combining it with an understanding of
+                people to create experiences that are useful, intuitive, and enjoyable.
               </p>
               <p>
-                Whenever I get the chance, I head back north to our summer house
-                on the coast outside Umeå. Life moves a little slower there.
-                Mornings begin with coffee overlooking the sea, the days are
-                filled with long walks, swims, berry picking, or simply spending
-                time outdoors, and there's rarely any rush to be anywhere. It's
-                where I find the space to recharge, reflect, and return with a
-                fresh perspective.
+                Whenever I can, I head back north to our summer house on the coast
+                outside Umeå. Being by the sea, spending time outdoors, and slowing
+                down for a while is my favourite way to recharge.
               </p>
             </div>
           </div>
