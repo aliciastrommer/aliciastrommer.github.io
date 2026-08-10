@@ -131,9 +131,9 @@ function Home() {
         />
         <section className="relative z-10 container-wide min-h-svh flex flex-col items-center justify-center py-24 text-center">
           <div className="max-w-4xl flex flex-col items-center">
-            <div className="inline-flex items-center gap-3 type-caption text-hero-muted">
+            <div className="inline-flex items-center gap-3 type-body-lg text-hero-muted">
               <span className="pulse-dot" aria-hidden="true" />
-              <span>Designing for Scania - Stockholm</span>
+              <span>Designing for Scania • Stockholm</span>
             </div>
             <h1 className="mt-8 type-hero text-white">
               <span className="inline-block pb-[0.06em]">Alicia Strömmer</span>
