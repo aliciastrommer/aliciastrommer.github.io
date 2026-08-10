@@ -259,7 +259,7 @@ function Home() {
 
       {/* [03] HOW I WORK — light lavender section matching design challenge blocks */}
       <div
-        className="bg-lavender-soft relative overflow-hidden"
+        className="bg-lavender-soft relative overflow-hidden border-y border-primary/15"
         data-header-theme="light"
       >
         <section className="container-wide relative z-10 py-20 sm:py-24">
