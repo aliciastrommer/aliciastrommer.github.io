@@ -138,7 +138,7 @@ function Home() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="mailto:alicia@strommer.se"
-                className="btn-pill btn-pill-primary type-caption"
+                className="btn-pill btn-pill-primary type-caption text-white"
               >
                 Get In Touch
               </a>
