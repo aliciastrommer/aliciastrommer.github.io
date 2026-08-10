@@ -298,7 +298,7 @@ export function CaseTopNav({
         </Link>
         <Link
           to={next}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/70 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-black/80 hover:scale-105 transition-all duration-200"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/70 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 text-base font-medium hover:bg-black/80 hover:scale-105 transition-all duration-200"
         >
           {nextLabel}
           <ArrowRight className="h-4 w-4" />
