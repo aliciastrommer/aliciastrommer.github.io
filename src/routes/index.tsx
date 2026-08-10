@@ -349,7 +349,7 @@ function Home() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary group">
+          <a href="mailto:alicia@strommer.se" className="btn-pill btn-pill-primary type-caption group">
             Let's Talk
             <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
