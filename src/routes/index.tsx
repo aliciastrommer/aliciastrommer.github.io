@@ -95,7 +95,7 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 
 function Home() {
   return (
-    <div className="dark min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       {/* HERO — minimal dark field with faint grid, soft glow, vignette */}
       <div
         className="relative overflow-hidden bg-hero-gradient"
@@ -120,12 +120,12 @@ function Home() {
           }}
           aria-hidden="true"
         />
-        {/* Vignette for depth — matches the dark field tone */}
+        {/* Vignette for depth — matches the new hero background tone */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle at center, transparent 0%, oklch(0.14 0.005 285) 70%)",
+              "radial-gradient(circle at center, transparent 0%, #16171b 70%)",
           }}
           aria-hidden="true"
         />

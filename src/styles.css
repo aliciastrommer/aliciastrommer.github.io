@@ -249,14 +249,14 @@
 
 /* Hero background — minimal dark field with an ultra-faint linear grid,
    a soft central purple glow, and a vignette for depth.
-   Uses the same dark field as the dark theme so the whole page feels continuous. */
+   Same darkness as the How I Work section (#16171b) so the grid is readable. */
 @utility bg-hero-gradient {
-  background-color: oklch(0.14 0.005 285);
+  background-color: #16171b;
   color: #f2f3f5;
 }
 /* Flat dark surface (no pattern) used by the How I Work section. */
 @utility bg-dark-flat {
-  background-color: oklch(0.14 0.005 285);
+  background-color: #16171b;
   color: #f2f3f5;
 }
 
