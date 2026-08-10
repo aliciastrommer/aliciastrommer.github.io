@@ -286,19 +286,19 @@ export function CaseTopNav({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
         visible ? "translate-y-0" : "-translate-y-full"
-      } bg-background/95 backdrop-blur-md border-b border-foreground/10`}
+      }`}
     >
-      <div className="container-wide py-4 flex items-center justify-between gap-4 type-small">
+      <div className="container-wide py-5 flex items-center justify-between gap-4">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+          aria-label="Back home"
+          className="grid place-items-center w-11 h-11 rounded-full bg-black/40 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 hover:bg-black/50 hover:scale-105 transition-all duration-200"
         >
-          <ArrowLeft className="h-4 w-4" />
-          Back Home
+          <Home className="h-5 w-5" />
         </Link>
         <Link
           to={next}
-          className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/40 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-black/50 hover:scale-105 transition-all duration-200"
         >
           {nextLabel}
           <ArrowRight className="h-4 w-4" />
