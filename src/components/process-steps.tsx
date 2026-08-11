@@ -43,14 +43,14 @@ export function ProcessSteps({ steps }: Props) {
     <div className="relative">
       <ol
         ref={scrollRef}
-        className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {steps.map((step, i) => {
           const num = String(i + 1).padStart(2, "0");
           return (
             <li
               key={step.title}
-              className="group min-w-[320px] md:min-w-[400px] snap-start rounded-2xl border border-border bg-background p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-primary/25 hover:shadow-xl hover:shadow-primary/10"
+              className="group w-full flex-shrink-0 snap-start rounded-2xl border border-border bg-background p-8 transition-all duration-300 hover:border-primary/25"
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary-soft text-primary font-bold text-xl mb-8 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                 {num}
@@ -64,7 +64,7 @@ export function ProcessSteps({ steps }: Props) {
         })}
       </ol>
 
-      <div className="mt-2 flex items-center justify-between gap-4">
+      <div className="mt-6 flex items-center justify-between gap-4">
         <div className="flex-1 h-1 bg-border rounded-full overflow-hidden">
           <div
             className="h-full bg-primary transition-all duration-500"
