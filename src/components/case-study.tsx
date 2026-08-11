@@ -79,7 +79,7 @@ export function CaseSection({
 }: {
   title?: string;
   centered?: boolean;
-  tone?: "default" | "lavender" | "dark" | "dark-flat";
+  tone?: "default" | "lavender" | "dark" | "dark-flat" | "light-tinted";
   children: ReactNode;
 }) {
   if (tone === "dark") {
