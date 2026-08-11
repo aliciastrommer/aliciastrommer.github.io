@@ -259,7 +259,7 @@
   color: #f2f3f5;
 }
 
-/* Cursor-following spotlight for How I Work section */
+/* Cursor-following purple spotlight / mask for How I Work section */
 .spotlight-section {
   --spotlight-x: 50%;
   --spotlight-y: 50%;
@@ -271,14 +271,20 @@
     inset: 0;
     pointer-events: none;
     background: radial-gradient(
-      500px circle at var(--spotlight-x) var(--spotlight-y),
-      oklch(1 0 0 / 0.07),
-      transparent 40%
+      520px circle at var(--spotlight-x) var(--spotlight-y),
+      oklch(0.55 0.18 285 / 0.22),
+      oklch(0.55 0.18 285 / 0.08) 35%,
+      transparent 60%
     );
     opacity: var(--spotlight-opacity);
     transition: opacity 300ms ease;
     z-index: 0;
   }
+}
+
+/* Deeper lavender section background — used for How I Work */
+@utility bg-lavender-deep {
+  background-color: oklch(0.82 0.035 285);
 }
 /* Muted hero text — #c8ccd4 on #16171b hits ~10.6:1 contrast (WCAG AAA). */
 @utility text-hero-muted {
