@@ -120,7 +120,24 @@ export function CaseSection({
     );
   }
 
-
+  if (tone === "light-tinted") {
+    return (
+      <section className="bg-surface mt-16 sm:mt-24 py-20 sm:py-28">
+        <div className="container-wide">
+          <Reveal>
+            {title && (
+              <h2 className={`type-h2 text-foreground ${centered ? "text-center" : ""}`}>
+                {title}
+              </h2>
+            )}
+            <div className="mt-6 space-y-4 type-body text-muted-ink">
+              {children}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
 
   if (tone === "lavender") {
     return (
