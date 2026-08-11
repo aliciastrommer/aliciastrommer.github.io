@@ -173,7 +173,7 @@ function SmartDashPage() {
         </div>
       </CaseSection>
 
-      <CaseSection title="Way of Working" tone="dark-flat">
+      <CaseSection title="Way of Working" tone="light-tinted">
         <p>
           My design process within this project is iterative and collaborative,
           and can look slightly different depending on what I'm working on.
