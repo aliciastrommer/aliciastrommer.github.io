@@ -248,10 +248,19 @@ function Home() {
         </div>
       </section>
 
-      {/* [03] HOW I WORK — light lavender section matching design challenge blocks */}
+      {/* [03] HOW I WORK — deeper lavender section with purple cursor spotlight */}
       <div
-        className="bg-lavender-soft relative overflow-hidden border-y border-primary/15"
+        className="bg-lavender-deep relative overflow-hidden spotlight-section"
         data-header-theme="light"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
+        }}
       >
         <section className="container-wide relative z-10 py-20 sm:py-24">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
