@@ -123,7 +123,7 @@ export function CaseSection({
   if (tone === "light-tinted") {
     return (
       <section className="bg-surface mt-16 sm:mt-24 py-20 sm:py-28">
-        <div className="container-wide">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
               <h2 className={`type-h2 text-foreground ${centered ? "text-center" : ""}`}>
