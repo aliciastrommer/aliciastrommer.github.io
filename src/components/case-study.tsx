@@ -292,13 +292,13 @@ export function CaseTopNav({
         <Link
           to="/"
           aria-label="Back home"
-          className="grid place-items-center w-11 h-11 rounded-full bg-black/70 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 hover:bg-black/80 hover:scale-105 transition-all duration-200"
+          className="grid place-items-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 hover:bg-white hover:scale-105 transition-all duration-200"
         >
           <Home className="h-5 w-5" />
         </Link>
         <Link
           to={next}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-black/70 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-black/80 hover:scale-105 transition-all duration-200"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 type-caption hover:bg-white hover:scale-105 transition-all duration-200"
         >
           {nextLabel}
           <ArrowRight className="h-4 w-4" />
