@@ -98,8 +98,17 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground">
       {/* HERO — light greige field with subtle grid and soft lavender glow */}
       <div
-        className="relative overflow-hidden bg-hero-gradient"
+        className="relative overflow-hidden bg-hero-gradient spotlight-section"
         data-header-theme="light"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
+        }}
       >
         {/* Subtle linear grid — clean structure without color shift */}
         <div
@@ -248,19 +257,10 @@ function Home() {
         </div>
       </section>
 
-      {/* [03] HOW I WORK — deeper lavender section with purple cursor spotlight */}
+      {/* [03] HOW I WORK — deeper lavender section */}
       <div
-        className="bg-lavender-deep relative overflow-hidden spotlight-section"
+        className="bg-lavender-deep relative overflow-hidden"
         data-header-theme="light"
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect();
-          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
-          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
-          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
-        }}
       >
         <section className="container-wide relative z-10 py-20 sm:py-24">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
