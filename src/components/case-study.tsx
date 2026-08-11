@@ -50,8 +50,8 @@ export function CaseHero({
             <dl className="mt-auto pt-8 space-y-4 type-body">
               {meta.map((m) => (
                 <div key={m.label}>
-                  <dt className="type-body text-muted-ink">{m.label}</dt>
-                  <dd className="mt-1 type-value">{m.value}</dd>
+                  <dt className="type-body font-bold text-muted-ink">{m.label}</dt>
+                  <dd className="mt-1 type-body font-semibold">{m.value}</dd>
                 </div>
               ))}
             </dl>
