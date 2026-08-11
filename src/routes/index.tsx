@@ -98,8 +98,17 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground">
       {/* HERO — light greige field with subtle grid and soft lavender glow */}
       <div
-        className="relative overflow-hidden bg-hero-gradient"
+        className="relative overflow-hidden bg-hero-gradient spotlight-section"
         data-header-theme="light"
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
+        }}
       >
         {/* Subtle linear grid — clean structure without color shift */}
         <div
