@@ -265,6 +265,7 @@
   perspective: 1200px;
 }
 
+/* Soft lavender glow — echoes the portfolio accent color subtly. */
 .hero-craft-glow {
   position: absolute;
   width: 100%;
@@ -272,15 +273,16 @@
   border-radius: 9999px;
   background: conic-gradient(
     from 200deg,
-    oklch(0.78 0.16 300 / 0.5),
-    oklch(0.8 0.14 350 / 0.45),
-    oklch(0.85 0.11 220 / 0.4),
-    oklch(0.78 0.16 300 / 0.5)
+    color-mix(in oklab, var(--color-primary) 30%, transparent),
+    color-mix(in oklab, var(--color-primary) 18%, transparent),
+    color-mix(in oklab, var(--color-lavender) 25%, transparent),
+    color-mix(in oklab, var(--color-primary) 30%, transparent)
   );
   filter: blur(60px);
-  opacity: 0.45;
+  opacity: 0.35;
   pointer-events: none;
 }
+
 
 
 .hero-craft-planes {
@@ -308,13 +310,13 @@
   transform: translateZ(-40px);
   background: linear-gradient(
     135deg,
-    oklch(0.66 0.24 300 / 0.9) 0%,
-    oklch(0.72 0.22 350 / 0.8) 45%,
-    oklch(0.8 0.16 215 / 0.85) 100%
+    color-mix(in oklab, var(--color-primary) 55%, transparent) 0%,
+    color-mix(in oklab, var(--color-lavender) 35%, transparent) 100%
   );
-  border: 1px solid oklch(0.7 0.16 300 / 0.25);
-  opacity: 0.85;
+  border: 1px solid color-mix(in oklab, var(--color-primary) 18%, transparent);
+  opacity: 0.65;
 }
+
 
 .hero-craft:hover .hero-craft-plane--base,
 .hero-craft:focus-visible .hero-craft-plane--base {
@@ -325,12 +327,13 @@
   transform: translateZ(-20px);
   background: linear-gradient(
     160deg,
-    oklch(0.82 0.16 330 / 0.55),
-    oklch(0.86 0.12 250 / 0.45)
+    color-mix(in oklab, var(--color-lavender) 50%, transparent),
+    color-mix(in oklab, var(--color-primary) 18%, transparent)
   );
   backdrop-filter: blur(4px);
-  border: 1px solid oklch(0.75 0.14 330 / 0.3);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 14%, transparent);
 }
+
 
 .hero-craft:hover .hero-craft-plane--lavender,
 .hero-craft:focus-visible .hero-craft-plane--lavender {
@@ -341,18 +344,19 @@
   transform: translateZ(0);
   background: linear-gradient(
     135deg,
-    oklch(1 0 0 / 0.3),
-    oklch(0.9 0.1 300 / 0.25)
+    oklch(1 0 0 / 0.35),
+    color-mix(in oklab, var(--color-primary-soft) 35%, transparent)
   );
   backdrop-filter: blur(8px);
-  border: 1px solid oklch(1 0 0 / 0.6);
+  border: 1px solid oklch(1 0 0 / 0.55);
   display: grid;
   place-items: center;
 }
 
+
 .hero-craft-plane--grid {
   transform: translateZ(20px);
-  border: 1px solid oklch(0.7 0.16 330 / 0.35);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 20%, transparent);
   overflow: hidden;
 }
 
@@ -364,13 +368,14 @@
 .hero-craft-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.2;
+  opacity: 0.16;
   background-image: radial-gradient(
-    color-mix(in oklab, var(--color-primary) 60%, transparent) 1px,
+    color-mix(in oklab, var(--color-primary) 55%, transparent) 1px,
     transparent 1px
   );
   background-size: 16px 16px;
 }
+
 
 .hero-craft-plane--wireframe {
   position: absolute;
@@ -439,15 +444,15 @@
   width: 3rem;
   height: 3rem;
   border-radius: 9999px;
-  background: linear-gradient(
-    135deg,
-    oklch(0.68 0.22 300 / 0.85),
-    oklch(0.75 0.2 350 / 0.7) 50%,
-    oklch(0.82 0.15 210 / 0.7)
+  background: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--color-primary) 55%, transparent),
+    color-mix(in oklab, var(--color-primary-soft) 30%, transparent) 70%
   );
-  filter: blur(8px);
+  filter: blur(10px);
   animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .hero-craft-planes,
@@ -499,26 +504,22 @@
   background-color: oklch(0.93 0.012 285);
 }
 
-/* Prism wash — echoes the hero craft object's violet/pink/cyan palette. */
+/* Prism wash — echoes the hero craft object's lavender/purple palette subtly. */
 @utility bg-prism-wash {
-  background-color: oklch(0.955 0.008 285);
+  background-color: color-mix(in oklab, var(--color-lavender) 35%, var(--color-background));
   background-image:
-    radial-gradient(60% 90% at 8% 0%, oklch(0.66 0.24 300 / 0.18), transparent 70%),
-    radial-gradient(55% 85% at 55% 110%, oklch(0.72 0.22 350 / 0.16), transparent 70%),
-    radial-gradient(60% 90% at 100% 20%, oklch(0.8 0.16 215 / 0.18), transparent 70%);
+    radial-gradient(60% 90% at 8% 0%, color-mix(in oklab, var(--color-primary) 14%, transparent), transparent 70%),
+    radial-gradient(55% 85% at 55% 110%, color-mix(in oklab, var(--color-lavender) 40%, transparent), transparent 70%),
+    radial-gradient(60% 90% at 100% 20%, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 70%);
 }
 
-/* Thin prism rule — same three hues, used as section accents. */
+/* Thin prism rule — single lavender tone, used as section accent. */
 @utility prism-rule {
   height: 2px;
   border: 0;
-  background: linear-gradient(
-    90deg,
-    oklch(0.66 0.24 300 / 0.9),
-    oklch(0.72 0.22 350 / 0.85) 50%,
-    oklch(0.8 0.16 215 / 0.9)
-  );
+  background: color-mix(in oklab, var(--color-primary) 60%, transparent);
 }
+
 /* Muted hero text — #c8ccd4 on #16171b hits ~10.6:1 contrast (WCAG AAA). */
 @utility text-hero-muted {
   color: #c8ccd4;
