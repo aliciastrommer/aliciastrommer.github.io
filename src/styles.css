@@ -254,130 +254,201 @@
   color: var(--foreground);
 }
 
-/* Hero craft object — modern layered prism with glassy planes */
+/* Hero craft object — prismatic kinetic glass layers
+   No heavy shadows; life comes from color, refraction, and 3D hover motion. */
 .hero-craft {
   position: relative;
   width: clamp(13rem, 22vw, 17rem);
   height: clamp(13rem, 22vw, 17rem);
   display: grid;
   place-items: center;
-  perspective: 800px;
+  perspective: 1200px;
 }
 
-.hero-craft-outer,
-.hero-craft-accent,
-.hero-craft-core {
+.hero-craft-glow {
   position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--color-primary) 14%, transparent);
+  filter: blur(60px);
+  opacity: 0.4;
+  transition: opacity 1000ms ease;
   pointer-events: none;
-  will-change: transform;
 }
 
-.hero-craft-outer {
+.hero-craft:hover .hero-craft-glow,
+.hero-craft:focus-visible .hero-craft-glow {
+  opacity: 0.7;
+}
+
+.hero-craft-planes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(55deg) rotateZ(-45deg);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-craft:hover .hero-craft-planes,
+.hero-craft:focus-visible .hero-craft-planes {
+  transform: rotateX(45deg) rotateZ(-35deg);
+}
+
+.hero-craft-plane {
+  position: absolute;
   inset: 0;
-  border: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
-  border-radius: 4px;
-  transform: rotate(45deg) translateZ(0);
+  border-radius: 1rem;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-craft-plane--base {
+  transform: translateZ(-40px);
   background: linear-gradient(
     135deg,
-    color-mix(in oklab, var(--color-primary) 4%, transparent) 0%,
-    transparent 50%,
-    color-mix(in oklab, var(--color-foreground) 4%, transparent) 100%
+    color-mix(in oklab, var(--color-lavender) 55%, transparent) 0%,
+    color-mix(in oklab, var(--color-background) 80%, transparent) 100%
   );
-  backdrop-filter: blur(2px);
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 300ms ease;
+  border: 1px solid color-mix(in oklab, var(--color-primary) 10%, transparent);
+  opacity: 0.6;
 }
 
-.hero-craft-accent {
-  inset: 1.25rem;
-  border: 1.5px solid color-mix(in oklab, var(--color-primary) 45%, transparent);
-  border-radius: 3px;
-  opacity: 0.55;
-  transform: rotate(-12deg) translateZ(20px);
-  box-shadow: inset 0 0 28px color-mix(in oklab, var(--color-primary) 12%, transparent);
-  transition: transform 1000ms cubic-bezier(0.22, 1, 0.36, 1),
-              opacity 300ms ease,
-              box-shadow 300ms ease;
+.hero-craft:hover .hero-craft-plane--base,
+.hero-craft:focus-visible .hero-craft-plane--base {
+  transform: translateZ(-55px);
+}
+
+.hero-craft-plane--lavender {
+  transform: translateZ(-20px);
+  background: color-mix(in oklab, var(--color-background) 40%, transparent);
+  backdrop-filter: blur(4px);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 15%, transparent);
+}
+
+.hero-craft:hover .hero-craft-plane--lavender,
+.hero-craft:focus-visible .hero-craft-plane--lavender {
+  transform: translateZ(-30px);
+}
+
+.hero-craft-plane--glass {
+  transform: translateZ(0);
+  background: color-mix(in oklab, var(--color-background) 30%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in oklab, var(--color-background) 85%, transparent);
+  display: grid;
+  place-items: center;
+}
+
+.hero-craft-plane--grid {
+  transform: translateZ(20px);
+  border: 1px solid color-mix(in oklab, var(--color-primary) 20%, transparent);
+  overflow: hidden;
+}
+
+.hero-craft:hover .hero-craft-plane--grid,
+.hero-craft:focus-visible .hero-craft-plane--grid {
+  transform: translateZ(40px);
+}
+
+.hero-craft-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--color-primary) 60%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+}
+
+.hero-craft-plane--wireframe {
+  position: absolute;
+  inset: 2rem;
+  transform: translateZ(40px);
+  border: 0.5px solid color-mix(in oklab, var(--color-primary) 30%, transparent);
+  border-radius: 0.75rem;
+  display: grid;
+  place-items: center;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-craft:hover .hero-craft-plane--wireframe,
+.hero-craft:focus-visible .hero-craft-plane--wireframe {
+  transform: translateZ(80px);
+}
+
+.hero-craft-wire-h,
+.hero-craft-wire-v {
+  position: absolute;
+  background: linear-gradient(
+    var(--wire-dir, to right),
+    transparent,
+    color-mix(in oklab, var(--color-primary) 35%, transparent),
+    transparent
+  );
+}
+
+.hero-craft-wire-h {
+  --wire-dir: to right;
+  width: 100%;
+  height: 0.5px;
+}
+
+.hero-craft-wire-v {
+  --wire-dir: to bottom;
+  width: 0.5px;
+  height: 100%;
+}
+
+.hero-craft-plane--accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transform: translateZ(50px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-primary) 30%, transparent),
+    transparent
+  );
+  filter: blur(4px);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.hero-craft:hover .hero-craft-plane--accent,
+.hero-craft:focus-visible .hero-craft-plane--accent {
+  opacity: 1;
 }
 
 .hero-craft-core {
-  inset: 3.5rem;
-  border-radius: 2px;
-  border: 1px solid color-mix(in oklab, var(--color-foreground) 8%, transparent);
-  background: radial-gradient(
-    120% 120% at 30% 30%,
-    color-mix(in oklab, var(--color-primary) 18%, var(--color-background)) 0%,
-    color-mix(in oklab, var(--color-primary) 7%, var(--color-background)) 55%,
-    color-mix(in oklab, var(--color-foreground) 5%, var(--color-background)) 100%
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--color-primary) 35%, transparent),
+    color-mix(in oklab, var(--color-primary) 10%, transparent)
   );
-  transform: rotate(45deg) translateZ(40px);
-  box-shadow:
-    inset 0 0 24px color-mix(in oklab, var(--color-primary) 10%, transparent),
-    0 14px 40px color-mix(in oklab, var(--color-foreground) 8%, transparent);
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-              background-color 300ms ease,
-              box-shadow 300ms ease;
+  filter: blur(10px);
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-
-.hero-craft:hover .hero-craft-outer {
-  transform: rotate(60deg) translateZ(0) scale(1.04);
-  border-color: color-mix(in oklab, var(--color-foreground) 18%, transparent);
-}
-
-.hero-craft:hover .hero-craft-accent {
-  transform: rotate(22deg) translateZ(40px) scale(1.02);
-  opacity: 0.8;
-  box-shadow: inset 0 0 40px color-mix(in oklab, var(--color-primary) 20%, transparent);
-}
-
-.hero-craft:hover .hero-craft-core {
-  transform: rotate(75deg) translateZ(60px) scale(1.08);
-  background: radial-gradient(
-    120% 120% at 30% 30%,
-    color-mix(in oklab, var(--color-primary) 26%, var(--color-background)) 0%,
-    color-mix(in oklab, var(--color-primary) 12%, var(--color-background)) 55%,
-    color-mix(in oklab, var(--color-foreground) 6%, var(--color-background)) 100%
-  );
-  box-shadow:
-    inset 0 0 32px color-mix(in oklab, var(--color-primary) 14%, transparent),
-    0 20px 50px color-mix(in oklab, var(--color-foreground) 12%, transparent);
-}
-
-.hero-craft-line {
-  position: absolute;
-  background: linear-gradient(var(--line-dir, to right), transparent, var(--line-color), transparent);
-  --line-color: color-mix(in oklab, var(--color-foreground) 12%, transparent);
-}
-
-.hero-craft-line-top,
-.hero-craft-line-bottom {
-  width: 1px;
-  height: 4.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.hero-craft-line-top { top: -3.5rem; --line-dir: to bottom; }
-.hero-craft-line-bottom { bottom: -3.5rem; --line-dir: to bottom; }
-
-.hero-craft-line-left,
-.hero-craft-line-right {
-  width: 4.5rem;
-  height: 1px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.hero-craft-line-left { left: -3.5rem; --line-dir: to right; }
-.hero-craft-line-right { right: -3.5rem; --line-dir: to right; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-craft-outer,
-  .hero-craft-accent,
+  .hero-craft-planes,
+  .hero-craft-plane,
+  .hero-craft-plane--wireframe,
+  .hero-craft-glow,
   .hero-craft-core {
     transition: none;
+    animation: none;
   }
 }
+
 /* Flat dark surface (no pattern) used by the How I Work section. */
 @utility bg-dark-flat {
   background-color: #16171b;
