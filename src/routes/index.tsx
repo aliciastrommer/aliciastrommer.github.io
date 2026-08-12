@@ -140,15 +140,13 @@ function Home() {
           </div>
 
 
-          {/* Bottom: status + CTAs */}
-          <footer className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="inline-flex items-center gap-3 type-body-lg text-muted-ink">
-              <span className="pulse-dot" aria-hidden="true" />
-              <span className="font-semibold text-foreground">Currently</span>
-              <span>Designing for Scania</span>
-              <span className="text-[0.4em] leading-none translate-y-[-1px]">•</span>
-              <span>Stockholm</span>
-            </div>
+          {/* Bottom: bio + CTAs */}
+          <footer className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <p className="max-w-md text-left type-body-lg text-muted-ink">
+              I design thoughtful products for complex systems by combining systems
+              thinking and hands-on craft, with a deep understanding of how humans
+              process information.
+            </p>
 
             <div className="flex flex-wrap items-center gap-4">
               <a
@@ -171,6 +169,7 @@ function Home() {
               </a>
             </div>
           </footer>
+
         </section>
       </div>
 
