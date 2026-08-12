@@ -98,7 +98,7 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground">
       {/* HERO — clean editorial layout with central craft object */}
       <div
-        className="relative overflow-hidden bg-background"
+        className="relative overflow-hidden bg-hero-dots"
         data-header-theme="light"
       >
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
