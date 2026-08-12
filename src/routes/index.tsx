@@ -114,16 +114,30 @@ function Home() {
 
           {/* Center: craft object + bio, balanced */}
           <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 py-12 md:py-20">
-            {/* Geometric craft object */}
-            <div className="hero-craft group cursor-crosshair" aria-hidden="true">
-              <div className="hero-craft-outer" />
-              <div className="hero-craft-accent" />
-              <div className="hero-craft-core" />
-              <div className="hero-craft-line hero-craft-line-top" />
-              <div className="hero-craft-line hero-craft-line-bottom" />
-              <div className="hero-craft-line hero-craft-line-left" />
-              <div className="hero-craft-line hero-craft-line-right" />
+            {/* Geometric craft object — prismatic kinetic glass */}
+            <div className="hero-craft group cursor-crosshair" aria-hidden="true" tabIndex={-1}>
+              <div className="hero-craft-glow" />
+              <div className="hero-craft-planes">
+                <div className="hero-craft-plane hero-craft-plane--base" />
+                <div className="hero-craft-plane hero-craft-plane--lavender" />
+                <div className="hero-craft-plane hero-craft-plane--glass">
+                  <div className="hero-craft-core" />
+                </div>
+                <div className="hero-craft-plane hero-craft-plane--grid">
+                  <div className="hero-craft-grid" />
+                  <div className="absolute top-2 left-2 w-1.5 h-1.5 border-t border-l border-primary/40" />
+                  <div className="absolute top-2 right-2 w-1.5 h-1.5 border-t border-r border-primary/40" />
+                  <div className="absolute bottom-2 left-2 w-1.5 h-1.5 border-b border-l border-primary/40" />
+                  <div className="absolute bottom-2 right-2 w-1.5 h-1.5 border-b border-r border-primary/40" />
+                </div>
+                <div className="hero-craft-plane--wireframe">
+                  <div className="hero-craft-wire-h" />
+                  <div className="hero-craft-wire-v" />
+                </div>
+                <div className="hero-craft-plane--accent" />
+              </div>
             </div>
+
 
             {/* Bio */}
             <p className="max-w-md text-center md:text-left type-body-lg text-muted-ink">
