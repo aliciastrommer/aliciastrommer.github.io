@@ -243,7 +243,7 @@ function Home() {
                       className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       aria-hidden="true"
                     >
-                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20">
+                      <div className="grid place-items-center w-12 h-12 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 hover:bg-white hover:scale-105 transition-all duration-200">
                         <ArrowUpRight className="h-5 w-5" />
                       </div>
                     </div>
