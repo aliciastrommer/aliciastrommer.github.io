@@ -138,8 +138,9 @@ function Home() {
             <div className="inline-flex items-center gap-3 type-body-lg text-muted-ink">
               <span className="pulse-dot" aria-hidden="true" />
               <span className="font-semibold text-foreground">Currently</span>
+              <span>Designing for Scania</span>
               <span className="text-[0.4em] leading-none translate-y-[-1px]">•</span>
-              <span>Designing for Scania • Stockholm</span>
+              <span>Stockholm</span>
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
