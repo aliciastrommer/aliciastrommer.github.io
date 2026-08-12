@@ -102,8 +102,17 @@ function Home() {
         data-header-theme="light"
       >
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
-          {/* Top: name / role spanning full width */}
+          {/* Top: contact + name / role spanning full width */}
           <header>
+            <div className="flex justify-end pb-4">
+              <a
+                href="mailto:alicia@strommer.se"
+                className="type-caption text-muted-ink hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+              >
+                Get In Touch
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
               <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
@@ -111,6 +120,7 @@ function Home() {
               </span>
             </h1>
           </header>
+
 
           {/* Center: craft object only, centered */}
           <div className="flex-1 flex items-center justify-center py-12 md:py-20">
