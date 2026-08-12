@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 
@@ -102,8 +102,17 @@ function Home() {
         data-header-theme="light"
       >
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
-          {/* Top: name / role spanning full width */}
+          {/* Top: contact + name / role spanning full width */}
           <header>
+            <div className="flex justify-end pb-4">
+              <a
+                href="mailto:alicia@strommer.se"
+                className="type-caption text-muted-ink hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+              >
+                Get In Touch
+                <ArrowUpRight className="size-4" />
+              </a>
+            </div>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
               <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
@@ -111,6 +120,7 @@ function Home() {
               </span>
             </h1>
           </header>
+
 
           {/* Center: craft object only, centered */}
           <div className="flex-1 flex items-center justify-center py-12 md:py-20">
@@ -140,35 +150,29 @@ function Home() {
           </div>
 
 
-          {/* Bottom: bio + CTAs */}
-          <footer className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <p className="max-w-md text-left type-body-lg text-muted-ink">
+          {/* Bottom: wide bio + scroll cue */}
+          <footer className="flex items-end gap-8">
+            <p className="flex-1 text-left type-body-lg text-muted-ink text-balance">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="#work"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .getElementById("work")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className="btn-pill btn-pill-outline type-caption"
-              >
-                View Work
-              </a>
-              <a
-                href="mailto:alicia@strommer.se"
-                className="btn-pill btn-pill-primary type-caption text-white"
-              >
-                Get In Touch
-              </a>
-            </div>
+            <a
+              href="#work"
+              aria-label="Scroll to work"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("work")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="shrink-0 grid place-items-center size-12 rounded-full ring-1 ring-foreground/15 text-foreground hover:ring-primary/50 hover:text-primary transition-all duration-300 hover:translate-y-1"
+            >
+              <ArrowDown className="size-5" />
+            </a>
           </footer>
+
 
         </section>
       </div>
