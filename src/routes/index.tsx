@@ -98,36 +98,18 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground">
       {/* HERO — light greige field with subtle grid and soft lavender glow */}
       <div
-        className="relative overflow-hidden bg-hero-gradient spotlight-section"
+        className="relative overflow-hidden bg-background"
         data-header-theme="light"
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect();
-          e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
-          e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
-          e.currentTarget.style.setProperty("--spotlight-opacity", "1");
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.setProperty("--spotlight-opacity", "0");
-        }}
       >
-        {/* Subtle dot grid — editorial texture */}
-        <div
-          className="absolute inset-0 opacity-[0.35] pointer-events-none"
-          style={{
-            backgroundImage: "radial-gradient(#9a9aa5 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-          aria-hidden="true"
-        />
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-center py-24">
-          <div className="max-w-6xl">
+          <div className="w-full">
             <div className="inline-flex items-center gap-3 type-body-lg text-muted-ink">
               <span className="pulse-dot" aria-hidden="true" />
               <span>Designing for Scania • Stockholm</span>
             </div>
-            <h1 className="mt-10 text-[clamp(3rem,8vw,8rem)] font-semibold leading-[0.9] tracking-tighter">
-              <span className="block pb-[0.04em]">Alicia Strömmer</span>
-              <span className="block text-foreground/25 transition-colors duration-500 hover:text-foreground/50">
+            <h1 className="mt-10 flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4 text-[clamp(1.75rem,4.5vw,4.5rem)] font-semibold leading-[0.95] tracking-tighter">
+              <span className="whitespace-nowrap">Alicia Strömmer</span>
+              <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
                 / Product Designer
               </span>
             </h1>
@@ -160,6 +142,7 @@ function Home() {
         </section>
 
       </div>
+
 
 
 
