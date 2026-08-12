@@ -107,7 +107,7 @@ function Home() {
               <span className="pulse-dot" aria-hidden="true" />
               <span>Designing for Scania • Stockholm</span>
             </div>
-            <h1 className="mt-10 flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4 text-[clamp(2rem,5.5vw,5.5rem)] font-semibold leading-[0.95] tracking-tighter">
+            <h1 className="mt-10 flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4 text-[clamp(1.75rem,4.5vw,4.5rem)] font-semibold leading-[0.95] tracking-tighter">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
               <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
                 / Product Designer
