@@ -96,35 +96,51 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* HERO — light greige field with subtle grid and soft lavender glow */}
+      {/* HERO — clean editorial layout with central craft object */}
       <div
         className="relative overflow-hidden bg-background"
         data-header-theme="light"
       >
-        <section className="relative z-10 container-wide min-h-svh flex flex-col justify-center py-24">
-          <div className="w-full">
-            <div className="inline-flex items-center gap-3 type-body-lg text-muted-ink">
-              <span className="pulse-dot" aria-hidden="true" />
-              <span>Designing for Scania • Stockholm</span>
-            </div>
-            <h1 className="mt-10 flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4 text-[clamp(1.75rem,4.5vw,4.5rem)] font-semibold leading-[0.95] tracking-tighter">
+        <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
+          {/* Top: name / role spanning full width */}
+          <header>
+            <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
               <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
                 / Product Designer
               </span>
             </h1>
-            <p className="mt-12 max-w-xl type-body-lg text-muted-ink">
+          </header>
+
+          {/* Center: craft object + bio, balanced */}
+          <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 py-12 md:py-20">
+            {/* Geometric craft object */}
+            <div className="hero-craft group cursor-crosshair" aria-hidden="true">
+              <div className="hero-craft-outer" />
+              <div className="hero-craft-accent" />
+              <div className="hero-craft-core" />
+              <div className="hero-craft-line hero-craft-line-top" />
+              <div className="hero-craft-line hero-craft-line-bottom" />
+              <div className="hero-craft-line hero-craft-line-left" />
+              <div className="hero-craft-line hero-craft-line-right" />
+            </div>
+
+            {/* Bio */}
+            <p className="max-w-md text-center md:text-left type-body-lg text-muted-ink">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
             </p>
-            <div className="mt-14 flex flex-wrap items-center gap-4">
-              <a
-                href="mailto:alicia@strommer.se"
-                className="btn-pill btn-pill-primary type-caption text-white"
-              >
-                Get In Touch
-              </a>
+          </div>
+
+          {/* Bottom: status + CTAs */}
+          <footer className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="inline-flex items-center gap-3 type-body-lg text-muted-ink">
+              <span className="pulse-dot" aria-hidden="true" />
+              <span>Designing for Scania • Stockholm</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#work"
                 onClick={(e) => {
@@ -137,10 +153,15 @@ function Home() {
               >
                 View Work
               </a>
+              <a
+                href="mailto:alicia@strommer.se"
+                className="btn-pill btn-pill-primary type-caption text-white"
+              >
+                Get In Touch
+              </a>
             </div>
-          </div>
+          </footer>
         </section>
-
       </div>
 
 
