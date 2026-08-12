@@ -254,68 +254,99 @@
   color: var(--foreground);
 }
 
-/* Hero craft object — abstract geometric cube / layered craft shape
-   placed in the center of the hero to balance the composition. */
+/* Hero craft object — modern layered prism with glassy planes */
 .hero-craft {
   position: relative;
-  width: clamp(12rem, 20vw, 16rem);
-  height: clamp(12rem, 20vw, 16rem);
+  width: clamp(13rem, 22vw, 17rem);
+  height: clamp(13rem, 22vw, 17rem);
   display: grid;
   place-items: center;
+  perspective: 800px;
 }
 
 .hero-craft-outer,
 .hero-craft-accent,
 .hero-craft-core {
   position: absolute;
-  border-radius: 2px;
   pointer-events: none;
+  will-change: transform;
 }
 
 .hero-craft-outer {
   inset: 0;
-  border: 1px solid var(--color-border);
-  transform: rotate(45deg);
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+  border-radius: 4px;
+  transform: rotate(45deg) translateZ(0);
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--color-primary) 4%, transparent) 0%,
+    transparent 50%,
+    color-mix(in oklab, var(--color-foreground) 4%, transparent) 100%
+  );
+  backdrop-filter: blur(2px);
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
               border-color 300ms ease;
 }
 
 .hero-craft-accent {
-  inset: 1.5rem;
-  border: 1.5px solid var(--color-primary);
-  opacity: 0.35;
-  transform: rotate(-12deg);
+  inset: 1.25rem;
+  border: 1.5px solid color-mix(in oklab, var(--color-primary) 45%, transparent);
+  border-radius: 3px;
+  opacity: 0.55;
+  transform: rotate(-12deg) translateZ(20px);
+  box-shadow: inset 0 0 28px color-mix(in oklab, var(--color-primary) 12%, transparent);
   transition: transform 1000ms cubic-bezier(0.22, 1, 0.36, 1),
-              opacity 300ms ease;
+              opacity 300ms ease,
+              box-shadow 300ms ease;
 }
 
 .hero-craft-core {
-  inset: 3rem;
-  background-color: color-mix(in oklab, var(--color-primary) 7%, var(--color-background));
-  border: 1px solid var(--color-border);
+  inset: 3.5rem;
+  border-radius: 2px;
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 8%, transparent);
+  background: radial-gradient(
+    120% 120% at 30% 30%,
+    color-mix(in oklab, var(--color-primary) 18%, var(--color-background)) 0%,
+    color-mix(in oklab, var(--color-primary) 7%, var(--color-background)) 55%,
+    color-mix(in oklab, var(--color-foreground) 5%, var(--color-background)) 100%
+  );
+  transform: rotate(45deg) translateZ(40px);
+  box-shadow:
+    inset 0 0 24px color-mix(in oklab, var(--color-primary) 10%, transparent),
+    0 14px 40px color-mix(in oklab, var(--color-foreground) 8%, transparent);
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-              background-color 300ms ease;
+              background-color 300ms ease,
+              box-shadow 300ms ease;
 }
 
 .hero-craft:hover .hero-craft-outer {
-  transform: rotate(90deg) scale(1.08);
+  transform: rotate(60deg) translateZ(0) scale(1.04);
   border-color: color-mix(in oklab, var(--color-foreground) 18%, transparent);
 }
 
 .hero-craft:hover .hero-craft-accent {
-  transform: rotate(45deg);
-  opacity: 0.55;
+  transform: rotate(22deg) translateZ(40px) scale(1.02);
+  opacity: 0.8;
+  box-shadow: inset 0 0 40px color-mix(in oklab, var(--color-primary) 20%, transparent);
 }
 
 .hero-craft:hover .hero-craft-core {
-  transform: rotate(90deg) scale(1.05);
-  background-color: color-mix(in oklab, var(--color-primary) 12%, var(--color-background));
+  transform: rotate(75deg) translateZ(60px) scale(1.08);
+  background: radial-gradient(
+    120% 120% at 30% 30%,
+    color-mix(in oklab, var(--color-primary) 26%, var(--color-background)) 0%,
+    color-mix(in oklab, var(--color-primary) 12%, var(--color-background)) 55%,
+    color-mix(in oklab, var(--color-foreground) 6%, var(--color-background)) 100%
+  );
+  box-shadow:
+    inset 0 0 32px color-mix(in oklab, var(--color-primary) 14%, transparent),
+    0 20px 50px color-mix(in oklab, var(--color-foreground) 12%, transparent);
 }
 
 .hero-craft-line {
   position: absolute;
   background: linear-gradient(var(--line-dir, to right), transparent, var(--line-color), transparent);
-  --line-color: color-mix(in oklab, var(--color-foreground) 14%, transparent);
+  --line-color: color-mix(in oklab, var(--color-foreground) 12%, transparent);
 }
 
 .hero-craft-line-top,
