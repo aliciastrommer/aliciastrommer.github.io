@@ -20,13 +20,13 @@ export const Route = createFileRoute("/projects/accessibility-guide")({
       {
         name: "description",
         content:
-          "Case study: a guide helping designers and developers interpret and comply with WCAG guidelines.",
+          "Case study: a guide created to help designers and developers develop WCAG compliant products and services.",
       },
       { property: "og:title", content: "Accessibility Guide — Alicia Strömmer" },
       {
         property: "og:description",
         content:
-          "Case study: a guide helping designers and developers interpret and comply with WCAG guidelines.",
+          "Case study: a guide created to help designers and developers develop WCAG compliant products and services.",
       },
       { property: "og:image", content: hero.url },
       { name: "twitter:image", content: hero.url },
@@ -47,7 +47,7 @@ function AccessibilityPage() {
           { label: "Time frame", value: "2022 – 2023" },
         ]}
         title="Accessibility Guide"
-        tagline="A guide created to help designers and developers interpret and comply with WCAG guidelines"
+        tagline="A guide created to help designers and developers develop WCAG compliant products and services"
         about={
           <>
             <p>
