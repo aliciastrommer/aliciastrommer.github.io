@@ -112,8 +112,8 @@ function Home() {
             </h1>
           </header>
 
-          {/* Center: craft object + bio, balanced */}
-          <div className="flex-1 flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 py-12 md:py-20">
+          {/* Center: craft object only, centered */}
+          <div className="flex-1 flex items-center justify-center py-12 md:py-20">
             {/* Geometric craft object — prismatic kinetic glass */}
             <div className="hero-craft group cursor-crosshair" aria-hidden="true" tabIndex={-1}>
               <div className="hero-craft-glow" />
@@ -137,15 +137,8 @@ function Home() {
                 <div className="hero-craft-plane--accent" />
               </div>
             </div>
-
-
-            {/* Bio */}
-            <p className="max-w-md text-center md:text-left type-body-lg text-muted-ink">
-              I design thoughtful products for complex systems by combining systems
-              thinking and hands-on craft, with a deep understanding of how humans
-              process information.
-            </p>
           </div>
+
 
           {/* Bottom: status + CTAs */}
           <footer className="flex flex-col md:flex-row md:items-center justify-between gap-6">
