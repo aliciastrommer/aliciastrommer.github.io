@@ -150,35 +150,29 @@ function Home() {
           </div>
 
 
-          {/* Bottom: bio + CTAs */}
-          <footer className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <p className="max-w-md text-left type-body-lg text-muted-ink">
+          {/* Bottom: wide bio + scroll cue */}
+          <footer className="flex items-end gap-8">
+            <p className="flex-1 text-left type-body-lg text-muted-ink text-balance">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="#work"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .getElementById("work")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                className="btn-pill btn-pill-outline type-caption"
-              >
-                View Work
-              </a>
-              <a
-                href="mailto:alicia@strommer.se"
-                className="btn-pill btn-pill-primary type-caption text-white"
-              >
-                Get In Touch
-              </a>
-            </div>
+            <a
+              href="#work"
+              aria-label="Scroll to work"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("work")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="shrink-0 grid place-items-center size-12 rounded-full ring-1 ring-foreground/15 text-foreground hover:ring-primary/50 hover:text-primary transition-all duration-300 hover:translate-y-1"
+            >
+              <ArrowDown className="size-5" />
+            </a>
           </footer>
+
 
         </section>
       </div>
