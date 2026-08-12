@@ -156,7 +156,7 @@ function Home() {
 
 
           {/* Bottom: wide bio + scroll cue */}
-          <footer className="flex items-end gap-8">
+          <footer className="flex flex-col items-start gap-6 md:flex-row md:items-end md:gap-8">
             <p className="flex-1 text-left type-body-lg text-muted-ink text-balance">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
