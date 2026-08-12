@@ -290,7 +290,6 @@ function Home() {
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
             <div className="flex flex-col justify-between">
               <div>
-                <hr className="prism-rule w-16 mb-4" />
                 <span className="type-caption text-muted-ink">HOW I WORK</span>
               </div>
               <span className="type-caption hidden sm:inline text-muted-ink">[03]</span>
