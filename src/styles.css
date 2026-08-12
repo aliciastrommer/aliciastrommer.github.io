@@ -601,10 +601,10 @@
 }
 @utility type-h3 {
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 1.25rem; /* 20px */
-  line-height: 1.35;
-  letter-spacing: -0.005em;
+  font-weight: 700;
+  font-size: 1rem; /* 16px — bold body, less prominent than H2 */
+  line-height: 1.6;
+  letter-spacing: 0;
 }
 /* Data value (stats, project overview definitions) — not a heading */
 @utility type-value {
