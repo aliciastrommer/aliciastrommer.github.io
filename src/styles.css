@@ -504,26 +504,22 @@
   background-color: oklch(0.93 0.012 285);
 }
 
-/* Prism wash — echoes the hero craft object's violet/pink/cyan palette. */
+/* Prism wash — echoes the hero craft object's lavender/purple palette subtly. */
 @utility bg-prism-wash {
-  background-color: oklch(0.955 0.008 285);
+  background-color: color-mix(in oklab, var(--color-lavender) 35%, var(--color-background));
   background-image:
-    radial-gradient(60% 90% at 8% 0%, oklch(0.66 0.24 300 / 0.18), transparent 70%),
-    radial-gradient(55% 85% at 55% 110%, oklch(0.72 0.22 350 / 0.16), transparent 70%),
-    radial-gradient(60% 90% at 100% 20%, oklch(0.8 0.16 215 / 0.18), transparent 70%);
+    radial-gradient(60% 90% at 8% 0%, color-mix(in oklab, var(--color-primary) 14%, transparent), transparent 70%),
+    radial-gradient(55% 85% at 55% 110%, color-mix(in oklab, var(--color-lavender) 40%, transparent), transparent 70%),
+    radial-gradient(60% 90% at 100% 20%, color-mix(in oklab, var(--color-primary) 12%, transparent), transparent 70%);
 }
 
-/* Thin prism rule — same three hues, used as section accents. */
+/* Thin prism rule — single lavender tone, used as section accent. */
 @utility prism-rule {
   height: 2px;
   border: 0;
-  background: linear-gradient(
-    90deg,
-    oklch(0.66 0.24 300 / 0.9),
-    oklch(0.72 0.22 350 / 0.85) 50%,
-    oklch(0.8 0.16 215 / 0.9)
-  );
+  background: color-mix(in oklab, var(--color-primary) 60%, transparent);
 }
+
 /* Muted hero text — #c8ccd4 on #16171b hits ~10.6:1 contrast (WCAG AAA). */
 @utility text-hero-muted {
   color: #c8ccd4;
