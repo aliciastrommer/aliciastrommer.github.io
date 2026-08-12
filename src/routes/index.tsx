@@ -104,13 +104,18 @@ function Home() {
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
           {/* Top: contact + name / role spanning full width */}
           <header>
-            <div className="flex justify-end pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-6 type-small text-muted-ink">
               <a
                 href="mailto:alicia@strommer.se"
-                className="type-caption text-muted-ink hover:text-foreground transition-colors inline-flex items-center gap-1.5"
+                className="link-underline hover:text-foreground transition-colors self-start"
               >
-                Get In Touch
-                <ArrowUpRight className="size-4" />
+                alicia@strommer.se
+              </a>
+              <a
+                href="tel:+46722068063"
+                className="link-underline hover:text-foreground transition-colors self-start"
+              >
+                +46 72-206 80 63
               </a>
             </div>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
@@ -167,7 +172,7 @@ function Home() {
                   .getElementById("work")
                   ?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className="shrink-0 grid place-items-center size-12 rounded-full ring-1 ring-foreground/15 text-foreground hover:ring-primary/50 hover:text-primary transition-all duration-300 hover:translate-y-1"
+              className="shrink-0 grid place-items-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1"
             >
               <ArrowDown className="size-5" />
             </a>
@@ -278,13 +283,16 @@ function Home() {
 
       {/* [03] HOW I WORK — deeper lavender section */}
       <div
-        className="bg-lavender-deep relative overflow-hidden"
+        className="bg-prism-wash relative overflow-hidden border-y border-primary/10"
         data-header-theme="light"
       >
         <section className="container-wide relative z-10 py-20 sm:py-24">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
             <div className="flex flex-col justify-between">
-              <span className="type-caption text-muted-ink">HOW I WORK</span>
+              <div>
+                <hr className="prism-rule w-16 mb-4" />
+                <span className="type-caption text-muted-ink">HOW I WORK</span>
+              </div>
               <span className="type-caption hidden sm:inline text-muted-ink">[03]</span>
             </div>
             <div className="flex flex-col justify-between gap-6">
