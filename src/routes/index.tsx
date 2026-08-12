@@ -110,32 +110,33 @@ function Home() {
           e.currentTarget.style.setProperty("--spotlight-opacity", "0");
         }}
       >
-        {/* Subtle linear grid — clean structure without color shift */}
+        {/* Subtle dot grid — editorial texture */}
         <div
-          className="absolute inset-0 opacity-[0.05] pointer-events-none"
+          className="absolute inset-0 opacity-[0.35] pointer-events-none"
           style={{
-            backgroundImage:
-              "linear-gradient(#070707 1px, transparent 1px), linear-gradient(90deg, #070707 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+            backgroundImage: "radial-gradient(#9a9aa5 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
           }}
           aria-hidden="true"
         />
-        <section className="relative z-10 container-wide min-h-svh flex flex-col items-center justify-center py-24 text-center">
-          <div className="max-w-4xl flex flex-col items-center">
+        <section className="relative z-10 container-wide min-h-svh flex flex-col justify-center py-24">
+          <div className="max-w-6xl">
             <div className="inline-flex items-center gap-3 type-body-lg text-muted-ink">
               <span className="pulse-dot" aria-hidden="true" />
               <span>Designing for Scania • Stockholm</span>
             </div>
-            <h1 className="mt-8 type-hero">
-              <span className="inline-block pb-[0.06em]">Alicia Strömmer</span>
-              <span className="block">Product Designer</span>
+            <h1 className="mt-10 text-[clamp(3rem,8vw,8rem)] font-semibold leading-[0.9] tracking-tighter">
+              <span className="block pb-[0.04em]">Alicia Strömmer</span>
+              <span className="block text-foreground/25 transition-colors duration-500 hover:text-foreground/50">
+                / Product Designer
+              </span>
             </h1>
-            <p className="mt-6 max-w-2xl type-body-lg text-muted-ink">
+            <p className="mt-12 max-w-xl type-body-lg text-muted-ink">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-14 flex flex-wrap items-center gap-4">
               <a
                 href="mailto:alicia@strommer.se"
                 className="btn-pill btn-pill-primary type-caption text-white"
@@ -157,6 +158,7 @@ function Home() {
             </div>
           </div>
         </section>
+
       </div>
 
 
