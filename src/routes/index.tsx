@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 
