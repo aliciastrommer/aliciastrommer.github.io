@@ -289,7 +289,7 @@
 
 /* Deeper lavender section background — used for How I Work */
 @utility bg-lavender-deep {
-  background-color: oklch(0.82 0.035 285);
+  background-color: oklch(0.93 0.012 285);
 }
 /* Muted hero text — #c8ccd4 on #16171b hits ~10.6:1 contrast (WCAG AAA). */
 @utility text-hero-muted {
