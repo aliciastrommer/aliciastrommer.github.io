@@ -258,8 +258,8 @@
    No heavy shadows; life comes from color, refraction, and 3D hover motion. */
 .hero-craft {
   position: relative;
-  width: clamp(13rem, 22vw, 17rem);
-  height: clamp(13rem, 22vw, 17rem);
+  width: clamp(16rem, 28vw, 22rem);
+  height: clamp(16rem, 28vw, 22rem);
   display: grid;
   place-items: center;
   perspective: 1200px;
@@ -267,20 +267,15 @@
 
 .hero-craft-glow {
   position: absolute;
-  width: 120%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
   border-radius: 9999px;
-  background: color-mix(in oklab, var(--color-primary) 14%, transparent);
-  filter: blur(60px);
-  opacity: 0.4;
-  transition: opacity 1000ms ease;
+  background: color-mix(in oklab, var(--color-primary) 10%, transparent);
+  filter: blur(50px);
+  opacity: 0.25;
   pointer-events: none;
 }
 
-.hero-craft:hover .hero-craft-glow,
-.hero-craft:focus-visible .hero-craft-glow {
-  opacity: 0.7;
-}
 
 .hero-craft-planes {
   position: relative;
