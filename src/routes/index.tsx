@@ -94,13 +94,15 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 
 
 function Home() {
+  useActiveBand();
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* HERO — clean editorial layout with central craft object */}
       <div
-        className="relative overflow-hidden bg-background"
+        className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
+
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
           {/* Top: contact + name / role spanning full width */}
           <header>
