@@ -1,6 +1,5 @@
-import { useState, useEffect, useRef, type ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
-import { Home, ArrowUpRight } from "lucide-react";
+import { Link, type ReactNode } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 import { projects } from "@/lib/projects";
