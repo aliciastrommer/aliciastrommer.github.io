@@ -257,7 +257,8 @@ function Home() {
 
       {/* [02] FEATURED WORK */}
       <div id="work" data-band className="section-band">
-      <section id="work" className="container-wide py-20 sm:py-24 scroll-mt-24">
+      <section className="container-wide py-20 sm:py-24 scroll-mt-24">
+
 
 
         <SectionLabel label="FEATURED WORK" number="[02]" />
@@ -346,7 +347,8 @@ function Home() {
 
       {/* [04] ABOUT */}
       <div id="about" data-band className="section-band">
-      <section id="about" className="container-wide py-20 sm:py-24 scroll-mt-24">
+      <section className="container-wide py-20 sm:py-24 scroll-mt-24">
+
 
 
         <SectionLabel label="ABOUT" number="[04]" />
