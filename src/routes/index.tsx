@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { useActiveBand } from "@/hooks/use-active-band";
+
 
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
