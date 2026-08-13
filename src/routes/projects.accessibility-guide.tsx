@@ -107,29 +107,31 @@ function AccessibilityPage() {
 
 
       <CaseSection title="Deliverables & Impact">
-        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
-          <div>
-            <h3 className="type-h3">Deliverables</h3>
-            <p className="mt-2">
-              My key deliverables included a visual framework for interpreting
-              WCAG guidelines, benchmarked examples of accessible design
-              patterns, the initial concepts for the guide's "do's and don'ts",
-              and editorial contributions that shaped the guide's language and
-              usability.
-            </p>
+        <DeliverablesBox>
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            <div>
+              <h3 className="type-h3">Deliverables</h3>
+              <p className="mt-2">
+                My key deliverables included a visual framework for interpreting
+                WCAG guidelines, benchmarked examples of accessible design
+                patterns, the initial concepts for the guide's "do's and don'ts",
+                and editorial contributions that shaped the guide's language and
+                usability.
+              </p>
+            </div>
+            <div>
+              <h3 className="type-h3">Impact</h3>
+              <p className="mt-2">
+                The result was a practical resource that translated complex
+                accessibility standards into actionable guidance for day-to-day
+                design and development work. Since its release, the guide has
+                been adopted not only by internal design and development teams,
+                but also by external partners and clients, helping establish a
+                more consistent and accessible way of working across projects.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="type-h3">Impact</h3>
-            <p className="mt-2">
-              The result was a practical resource that translated complex
-              accessibility standards into actionable guidance for day-to-day
-              design and development work. Since its release, the guide has
-              been adopted not only by internal design and development teams,
-              but also by external partners and clients, helping establish a
-              more consistent and accessible way of working across projects.
-            </p>
-          </div>
-        </div>
+        </DeliverablesBox>
       </CaseSection>
 
       <div className="mt-16 sm:mt-20 w-full overflow-hidden bg-muted">
