@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { Home, ArrowRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { projects } from "@/lib/projects";
+
 
 
 type MetaItem = { label: string; value: string };
