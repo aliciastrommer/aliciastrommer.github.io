@@ -1,4 +1,4 @@
-interface SectionIndicatorItem {
+import type { MouseEvent } from "react";
   label: string;
   targetId: string;
 }
@@ -9,7 +9,8 @@ interface SectionIndicatorProps {
 }
 
 export function SectionIndicator({ items, activeIndex }: SectionIndicatorProps) {
-  const handleClick = (targetId: string) => (e: React.MouseEvent) => {
+  const handleClick = (targetId: string) => (e: MouseEvent<HTMLAnchorElement>) => {
+
     e.preventDefault();
     const el = document.getElementById(targetId);
     if (el) {
