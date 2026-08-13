@@ -1,4 +1,5 @@
-import { Link, type ReactNode } from "react";
+import { type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
