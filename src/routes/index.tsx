@@ -311,24 +311,26 @@ function Home() {
 
 
         <section className="container-wide relative z-10 py-20 sm:py-24">
-          <div className="grid gap-6 sm:grid-cols-[1fr_2fr] items-stretch">
-            <div className="flex flex-col justify-between">
-              <div>
-                <span className="type-caption text-muted-ink">HOW I WORK</span>
+          <div className="w-full md:w-3/4 rounded-2xl bg-lavender p-8 sm:p-10">
+            <div className="grid gap-6 sm:grid-cols-[1fr_2fr] items-stretch">
+              <div className="flex flex-col justify-between">
+                <div>
+                  <span className="type-caption text-muted-ink">HOW I WORK</span>
+                </div>
+                <span className="type-caption hidden sm:inline text-muted-ink">[03]</span>
               </div>
-              <span className="type-caption hidden sm:inline text-muted-ink">[03]</span>
-            </div>
-            <div className="flex flex-col justify-between gap-6">
-              {howIWork.map((h) => (
-                <Reveal key={h.title}>
-                  <div className="cursor-default">
-                    <h3 className="type-h3">{h.title}</h3>
-                    <p className="mt-2 type-body text-foreground/85 max-w-lg">
-                      {h.body}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
+              <div className="flex flex-col justify-between gap-6">
+                {howIWork.map((h) => (
+                  <Reveal key={h.title}>
+                    <div className="cursor-default">
+                      <h3 className="type-h3">{h.title}</h3>
+                      <p className="mt-2 type-body text-foreground/85 max-w-lg">
+                        {h.body}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
         </section>
