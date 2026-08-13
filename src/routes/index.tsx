@@ -369,6 +369,8 @@ function Home() {
           </a>
         </div>
       </section>
+      </div>
+
 
       <SiteFooter />
     </div>
