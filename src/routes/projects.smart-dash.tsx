@@ -6,6 +6,7 @@ import {
   CaseSection,
   ChallengeList,
   FullBleedImage,
+  DeliverablesBox,
 } from "@/components/case-study";
 import { ProcessSteps } from "@/components/process-steps";
 
@@ -219,7 +220,7 @@ function SmartDashPage() {
       </CaseSection>
 
       <CaseSection title="Deliverables & Impact">
-        <div className="w-full rounded-2xl bg-lavender p-8 sm:p-10">
+        <DeliverablesBox>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
             <div>
               <h3 className="type-h3">Product</h3>
@@ -255,7 +256,7 @@ function SmartDashPage() {
               </p>
             </div>
           </div>
-        </div>
+        </DeliverablesBox>
       </CaseSection>
 
       <CaseSection title="Key Learnings">

@@ -221,6 +221,11 @@ export function ChallengeList({
   );
 }
 
+export function DeliverablesBox({ children }: { children: ReactNode }) {
+  return <div className="card-lavender p-8 sm:p-10">{children}</div>;
+}
+
+
 
 
 export function CaseDivider() {
