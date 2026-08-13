@@ -247,7 +247,9 @@ function Home() {
 
 
 
-        <SectionLabel label="FEATURED WORK" number="[02]" />
+        <Reveal>
+          <SectionLabel label="FEATURED WORK" number="[02]" />
+        </Reveal>
         <div className="mt-6 space-y-4 sm:space-y-6">
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
