@@ -187,8 +187,9 @@ function Home() {
 
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
-      <div className="bg-section-tint">
+      <div className="section-band">
       <Reveal as="section" className="container-wide py-20 sm:py-24">
+
 
         <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
           <div className="type-caption hidden md:block">[01]</div>
@@ -235,7 +236,9 @@ function Home() {
 
 
       {/* [02] FEATURED WORK */}
+      <div className="section-band">
       <section id="work" className="container-wide py-20 sm:py-24 scroll-mt-24">
+
         <SectionLabel label="FEATURED WORK" number="[02]" />
         <div className="mt-6 space-y-4 sm:space-y-6">
           {projects.map((p, i) => (
@@ -284,12 +287,14 @@ function Home() {
           ))}
         </div>
       </section>
+      </div>
 
-      {/* [03] HOW I WORK — deeper lavender section */}
+      {/* [03] HOW I WORK */}
       <div
-        className="bg-prism-wash relative overflow-hidden border-y border-primary/10"
+        className="section-band relative overflow-hidden"
         data-header-theme="light"
       >
+
         <section className="container-wide relative z-10 py-20 sm:py-24">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
             <div className="flex flex-col justify-between">
@@ -316,7 +321,7 @@ function Home() {
 
 
       {/* [04] ABOUT */}
-      <div className="bg-section-tint">
+      <div className="section-band">
       <section id="about" className="container-wide py-20 sm:py-24 scroll-mt-24">
 
         <SectionLabel label="ABOUT" number="[04]" />

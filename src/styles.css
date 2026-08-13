@@ -262,11 +262,48 @@
   color: var(--foreground);
 }
 
-/* Section rhythm — alternating tones so sections read as distinct bands
-   without breaking the light, editorial feel. */
+/* Section rhythm — all sections share the same white ground. Separation comes
+   from a hairline rule that fades out at the edges plus a soft gradient wash
+   at the top of each band, so transitions feel smooth while scrolling. */
 @utility bg-section-tint {
-  background-color: color-mix(in oklab, var(--color-surface) 70%, var(--color-background));
+  background-color: var(--color-background);
 }
+
+@utility section-band {
+  position: relative;
+  background-color: var(--color-background);
+}
+
+.section-band::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--primary) 22%, transparent) 20%,
+    color-mix(in oklab, var(--primary) 22%, transparent) 80%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.section-band::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 12rem;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--primary) 5%, transparent),
+    transparent
+  );
+  pointer-events: none;
+}
+
 
 
 /* Hero craft object — prismatic kinetic glass layers
