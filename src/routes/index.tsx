@@ -3,6 +3,8 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 import { useActiveBand } from "@/hooks/use-active-band";
+import { SectionIndicator } from "@/components/section-indicator";
+
 
 
 
@@ -95,10 +97,20 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 }
 
 
+const sections = [
+  { label: "Top", targetId: "top" },
+  { label: "Proof", targetId: "proof" },
+  { label: "Work", targetId: "work" },
+  { label: "How I work", targetId: "how-i-work" },
+  { label: "About", targetId: "about" },
+];
+
 function Home() {
-  useActiveBand();
+  const activeIndex = useActiveBand();
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SectionIndicator items={sections} activeIndex={activeIndex} />
+
       {/* HERO — clean editorial layout with central craft object */}
       <div
         className="relative overflow-hidden bg-background snap-start"
