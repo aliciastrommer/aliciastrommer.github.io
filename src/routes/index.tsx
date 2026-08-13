@@ -92,19 +92,9 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 }
 
 
-const sections = [
-  { label: "Top", targetId: "top" },
-  { label: "Proof", targetId: "proof" },
-  { label: "Work", targetId: "work" },
-  { label: "How I work", targetId: "how-i-work" },
-  { label: "About", targetId: "about" },
-];
-
 function Home() {
-  const activeIndex = useActiveBand();
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SectionIndicator items={sections} activeIndex={activeIndex} />
 
       {/* HERO — clean editorial layout with central craft object */}
       <div
