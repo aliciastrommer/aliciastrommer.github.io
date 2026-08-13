@@ -287,12 +287,14 @@ function Home() {
           ))}
         </div>
       </section>
+      </div>
 
-      {/* [03] HOW I WORK — deeper lavender section */}
+      {/* [03] HOW I WORK */}
       <div
-        className="bg-prism-wash relative overflow-hidden border-y border-primary/10"
+        className="section-band relative overflow-hidden"
         data-header-theme="light"
       >
+
         <section className="container-wide relative z-10 py-20 sm:py-24">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
             <div className="flex flex-col justify-between">
