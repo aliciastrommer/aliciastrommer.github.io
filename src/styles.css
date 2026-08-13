@@ -282,8 +282,6 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100svh;
-  scroll-snap-align: center;
-  scroll-snap-stop: normal;
   opacity: 0.32;
   filter: blur(1px);
   transform: scale(0.99);
@@ -304,7 +302,6 @@
     opacity: 1;
     filter: none;
     transform: none;
-    scroll-snap-align: none;
   }
 }
 
