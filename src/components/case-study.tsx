@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Home, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 import { projects } from "@/lib/projects";
@@ -278,59 +278,6 @@ type NextRoute =
   | "/projects/accessibility-guide"
   | "/projects/smart-pot";
 
-export function CaseTopNav({
-  next,
-  nextLabel = "Next Project",
-}: {
-  next: NextRoute;
-  nextLabel?: string;
-}) {
-  const [visible, setVisible] = useState(true);
-  const lastScrollY = useRef(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY < 10) {
-        setVisible(true);
-      } else if (currentScrollY < lastScrollY.current) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-      lastScrollY.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
-        visible ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
-      <div className="container-wide py-5 flex items-center justify-between gap-4">
-        <Link
-          to="/"
-          aria-label="Back home"
-          className="grid place-items-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 hover:bg-white hover:scale-105 transition-all duration-200"
-        >
-          <Home className="h-5 w-5" />
-        </Link>
-        <Link
-          to={next}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 type-caption hover:bg-white hover:scale-105 transition-all duration-200"
-        >
-          {nextLabel}
-          <ArrowUpRight className="h-4 w-4" />
-        </Link>
-      </div>
-    </header>
-  );
-}
 
 export function CaseProjectNav({ currentPath }: { currentPath: string }) {
   const others = projects.filter((p) => p.path !== currentPath);
@@ -376,16 +323,13 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
 
 export function CaseLayout({
   children,
-  next,
   currentPath,
 }: {
   children: ReactNode;
-  next?: NextRoute;
   currentPath?: string;
 }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {next && <CaseTopNav next={next} />}
       <main className="pb-16">{children}</main>
       {currentPath && <CaseProjectNav currentPath={currentPath} />}
       <SiteFooter />
