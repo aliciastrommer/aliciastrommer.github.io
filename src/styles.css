@@ -281,28 +281,8 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100svh;
-  opacity: 0.32;
-  filter: blur(1px);
-  transform: scale(0.99);
-  transition:
-    opacity 600ms ease,
-    filter 600ms ease,
-    transform 600ms ease;
 }
 
-.section-band.is-active {
-  opacity: 1;
-  filter: none;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .section-band {
-    opacity: 1;
-    filter: none;
-    transform: none;
-  }
-}
 
 
 
