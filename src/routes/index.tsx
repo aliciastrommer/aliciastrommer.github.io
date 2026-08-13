@@ -98,7 +98,7 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground">
       {/* HERO — clean editorial layout with central craft object */}
       <div
-        className="relative overflow-hidden bg-hero-dots"
+        className="relative overflow-hidden bg-background"
         data-header-theme="light"
       >
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
@@ -187,7 +187,9 @@ function Home() {
 
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
+      <div className="bg-section-tint">
       <Reveal as="section" className="container-wide py-20 sm:py-24">
+
         <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
           <div className="type-caption hidden md:block">[01]</div>
 
@@ -229,6 +231,8 @@ function Home() {
           </div>
         </div>
       </Reveal>
+      </div>
+
 
       {/* [02] FEATURED WORK */}
       <section id="work" className="container-wide py-20 sm:py-24 scroll-mt-24">
@@ -312,7 +316,9 @@ function Home() {
 
 
       {/* [04] ABOUT */}
+      <div className="bg-section-tint">
       <section id="about" className="container-wide py-20 sm:py-24 scroll-mt-24">
+
         <SectionLabel label="ABOUT" number="[04]" />
         <div className="mt-6 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
           <div className="overflow-hidden rounded-lg bg-surface h-full min-h-[320px] md:min-h-[520px]">
@@ -363,6 +369,8 @@ function Home() {
           </a>
         </div>
       </section>
+      </div>
+
 
       <SiteFooter />
     </div>
