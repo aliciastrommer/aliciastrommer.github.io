@@ -323,16 +323,13 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
 
 export function CaseLayout({
   children,
-  next,
   currentPath,
 }: {
   children: ReactNode;
-  next?: NextRoute;
   currentPath?: string;
 }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {next && <CaseTopNav next={next} />}
       <main className="pb-16">{children}</main>
       {currentPath && <CaseProjectNav currentPath={currentPath} />}
       <SiteFooter />
