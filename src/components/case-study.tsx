@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Home, ArrowRight } from "lucide-react";
+import { Home, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 import { projects } from "@/lib/projects";
@@ -320,7 +320,7 @@ export function CaseTopNav({
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 type-caption hover:bg-white hover:scale-105 transition-all duration-200"
         >
           {nextLabel}
-          <ArrowRight className="h-4 w-4" />
+          <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>
     </header>
@@ -332,29 +332,37 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
 
   return (
     <section className="container-wide mt-20 sm:mt-28">
-      <Reveal>
-        <h2 className="type-h2 mb-8 sm:mb-10">Explore more projects</h2>
-      </Reveal>
       <div className="grid gap-5 sm:grid-cols-2">
         {others.map((p) => (
           <Reveal key={p.path}>
             <Link
               to={p.path}
-              className="group relative block overflow-hidden rounded-2xl bg-muted aspect-[4/3] sm:aspect-[16/10]"
+              aria-label={`Open ${p.title} case study`}
+              className="group relative block py-4 transition-all duration-300 ease-out"
             >
-              <img
-                src={p.image}
-                alt={p.alt}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                <h3 className="type-h3 text-white">{p.title}</h3>
-                <span className="mt-2 inline-flex items-center gap-1.5 text-sm text-white/90 transition-transform duration-300 group-hover:translate-x-1">
-                  View project
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-              </div>
+              <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
+                <div className="order-2 sm:order-none min-w-0 flex flex-col">
+                  <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                    {p.title}
+                  </h3>
+                </div>
+                <div className="order-1 sm:order-none relative min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                  <img
+                    src={p.image}
+                    alt={p.alt}
+                    loading="lazy"
+                    className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                  />
+                  <div
+                    className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    aria-hidden="true"
+                  >
+                    <div className="grid place-items-center w-12 h-12 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 hover:bg-white hover:scale-105 transition-all duration-200">
+                      <ArrowUpRight className="h-5 w-5" />
+                    </div>
+                  </div>
+                </div>
+              </article>
             </Link>
           </Reveal>
         ))}
