@@ -262,9 +262,9 @@
   color: var(--foreground);
 }
 
-/* Section rhythm — all sections share the same white ground. Separation comes
-   from a hairline rule that fades out at the edges plus a soft gradient wash
-   at the top of each band, so transitions feel smooth while scrolling. */
+/* Section rhythm — one white ground everywhere. Each band fills the viewport
+   and snaps into place; the band you are on is in focus while the others
+   recede softly. */
 @utility bg-section-tint {
   background-color: var(--color-background);
 }
@@ -272,37 +272,36 @@
 @utility section-band {
   position: relative;
   background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
+  opacity: 0.32;
+  filter: blur(1px);
+  transform: scale(0.99);
+  transition:
+    opacity 600ms ease,
+    filter 600ms ease,
+    transform 600ms ease;
 }
 
-.section-band::before {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    color-mix(in oklab, var(--primary) 22%, transparent) 20%,
-    color-mix(in oklab, var(--primary) 22%, transparent) 80%,
-    transparent
-  );
-  pointer-events: none;
+.section-band.is-active {
+  opacity: 1;
+  filter: none;
+  transform: none;
 }
 
-.section-band::after {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 12rem;
-  background: linear-gradient(
-    to bottom,
-    color-mix(in oklab, var(--primary) 5%, transparent),
-    transparent
-  );
-  pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+  .section-band {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    scroll-snap-align: none;
+  }
 }
+
 
 
 
