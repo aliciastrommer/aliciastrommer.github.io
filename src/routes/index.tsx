@@ -121,22 +121,8 @@ function Home() {
 
 
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
-          {/* Top: contact + name / role spanning full width */}
+          {/* Top: name / role spanning full width */}
           <header>
-            <div className="hidden sm:flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-6 type-small text-muted-ink">
-              <a
-                href="mailto:alicia@strommer.se"
-                className="link-underline hover:text-foreground transition-colors self-start"
-              >
-                alicia@strommer.se
-              </a>
-              <a
-                href="tel:+46722068063"
-                className="link-underline hover:text-foreground transition-colors self-start"
-              >
-                +46 72-206 80 63
-              </a>
-            </div>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
               <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
