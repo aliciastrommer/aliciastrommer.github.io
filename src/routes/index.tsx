@@ -231,6 +231,8 @@ function Home() {
           </div>
         </div>
       </Reveal>
+      </div>
+
 
       {/* [02] FEATURED WORK */}
       <section id="work" className="container-wide py-20 sm:py-24 scroll-mt-24">
