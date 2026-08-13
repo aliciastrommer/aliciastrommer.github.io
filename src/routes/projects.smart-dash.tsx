@@ -219,39 +219,41 @@ function SmartDashPage() {
       </CaseSection>
 
       <CaseSection title="Deliverables & Impact">
-        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
-          <div>
-            <h3 className="type-h3">Product</h3>
-            <p className="mt-2">
-              I have delivered, validated and improved numerous production-ready
-              HMI experiences, now used by thousands of professional drivers
-              every day.
-            </p>
-          </div>
-          <div>
-            <h3 className="type-h3">Process</h3>
-            <p className="mt-2">
-              Working across several teams, I have helped define collaboration
-              models for newly formed functional teams, co-created onboarding
-              material and introduced new designers to established HMI
-              workflows.
-            </p>
-          </div>
-          <div>
-            <h3 className="type-h3">System</h3>
-            <p className="mt-2">
-              I have established reusable interaction patterns and components
-              adopted across multiple features, and created a new system
-              framework that enhanced visibility and scalability of the HMI.
-            </p>
-          </div>
-          <div>
-            <h3 className="type-h3">Strategic</h3>
-            <p className="mt-2">
-              I have driven strategic development within a key HMI domain,
-              coordinating upcoming work, supporting other designers, and acting
-              as a domain expert who guides long-term interaction strategy.
-            </p>
+        <div className="w-full rounded-2xl bg-lavender p-8 sm:p-10">
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+            <div>
+              <h3 className="type-h3">Product</h3>
+              <p className="mt-2">
+                I have delivered, validated and improved numerous production-ready
+                HMI experiences, now used by thousands of professional drivers
+                every day.
+              </p>
+            </div>
+            <div>
+              <h3 className="type-h3">Process</h3>
+              <p className="mt-2">
+                Working across several teams, I have helped define collaboration
+                models for newly formed functional teams, co-created onboarding
+                material and introduced new designers to established HMI
+                workflows.
+              </p>
+            </div>
+            <div>
+              <h3 className="type-h3">System</h3>
+              <p className="mt-2">
+                I have established reusable interaction patterns and components
+                adopted across multiple features, and created a new system
+                framework that enhanced visibility and scalability of the HMI.
+              </p>
+            </div>
+            <div>
+              <h3 className="type-h3">Strategic</h3>
+              <p className="mt-2">
+                I have driven strategic development within a key HMI domain,
+                coordinating upcoming work, supporting other designers, and acting
+                as a domain expert who guides long-term interaction strategy.
+              </p>
+            </div>
           </div>
         </div>
       </CaseSection>
