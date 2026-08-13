@@ -104,7 +104,7 @@ function Home() {
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
           {/* Top: contact + name / role spanning full width */}
           <header>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-6 type-small text-muted-ink">
+            <div className="hidden sm:flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-6 type-small text-muted-ink">
               <a
                 href="mailto:alicia@strommer.se"
                 className="link-underline hover:text-foreground transition-colors self-start"
