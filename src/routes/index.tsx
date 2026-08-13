@@ -316,7 +316,9 @@ function Home() {
 
 
       {/* [04] ABOUT */}
+      <div className="bg-section-tint">
       <section id="about" className="container-wide py-20 sm:py-24 scroll-mt-24">
+
         <SectionLabel label="ABOUT" number="[04]" />
         <div className="mt-6 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
           <div className="overflow-hidden rounded-lg bg-surface h-full min-h-[320px] md:min-h-[520px]">
