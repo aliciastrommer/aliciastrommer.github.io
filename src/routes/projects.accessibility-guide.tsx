@@ -7,6 +7,7 @@ import {
   ChallengeList,
   FullBleedImage,
   CaseDivider,
+  DeliverablesBox,
 } from "@/components/case-study";
 
 import hero from "@/assets/accessibility-laptop1.jpg.asset.json";
