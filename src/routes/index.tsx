@@ -2,11 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
-import { useActiveBand } from "@/hooks/use-active-band";
-import { SectionIndicator } from "@/components/section-indicator";
-
-
-
 
 import portrait from "@/assets/alicia-portrait-v3.png.asset.json";
 import smartDashImg from "@/assets/smart-dash-cockpit.jpg.asset.json";
@@ -97,19 +92,9 @@ function SectionLabel({ label, number }: { label: string; number: string }) {
 }
 
 
-const sections = [
-  { label: "Top", targetId: "top" },
-  { label: "Proof", targetId: "proof" },
-  { label: "Work", targetId: "work" },
-  { label: "How I work", targetId: "how-i-work" },
-  { label: "About", targetId: "about" },
-];
-
 function Home() {
-  const activeIndex = useActiveBand();
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SectionIndicator items={sections} activeIndex={activeIndex} />
 
       {/* HERO — clean editorial layout with central craft object */}
       <div
