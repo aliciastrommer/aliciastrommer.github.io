@@ -321,7 +321,7 @@ function Home() {
 
 
       {/* [04] ABOUT */}
-      <div className="bg-section-tint">
+      <div className="section-band">
       <section id="about" className="container-wide py-20 sm:py-24 scroll-mt-24">
 
         <SectionLabel label="ABOUT" number="[04]" />
