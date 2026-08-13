@@ -177,7 +177,7 @@ function Home() {
                   .getElementById("work")
                   ?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className="shrink-0 grid place-items-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1"
+              className="shrink-0 grid place-items-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1 md:ml-auto"
             >
               <ArrowDown className="size-5" />
             </a>
