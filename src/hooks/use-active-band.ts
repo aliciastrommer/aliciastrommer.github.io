@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 /**
- * Marks the section band closest to the viewport centre with `.is-active`,
- * so the band you are scrolled to is in focus and the others recede.
+ * Tracks the section band closest to the viewport centre and marks it
+ * with `.is-active`. Also returns the active index so a UI indicator can
+ * mirror it.
  */
 export function useActiveBand() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   useEffect(() => {
     const bands = Array.from(
-      document.querySelectorAll<HTMLElement>(".section-band"),
+      document.querySelectorAll<HTMLElement>("[data-band]"),
     );
     if (bands.length === 0) return;
 
@@ -26,6 +29,9 @@ export function useActiveBand() {
           best = band;
         }
       }
+
+      const index = best ? bands.indexOf(best) : 0;
+      setActiveIndex(index);
 
       for (const band of bands) {
         band.classList.toggle("is-active", band === best);
@@ -46,4 +52,6 @@ export function useActiveBand() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
+
+  return activeIndex;
 }
