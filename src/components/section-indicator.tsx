@@ -22,7 +22,7 @@ export function SectionIndicator({ items, activeIndex }: SectionIndicatorProps) 
   return (
     <nav
       aria-label="Section navigation"
-      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-end xl:right-[max(0.25rem,calc((100vw-1600px)/4))]"
+      className="fixed right-4 sm:right-5 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-end xl:right-[max(1rem,calc((100vw-1400px)/2+1rem))]"
     >
       <div className="relative flex flex-col items-end gap-5 py-5 pl-3">
         {items.map((item, i) => {
@@ -47,16 +47,16 @@ export function SectionIndicator({ items, activeIndex }: SectionIndicatorProps) 
               >
                 {item.label}
               </span>
-              <span className="relative flex items-center justify-center w-4 h-4">
+              <span className="relative flex items-center justify-center w-5 h-5">
                 {isActive && (
-                  <span className="absolute inset-0 rounded-full border border-primary/30 animate-pulse" />
+                  <span className="absolute inset-0 rounded-full border-2 border-primary/40 animate-pulse" />
                 )}
                 <span
                   className={[
                     "block rounded-full transition-all duration-300",
                     isActive
-                      ? "w-1.5 h-1.5 bg-primary ring-4 ring-primary/15 group-hover/item:scale-125"
-                      : "w-1.5 h-1.5 bg-transparent border border-muted-ink/40 group-hover/item:border-primary/70 group-hover/item:scale-110",
+                      ? "w-2.5 h-2.5 bg-primary ring-[6px] ring-primary/20 group-hover/item:scale-110"
+                      : "w-2.5 h-2.5 bg-background border-2 border-muted-ink/70 shadow-sm group-hover/item:border-primary group-hover/item:scale-110",
                   ].join(" ")}
                 />
               </span>
