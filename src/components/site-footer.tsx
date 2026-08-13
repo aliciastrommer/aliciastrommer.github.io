@@ -9,8 +9,8 @@ export function SiteFooter() {
           >
             alicia@strommer.se
           </a>
-          <span className="text-xs uppercase tracking-[0.2em] text-muted-ink/70 order-first sm:order-none">
-            Designed in Figma • Implemented with Lovable
+          <span className="text-xs uppercase tracking-[0.12em] text-muted-ink/70 order-first sm:order-none">
+            Figma design / Lovable implementation
           </span>
           <a
             href="tel:+46722068063"
