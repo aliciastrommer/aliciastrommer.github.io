@@ -187,7 +187,9 @@ function Home() {
 
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
+      <div className="bg-section-tint">
       <Reveal as="section" className="container-wide py-20 sm:py-24">
+
         <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
           <div className="type-caption hidden md:block">[01]</div>
 
