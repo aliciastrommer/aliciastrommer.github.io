@@ -113,9 +113,12 @@ function Home() {
 
       {/* HERO — clean editorial layout with central craft object */}
       <div
+        id="top"
+        data-band
         className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
+
 
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
           {/* Top: contact + name / role spanning full width */}
@@ -203,8 +206,9 @@ function Home() {
 
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
-      <div className="section-band">
+      <div id="proof" data-band className="section-band">
       <Reveal as="section" className="container-wide py-20 sm:py-24">
+
 
 
         <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
@@ -252,8 +256,9 @@ function Home() {
 
 
       {/* [02] FEATURED WORK */}
-      <div className="section-band">
+      <div id="work" data-band className="section-band">
       <section id="work" className="container-wide py-20 sm:py-24 scroll-mt-24">
+
 
         <SectionLabel label="FEATURED WORK" number="[02]" />
         <div className="mt-6 space-y-4 sm:space-y-6">
@@ -307,9 +312,12 @@ function Home() {
 
       {/* [03] HOW I WORK */}
       <div
+        id="how-i-work"
+        data-band
         className="section-band relative overflow-hidden"
         data-header-theme="light"
       >
+
 
         <section className="container-wide relative z-10 py-20 sm:py-24">
           <div className="grid gap-10 sm:grid-cols-[1fr_2fr] items-stretch">
@@ -337,8 +345,9 @@ function Home() {
 
 
       {/* [04] ABOUT */}
-      <div className="section-band">
+      <div id="about" data-band className="section-band">
       <section id="about" className="container-wide py-20 sm:py-24 scroll-mt-24">
+
 
         <SectionLabel label="ABOUT" number="[04]" />
         <div className="mt-6 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
