@@ -339,7 +339,9 @@ function Home() {
 
 
 
-        <SectionLabel label="ABOUT" number="[04]" />
+        <Reveal>
+          <SectionLabel label="ABOUT" number="[04]" />
+        </Reveal>
         <div className="mt-6 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
           <div className="overflow-hidden rounded-lg bg-surface h-full min-h-[320px] md:min-h-[520px]">
             <img
@@ -349,44 +351,56 @@ function Home() {
             />
           </div>
           <div className="flex flex-col">
-            <h2 className="type-h2">
-              A little bit about me
-            </h2>
+            <Reveal>
+              <h2 className="type-h2">
+                A little bit about me
+              </h2>
+            </Reveal>
             <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
-              <p>
-                I grew up in Umeå and now live in Stockholm with my fiancé. Today,
-                I work at the intersection of design, technology, and human behaviour,
-                with a particular interest in creating products that become a natural
-                part of people’s everyday lives. I find it especially rewarding to
-                see how small design decisions can make a meaningful difference over time.
-              </p>
-              <p>
-                My interest in human behaviour started early. Growing up alongside
-                people with different cognitive variations gave me a firsthand
-                understanding of how differently we can think, communicate, and
-                experience the world. It made me curious about people and eventually
-                led me to study cognitive science and interaction design.
-              </p>
-              <p>
-                Creativity has always been an important part of my life, from writing
-                and photography to various personal projects. Today, I bring that
-                creative side into my work, combining it with an understanding of
-                people to create experiences that are useful, intuitive, and enjoyable.
-              </p>
-              <p>
-                Whenever I can, I head back north to our summer house on the coast
-                outside Umeå. Being by the sea, spending time outdoors, and slowing
-                down for a while is my favourite way to recharge.
-              </p>
+              <Reveal>
+                <p>
+                  I grew up in Umeå and now live in Stockholm with my fiancé. Today,
+                  I work at the intersection of design, technology, and human behaviour,
+                  with a particular interest in creating products that become a natural
+                  part of people’s everyday lives. I find it especially rewarding to
+                  see how small design decisions can make a meaningful difference over time.
+                </p>
+              </Reveal>
+              <Reveal>
+                <p>
+                  My interest in human behaviour started early. Growing up alongside
+                  people with different cognitive variations gave me a firsthand
+                  understanding of how differently we can think, communicate, and
+                  experience the world. It made me curious about people and eventually
+                  led me to study cognitive science and interaction design.
+                </p>
+              </Reveal>
+              <Reveal>
+                <p>
+                  Creativity has always been an important part of my life, from writing
+                  and photography to various personal projects. Today, I bring that
+                  creative side into my work, combining it with an understanding of
+                  people to create experiences that are useful, intuitive, and enjoyable.
+                </p>
+              </Reveal>
+              <Reveal>
+                <p>
+                  Whenever I can, I head back north to our summer house on the coast
+                  outside Umeå. Being by the sea, spending time outdoors, and slowing
+                  down for a while is my favourite way to recharge.
+                </p>
+              </Reveal>
             </div>
           </div>
         </div>
 
         <div className="mt-16 flex justify-center">
-          <a href="mailto:alicia@strommer.se" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-primary hover:scale-105 transition-all duration-200 group">
-            Let's Talk
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          <Reveal>
+            <a href="mailto:alicia@strommer.se" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-primary hover:scale-105 transition-all duration-200 group">
+              Let's Talk
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </Reveal>
         </div>
       </section>
       </div>
