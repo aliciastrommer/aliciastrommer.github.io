@@ -132,17 +132,15 @@
     scroll-behavior: smooth;
   }
 
-  html:has(.section-band) {
-    scroll-snap-type: y proximity;
-  }
+  /* Scroll-snap intentionally disabled so the global footer (e.g. on the
+     index page) remains reachable and the page still scrolls naturally. The
+     "focus" effect is still driven by the active-band hook. */
 
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
-    html:has(.section-band) {
-      scroll-snap-type: none;
-    }
+  }
   }
 
 
