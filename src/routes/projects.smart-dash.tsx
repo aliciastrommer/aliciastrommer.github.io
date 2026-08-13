@@ -6,6 +6,7 @@ import {
   CaseSection,
   ChallengeList,
   FullBleedImage,
+  DeliverablesBox,
 } from "@/components/case-study";
 import { ProcessSteps } from "@/components/process-steps";
 
