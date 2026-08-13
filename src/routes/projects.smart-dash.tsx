@@ -35,7 +35,7 @@ export const Route = createFileRoute("/projects/smart-dash")({
 
 function SmartDashPage() {
   return (
-    <CaseLayout next="/projects/accessibility-guide" currentPath="/projects/smart-dash">
+    <CaseLayout currentPath="/projects/smart-dash">
       <CaseHero
         heroImage={hero.url}
         heroAlt="Scania truck cab with the steering wheel and Center Information Display"

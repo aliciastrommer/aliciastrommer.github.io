@@ -39,7 +39,7 @@ export const Route = createFileRoute("/projects/smart-pot")({
 
 function SmartPotPage() {
   return (
-    <CaseLayout next="/projects/smart-dash" currentPath="/projects/smart-pot">
+    <CaseLayout currentPath="/projects/smart-pot">
       <CaseHero
         heroImage={hero.url}
         heroAlt="Hands holding a glowing white origami-textured plant pot with basil"
