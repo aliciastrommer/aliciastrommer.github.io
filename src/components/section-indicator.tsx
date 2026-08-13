@@ -22,9 +22,9 @@ export function SectionIndicator({ items, activeIndex }: SectionIndicatorProps) 
   return (
     <nav
       aria-label="Section navigation"
-      className="fixed right-4 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-end xl:right-[max(1rem,calc((100vw-1600px)/2+1rem))]"
+      className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-end xl:right-[max(0.25rem,calc((100vw-1600px)/4))]"
     >
-      <div className="relative flex flex-col items-end gap-5 py-5 px-3">
+      <div className="relative flex flex-col items-end gap-5 py-5 pl-3">
         {items.map((item, i) => {
           const isActive = i === activeIndex;
           return (
