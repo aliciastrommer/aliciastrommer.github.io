@@ -197,44 +197,46 @@ function Home() {
 
 
 
-        <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
-          <div className="type-caption hidden md:block">[01]</div>
+        <div className="bg-muted rounded-2xl p-8 sm:p-10">
+          <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
+            <div className="type-caption hidden md:block">[01]</div>
 
-          <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
-            <div className="space-y-5">
-              <div>
-                <div className="type-small text-muted-ink">Years of experience</div>
-                <div className="mt-1 type-value">4+</div>
+            <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+              <div className="space-y-5">
+                <div>
+                  <div className="type-small text-muted-ink">Years of experience</div>
+                  <div className="mt-1 type-value">4+</div>
+                </div>
+                <div>
+                  <div className="type-small text-muted-ink">Current role</div>
+                  <div className="mt-1 type-value">UX/UI Designer</div>
+                  <div className="type-value">Area Lead</div>
+                </div>
+                <div>
+                  <div className="type-small text-muted-ink">Focus</div>
+                  <div className="mt-1 type-value">Product &amp; System Thinking</div>
+                  <div className="type-value">Accessibility-Driven Design</div>
+                  <div className="type-value">Usability in Complex Products</div>
+                </div>
               </div>
-              <div>
-                <div className="type-small text-muted-ink">Current role</div>
-                <div className="mt-1 type-value">UX/UI Designer</div>
-                <div className="type-value">Area Lead</div>
+
+              <div className="space-y-5">
+                <div>
+                  <div className="type-small text-muted-ink">Experience from</div>
+                  <div className="mt-1 type-value">Traton Group</div>
+                  <div className="type-value">Scania</div>
+                  <div className="type-value">Daresay by Knightec</div>
+                  <div className="type-value">ABB</div>
+                  <div className="type-value">Umeå Energi</div>
+                </div>
+                <div>
+                  <div className="type-small text-muted-ink">Education in</div>
+                  <div className="mt-1 type-value">Interaction Design</div>
+                  <div className="type-value">Cognitive Science</div>
+                </div>
               </div>
-              <div>
-                <div className="type-small text-muted-ink">Focus</div>
-                <div className="mt-1 type-value">Product &amp; System Thinking</div>
-                <div className="type-value">Accessibility-Driven Design</div>
-                <div className="type-value">Usability in Complex Products</div>
-              </div>
+
             </div>
-
-            <div className="space-y-5">
-              <div>
-                <div className="type-small text-muted-ink">Experience from</div>
-                <div className="mt-1 type-value">Traton Group</div>
-                <div className="type-value">Scania</div>
-                <div className="type-value">Daresay by Knightec</div>
-                <div className="type-value">ABB</div>
-                <div className="type-value">Umeå Energi</div>
-              </div>
-              <div>
-                <div className="type-small text-muted-ink">Education in</div>
-                <div className="mt-1 type-value">Interaction Design</div>
-                <div className="type-value">Cognitive Science</div>
-              </div>
-            </div>
-
           </div>
         </div>
       </Reveal>
