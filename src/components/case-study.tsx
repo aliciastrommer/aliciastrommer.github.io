@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { Home, ArrowRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { projects } from "@/lib/projects";
+
 
 
 type MetaItem = { label: string; value: string };
@@ -325,20 +327,60 @@ export function CaseTopNav({
   );
 }
 
+export function CaseProjectNav({ currentPath }: { currentPath: string }) {
+  const others = projects.filter((p) => p.path !== currentPath);
+
+  return (
+    <section className="container-wide mt-20 sm:mt-28">
+      <Reveal>
+        <h2 className="type-h2 mb-8 sm:mb-10">Explore more projects</h2>
+      </Reveal>
+      <div className="grid gap-5 sm:grid-cols-2">
+        {others.map((p) => (
+          <Reveal key={p.path}>
+            <Link
+              to={p.path}
+              className="group relative block overflow-hidden rounded-2xl bg-muted aspect-[4/3] sm:aspect-[16/10]"
+            >
+              <img
+                src={p.image}
+                alt={p.alt}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <h3 className="type-h3 text-white">{p.title}</h3>
+                <span className="mt-2 inline-flex items-center gap-1.5 text-sm text-white/90 transition-transform duration-300 group-hover:translate-x-1">
+                  View project
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function CaseLayout({
   children,
   next,
+  currentPath,
 }: {
   children: ReactNode;
   next?: NextRoute;
+  currentPath?: string;
 }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {next && <CaseTopNav next={next} />}
       <main className="pb-16">{children}</main>
+      {currentPath && <CaseProjectNav currentPath={currentPath} />}
       <SiteFooter />
     </div>
   );
 }
+
 
 
