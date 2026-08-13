@@ -262,16 +262,12 @@
   color: var(--foreground);
 }
 
-/* Subtle dotted background for the hero section.
-   Very low opacity keeps the pattern quiet and modern. */
-@utility bg-hero-dots {
-  background-color: var(--color-background);
-  background-image: radial-gradient(
-    color-mix(in oklab, var(--color-primary) 22%, transparent) 1px,
-    transparent 1px
-  );
-  background-size: 28px 28px;
+/* Section rhythm — alternating tones so sections read as distinct bands
+   without breaking the light, editorial feel. */
+@utility bg-section-tint {
+  background-color: color-mix(in oklab, var(--color-surface) 70%, var(--color-background));
 }
+
 
 /* Hero craft object — prismatic kinetic glass layers
    No heavy shadows; life comes from color, refraction, and 3D hover motion. */
