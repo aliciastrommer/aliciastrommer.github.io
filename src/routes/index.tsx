@@ -106,8 +106,18 @@ function Home() {
 
 
         <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
+          {/* Top-left HOME link */}
+          <div className="flex items-center">
+            <Link
+              to="/"
+              className="type-caption uppercase tracking-[0.12em] text-muted-ink hover:text-foreground transition-colors"
+            >
+              Home
+            </Link>
+          </div>
+
           {/* Top: name / role spanning full width */}
-          <header>
+          <header className="mt-6">
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
               <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
