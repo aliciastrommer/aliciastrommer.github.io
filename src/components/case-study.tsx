@@ -338,15 +338,10 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
             <Link
               to={p.path}
               aria-label={`Open ${p.title} case study`}
-              className="group relative block py-4 transition-all duration-300 ease-out"
+              className="group block transition-all duration-300 ease-out"
             >
-              <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
-                <div className="order-2 sm:order-none min-w-0 flex flex-col">
-                  <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
-                    {p.title}
-                  </h3>
-                </div>
-                <div className="order-1 sm:order-none relative min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+              <article className="relative">
+                <div className="relative min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
                   <img
                     src={p.image}
                     alt={p.alt}
@@ -362,6 +357,9 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
                     </div>
                   </div>
                 </div>
+                <h3 className="mt-4 type-h2 transition-colors duration-200 group-hover:text-primary">
+                  {p.title}
+                </h3>
               </article>
             </Link>
           </Reveal>
