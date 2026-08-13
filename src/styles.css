@@ -132,16 +132,13 @@
     scroll-behavior: smooth;
   }
 
-  html:has(.section-band) {
-    scroll-snap-type: y proximity;
-  }
+  /* Scroll-snap intentionally disabled so the global footer (e.g. on the
+     index page) remains reachable and the page still scrolls naturally. The
+     "focus" effect is still driven by the active-band hook. */
 
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
-    }
-    html:has(.section-band) {
-      scroll-snap-type: none;
     }
   }
 
@@ -284,8 +281,6 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100svh;
-  scroll-snap-align: center;
-  scroll-snap-stop: normal;
   opacity: 0.32;
   filter: blur(1px);
   transform: scale(0.99);
@@ -306,7 +301,6 @@
     opacity: 1;
     filter: none;
     transform: none;
-    scroll-snap-align: none;
   }
 }
 
