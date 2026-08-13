@@ -236,7 +236,9 @@ function Home() {
 
 
       {/* [02] FEATURED WORK */}
+      <div className="section-band">
       <section id="work" className="container-wide py-20 sm:py-24 scroll-mt-24">
+
         <SectionLabel label="FEATURED WORK" number="[02]" />
         <div className="mt-6 space-y-4 sm:space-y-6">
           {projects.map((p, i) => (
