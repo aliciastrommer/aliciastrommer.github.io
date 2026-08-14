@@ -32,9 +32,11 @@ export function SiteHeader() {
   }, []);
 
   const isActive = (item: (typeof navItems)[number]) => {
-    if (pathname !== "/") return false;
-    if (item.hash) return hash === item.hash;
-    return hash === "";
+    if (item.hash) {
+      return pathname === "/" && hash === item.hash;
+    }
+    // Home is active on project pages too, or on index without a hash.
+    return pathname !== "/" || hash === "";
   };
 
   return (
