@@ -32,18 +32,6 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    hash?: string
-  ) => {
-    if (!hash) return;
-    const element = document.getElementById(hash);
-    if (element) {
-      e.preventDefault();
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   const isActive = (item: (typeof navItems)[number]) => {
     if (pathname !== "/") return false;
     if (item.hash) return hash === item.hash;
@@ -67,7 +55,6 @@ export function SiteHeader() {
               key={item.label}
               to={item.to}
               hash={item.hash}
-              onClick={(e) => handleNavClick(e, item.hash)}
               className={`relative px-5 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-200 ${
                 active
                   ? "bg-foreground text-background"
