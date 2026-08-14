@@ -10,8 +10,7 @@ const navItems = [
 export function SiteHeader() {
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
-  const router = useRouterState();
-  const { pathname, hash } = router.location;
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
