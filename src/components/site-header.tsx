@@ -8,7 +8,7 @@ const navItems = [
 ];
 
 export function SiteHeader() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   const lastScrollY = useRef(0);
   const { pathname, hash } = useLocation();
 
