@@ -260,7 +260,7 @@ function Home() {
                       ))}
                     </div>
                   </div>
-                  <div className="order-1 sm:order-none relative min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                  <div className="order-1 sm:order-none relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                     <img
                       src={p.image}
                       alt={p.alt}
@@ -332,7 +332,7 @@ function Home() {
           <SectionLabel label="ABOUT" number="[04]" />
         </Reveal>
         <div className="mt-6 grid gap-8 sm:gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] items-stretch">
-          <div className="overflow-hidden rounded-lg bg-surface h-full min-h-[320px] md:min-h-[520px]">
+          <div className="overflow-hidden rounded-2xl bg-surface h-full min-h-[320px] md:min-h-[520px]">
             <img
               src={portrait.url}
               alt="Portrait of Alicia Strömmer"

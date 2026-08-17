@@ -236,7 +236,7 @@
 @utility card-lavender {
   background-color: color-mix(in oklab, var(--color-lavender) 45%, var(--color-background));
   border: 1px solid color-mix(in oklab, var(--color-primary) 14%, transparent);
-  border-radius: 1.25rem;
+  border-radius: 1rem; /* 16px — consistent with all block-level rounded corners */
   box-shadow: 0 1px 2px color-mix(in oklab, var(--color-primary) 6%, transparent);
 }
 

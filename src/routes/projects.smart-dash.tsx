@@ -72,7 +72,7 @@ function SmartDashPage() {
                 Read more about Smart Dash
               </a>
             </p>
-            <div className="flex items-center rounded-lg border border-red-200 bg-red-50 p-4 type-small text-red-900">
+            <div className="flex items-center rounded-2xl border border-red-200 bg-red-50 p-4 type-small text-red-900">
               Due to confidentiality, this case study focuses on my professional
               development and overall contribution instead of specific examples.
               All images in this case study are officially published by Scania.
