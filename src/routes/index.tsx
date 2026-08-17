@@ -190,34 +190,34 @@ function Home() {
               <div className="space-y-5">
                 <div>
                   <div className="type-small text-muted-ink">Years of experience</div>
-                  <div className="mt-1 type-value">4+</div>
+                  <div className="mt-1 type-h3">4+</div>
                 </div>
                 <div>
                   <div className="type-small text-muted-ink">Current role</div>
-                  <div className="mt-1 type-value">UX/UI Designer</div>
-                  <div className="type-value">Area Lead</div>
+                  <div className="mt-1 type-h3">UX/UI Designer</div>
+                  <div className="type-h3">Area Lead</div>
                 </div>
                 <div>
                   <div className="type-small text-muted-ink">Focus</div>
-                  <div className="mt-1 type-value">Product &amp; System Thinking</div>
-                  <div className="type-value">Accessibility-Driven Design</div>
-                  <div className="type-value">Usability in Complex Products</div>
+                  <div className="mt-1 type-h3">Product &amp; System Thinking</div>
+                  <div className="type-h3">Accessibility-Driven Design</div>
+                  <div className="type-h3">Usability in Complex Products</div>
                 </div>
               </div>
 
               <div className="space-y-5">
                 <div>
                   <div className="type-small text-muted-ink">Experience from</div>
-                  <div className="mt-1 type-value">Traton Group</div>
-                  <div className="type-value">Scania</div>
-                  <div className="type-value">Daresay by Knightec</div>
-                  <div className="type-value">ABB</div>
-                  <div className="type-value">Umeå Energi</div>
+                  <div className="mt-1 type-h3">Traton Group</div>
+                  <div className="type-h3">Scania</div>
+                  <div className="type-h3">Daresay by Knightec</div>
+                  <div className="type-h3">ABB</div>
+                  <div className="type-h3">Umeå Energi</div>
                 </div>
                 <div>
                   <div className="type-small text-muted-ink">Education in</div>
-                  <div className="mt-1 type-value">Interaction Design</div>
-                  <div className="type-value">Cognitive Science</div>
+                  <div className="mt-1 type-h3">Interaction Design</div>
+                  <div className="type-h3">Cognitive Science</div>
                 </div>
               </div>
 
