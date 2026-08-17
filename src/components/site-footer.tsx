@@ -2,16 +2,20 @@ export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-foreground/10">
       <div className="container-wide py-8 type-small text-muted-ink">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <a
-            href="mailto:alicia@strommer.se"
-            className="link-underline hover:text-foreground transition-colors"
-          >
-            alicia@strommer.se
-          </a>
-          <span className="type-micro uppercase tracking-[0.12em] text-muted-ink/70 order-first sm:order-none">
-            Figma design / Lovable implementation
-          </span>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div className="flex flex-col gap-0.5">
+            <a
+              href="mailto:alicia@strommer.se"
+              className="link-underline hover:text-foreground transition-colors"
+            >
+              alicia@strommer.se
+            </a>
+            <p className="type-small text-muted-ink/70">
+              Designed in Figma
+              <br />
+              Implemented with Lovable
+            </p>
+          </div>
           <a
             href="tel:+46722068063"
             className="link-underline hover:text-foreground transition-colors"
