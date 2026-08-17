@@ -52,7 +52,7 @@ export function ProcessSteps({ steps }: Props) {
               key={step.title}
               className="group w-full flex-shrink-0 snap-start rounded-2xl border border-border bg-background p-8 transition-all duration-300 hover:border-primary/25"
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary-soft text-primary font-bold text-xl mb-8 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary-soft text-primary type-body-lg font-semibold mb-8 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                 {num}
               </div>
               <h3 className="type-h3 text-foreground mb-4">{step.title}</h3>

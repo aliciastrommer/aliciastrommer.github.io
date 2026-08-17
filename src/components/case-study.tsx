@@ -40,7 +40,7 @@ export function CaseHero({
       </div>
 
 
-      <div className="container-wide mt-12 sm:mt-16">
+      <div className="container-wide mt-16 sm:mt-24">
         <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-stretch">
           <div className="flex flex-col h-full">
             <h1 className="type-h1">{title}</h1>
@@ -86,7 +86,7 @@ export function CaseSection({
 }) {
   if (tone === "dark") {
     return (
-      <section className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-28">
+      <section className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-24">
         <div className="mx-auto max-w-3xl w-full px-5 sm:px-8">
           <Reveal>
             {title && (
@@ -105,7 +105,7 @@ export function CaseSection({
 
   if (tone === "dark-flat") {
     return (
-      <section className="bg-dark-flat mt-16 sm:mt-24 py-20 sm:py-28">
+      <section className="bg-dark-flat mt-16 sm:mt-24 py-20 sm:py-24">
         <div className="container-wide">
           <Reveal>
             {title && (
@@ -124,7 +124,7 @@ export function CaseSection({
 
   if (tone === "light-tinted") {
     return (
-      <section className="bg-surface mt-16 sm:mt-24 py-20 sm:py-28">
+      <section className="bg-surface mt-16 sm:mt-24 py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
@@ -143,7 +143,7 @@ export function CaseSection({
 
   if (tone === "lavender") {
     return (
-      <section className="bg-lavender-soft mt-16 sm:mt-24 py-16 sm:py-24">
+      <section className="bg-lavender-soft mt-16 sm:mt-24 py-20 sm:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
@@ -188,7 +188,7 @@ export function ChallengeList({
 }) {
   const isPlain = variant === "plain";
   const isDark = variant === "dark";
-  const itemClass = isPlain || isDark ? "py-2" : "card-lavender p-6 sm:p-7";
+  const itemClass = isPlain || isDark ? "py-2" : "card-lavender p-6 sm:p-8";
   const dividerClass = isDark
     ? "divide-y divide-white/10"
     : isPlain
@@ -283,8 +283,8 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
   const others = projects.filter((p) => p.path !== currentPath);
 
   return (
-    <section className="container-wide mt-20 sm:mt-28">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <section className="container-wide mt-16 sm:mt-24">
+      <div className="grid gap-6 sm:grid-cols-2">
         {others.map((p) => (
           <Reveal key={p.path}>
             <Link

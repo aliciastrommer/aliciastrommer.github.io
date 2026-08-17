@@ -345,7 +345,7 @@ function Home() {
                 A little bit about me
               </h2>
             </Reveal>
-            <div className="mt-6 space-y-4 type-body text-[color:var(--muted-ink)]">
+            <div className="mt-6 space-y-4 type-body text-muted-ink">
               <Reveal>
                 <p>
                   I grew up in Umeå and now live in Stockholm with my fiancé. Today,
@@ -385,7 +385,7 @@ function Home() {
 
         <div className="mt-16 flex justify-center">
           <Reveal>
-            <a href="mailto:alicia@strommer.se" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-primary hover:scale-105 transition-all duration-200 group">
+            <a href="mailto:alicia@strommer.se" className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-caption hover:bg-primary hover:scale-105 transition-all duration-200 group">
               Let's Talk
               <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
