@@ -250,7 +250,7 @@ function Home() {
                     <div>
                       <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                         {p.title}
-                      </h3>
+                      </h2>
                       <div className="mt-2 type-small text-muted-ink">{p.period}</div>
                       <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                     </div>
