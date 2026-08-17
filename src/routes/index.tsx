@@ -37,7 +37,7 @@ const projects = [
     period: "2023 – Present",
     body:
       "Designing digital driver experiences for professional truck and bus drivers that reduce cognitive effort and simplify complex workflows.\u00a0",
-    tags: ["UX/UI Design", "System Thinking", "Design System"],
+    tags: ["UX/UI Design", "System Thinking"],
     image: smartDashImg.url,
     alt: "Scania truck cab with the steering wheel and Center Information Display",
   },
