@@ -248,9 +248,9 @@ function Home() {
                 <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
                   <div className="order-2 sm:order-none min-w-0 flex flex-col">
                     <div>
-                      <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                      <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                         {p.title}
-                      </h3>
+                      </h2>
                       <div className="mt-2 type-small text-muted-ink">{p.period}</div>
                       <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                     </div>
