@@ -296,7 +296,7 @@ function Home() {
 
 
         <section className="container-wide relative z-10 py-20 sm:py-24">
-          <div className="w-full md:w-3/4 rounded-2xl bg-lavender p-8 sm:p-10">
+          <div className="w-full rounded-2xl bg-lavender p-8 sm:p-10">
             <div className="grid gap-6 sm:grid-cols-[1fr_2fr] items-stretch">
               <div className="flex flex-col justify-between">
                 <div>
