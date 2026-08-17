@@ -770,8 +770,8 @@
 }
 @utility type-h3 {
   font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1rem; /* 16px — bold body, less prominent than H2 */
+  font-weight: 600;
+  font-size: 1rem; /* 16px — semibold body, less prominent than H2 */
   line-height: 1.6;
   letter-spacing: 0;
 }
