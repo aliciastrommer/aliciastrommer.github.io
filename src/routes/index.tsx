@@ -350,9 +350,9 @@ function Home() {
                 <p>
                   I grew up in Umeå and now live in Stockholm with my fiancé. Today,
                   I work at the intersection of design, technology, and human behaviour,
-                  with a particular interest in creating products that become a natural
-                  part of people’s everyday lives. I find it especially rewarding to
-                  see how small design decisions can make a meaningful difference over time.
+                  with a particular interest in products for everyday use. I find it
+                  especially rewarding to see how small design decisions can make a
+                  meaningful difference over time.
                 </p>
               </Reveal>
               <Reveal>
