@@ -9,7 +9,7 @@ export function SiteFooter() {
           >
             alicia@strommer.se
           </a>
-          <span className="text-xs uppercase tracking-[0.12em] text-muted-ink/70 order-first sm:order-none">
+          <span className="type-micro uppercase tracking-[0.12em] text-muted-ink/70 order-first sm:order-none">
             Figma design / Lovable implementation
           </span>
           <a
