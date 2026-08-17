@@ -336,7 +336,7 @@ function Home() {
             <img
               src={portrait.url}
               alt="Portrait of Alicia Strömmer"
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full rounded-2xl object-cover object-top"
             />
           </div>
           <div className="flex flex-col">
