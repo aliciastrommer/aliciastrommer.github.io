@@ -201,7 +201,7 @@ export function ChallengeList({
           <div className="flex items-start gap-4 py-4">
             {it.icon && (
               <div
-                className={`shrink-0 grid place-items-center h-10 w-10 rounded-xl ${
+                className={`shrink-0 grid place-items-center h-10 w-10 rounded-2xl ${
                   isDark ? "bg-white/10 text-white" : "bg-primary/10 text-primary"
                 }`}
               >
@@ -293,7 +293,7 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
               className="group block transition-all duration-300 ease-out"
             >
               <article className="relative">
-                <div className="relative min-w-0 w-full overflow-hidden rounded-lg bg-surface aspect-[16/10]">
+                <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                   <img
                     src={p.image}
                     alt={p.alt}
