@@ -358,7 +358,7 @@ function Home() {
               <Reveal>
                 <p>
                   My interest in human behaviour started early. Growing up alongside
-                  people with different cognitive variations gave me a firsthand
+                  people with cognitive variations gave me a firsthand
                   understanding of how differently we can think, communicate, and
                   experience the world. It made me curious about people and eventually
                   led me to study cognitive science and interaction design.
