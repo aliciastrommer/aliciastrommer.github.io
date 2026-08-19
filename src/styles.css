@@ -806,9 +806,22 @@
 /* Smallest step (14px) — chips, footer meta, fine print */
 @utility type-micro {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 0.875rem; /* 14px */
   line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Footer credit line — smaller, lighter, quieter than body */
+@utility type-credit {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.875rem; /* 14px — one step below body/small */
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-muted-ink);
 }
 
 
