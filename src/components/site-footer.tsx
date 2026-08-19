@@ -3,8 +3,8 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-foreground/10">
       <div className="container-wide py-8 type-small text-muted-ink">
         <div className="flex flex-col items-start gap-3">
-          {/* Mobile: email + phone on the same row; desktop: split with phone on the right */}
-          <div className="flex flex-col sm:flex-row w-full items-start justify-between gap-3">
+          {/* Contact row: side-by-side on mobile, split on desktop */}
+          <div className="flex flex-row flex-wrap w-full items-start justify-between gap-x-4 gap-y-1 sm:flex-row">
             <a
               href="mailto:alicia@strommer.se"
               className="link-underline hover:text-foreground transition-colors"
@@ -28,5 +28,6 @@ export function SiteFooter() {
     </footer>
   );
 }
+
 
 
