@@ -304,8 +304,8 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
                     className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     aria-hidden="true"
                   >
-                    <div className="grid place-items-center w-12 h-12 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 hover:bg-white hover:scale-105 transition-all duration-200">
-                      <ArrowUpRight className="h-5 w-5" />
+                    <div className="grid place-items-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] text-muted-foreground hover:text-foreground transition-colors">
+                      <ArrowUpRight size={20} strokeWidth={1.75} />
                     </div>
                   </div>
                 </div>
