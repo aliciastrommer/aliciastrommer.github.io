@@ -385,9 +385,8 @@ function Home() {
 
         <div className="mt-16 flex justify-center">
           <Reveal>
-            <a href="mailto:alicia@strommer.se" className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-h2 hover:bg-primary hover:scale-105 transition-all duration-200 group">
+            <a href="mailto:alicia@strommer.se" className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-h3 hover:bg-primary hover:scale-105 transition-all duration-200">
               Let's Talk
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </Reveal>
         </div>
