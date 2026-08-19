@@ -109,6 +109,7 @@ function SmartDashPage() {
         />
       </CaseSection>
 
+      <FullBleedImage src={display.url} alt="Scania driver display showing speedometer, load status and trip data" />
 
       <CaseSection title="My Role">
         <p>
@@ -129,49 +130,6 @@ function SmartDashPage() {
           been carried out in an agile environment, following SAFe, and in a global
           context, where cross-functional collaboration has been key.&nbsp;
         </p>
-        <p>
-        </p>
-      </CaseSection>
-
-      <FullBleedImage src={display.url} alt="Scania driver display showing speedometer, load status and trip data" />
-
-      <CaseSection title="My Contribution">
-        <div className="space-y-10">
-          <div>
-            <h3 className="type-h3">Year 1</h3>
-            <p className="mt-3">
-              Initially, my role was centred on designing and delivering
-              individual HMI features. My responsibility was to translate
-              requirements into clear, usable interaction design. I worked
-              closely with development teams to deliver scoped functionality.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="type-h3">Year 1–2</h3>
-            <p className="mt-3">
-              As my experience grew, my role expanded to contributing beyond
-              single features, towards patterns, consistency, and shared ways of
-              working. I contributed to emerging design patterns, frameworks,
-              and shared solutions. Additionally, I contributed to new ways of
-              working and collaboration models when I was part of forming a new
-              team.&nbsp;
-            </p>
-          </div>
-
-          <div>
-            <h3 className="type-h3">Year 3–4</h3>
-            <p className="mt-3">
-              The past year my role has transitioned into a lead role within a
-              defined area. I help drive direction, facilitate alignment, and
-              support prioritization across stakeholders within my domain. I
-              balance short-term delivery needs with long-term vision and
-              foundational work. My focus has shifted from solving isolated
-              problems to defining principles, identifying the right challenges,
-              and enabling coherent solutions across the area.
-            </p>
-          </div>
-        </div>
       </CaseSection>
 
       <CaseSection title="Way of Working" tone="light-tinted">
