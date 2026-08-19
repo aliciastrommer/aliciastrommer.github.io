@@ -110,32 +110,6 @@ function SmartDashPage() {
       </CaseSection>
 
 
-      <CaseSection title="My Role">
-        <p>
-          I joined the Smart Dash project 3.5 years ago as a UX/UI designer,
-          focusing on interaction logic and HMI behavior of vehicle functions
-          within the Driver Display and the Center Information Display.
-        </p>
-        <p>
-          Since then, my role has evolved from hands-on feature delivery, to
-          contributing to shared design systems and patterns, and finally to
-          Area Lead with responsibility for direction, alignment, and long-term
-          quality within a defined domain.&nbsp;
-        </p>
-        <p>
-          During this time, I have worked in several teams with different parts
-          of the platform. I have belonged to pure design teams, but also been
-          in teams with other competences as the only designer. The work has
-          been carried out in an agile environment, following SAFe, and in a global
-          context, where cross-functional collaboration has been key.&nbsp;
-        </p>
-        <p>
-        </p>
-      </CaseSection>
-
-      <FullBleedImage src={display.url} alt="Scania driver display showing speedometer, load status and trip data" />
-
-      <CaseSection title="My Contribution">
         <div className="space-y-10">
           <div>
             <h3 className="type-h3">Year 1</h3>
