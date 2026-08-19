@@ -308,7 +308,7 @@ function Home() {
                 {howIWork.map((h) => (
                   <Reveal key={h.title}>
                     <div className="cursor-default">
-                      <h2 className="type-h2">{h.title}</h2>
+                      <h3 className="type-h3">{h.title}</h3>
                       <p className="mt-2 type-body text-foreground/85 max-w-lg">
                         {h.body}
                       </p>
