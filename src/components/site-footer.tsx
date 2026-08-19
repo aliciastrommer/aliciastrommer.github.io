@@ -11,7 +11,7 @@ export function SiteFooter() {
               alicia@strommer.se
             </a>
             <div className="h-3" />
-            <p className="type-caption text-muted-ink/70">
+            <p className="type-credit text-muted-ink/60">
               Designed in Figma
               <br />
               Implemented with Lovable
