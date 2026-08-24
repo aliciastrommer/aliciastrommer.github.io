@@ -103,16 +103,7 @@ function Home() {
         className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, var(--color-foreground) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-        <section className="relative z-10 container-wide flex flex-col gap-8 py-16 md:py-24">
+        <section className="relative z-10 container-wide flex flex-col gap-8 py-12 md:py-16">
           {/* Name / role spanning full width */}
           <header>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
@@ -140,13 +131,24 @@ function Home() {
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <div id="proof" data-band className="section-band">
-      <Reveal as="section" className="container-wide pt-4 pb-20 sm:pb-24">
+      <Reveal as="section" className="container-wide pt-2 pb-12 sm:pb-16">
 
 
 
-        <div className="rounded-2xl bg-foreground text-background p-8 sm:p-10">
+        <div
+          className="relative overflow-hidden rounded-2xl bg-foreground text-background p-8 sm:p-10 spotlight-section"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+            e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+            e.currentTarget.style.setProperty("--spotlight-opacity", "1");
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.setProperty("--spotlight-opacity", "0");
+          }}
+        >
           <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
-            <div className="type-caption hidden md:block text-background/60">[01]</div>
+            <div className="type-caption hidden md:block text-background/70">[01]</div>
 
             <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
               <div className="space-y-5">
@@ -192,7 +194,7 @@ function Home() {
 
       {/* [02] FEATURED WORK */}
       <div id="work" data-band className="section-band">
-      <section className="container-wide py-20 sm:py-24 scroll-mt-24">
+      <section className="container-wide py-12 sm:py-16 scroll-mt-24">
 
 
 
@@ -302,9 +304,18 @@ function Home() {
       >
 
 
-        <section className="container-wide relative z-10 py-20 sm:py-24">
-          <div className="w-full rounded-2xl bg-lavender p-8 sm:p-10">
-            <div className="grid gap-6 sm:grid-cols-[1fr_1fr] items-stretch">
+        <section className="container-wide relative z-10 py-12 sm:py-16">
+          <div className="group relative w-full overflow-hidden rounded-2xl bg-lavender p-8 sm:p-10">
+            <div
+              aria-hidden
+              className="dots-drift pointer-events-none absolute inset-0 opacity-60 transition-transform duration-700 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 45%, transparent) 1px, transparent 1px)",
+                backgroundSize: "22px 22px",
+              }}
+            />
+            <div className="relative z-10 grid gap-6 sm:grid-cols-[1fr_1fr] items-stretch">
               <div className="flex flex-col justify-between">
                 <div>
                   <span className="type-caption text-muted-ink">HOW I WORK</span>
@@ -331,7 +342,7 @@ function Home() {
 
       {/* [04] ABOUT */}
       <div id="about" data-band className="section-band">
-      <section className="container-wide py-20 sm:py-24 scroll-mt-24">
+      <section className="container-wide py-12 sm:py-16 scroll-mt-24">
 
 
 
