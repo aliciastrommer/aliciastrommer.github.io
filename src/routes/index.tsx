@@ -108,7 +108,7 @@ function Home() {
           <header>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
-              <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
+              <span className="text-foreground/25 transition-colors duration-500 hover:text-[oklch(0.34_0.09_285)] whitespace-nowrap">
                 / Product Designer
               </span>
             </h1>
@@ -131,7 +131,7 @@ function Home() {
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <div id="proof" data-band className="section-band">
-      <Reveal as="section" className="container-wide pt-2 pb-12 sm:pb-16">
+      <Reveal as="section" className="container-wide pt-12 sm:pt-16 pb-12 sm:pb-16">
 
 
 
@@ -201,14 +201,14 @@ function Home() {
         <Reveal>
           <SectionLabel label="FEATURED WORK" number="[02]" />
         </Reveal>
-        <div className="mt-6 space-y-4 sm:space-y-6">
+        <div className="mt-6 flex flex-col gap-6 sm:gap-8">
           {/* Featured project — full width */}
           {projects.slice(0, 1).map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
               <Link
                 to={p.to}
                 aria-label={`Open ${p.title} case study`}
-                className="group relative block py-4 transition-all duration-300 ease-out"
+                className="group relative block transition-all duration-300 ease-out"
               >
                 <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
                   <div className="order-2 sm:order-none min-w-0 flex flex-col">
@@ -247,13 +247,13 @@ function Home() {
           ))}
 
           {/* Remaining projects — side by side on desktop */}
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {projects.slice(1).map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
                 <Link
                   to={p.to}
                   aria-label={`Open ${p.title} case study`}
-                  className="group relative block py-4 transition-all duration-300 ease-out"
+                  className="group relative block transition-all duration-300 ease-out"
                 >
                   <article className="flex flex-col">
                     <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
