@@ -103,6 +103,15 @@ function Home() {
         className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, var(--color-foreground) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
         <section className="relative z-10 container-wide flex flex-col gap-8 py-16 md:py-24">
           {/* Name / role spanning full width */}
           <header>
