@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 
@@ -103,7 +103,7 @@ function Home() {
         className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
-        <section className="relative z-10 container-wide flex flex-col gap-8 py-12 md:py-16">
+        <section className="relative z-10 container-wide flex min-h-[70svh] flex-col justify-center gap-8 py-12 md:py-16">
           {/* Name / role spanning full width */}
           <header>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
@@ -114,13 +114,20 @@ function Home() {
             </h1>
           </header>
 
-          {/* Bio */}
-          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
+          {/* Bio + featured work button */}
+          <div className="flex flex-col items-start gap-6">
             <p className="flex-1 text-left type-body text-muted-ink text-balance md:max-w-2xl">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
             </p>
+            <a
+              href="#work"
+              className="btn-pill btn-pill-primary"
+            >
+              <ArrowDown size={18} strokeWidth={2} />
+              Featured work
+            </a>
           </div>
         </section>
       </div>
@@ -219,9 +226,12 @@ function Home() {
                       <div className="mt-2 type-small text-muted-ink">{p.period}</div>
                       <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                     </div>
-                    <div className="mt-auto pt-4 flex flex-wrap gap-2">
-                      {p.tags.map((t) => (
-                        <span key={t} className="chip-outline">{t}</span>
+                    <div className="mt-auto pt-4 flex flex-wrap items-center gap-x-2 gap-y-1 type-small text-foreground/45">
+                      {p.tags.map((t, i) => (
+                        <span key={t} className="flex items-center gap-2">
+                          {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
+                          {t}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -280,9 +290,12 @@ function Home() {
                         <div className="mt-2 type-small text-muted-ink">{p.period}</div>
                         <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                       </div>
-                      <div className="mt-auto pt-4 flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
-                          <span key={t} className="chip-outline">{t}</span>
+                      <div className="mt-auto pt-4 flex flex-wrap items-center gap-x-2 gap-y-1 type-small text-foreground/45">
+                        {p.tags.map((t, i) => (
+                          <span key={t} className="flex items-center gap-2">
+                            {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
+                            {t}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -306,15 +319,6 @@ function Home() {
 
         <section className="container-wide relative z-10 py-12 sm:py-16">
           <div className="group relative w-full overflow-hidden rounded-2xl bg-lavender p-8 sm:p-10">
-            <div
-              aria-hidden
-              className="dots-drift pointer-events-none absolute inset-0 opacity-60 transition-transform duration-700 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 45%, transparent) 1px, transparent 1px)",
-                backgroundSize: "22px 22px",
-              }}
-            />
             <div className="relative z-10 grid gap-6 sm:grid-cols-[1fr_1fr] items-stretch">
               <div className="flex flex-col justify-between">
                 <div>

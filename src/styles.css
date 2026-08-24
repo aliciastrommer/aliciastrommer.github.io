@@ -503,7 +503,8 @@
   color: #f2f3f5;
 }
 
- /* Cursor-following radial spotlight — emanates from wherever the cursor is */
+ /* Cursor-following radial spotlight — emanates from wherever the cursor is,
+    spread soft and diffused across the panel. */
  .spotlight-section {
    --spotlight-x: 50%;
    --spotlight-y: 50%;
@@ -512,15 +513,16 @@
    &::before {
      content: "";
      position: absolute;
-     inset: 0;
+     inset: -25%;
      pointer-events: none;
      background: radial-gradient(
-       circle 420px at var(--spotlight-x) var(--spotlight-y),
+       circle 620px at var(--spotlight-x) var(--spotlight-y),
        oklch(0.72 0.17 315 / 0.30) 0%,
-       oklch(0.58 0.19 285 / 0.22) 28%,
-       oklch(0.82 0.12 350 / 0.10) 55%,
-       transparent 75%
+       oklch(0.58 0.19 285 / 0.22) 30%,
+       oklch(0.82 0.12 350 / 0.10) 58%,
+       transparent 78%
      );
+     filter: blur(55px);
      opacity: var(--spotlight-opacity);
      transition: opacity 450ms ease;
      z-index: 0;

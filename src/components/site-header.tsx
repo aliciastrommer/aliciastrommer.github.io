@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home, Briefcase } from "lucide-react";
+import { Home } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 export function SiteHeader() {
@@ -38,13 +38,6 @@ export function SiteHeader() {
       >
         <Home size={20} strokeWidth={1.75} />
       </Link>
-      <a
-        href="/#work"
-        className="flex items-center justify-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] text-muted-foreground hover:text-foreground transition-colors"
-        aria-label="Featured work"
-      >
-        <Briefcase size={20} strokeWidth={1.75} />
-      </a>
     </header>
   );
 }
