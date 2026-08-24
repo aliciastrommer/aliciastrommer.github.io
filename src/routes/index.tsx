@@ -103,7 +103,7 @@ function Home() {
         className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
-        <section className="relative z-10 container-wide flex flex-col gap-8 py-12 md:py-16">
+        <section className="relative z-10 container-wide flex min-h-[70svh] flex-col justify-center gap-8 py-12 md:py-16">
           {/* Name / role spanning full width */}
           <header>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
@@ -114,13 +114,20 @@ function Home() {
             </h1>
           </header>
 
-          {/* Bio */}
-          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
+          {/* Bio + featured work button */}
+          <div className="flex flex-col items-start gap-6">
             <p className="flex-1 text-left type-body text-muted-ink text-balance md:max-w-2xl">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
             </p>
+            <a
+              href="#work"
+              className="btn-pill btn-pill-primary"
+            >
+              <ArrowDown size={18} strokeWidth={2} />
+              Featured work
+            </a>
           </div>
         </section>
       </div>
