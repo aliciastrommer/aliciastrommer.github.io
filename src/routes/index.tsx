@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 
@@ -114,28 +114,13 @@ function Home() {
             </h1>
           </header>
 
-          {/* Bio (left) + Featured work button (right) */}
+          {/* Bio */}
           <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
             <p className="flex-1 text-left type-body text-muted-ink text-balance md:max-w-2xl">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
               process information.
             </p>
-
-            <a
-              href="#work"
-              aria-label="Scroll to featured work"
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .getElementById("work")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
-              }}
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white type-h3 shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1 md:ml-auto"
-            >
-              Featured work
-              <ArrowDown className="size-4" />
-            </a>
           </div>
         </section>
       </div>

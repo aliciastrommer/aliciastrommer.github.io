@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home } from "lucide-react";
+import { Home, Briefcase } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 export function SiteHeader() {
@@ -27,7 +27,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-5 left-5 z-50 transition-transform duration-300 ease-out ${
+      className={`fixed top-5 left-5 z-50 flex items-center gap-2 transition-transform duration-300 ease-out ${
         hidden ? "-translate-y-[calc(100%+1.5rem)]" : "translate-y-0"
       }`}
     >
@@ -38,6 +38,13 @@ export function SiteHeader() {
       >
         <Home size={20} strokeWidth={1.75} />
       </Link>
+      <a
+        href="/#work"
+        className="flex items-center justify-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] text-muted-foreground hover:text-foreground transition-colors"
+        aria-label="Featured work"
+      >
+        <Briefcase size={20} strokeWidth={1.75} />
+      </a>
     </header>
   );
 }
