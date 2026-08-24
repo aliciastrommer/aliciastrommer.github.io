@@ -315,7 +315,7 @@ function Home() {
                 backgroundSize: "22px 22px",
               }}
             />
-            <div className="grid gap-6 sm:grid-cols-[1fr_1fr] items-stretch">
+            <div className="relative z-10 grid gap-6 sm:grid-cols-[1fr_1fr] items-stretch">
               <div className="flex flex-col justify-between">
                 <div>
                   <span className="type-caption text-muted-ink">HOW I WORK</span>
