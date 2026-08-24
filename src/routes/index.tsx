@@ -108,7 +108,7 @@ function Home() {
           <header>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
-              <span className="text-foreground/25 transition-colors duration-500 hover:text-foreground/50 whitespace-nowrap">
+              <span className="text-foreground/25 transition-colors duration-500 hover:text-[oklch(0.34_0.09_285)] whitespace-nowrap">
                 / Product Designer
               </span>
             </h1>
