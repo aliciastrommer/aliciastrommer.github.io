@@ -239,7 +239,8 @@ function Home() {
           <SectionLabel label="FEATURED WORK" number="[02]" />
         </Reveal>
         <div className="mt-6 space-y-4 sm:space-y-6">
-          {projects.map((p, i) => (
+          {/* Featured project — full width */}
+          {projects.slice(0, 1).map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
               <Link
                 to={p.to}
@@ -280,9 +281,53 @@ function Home() {
                 </article>
               </Link>
             </Reveal>
-
-
           ))}
+
+          {/* Remaining projects — side by side on desktop */}
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
+            {projects.slice(1).map((p, i) => (
+              <Reveal key={p.title} delay={i * 80}>
+                <Link
+                  to={p.to}
+                  aria-label={`Open ${p.title} case study`}
+                  className="group relative block py-4 transition-all duration-300 ease-out"
+                >
+                  <article className="flex flex-col">
+                    <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                      <img
+                        src={p.image}
+                        alt={p.alt}
+                        loading="lazy"
+                        className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                      />
+                      <div
+                        className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        aria-hidden="true"
+                      >
+                        <div className="grid place-items-center w-12 h-12 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 hover:bg-white hover:scale-105 transition-all duration-200">
+                          <ArrowUpRight className="h-5 w-5" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 flex flex-col flex-1">
+                      <div>
+                        <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                          {p.title}
+                        </h2>
+                        <div className="mt-2 type-small text-muted-ink">{p.period}</div>
+                        <p className="mt-4 type-small text-muted-ink">{p.body}</p>
+                      </div>
+                      <div className="mt-auto pt-4 flex flex-wrap gap-2">
+                        {p.tags.map((t) => (
+                          <span key={t} className="chip-outline">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
       </div>
