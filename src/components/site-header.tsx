@@ -26,18 +26,20 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-5 left-5 z-50 flex items-center gap-2 transition-transform duration-300 ease-out ${
+    <div
+      className={`fixed top-5 left-0 z-50 w-full pointer-events-none transition-transform duration-300 ease-out ${
         hidden ? "-translate-y-[calc(100%+1.5rem)]" : "translate-y-0"
       }`}
     >
-      <Link
-        to="/"
-        className="flex items-center justify-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] text-muted-foreground hover:text-foreground transition-colors"
-        aria-label="Home"
-      >
-        <Home size={20} strokeWidth={1.75} />
-      </Link>
-    </header>
+      <div className="container-wide">
+        <Link
+          to="/"
+          className="pointer-events-auto flex items-center justify-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Home"
+        >
+          <Home size={20} strokeWidth={1.75} />
+        </Link>
+      </div>
+    </div>
   );
 }

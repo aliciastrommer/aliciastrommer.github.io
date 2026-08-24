@@ -123,10 +123,11 @@ function Home() {
             </p>
             <a
               href="#work"
-              className="btn-pill btn-pill-primary"
+              aria-label="Featured work"
+              className="grid place-items-center w-12 h-12 rounded-full text-white shadow-xl transition-all duration-200 hover:scale-105"
+              style={{ backgroundColor: "oklch(0.34 0.09 285)" }}
             >
-              <ArrowDown size={18} strokeWidth={2} />
-              Featured work
+              <ArrowDown size={20} strokeWidth={2} />
             </a>
           </div>
         </section>
