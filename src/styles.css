@@ -503,33 +503,29 @@
   color: #f2f3f5;
 }
 
-/* Cursor-following pink/purple linear spotlight for How I Work section */
-.spotlight-section {
-  --spotlight-x: 50%;
-  --spotlight-y: 50%;
-  --spotlight-opacity: 0;
+ /* Cursor-following radial spotlight — emanates from wherever the cursor is */
+ .spotlight-section {
+   --spotlight-x: 50%;
+   --spotlight-y: 50%;
+   --spotlight-opacity: 0;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -60%;
-    pointer-events: none;
-    background: linear-gradient(
-      115deg,
-      oklch(0.82 0.12 350 / 0) 0%,
-      oklch(0.82 0.14 350 / 0.22) 16%,
-      oklch(0.72 0.17 315 / 0.28) 34%,
-      oklch(0.58 0.19 285 / 0.22) 54%,
-      oklch(0.68 0.14 330 / 0.12) 72%,
-      oklch(0.82 0.12 350 / 0) 90%
-    );
-    transform: translate(calc(var(--spotlight-x) - 50%), calc(var(--spotlight-y) - 50%));
-    filter: blur(70px);
-    opacity: var(--spotlight-opacity);
-    transition: opacity 300ms ease;
-    z-index: 0;
-  }
-}
+   &::before {
+     content: "";
+     position: absolute;
+     inset: 0;
+     pointer-events: none;
+     background: radial-gradient(
+       circle 420px at var(--spotlight-x) var(--spotlight-y),
+       oklch(0.72 0.17 315 / 0.30) 0%,
+       oklch(0.58 0.19 285 / 0.22) 28%,
+       oklch(0.82 0.12 350 / 0.10) 55%,
+       transparent 75%
+     );
+     opacity: var(--spotlight-opacity);
+     transition: opacity 450ms ease;
+     z-index: 0;
+   }
+ }
 
 /* Deeper lavender section background — used for How I Work */
 @utility bg-lavender-deep {
