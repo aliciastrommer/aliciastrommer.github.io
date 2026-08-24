@@ -342,7 +342,7 @@ function Home() {
 
       {/* [04] ABOUT */}
       <div id="about" data-band className="section-band">
-      <section className="container-wide py-20 sm:py-24 scroll-mt-24">
+      <section className="container-wide py-12 sm:py-16 scroll-mt-24">
 
 
 
