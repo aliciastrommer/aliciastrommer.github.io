@@ -118,7 +118,7 @@ function Home() {
 
 
           {/* Center: craft object only, centered (hidden on mobile) */}
-          <div className="hidden md:flex flex-1 items-center justify-center py-12 md:py-20">
+          <div className="hidden md:flex flex-1 items-center justify-center py-12 md:py-20 bg-[#e9e5f0]">
             {/* Geometric craft object — prismatic kinetic glass */}
             <div className="hero-craft group cursor-crosshair" aria-hidden="true" tabIndex={-1}>
               <div className="hero-craft-glow" />
