@@ -162,7 +162,7 @@ function Home() {
                   .getElementById("work")
                   ?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white type-caption shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1 md:ml-auto"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white type-h3 shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1 md:ml-auto"
             >
               Featured work
               <ArrowDown className="size-4" />
