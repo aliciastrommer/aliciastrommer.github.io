@@ -131,11 +131,22 @@ function Home() {
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <div id="proof" data-band className="section-band">
-      <Reveal as="section" className="container-wide pt-4 pb-20 sm:pb-24">
+      <Reveal as="section" className="container-wide pt-2 pb-12 sm:pb-16">
 
 
 
-        <div className="rounded-2xl bg-foreground text-background p-8 sm:p-10">
+        <div
+          className="relative overflow-hidden rounded-2xl bg-foreground text-background p-8 sm:p-10 spotlight-section"
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
+            e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
+            e.currentTarget.style.setProperty("--spotlight-opacity", "1");
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.setProperty("--spotlight-opacity", "0");
+          }}
+        >
           <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
             <div className="type-caption hidden md:block text-background/60">[01]</div>
 
