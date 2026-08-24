@@ -100,7 +100,7 @@ function Home() {
       <div
         id="top"
         data-band
-        className="relative overflow-hidden bg-background snap-start min-h-svh flex flex-col"
+        className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
         <div
@@ -112,7 +112,7 @@ function Home() {
             backgroundSize: "24px 24px",
           }}
         />
-        <section className="relative z-10 container-wide flex flex-col justify-center gap-8 py-16 md:py-24 flex-1">
+        <section className="relative z-10 container-wide flex flex-col gap-8 py-16 md:py-24">
           {/* Name / role spanning full width */}
           <header>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
