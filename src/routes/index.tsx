@@ -118,8 +118,8 @@ function Home() {
           <div className="flex flex-col items-start gap-6">
             <p className="flex-1 text-left type-body text-muted-ink text-balance md:max-w-2xl">
               I design thoughtful products for complex systems by combining systems
-              thinking and hands-on craft, with a deep understanding of how humans
-              process information.
+              thinking and hands-on craft with a deep understanding of how humans
+              process information, reason and make decisions.
             </p>
             <a
               href="#work"
