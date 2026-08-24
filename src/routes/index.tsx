@@ -117,8 +117,8 @@ function Home() {
           </header>
 
 
-          {/* Center: craft object only, centered */}
-          <div className="flex-1 flex items-center justify-center py-12 md:py-20">
+          {/* Center: craft object only, centered (hidden on mobile) */}
+          <div className="hidden md:flex flex-1 items-center justify-center py-12 md:py-20">
             {/* Geometric craft object — prismatic kinetic glass */}
             <div className="hero-craft group cursor-crosshair" aria-hidden="true" tabIndex={-1}>
               <div className="hero-craft-glow" />
@@ -155,16 +155,17 @@ function Home() {
 
             <a
               href="#work"
-              aria-label="Scroll to work"
+              aria-label="Scroll to featured work"
               onClick={(e) => {
                 e.preventDefault();
                 document
                   .getElementById("work")
                   ?.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className="shrink-0 grid place-items-center size-14 rounded-full bg-primary text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1 md:ml-auto"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white type-caption shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-300 hover:translate-y-1 md:ml-auto"
             >
-              <ArrowDown className="size-5" />
+              Featured work
+              <ArrowDown className="size-4" />
             </a>
           </footer>
 
