@@ -146,27 +146,27 @@ function Home() {
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <div id="proof" data-band className="section-band">
-      <Reveal as="section" className="container-wide py-20 sm:py-24">
+      <Reveal as="section" className="container-wide pt-4 pb-20 sm:pb-24">
 
 
 
-        <div className="bg-muted rounded-2xl p-8 sm:p-10">
+        <div className="rounded-2xl bg-foreground text-background p-8 sm:p-10">
           <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
-            <div className="type-caption hidden md:block">[01]</div>
+            <div className="type-caption hidden md:block text-background/40">[01]</div>
 
             <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
               <div className="space-y-5">
                 <div>
-                  <div className="type-small text-muted-ink">Years of experience</div>
+                  <div className="type-small text-background/50">Years of experience</div>
                   <div className="mt-1 type-h3">4+</div>
                 </div>
                 <div>
-                  <div className="type-small text-muted-ink">Current role</div>
+                  <div className="type-small text-background/50">Current role</div>
                   <div className="mt-1 type-h3">UX/UI Designer</div>
                   <div className="type-h3">Area Lead</div>
                 </div>
                 <div>
-                  <div className="type-small text-muted-ink">Focus</div>
+                  <div className="type-small text-background/50">Focus</div>
                   <div className="mt-1 type-h3">Product &amp; System Thinking</div>
                   <div className="type-h3">Accessibility-Driven Design</div>
                   <div className="type-h3">Usability in Complex Products</div>
@@ -175,7 +175,7 @@ function Home() {
 
               <div className="space-y-5">
                 <div>
-                  <div className="type-small text-muted-ink">Experience from</div>
+                  <div className="type-small text-background/50">Experience from</div>
                   <div className="mt-1 type-h3">Traton Group</div>
                   <div className="type-h3">Scania</div>
                   <div className="type-h3">Daresay by Knightec</div>
@@ -183,7 +183,7 @@ function Home() {
                   <div className="type-h3">Umeå Energi</div>
                 </div>
                 <div>
-                  <div className="type-small text-muted-ink">Education in</div>
+                  <div className="type-small text-background/50">Education in</div>
                   <div className="mt-1 type-h3">Interaction Design</div>
                   <div className="type-h3">Cognitive Science</div>
                 </div>
