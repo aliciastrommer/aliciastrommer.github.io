@@ -148,7 +148,7 @@ function Home() {
           }}
         >
           <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
-            <div className="type-caption hidden md:block text-background/60">[01]</div>
+            <div className="type-caption hidden md:block text-background/70">[01]</div>
 
             <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
               <div className="space-y-5">
