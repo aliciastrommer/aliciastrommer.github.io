@@ -96,17 +96,15 @@ function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
 
-      {/* HERO — clean editorial layout with central craft object */}
+      {/* HERO — compact editorial layout, proof section peeks below */}
       <div
         id="top"
         data-band
         className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
-
-
-        <section className="relative z-10 container-wide min-h-svh flex flex-col justify-between py-16 md:py-24">
-          {/* Top: name / role spanning full width */}
+        <section className="relative z-10 container-wide flex flex-col gap-8 py-16 md:py-24">
+          {/* Name / role spanning full width */}
           <header>
             <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
@@ -116,37 +114,8 @@ function Home() {
             </h1>
           </header>
 
-
-          {/* Center: craft object only, centered (hidden on mobile) */}
-          <div className="hidden md:flex flex-1 items-center justify-center py-12 md:py-20 bg-[#e9e5f0]">
-            {/* Geometric craft object — prismatic kinetic glass */}
-            <div className="hero-craft group cursor-crosshair" aria-hidden="true" tabIndex={-1}>
-              <div className="hero-craft-glow" />
-              <div className="hero-craft-planes">
-                <div className="hero-craft-plane hero-craft-plane--base" />
-                <div className="hero-craft-plane hero-craft-plane--lavender" />
-                <div className="hero-craft-plane hero-craft-plane--glass">
-                  <div className="hero-craft-core" />
-                </div>
-                <div className="hero-craft-plane hero-craft-plane--grid">
-                  <div className="hero-craft-grid" />
-                  <div className="absolute top-2 left-2 w-1.5 h-1.5 border-t border-l border-primary/40" />
-                  <div className="absolute top-2 right-2 w-1.5 h-1.5 border-t border-r border-primary/40" />
-                  <div className="absolute bottom-2 left-2 w-1.5 h-1.5 border-b border-l border-primary/40" />
-                  <div className="absolute bottom-2 right-2 w-1.5 h-1.5 border-b border-r border-primary/40" />
-                </div>
-                <div className="hero-craft-plane--wireframe">
-                  <div className="hero-craft-wire-h" />
-                  <div className="hero-craft-wire-v" />
-                </div>
-                <div className="hero-craft-plane--accent" />
-              </div>
-            </div>
-          </div>
-
-
-          {/* Bottom: wide bio + scroll cue */}
-          <footer className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
+          {/* Bio (left) + Featured work button (right) */}
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
             <p className="flex-1 text-left type-body text-muted-ink text-balance md:max-w-2xl">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft, with a deep understanding of how humans
@@ -167,9 +136,7 @@ function Home() {
               Featured work
               <ArrowDown className="size-4" />
             </a>
-          </footer>
-
-
+          </div>
         </section>
       </div>
 
