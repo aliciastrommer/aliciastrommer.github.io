@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home } from "lucide-react";
+import { Home, Briefcase } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 
 export function SiteHeader() {
