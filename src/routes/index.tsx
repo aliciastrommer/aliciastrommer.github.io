@@ -124,8 +124,7 @@ function Home() {
             <a
               href="#work"
               aria-label="Featured work"
-              className="grid place-items-center w-12 h-12 rounded-full text-white shadow-xl transition-all duration-200 hover:scale-105"
-              style={{ backgroundColor: "oklch(0.34 0.09 285)" }}
+              className="btn-featured grid place-items-center w-12 h-12 rounded-full text-white shadow-xl transition-all duration-200 hover:scale-105"
             >
               <ArrowDown size={20} strokeWidth={2} />
             </a>

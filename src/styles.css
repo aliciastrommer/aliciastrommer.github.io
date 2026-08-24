@@ -497,11 +497,26 @@
   }
 }
 
-/* Flat dark surface (no pattern) used by the How I Work section. */
-@utility bg-dark-flat {
-  background-color: #16171b;
-  color: #f2f3f5;
-}
+ /* Flat dark surface (no pattern) used by the How I Work section. */
+ @utility bg-dark-flat {
+   background-color: #16171b;
+   color: #f2f3f5;
+ }
+
+ /* Featured-work circular button — dark purple base, shifts to a soft purple
+    linear gradient on hover that echoes the proof-section spotlight. */
+ .btn-featured {
+   background-color: oklch(0.34 0.09 285);
+   transition: background 400ms ease, transform 200ms ease;
+ }
+ .btn-featured:hover {
+   background-image: linear-gradient(
+     135deg,
+     oklch(0.58 0.19 285) 0%,
+     oklch(0.72 0.17 315) 50%,
+     oklch(0.82 0.12 350) 100%
+   );
+ }
 
  /* Cursor-following radial spotlight — emanates from wherever the cursor is,
     spread soft and diffused across the panel. Coordinates are relative to the
