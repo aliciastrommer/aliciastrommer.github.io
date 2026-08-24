@@ -313,15 +313,6 @@ function Home() {
 
         <section className="container-wide relative z-10 py-12 sm:py-16">
           <div className="group relative w-full overflow-hidden rounded-2xl bg-lavender p-8 sm:p-10">
-            <div
-              aria-hidden
-              className="dots-drift pointer-events-none absolute inset-0 opacity-60 transition-transform duration-700 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 45%, transparent) 1px, transparent 1px)",
-                backgroundSize: "22px 22px",
-              }}
-            />
             <div className="relative z-10 grid gap-6 sm:grid-cols-[1fr_1fr] items-stretch">
               <div className="flex flex-col justify-between">
                 <div>
