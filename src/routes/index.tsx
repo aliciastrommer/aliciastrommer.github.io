@@ -290,9 +290,12 @@ function Home() {
                         <div className="mt-2 type-small text-muted-ink">{p.period}</div>
                         <p className="mt-4 type-small text-muted-ink">{p.body}</p>
                       </div>
-                      <div className="mt-auto pt-4 flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
-                          <span key={t} className="chip-outline">{t}</span>
+                      <div className="mt-auto pt-4 flex flex-wrap items-center gap-x-2 gap-y-1 type-small text-foreground/45">
+                        {p.tags.map((t, i) => (
+                          <span key={t} className="flex items-center gap-2">
+                            {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
+                            {t}
+                          </span>
                         ))}
                       </div>
                     </div>
