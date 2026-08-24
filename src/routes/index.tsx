@@ -152,7 +152,7 @@ function Home() {
 
         <div className="rounded-2xl bg-foreground text-background p-8 sm:p-10">
           <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
-            <div className="type-caption hidden md:block">[01]</div>
+            <div className="type-caption hidden md:block text-background/40">[01]</div>
 
             <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
               <div className="space-y-5">
