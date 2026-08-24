@@ -146,7 +146,7 @@ function Home() {
 
       {/* [01] PROOF — [01] label occupies the left half; stats compressed on the right */}
       <div id="proof" data-band className="section-band">
-      <Reveal as="section" className="container-wide py-20 sm:py-24">
+      <Reveal as="section" className="container-wide pt-4 pb-20 sm:pb-24">
 
 
 
