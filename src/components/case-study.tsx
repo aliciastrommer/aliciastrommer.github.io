@@ -46,7 +46,7 @@ export function CaseHero({
             <nav aria-label="Breadcrumb" className="type-small text-muted-ink">
               <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
               <span className="mx-1.5 text-foreground/30">/</span>
-              <Link to="/#work" className="hover:text-foreground transition-colors">Work</Link>
+              <a href="/#work" className="hover:text-foreground transition-colors">Work</a>
               <span className="mx-1.5 text-foreground/30">/</span>
               <span className="text-foreground/45">{title}</span>
             </nav>
