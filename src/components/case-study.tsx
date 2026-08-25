@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { ProjectNavFabs } from "@/components/project-nav-fabs";
 import { projects } from "@/lib/projects";
 
 
@@ -337,6 +338,7 @@ export function CaseLayout({
 }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {currentPath && <ProjectNavFabs currentPath={currentPath} />}
       <main className="pb-16">{children}</main>
       {currentPath && <CaseProjectNav currentPath={currentPath} />}
       <SiteFooter />
