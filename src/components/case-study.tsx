@@ -317,9 +317,14 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
                     </div>
                   </div>
                 </div>
-                <h3 className="mt-4 type-h2 transition-colors duration-200 group-hover:text-primary">
-                  {p.title}
-                </h3>
+                <div className="mt-4 flex flex-col flex-1">
+                  <h3 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                    {p.title}
+                  </h3>
+                  <div className="mt-2 type-small text-muted-ink">
+                    {p.period} <span className="text-foreground/30">/</span> {p.role}
+                  </div>
+                </div>
               </article>
             </Link>
           </Reveal>
