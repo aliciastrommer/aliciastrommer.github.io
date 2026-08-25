@@ -35,9 +35,7 @@ const projects = [
     to: "/projects/smart-dash" as const,
     title: "Designing a Driver Experience That Keeps Attention on the Road",
     period: "2023 – Present",
-    body:
-      "Designing digital driver experiences for professional truck and bus drivers that reduce cognitive effort and simplify complex workflows.\u00a0",
-    tags: ["UX/UI Design", "System Thinking"],
+    role: "UX/UI Designer & Area Lead",
     image: smartDashImg.url,
     alt: "Scania truck cab with the steering wheel and Center Information Display",
   },
@@ -45,9 +43,7 @@ const projects = [
     to: "/projects/accessibility-guide" as const,
     title: "Bridging the Gap Between Accessibility Standards and Everyday Design",
     period: "2022 – 2023",
-    body:
-      "Design of an accessibility guide for designers and developers to make it easier to design accessible products.",
-    tags: ["UX/UI Design", "UX Writing", "Accessibility"],
+    role: "UX/UI Designer",
     image: accessibilityImg.url,
     alt: "Laptop showing the Daresay Accessibility Guide on a wooden desk",
   },
@@ -55,9 +51,7 @@ const projects = [
     to: "/projects/smart-pot" as const,
     title: "Using Tangible Interaction to Inspire Sustainable Behavior",
     period: "2021",
-    body:
-      "Concept design of an interactive pot used to demonstrate how tangible interaction can increase engagement with sustainable behaviour.",
-    tags: ["User Research", "Interaction Design", "User Testing"],
+    role: "Interaction Designer",
     image: smartPotImg.url,
     alt: "Hands holding a glowing white origami-textured plant pot",
   },
