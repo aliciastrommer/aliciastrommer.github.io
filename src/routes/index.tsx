@@ -374,11 +374,14 @@ function Home() {
           </div>
         </div>
 
-        <div className="mt-16 flex justify-center">
+        <div className="mt-16 flex flex-col items-center gap-4">
           <Reveal>
-            <a href="mailto:alicia@strommer.se" className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-xl ring-1 ring-white/20 type-h3 hover:bg-primary hover:scale-105 transition-all duration-200">
-              Let's Talk
+            <a href="mailto:alicia@strommer.se" className="type-h2 text-foreground hover:text-primary transition-colors">
+              alicia@strommer.se
             </a>
+          </Reveal>
+          <Reveal>
+            <CopyEmailButton />
           </Reveal>
         </div>
       </section>
