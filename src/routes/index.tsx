@@ -111,9 +111,7 @@ function Home() {
           {/* Bio */}
           <div>
             <h2 className="type-h2 font-normal text-muted-ink text-balance md:max-w-2xl">
-              I design thoughtful products for complex systems by combining systems
-              thinking and hands-on craft with a deep understanding of how humans
-              process information, reason and make decisions.
+              I design thoughtful products for complex systems by combining system thinking and hands-on craft with a deep understanding of human perception and thinking.
             </h2>
           </div>
         </section>
