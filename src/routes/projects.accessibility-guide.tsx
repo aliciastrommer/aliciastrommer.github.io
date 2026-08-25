@@ -52,12 +52,7 @@ function AccessibilityPage() {
         about={
           <>
             <p>
-              The accessibility guide was developed by the internal
-              "Accessibility Competence Area" at Daresay by Knightec. It was an
-              internal initiative carried out alongside client assignments.
-              Hence, the roles and responsibilities shifted throughout the
-              process. The work included user research, benchmarking, co-design
-              workshops, concept development, and user testing.
+              The accessibility guide was developed as an internal initiative at Daresay by Knightec, carried out alongside client assignments. This meant that the roles and responsibilities varied throughout the process. The work included user research, benchmarking, co-design workshops, concept development, and user testing.
             </p>
             <p>
               <a
