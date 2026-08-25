@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, ArrowDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 
@@ -98,9 +98,9 @@ function Home() {
         data-header-theme="light"
       >
         <section className="relative z-10 container-wide flex min-h-[70svh] flex-col justify-center gap-8 py-12 md:py-16">
-          {/* Name / role spanning full width */}
+          {/* Name / role — two left-aligned rows */}
           <header>
-            <h1 className="type-hero flex flex-col md:flex-row md:items-baseline md:justify-between gap-2 md:gap-4">
+            <h1 className="type-hero flex flex-col items-start gap-2">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
               <span className="text-foreground/25 transition-colors duration-500 hover:text-[oklch(0.34_0.09_285)] whitespace-nowrap">
                 / Product Designer
@@ -108,20 +108,13 @@ function Home() {
             </h1>
           </header>
 
-          {/* Bio + featured work button */}
-          <div className="flex flex-col items-start gap-6">
-            <p className="flex-1 text-left type-body text-muted-ink text-balance md:max-w-2xl">
+          {/* Bio */}
+          <div>
+            <h2 className="type-h2 text-muted-ink text-balance md:max-w-2xl">
               I design thoughtful products for complex systems by combining systems
               thinking and hands-on craft with a deep understanding of how humans
               process information, reason and make decisions.
-            </p>
-            <a
-              href="#work"
-              aria-label="Featured work"
-              className="btn-featured grid place-items-center w-12 h-12 rounded-full text-white shadow-xl transition-all duration-200 hover:scale-105"
-            >
-              <ArrowDown size={20} strokeWidth={2} />
-            </a>
+            </h2>
           </div>
         </section>
       </div>
