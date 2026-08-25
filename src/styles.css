@@ -620,7 +620,7 @@
 @utility container-wide {
   margin-inline: auto;
   width: 100%;
-  max-width: 588px;
+  max-width: 840px;
   padding-inline: 1rem;
 }
 @media (min-width: 640px) {
