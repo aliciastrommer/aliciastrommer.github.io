@@ -16,7 +16,7 @@ export function ProjectNavFabs({ currentPath }: { currentPath: string }) {
   const next = index < projects.length - 1 ? projects[index + 1] : projects[0];
 
   const fabClass =
-    "pointer-events-auto fixed top-5 z-50 flex items-center justify-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] text-muted-foreground hover:text-foreground transition-colors";
+    "pointer-events-auto fixed top-1/2 -translate-y-1/2 z-50 flex items-center justify-center w-11 h-11 rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] text-muted-foreground hover:text-foreground transition-colors";
 
   return (
     <>
