@@ -398,17 +398,6 @@ function Home() {
             </div>
           </div>
         </div>
-
-        <div className="mt-16 flex flex-col items-center gap-4">
-          <Reveal>
-            <a href="mailto:alicia@strommer.se" className="type-h2 text-foreground hover:text-primary transition-colors">
-              alicia@strommer.se
-            </a>
-          </Reveal>
-          <Reveal>
-            <CopyEmailButton />
-          </Reveal>
-        </div>
       </section>
       </div>
 
