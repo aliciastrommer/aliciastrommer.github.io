@@ -44,7 +44,7 @@ function SmartDashPage() {
           { label: "Company", value: "Scania" },
         ]}
         title="Smart Dash"
-        tagline="Scania's digital driver platform designed for professional truck and bus drivers"
+        tagline="A digital driver platform designed for professional truck and bus drivers"
         about={
           <>
             <p>
