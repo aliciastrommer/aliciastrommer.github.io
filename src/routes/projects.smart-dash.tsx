@@ -41,7 +41,7 @@ function SmartDashPage() {
         heroAlt="Scania truck cab with the steering wheel and Center Information Display"
         meta={[
           { label: "Role", value: "UX/UI Designer & Area Led" },
-          { label: "Daily users", value: "100 000+" },
+          { label: "Company", value: "100 000+" },
         ]}
         title="Smart Dash"
         tagline="Scania's digital driver platform designed for professional truck and bus drivers"
