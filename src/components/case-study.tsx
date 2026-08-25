@@ -43,7 +43,14 @@ export function CaseHero({
       <div className="container-wide mt-16 sm:mt-24">
         <div className="grid gap-10 sm:gap-16 sm:grid-cols-2 items-stretch">
           <div className="flex flex-col h-full">
-            <h1 className="type-h1">{title}</h1>
+            <nav aria-label="Breadcrumb" className="type-small text-muted-ink">
+              <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+              <span className="mx-1.5 text-foreground/30">/</span>
+              <a href="/#work" className="hover:text-foreground transition-colors">Work</a>
+              <span className="mx-1.5 text-foreground/30">/</span>
+              <span className="text-foreground/45">{title}</span>
+            </nav>
+            <h1 className="type-h1 mt-4">{title}</h1>
             {tagline && (
               <p className="mt-4 type-body text-muted-ink max-w-md">
                 {tagline}
