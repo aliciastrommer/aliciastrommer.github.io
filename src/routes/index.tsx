@@ -96,16 +96,16 @@ function Home() {
       <div
         id="top"
         data-band
-        className="relative overflow-hidden snap-start bg-[linear-gradient(180deg,#eef0f5_0%,#e9ebf2_55%,#f2f0f5_100%)]"
+        className="relative overflow-hidden bg-background snap-start"
         data-header-theme="light"
       >
-        <section className="relative z-10 container-wide flex min-h-[90svh] flex-col justify-center gap-8 py-12 md:py-16">
+        <section className="relative z-10 container-wide flex min-h-[70svh] flex-col justify-center gap-8 py-12 md:py-16">
           {/* Name / role — two left-aligned rows */}
           <header>
             <h1 className="type-hero flex flex-col items-start gap-2">
               <span className="whitespace-nowrap">Alicia Strömmer</span>
-              <span className="text-foreground/25 whitespace-nowrap">
-                Product Designer
+              <span className="text-foreground/25 transition-colors duration-500 hover:text-[oklch(0.34_0.09_285)] whitespace-nowrap">
+                / Product Designer
               </span>
             </h1>
           </header>
