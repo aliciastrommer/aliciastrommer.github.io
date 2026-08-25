@@ -40,7 +40,7 @@ function SmartDashPage() {
         heroImage={hero.url}
         heroAlt="Scania truck cab with the steering wheel and Center Information Display"
         meta={[
-          { label: "Launched in", value: "2024" },
+          { label: "Role", value: "UX/UI Designer & Area Led" },
           { label: "Daily users", value: "100 000+" },
         ]}
         title="Smart Dash"
