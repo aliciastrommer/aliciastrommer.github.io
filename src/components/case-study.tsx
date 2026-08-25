@@ -338,6 +338,7 @@ export function CaseLayout({
 }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {currentPath && <ProjectNavFabs currentPath={currentPath} />}
       <main className="pb-16">{children}</main>
       {currentPath && <CaseProjectNav currentPath={currentPath} />}
       <SiteFooter />
