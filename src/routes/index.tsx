@@ -271,17 +271,9 @@ function Home() {
                       <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                         {p.title}
                       </h2>
-                      <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 type-small text-muted-ink">
-                        <span>{p.period}</span>
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-foreground/45">
-                          {p.tags.map((t, i) => (
-                            <span key={t} className="flex items-center gap-2">
-                              {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="mt-2 type-small text-muted-ink">
+                      {p.period} <span className="text-foreground/30">—</span> {p.role}
+                    </div>
                     </div>
                   </article>
                 </Link>
