@@ -251,7 +251,7 @@ function Home() {
                       {p.title}
                     </h2>
                     <div className="mt-2 type-small text-muted-ink">
-                      {p.period} <span className="text-foreground/30">—</span> {p.role}
+                      {p.period} <span className="text-foreground/30">·</span> {p.role}
                     </div>
                   </div>
                 </article>
