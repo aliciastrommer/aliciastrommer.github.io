@@ -96,7 +96,7 @@ function Home() {
       <div
         id="top"
         data-band
-        className="relative overflow-hidden bg-background snap-start"
+        className="relative overflow-hidden snap-start bg-[linear-gradient(180deg,#eef0f5_0%,#e9ebf2_55%,#f2f0f5_100%)]"
         data-header-theme="light"
       >
         <section className="relative z-10 container-wide flex min-h-[90svh] flex-col justify-center gap-8 py-12 md:py-16">
