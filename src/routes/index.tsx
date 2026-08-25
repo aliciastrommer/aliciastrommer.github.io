@@ -9,6 +9,30 @@ import smartDashImg from "@/assets/smart-dash-cockpit.jpg.asset.json";
 import accessibilityImg from "@/assets/accessibility-laptop1.jpg.asset.json";
 import smartPotImg from "@/assets/smart-pot.jpg.asset.json";
 
+function CopyEmailButton() {
+  const [copied, setCopied] = useState(false);
+  const email = "alicia@strommer.se";
+  return (
+    <button
+      type="button"
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        } catch {
+          window.location.href = `mailto:${email}`;
+        }
+      }}
+      className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white type-body font-medium transition-all duration-200 hover:scale-105"
+      style={{ backgroundColor: "oklch(0.34 0.09 285)" }}
+    >
+      {copied ? "Copied!" : "Copy email"}
+    </button>
+  );
+}
+
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
