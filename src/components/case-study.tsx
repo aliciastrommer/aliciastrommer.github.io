@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
+import { ProjectNavFabs } from "@/components/project-nav-fabs";
 import { projects } from "@/lib/projects";
 
 
