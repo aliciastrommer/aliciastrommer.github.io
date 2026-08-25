@@ -35,9 +35,7 @@ const projects = [
     to: "/projects/smart-dash" as const,
     title: "Designing a Driver Experience That Keeps Attention on the Road",
     period: "2023 – Present",
-    body:
-      "Designing digital driver experiences for professional truck and bus drivers that reduce cognitive effort and simplify complex workflows.\u00a0",
-    tags: ["UX/UI Design", "System Thinking"],
+    role: "UX/UI Designer & Area Lead",
     image: smartDashImg.url,
     alt: "Scania truck cab with the steering wheel and Center Information Display",
   },
@@ -45,9 +43,7 @@ const projects = [
     to: "/projects/accessibility-guide" as const,
     title: "Bridging the Gap Between Accessibility Standards and Everyday Design",
     period: "2022 – 2023",
-    body:
-      "Design of an accessibility guide for designers and developers to make it easier to design accessible products.",
-    tags: ["UX/UI Design", "UX Writing", "Accessibility"],
+    role: "UX/UI Designer",
     image: accessibilityImg.url,
     alt: "Laptop showing the Daresay Accessibility Guide on a wooden desk",
   },
@@ -55,9 +51,7 @@ const projects = [
     to: "/projects/smart-pot" as const,
     title: "Using Tangible Interaction to Inspire Sustainable Behavior",
     period: "2021",
-    body:
-      "Concept design of an interactive pot used to demonstrate how tangible interaction can increase engagement with sustainable behaviour.",
-    tags: ["User Research", "Interaction Design", "User Testing"],
+    role: "Interaction Designer",
     image: smartPotImg.url,
     alt: "Hands holding a glowing white origami-textured plant pot",
   },
@@ -238,16 +232,8 @@ function Home() {
                     <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                       {p.title}
                     </h2>
-                    <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 type-small text-muted-ink">
-                      <span>{p.period}</span>
-                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-foreground/45">
-                        {p.tags.map((t, i) => (
-                          <span key={t} className="flex items-center gap-2">
-                            {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
-                            {t}
-                          </span>
-                        ))}
-                      </div>
+                    <div className="mt-2 type-small text-muted-ink">
+                      {p.period} <span className="text-foreground/30">—</span> {p.role}
                     </div>
                   </div>
                 </article>
@@ -285,17 +271,9 @@ function Home() {
                       <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
                         {p.title}
                       </h2>
-                      <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 type-small text-muted-ink">
-                        <span>{p.period}</span>
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-foreground/45">
-                          {p.tags.map((t, i) => (
-                            <span key={t} className="flex items-center gap-2">
-                              {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
-                              {t}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="mt-2 type-small text-muted-ink">
+                      {p.period} <span className="text-foreground/30">—</span> {p.role}
+                    </div>
                     </div>
                   </article>
                 </Link>
