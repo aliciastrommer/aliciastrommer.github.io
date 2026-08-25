@@ -217,25 +217,8 @@ function Home() {
                 aria-label={`Open ${p.title} case study`}
                 className="group relative block transition-all duration-300 ease-out"
               >
-                <article className="grid gap-4 sm:gap-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] items-stretch">
-                  <div className="order-2 sm:order-none min-w-0 flex flex-col">
-                    <div>
-                      <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
-                        {p.title}
-                      </h2>
-                      <div className="mt-2 type-small text-muted-ink">{p.period}</div>
-                      <p className="mt-4 type-small text-muted-ink">{p.body}</p>
-                    </div>
-                    <div className="mt-auto pt-4 flex flex-wrap items-center gap-x-2 gap-y-1 type-small text-foreground/45">
-                      {p.tags.map((t, i) => (
-                        <span key={t} className="flex items-center gap-2">
-                          {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="order-1 sm:order-none relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                <article className="flex flex-col">
+                  <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                     <img
                       src={p.image}
                       alt={p.alt}
@@ -248,6 +231,22 @@ function Home() {
                     >
                       <div className="grid place-items-center w-12 h-12 rounded-full bg-white/85 backdrop-blur-md text-foreground shadow-xl ring-1 ring-black/10 hover:bg-white hover:scale-105 transition-all duration-200">
                         <ArrowUpRight className="h-5 w-5" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex flex-col flex-1">
+                    <h2 className="type-h2 transition-colors duration-200 group-hover:text-primary">
+                      {p.title}
+                    </h2>
+                    <div className="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 type-small text-muted-ink">
+                      <span>{p.period}</span>
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-foreground/45">
+                        {p.tags.map((t, i) => (
+                          <span key={t} className="flex items-center gap-2">
+                            {i > 0 && <span aria-hidden className="text-foreground/30">·</span>}
+                            {t}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
