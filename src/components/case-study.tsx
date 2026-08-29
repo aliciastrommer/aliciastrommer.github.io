@@ -108,9 +108,7 @@ export function CaseSection({
         <div className="mx-auto max-w-3xl w-full px-5 sm:px-8">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 text-white ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass("text-white")}>{title}</h2>
             )}
             <div className="mt-8 space-y-4 type-body text-hero-muted">
               {children}
@@ -127,9 +125,7 @@ export function CaseSection({
         <div className="container-wide">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 text-white ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass("text-white")}>{title}</h2>
             )}
             <div className="mt-6 space-y-4 type-body text-hero-muted">
               {children}
@@ -146,9 +142,7 @@ export function CaseSection({
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 text-foreground ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass("text-foreground")}>{title}</h2>
             )}
             <div className="mt-6 space-y-4 type-body text-muted-ink">
               {children}
@@ -165,9 +159,7 @@ export function CaseSection({
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass()}>{title}</h2>
             )}
             <div className="mt-6 space-y-4 type-body text-foreground/85">
               {children}
@@ -181,9 +173,7 @@ export function CaseSection({
     <section id={id} className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24 scroll-mt-24">
       <Reveal>
         {title && (
-          <h2 className={isLead ? "type-h2 text-balance" : `type-h2 ${centered ? "text-center" : ""}`}>
-            {title}
-          </h2>
+          <h2 className={headingClass()}>{title}</h2>
         )}
         <div className="mt-6 space-y-4 type-body text-foreground/85">
           {children}
