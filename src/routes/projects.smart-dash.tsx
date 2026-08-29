@@ -243,6 +243,15 @@ function SmartDashPage() {
           </li>
         </ul>
       </CaseSection>
+
+      <KeyTakeaways
+        items={[
+          "Shipped production-ready HMI experiences used daily by thousands of professional truck and bus drivers.",
+          "Grew from hands-on UX/UI designer to Area Lead with strategic responsibility for a key HMI domain.",
+          "Established reusable interaction patterns and a new system framework adopted across multiple features.",
+          "Learned that alignment, communication and advocating for the user create as much impact as the designs themselves.",
+        ]}
+      />
     </CaseLayout>
   );
 }
