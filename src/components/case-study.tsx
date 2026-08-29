@@ -85,11 +85,13 @@ export function CaseSection({
   title,
   centered = true,
   tone = "default",
+  id,
   children,
 }: {
   title?: string;
   centered?: boolean;
   tone?: "default" | "lavender" | "dark" | "dark-flat" | "light-tinted";
+  id?: string;
   children: ReactNode;
 }) {
   if (tone === "dark") {
