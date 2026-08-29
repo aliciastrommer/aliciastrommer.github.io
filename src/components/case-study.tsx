@@ -235,6 +235,95 @@ export function DeliverablesBox({ children }: { children: ReactNode }) {
   return <div className="card-lavender p-8 sm:p-10">{children}</div>;
 }
 
+/**
+ * Sticky mini-nav for case studies: a frosted pill bar with anchor
+ * links to each section. Place directly after CaseHero.
+ */
+export function CaseMiniNav({
+  items,
+}: {
+  items: { id: string; label: string }[];
+}) {
+  return (
+    <nav
+      aria-label="Case study sections"
+      className="sticky top-4 z-40 mt-12 sm:mt-16 px-5"
+    >
+      <div className="mx-auto w-fit max-w-full overflow-x-auto rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] px-2 py-1.5">
+        <ul className="flex items-center gap-1 whitespace-nowrap">
+          {items.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className="block rounded-full px-3.5 py-1.5 type-small text-muted-ink hover:text-foreground hover:bg-foreground/5 transition-colors"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+}
+
+/**
+ * Pull quote: breaks a key insight out of the body copy so scanners
+ * catch it. Large, centered, with a purple accent rule.
+ */
+export function PullQuote({
+  quote,
+  attribution,
+}: {
+  quote: string;
+  attribution?: string;
+}) {
+  return (
+    <Reveal>
+      <figure className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24 text-center">
+        <div className="mx-auto h-px w-12 bg-primary/60" aria-hidden="true" />
+        <blockquote className="mt-8 type-h2 font-normal text-foreground text-balance">
+          “{quote}”
+        </blockquote>
+        {attribution && (
+          <figcaption className="mt-6 type-small text-muted-ink">
+            {attribution}
+          </figcaption>
+        )}
+      </figure>
+    </Reveal>
+  );
+}
+
+/**
+ * Key takeaways: an end-of-case summary box so a recruiter who scrolls
+ * straight to the bottom still gets the core story.
+ */
+export function KeyTakeaways({ items }: { items: string[] }) {
+  return (
+    <Reveal>
+      <aside className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
+        <div className="rounded-2xl bg-foreground text-background p-8 sm:p-10">
+          <p className="type-small uppercase tracking-widest text-background/60">
+            Key takeaways
+          </p>
+          <ul className="mt-6 space-y-4">
+            {items.map((item) => (
+              <li key={item} className="flex gap-4">
+                <span
+                  className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                  aria-hidden="true"
+                />
+                <span className="type-body text-background/90">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </Reveal>
+  );
+}
+
 
 
 
