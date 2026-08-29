@@ -112,8 +112,9 @@ function AccessibilityPage() {
 
       <FullBleedImage src={deskShot.url} alt="Desk with monitor showing the Daresay Accessibility Guide welcome page" />
 
+      <PullQuote quote="Accessibility shouldn't be difficult to get right — good guidance turns abstract standards into everyday practice." />
 
-      <CaseSection title="Deliverables & Impact">
+      <CaseSection id="impact" title="Deliverables & Impact">
         <DeliverablesBox>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
             <div>
