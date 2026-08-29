@@ -9,7 +9,6 @@ import {
   CaseDivider,
   DeliverablesBox,
   CaseMiniNav,
-  PullQuote,
   KeyTakeaways,
 } from "@/components/case-study";
 
@@ -82,7 +81,7 @@ function AccessibilityPage() {
 
       <CaseDivider />
 
-      <CaseSection id="challenge" title="Design Challenge">
+      <CaseSection id="challenge" headingStyle="lead" title="WCAG guidelines were hard to apply in real projects, and we wanted to change that">
         <ChallengeList variant="lavender"
           items={[
             {
@@ -94,7 +93,7 @@ function AccessibilityPage() {
         />
       </CaseSection>
 
-      <CaseSection id="contribution" headingStyle="lead" title="I led the translation of WCAG guidelines into practical, everyday design guidance.">
+      <CaseSection id="contribution" headingStyle="lead" title="I led the translation of WCAG guidelines into practical, everyday design guidance">
         <p>
           I joined the initiative after the introduction to the guide had been
           completed, at the stage where the team was developing the supporting
@@ -111,9 +110,7 @@ function AccessibilityPage() {
 
       <FullBleedImage src={deskShot.url} alt="Desk with monitor showing the Daresay Accessibility Guide welcome page" />
 
-      <PullQuote quote="Accessibility shouldn't be difficult to get right — good guidance turns abstract standards into everyday practice." />
-
-      <CaseSection id="impact" title="Deliverables & Impact">
+      <CaseSection id="impact" headingStyle="lead" title="The guide became a shared resource across teams, partners and clients">
         <DeliverablesBox>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
             <div>

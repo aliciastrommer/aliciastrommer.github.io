@@ -98,15 +98,17 @@ export function CaseSection({
   children: ReactNode;
 }) {
   const isLead = headingStyle === "lead";
+  const headingClass = (extra = "") =>
+    isLead
+      ? `type-h2 text-balance ${extra}`.trim()
+      : `type-h2 ${extra} ${centered ? "text-center" : ""}`.trim();
   if (tone === "dark") {
     return (
       <section id={id} className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-24 scroll-mt-24">
         <div className="mx-auto max-w-3xl w-full px-5 sm:px-8">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 text-white ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass("text-white")}>{title}</h2>
             )}
             <div className="mt-8 space-y-4 type-body text-hero-muted">
               {children}
@@ -123,9 +125,7 @@ export function CaseSection({
         <div className="container-wide">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 text-white ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass("text-white")}>{title}</h2>
             )}
             <div className="mt-6 space-y-4 type-body text-hero-muted">
               {children}
@@ -142,9 +142,7 @@ export function CaseSection({
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 text-foreground ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass("text-foreground")}>{title}</h2>
             )}
             <div className="mt-6 space-y-4 type-body text-muted-ink">
               {children}
@@ -161,9 +159,7 @@ export function CaseSection({
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
-              <h2 className={`type-h2 ${centered ? "text-center" : ""}`}>
-                {title}
-              </h2>
+              <h2 className={headingClass()}>{title}</h2>
             )}
             <div className="mt-6 space-y-4 type-body text-foreground/85">
               {children}
@@ -177,9 +173,7 @@ export function CaseSection({
     <section id={id} className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24 scroll-mt-24">
       <Reveal>
         {title && (
-          <h2 className={isLead ? "type-h2 text-balance" : `type-h2 ${centered ? "text-center" : ""}`}>
-            {title}
-          </h2>
+          <h2 className={headingClass()}>{title}</h2>
         )}
         <div className="mt-6 space-y-4 type-body text-foreground/85">
           {children}
@@ -251,7 +245,7 @@ export function CaseMiniNav({
   return (
     <nav
       aria-label="Case study sections"
-      className="sticky top-4 z-40 mt-4 -mb-[60px] px-5"
+      className="sticky top-4 z-40 -mb-[49px] px-5"
     >
       <div className="mx-auto w-fit max-w-full overflow-x-auto rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] px-2 py-1.5">
         <ul className="flex items-center gap-1 whitespace-nowrap">

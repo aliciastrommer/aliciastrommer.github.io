@@ -8,7 +8,6 @@ import {
   FullBleedImage,
   DeliverablesBox,
   CaseMiniNav,
-  PullQuote,
   KeyTakeaways,
 } from "@/components/case-study";
 import { ProcessSteps } from "@/components/process-steps";
@@ -96,7 +95,7 @@ function SmartDashPage() {
         alt="Scania truck cab dashboard with the Driver Display behind the steering wheel and the Center Information Display to the right"
       />
 
-      <CaseSection id="challenge" title="Design Challenge">
+      <CaseSection id="challenge" headingStyle="lead" title="Every interaction must minimize cognitive load in a safety critical, attention limited environment">
         <ChallengeList
           variant="lavender"
           items={[
@@ -121,7 +120,7 @@ function SmartDashPage() {
 
       <FullBleedImage src={display.url} alt="Scania driver display showing speedometer, load status and trip data" />
 
-      <CaseSection id="role" headingStyle="lead" title="From hands-on feature delivery to strategic leadership — my role evolved alongside the platform.">
+      <CaseSection id="role" headingStyle="lead" title="From hands-on feature delivery to strategic leadership as my role evolved alongside the platform">
         <p>
           I joined the Smart Dash project 3.5 years ago as a UX/UI designer,
           focusing on interaction logic and HMI behavior of vehicle functions
@@ -141,9 +140,7 @@ function SmartDashPage() {
         </p>
       </CaseSection>
 
-      <PullQuote quote="In a safety-critical environment, clarity is not a style choice — it is the design." />
-
-      <CaseSection id="process" title="Way of Working" tone="light-tinted">
+      <CaseSection id="process" tone="light-tinted" headingStyle="lead" title="My process is iterative and collaborative, shaped by the problem at hand">
         <p>
           My design process within this project is iterative and collaborative,
           and can look slightly different depending on what I'm working on.
@@ -188,7 +185,7 @@ function SmartDashPage() {
         </div>
       </CaseSection>
 
-      <CaseSection id="impact" title="Deliverables & Impact">
+      <CaseSection id="impact" headingStyle="lead" title="The work reached production, shaped teams and strengthened the design system">
         <DeliverablesBox>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
             <div>
@@ -227,8 +224,6 @@ function SmartDashPage() {
           </div>
         </DeliverablesBox>
       </CaseSection>
-
-      <PullQuote quote="My strongest contribution is not limited to the solutions I deliver, but lies in communication and alignment." />
 
       <KeyTakeaways
         id="takeaways"

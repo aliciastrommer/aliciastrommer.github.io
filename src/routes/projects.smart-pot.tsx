@@ -8,7 +8,6 @@ import {
   FullBleedImage,
   CaseDivider,
   CaseMiniNav,
-  PullQuote,
   KeyTakeaways,
 } from "@/components/case-study";
 
@@ -94,7 +93,7 @@ function SmartPotPage() {
 
       <CaseDivider />
 
-      <CaseSection id="challenge" title="Design Challenge">
+      <CaseSection id="challenge" headingStyle="lead" title="How can design encourage more sustainable habits at home">
         <ChallengeList variant="lavender"
           items={[
             {
@@ -106,7 +105,7 @@ function SmartPotPage() {
         />
       </CaseSection>
 
-      <CaseSection id="research" title="Research & Exploration">
+      <CaseSection id="research" headingStyle="lead" title="Everyone wanted to grow herbs at home, but no one could keep them alive">
         <p>
           To gain a better understanding of the problem space, we recruited six
           participants to take part in interviews and photo journals. The
@@ -129,7 +128,7 @@ function SmartPotPage() {
       <FullBleedImage src={sketches.url} alt="Hand-drawn pencil sketches exploring smart plant pot concepts" />
 
 
-      <CaseSection id="solution" title="Solution">
+      <CaseSection id="solution" headingStyle="lead" title="A shape changing pot that communicates through form, light and touch">
         <p>
           The final concept was a shape-changing plant pot designed to help
           people keep their herbs or plants alive by encouraging more engaging
@@ -193,7 +192,7 @@ function SmartPotPage() {
         />
       </div>
 
-      <CaseSection id="contribution" headingStyle="lead" title="I contributed across the full design process — and led the technical build of the prototype.">
+      <CaseSection id="contribution" headingStyle="lead" title="I contributed across the full design process and led the technical build of the prototype">
         <p>
           As the project was part of a course at university, the team
           intentionally shared responsibilities to give everyone exposure to
@@ -210,8 +209,6 @@ function SmartPotPage() {
           interaction concept.
         </p>
       </CaseSection>
-
-      <PullQuote quote="Physical form and touch can communicate the needs of a living plant — no screen required." />
 
       <KeyTakeaways
         id="takeaways"
