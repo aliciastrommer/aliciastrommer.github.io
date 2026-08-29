@@ -299,10 +299,10 @@ export function PullQuote({
  * Key takeaways: an end-of-case summary box so a recruiter who scrolls
  * straight to the bottom still gets the core story.
  */
-export function KeyTakeaways({ items }: { items: string[] }) {
+export function KeyTakeaways({ items, id }: { items: string[]; id?: string }) {
   return (
     <Reveal>
-      <aside className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
+      <aside id={id} className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24 scroll-mt-24">
         <div className="rounded-2xl bg-foreground text-background p-8 sm:p-10">
           <p className="type-small uppercase tracking-widest text-background/60">
             Key takeaways
