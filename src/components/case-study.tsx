@@ -98,6 +98,10 @@ export function CaseSection({
   children: ReactNode;
 }) {
   const isLead = headingStyle === "lead";
+  const headingClass = (extra = "") =>
+    isLead
+      ? `type-h2 text-balance ${extra}`.trim()
+      : `type-h2 ${extra} ${centered ? "text-center" : ""}`.trim();
   if (tone === "dark") {
     return (
       <section id={id} className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-24 scroll-mt-24">
