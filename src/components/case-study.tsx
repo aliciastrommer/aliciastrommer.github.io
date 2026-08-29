@@ -85,15 +85,19 @@ export function CaseSection({
   title,
   centered = true,
   tone = "default",
+  headingStyle = "default",
   id,
   children,
 }: {
   title?: string;
   centered?: boolean;
   tone?: "default" | "lavender" | "dark" | "dark-flat" | "light-tinted";
+  /** "lead" renders the title as a left-aligned bold lead-in sentence. */
+  headingStyle?: "default" | "lead";
   id?: string;
   children: ReactNode;
 }) {
+  const isLead = headingStyle === "lead";
   if (tone === "dark") {
     return (
       <section id={id} className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-24 scroll-mt-24">
@@ -173,7 +177,7 @@ export function CaseSection({
     <section id={id} className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24 scroll-mt-24">
       <Reveal>
         {title && (
-          <h2 className={`type-h2 ${centered ? "text-center" : ""}`}>
+          <h2 className={isLead ? "type-h2 text-balance" : `type-h2 ${centered ? "text-center" : ""}`}>
             {title}
           </h2>
         )}
@@ -247,7 +251,7 @@ export function CaseMiniNav({
   return (
     <nav
       aria-label="Case study sections"
-      className="sticky top-4 z-40 mt-12 sm:mt-16 px-5"
+      className="sticky top-4 z-40 mt-4 -mb-[60px] px-5"
     >
       <div className="mx-auto w-fit max-w-full overflow-x-auto rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] px-2 py-1.5">
         <ul className="flex items-center gap-1 whitespace-nowrap">
