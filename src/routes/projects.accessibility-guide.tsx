@@ -8,6 +8,9 @@ import {
   FullBleedImage,
   CaseDivider,
   DeliverablesBox,
+  CaseMiniNav,
+  PullQuote,
+  KeyTakeaways,
 } from "@/components/case-study";
 
 import hero from "@/assets/accessibility-laptop1.jpg.asset.json";
@@ -69,9 +72,18 @@ function AccessibilityPage() {
         }
       />
 
+      <CaseMiniNav
+        items={[
+          { id: "challenge", label: "Challenge" },
+          { id: "contribution", label: "My Contribution" },
+          { id: "impact", label: "Deliverables & Impact" },
+          { id: "takeaways", label: "Key Takeaways" },
+        ]}
+      />
+
       <CaseDivider />
 
-      <CaseSection title="Design Challenge">
+      <CaseSection id="challenge" title="Design Challenge">
         <ChallengeList variant="lavender"
           items={[
             {
@@ -83,7 +95,7 @@ function AccessibilityPage() {
         />
       </CaseSection>
 
-      <CaseSection title="My Contribution">
+      <CaseSection id="contribution" title="My Contribution">
         <p>
           I joined the initiative after the introduction to the guide had been
           completed, at the stage where the team was developing the supporting
@@ -100,8 +112,9 @@ function AccessibilityPage() {
 
       <FullBleedImage src={deskShot.url} alt="Desk with monitor showing the Daresay Accessibility Guide welcome page" />
 
+      <PullQuote quote="Accessibility shouldn't be difficult to get right — good guidance turns abstract standards into everyday practice." />
 
-      <CaseSection title="Deliverables & Impact">
+      <CaseSection id="impact" title="Deliverables & Impact">
         <DeliverablesBox>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
             <div>
@@ -137,12 +150,14 @@ function AccessibilityPage() {
         />
       </div>
 
-      <CaseSection title="Key Learnings">
-        <ul className="list-disc pl-5 space-y-2 marker:text-primary">
-          <li>Deepened expertise in accessibility standards and their application in complex product environments.</li>
-          <li>Improved ability to turn abstract requirements into actionable design guidance.</li>
-        </ul>
-      </CaseSection>
+      <KeyTakeaways
+        id="takeaways"
+        items={[
+          "Translated complex WCAG standards into practical, actionable guidance used by internal teams, external partners and clients.",
+          "Deepened expertise in accessibility standards and their application in complex product environments.",
+          "Improved ability to turn abstract requirements into actionable design guidance.",
+        ]}
+      />
     </CaseLayout>
   );
 }

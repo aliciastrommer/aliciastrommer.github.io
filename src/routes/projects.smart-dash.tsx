@@ -88,7 +88,7 @@ function SmartDashPage() {
           { id: "role", label: "My Role" },
           { id: "process", label: "Way of Working" },
           { id: "impact", label: "Deliverables & Impact" },
-          { id: "learnings", label: "Key Learnings" },
+          { id: "takeaways", label: "Key Takeaways" },
         ]}
       />
 
@@ -231,20 +231,8 @@ function SmartDashPage() {
 
       <PullQuote quote="My strongest contribution is not limited to the solutions I deliver, but lies in communication and alignment." />
 
-      <CaseSection id="learnings" title="Key Learnings">
-        <ul className="list-disc pl-5 space-y-2 marker:text-primary">
-          <li>I have come to realize that my strongest contribution is not limited to the solutions I deliver, but lies in communication and alignment. Where I once measured my value through outputs, I now see greater impact in sharing knowledge, communicating clearly, and helping shape direction and drive meaningful change.</li>
-          <li>I have developed a passion for combining long-term strategy with hands-on design craft.</li>
-          <li>I have strengthened my ability to build alignment across disciplines through continuous collaboration.</li>
-          <li>
-            I have gained confidence in advocating for the user and making
-            difficult design decisions. Saying no can be as important as saying
-            yes.&nbsp;
-          </li>
-        </ul>
-      </CaseSection>
-
       <KeyTakeaways
+        id="takeaways"
         items={[
           "Shipped production-ready HMI experiences used daily by thousands of professional truck and bus drivers.",
           "Grew from hands-on UX/UI designer to Area Lead with strategic responsibility for a key HMI domain.",

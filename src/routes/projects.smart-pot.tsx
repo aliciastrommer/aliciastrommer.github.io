@@ -7,6 +7,9 @@ import {
   ChallengeList,
   FullBleedImage,
   CaseDivider,
+  CaseMiniNav,
+  PullQuote,
+  KeyTakeaways,
 } from "@/components/case-study";
 
 import hero from "@/assets/smart-pot.jpg.asset.json";
@@ -80,9 +83,19 @@ function SmartPotPage() {
         }
       />
 
+      <CaseMiniNav
+        items={[
+          { id: "challenge", label: "Challenge" },
+          { id: "research", label: "Research" },
+          { id: "solution", label: "Solution" },
+          { id: "contribution", label: "My Contribution" },
+          { id: "takeaways", label: "Key Takeaways" },
+        ]}
+      />
+
       <CaseDivider />
 
-      <CaseSection title="Design Challenge">
+      <CaseSection id="challenge" title="Design Challenge">
         <ChallengeList variant="lavender"
           items={[
             {
@@ -94,7 +107,7 @@ function SmartPotPage() {
         />
       </CaseSection>
 
-      <CaseSection title="Research & Exploration">
+      <CaseSection id="research" title="Research & Exploration">
         <p>
           To gain a better understanding of the problem space, we recruited six
           participants to take part in interviews and photo journals. The
@@ -117,7 +130,7 @@ function SmartPotPage() {
       <FullBleedImage src={sketches.url} alt="Hand-drawn pencil sketches exploring smart plant pot concepts" />
 
 
-      <CaseSection title="Solution">
+      <CaseSection id="solution" title="Solution">
         <p>
           The final concept was a shape-changing plant pot designed to help
           people keep their herbs or plants alive by encouraging more engaging
@@ -181,7 +194,7 @@ function SmartPotPage() {
         />
       </div>
 
-      <CaseSection title="My Contribution">
+      <CaseSection id="contribution" title="My Contribution">
         <p>
           As the project was part of a course at university, the team
           intentionally shared responsibilities to give everyone exposure to
@@ -199,15 +212,17 @@ function SmartPotPage() {
         </p>
       </CaseSection>
 
-      <CaseSection title="Key Learnings">
-        <ul className="list-disc pl-5 space-y-2 marker:text-primary">
-          <li>Gained hands-on experience with tangible interaction design and physical prototyping.</li>
-          <li>Learned to integrate electronics into a physical artifact, an area I had no prior experience in.</li>
-          <li>Developed foundational skills in building circuits and programming Arduino boards.</li>
-          
-          <li>Expanded my understanding of the possibilities within interaction design, particularly in combining hardware and digital behaviour.</li>
-        </ul>
-      </CaseSection>
+      <PullQuote quote="Physical form and touch can communicate the needs of a living plant — no screen required." />
+
+      <KeyTakeaways
+        id="takeaways"
+        items={[
+          "Designed and built a shape-changing plant pot that communicates plant health through form, light and touch.",
+          "Gained hands-on experience with tangible interaction design and physical prototyping.",
+          "Learned to integrate electronics into a physical artifact, an area I had no prior experience in.",
+          "Expanded my understanding of interaction design by combining hardware and digital behaviour.",
+        ]}
+      />
     </CaseLayout>
   );
 }
