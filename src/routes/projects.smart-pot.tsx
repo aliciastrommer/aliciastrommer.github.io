@@ -43,6 +43,15 @@ export const Route = createFileRoute("/projects/smart-pot")({
 function SmartPotPage() {
   return (
     <CaseLayout currentPath="/projects/smart-pot">
+      <CaseMiniNav
+        items={[
+          { id: "challenge", label: "Challenge" },
+          { id: "research", label: "Research" },
+          { id: "solution", label: "Solution" },
+          { id: "contribution", label: "My Contribution" },
+          { id: "takeaways", label: "Key Takeaways" },
+        ]}
+      />
       <CaseHero
         heroImage={hero.url}
         heroAlt="Hands holding a glowing white origami-textured plant pot with basil"
@@ -81,16 +90,6 @@ function SmartPotPage() {
             </p>
           </>
         }
-      />
-
-      <CaseMiniNav
-        items={[
-          { id: "challenge", label: "Challenge" },
-          { id: "research", label: "Research" },
-          { id: "solution", label: "Solution" },
-          { id: "contribution", label: "My Contribution" },
-          { id: "takeaways", label: "Key Takeaways" },
-        ]}
       />
 
       <CaseDivider />
@@ -194,7 +193,7 @@ function SmartPotPage() {
         />
       </div>
 
-      <CaseSection id="contribution" title="My Contribution">
+      <CaseSection id="contribution" headingStyle="lead" title="I contributed across the full design process — and led the technical build of the prototype.">
         <p>
           As the project was part of a course at university, the team
           intentionally shared responsibilities to give everyone exposure to
