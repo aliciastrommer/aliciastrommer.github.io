@@ -42,6 +42,14 @@ export const Route = createFileRoute("/projects/accessibility-guide")({
 function AccessibilityPage() {
   return (
     <CaseLayout currentPath="/projects/accessibility-guide">
+      <CaseMiniNav
+        items={[
+          { id: "challenge", label: "Challenge" },
+          { id: "contribution", label: "My Contribution" },
+          { id: "impact", label: "Deliverables & Impact" },
+          { id: "takeaways", label: "Key Takeaways" },
+        ]}
+      />
       <CaseHero
         heroImage={hero.url}
         heroAlt="Laptop showing the Daresay Accessibility Guide on a wooden desk"
@@ -72,15 +80,6 @@ function AccessibilityPage() {
         }
       />
 
-      <CaseMiniNav
-        items={[
-          { id: "challenge", label: "Challenge" },
-          { id: "contribution", label: "My Contribution" },
-          { id: "impact", label: "Deliverables & Impact" },
-          { id: "takeaways", label: "Key Takeaways" },
-        ]}
-      />
-
       <CaseDivider />
 
       <CaseSection id="challenge" title="Design Challenge">
@@ -95,7 +94,7 @@ function AccessibilityPage() {
         />
       </CaseSection>
 
-      <CaseSection id="contribution" title="My Contribution">
+      <CaseSection id="contribution" headingStyle="lead" title="I led the translation of WCAG guidelines into practical, everyday design guidance.">
         <p>
           I joined the initiative after the introduction to the guide had been
           completed, at the stage where the team was developing the supporting

@@ -39,6 +39,15 @@ export const Route = createFileRoute("/projects/smart-dash")({
 function SmartDashPage() {
   return (
     <CaseLayout currentPath="/projects/smart-dash">
+      <CaseMiniNav
+        items={[
+          { id: "challenge", label: "Challenge" },
+          { id: "role", label: "My Role" },
+          { id: "process", label: "Way of Working" },
+          { id: "impact", label: "Deliverables & Impact" },
+          { id: "takeaways", label: "Key Takeaways" },
+        ]}
+      />
       <CaseHero
         heroImage={hero.url}
         heroAlt="Scania truck cab with the steering wheel and Center Information Display"
@@ -82,16 +91,6 @@ function SmartDashPage() {
         }
       />
 
-      <CaseMiniNav
-        items={[
-          { id: "challenge", label: "Challenge" },
-          { id: "role", label: "My Role" },
-          { id: "process", label: "Way of Working" },
-          { id: "impact", label: "Deliverables & Impact" },
-          { id: "takeaways", label: "Key Takeaways" },
-        ]}
-      />
-
       <FullBleedImage
         src={displays.url}
         alt="Scania truck cab dashboard with the Driver Display behind the steering wheel and the Center Information Display to the right"
@@ -122,7 +121,7 @@ function SmartDashPage() {
 
       <FullBleedImage src={display.url} alt="Scania driver display showing speedometer, load status and trip data" />
 
-      <CaseSection id="role" title="My Role">
+      <CaseSection id="role" headingStyle="lead" title="From hands-on feature delivery to strategic leadership — my role evolved alongside the platform.">
         <p>
           I joined the Smart Dash project 3.5 years ago as a UX/UI designer,
           focusing on interaction logic and HMI behavior of vehicle functions
