@@ -199,7 +199,7 @@ function SmartDashPage() {
               <p className="mt-2">
                 I have established reusable interaction patterns and components
                 adopted across multiple features, and created a new system
-                framework that enhanced visibility and scalability of the HMI.
+                 framework.
               </p>
             </div>
             <div>
