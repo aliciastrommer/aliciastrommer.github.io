@@ -123,7 +123,7 @@ function SmartDashPage() {
         </p>
         <p>
           During this time, I have worked in several teams with different parts
-          of the platform. My work work has been carried out in an agile
+          of the platform. My work has been carried out in an agile
           environment, following SAFe, and in a global context, where
           cross-functional collaboration has been key.&nbsp;
         </p>
