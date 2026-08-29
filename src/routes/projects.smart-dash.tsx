@@ -207,7 +207,7 @@ function SmartDashPage() {
               <p className="mt-2">
                 I have driven strategic development within a key HMI domain,
                 coordinating upcoming work, supporting other designers, and acting
-                as a domain expert who guides long-term interaction strategy.
+                 as a domain expert.
               </p>
             </div>
           </div>
