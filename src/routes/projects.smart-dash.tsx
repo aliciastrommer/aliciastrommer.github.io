@@ -185,7 +185,7 @@ function SmartDashPage() {
         </div>
       </CaseSection>
 
-      <CaseSection id="impact" title="Deliverables & Impact">
+      <CaseSection id="impact" headingStyle="lead" title="The work reached production, shaped teams and strengthened the design system">
         <DeliverablesBox>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
             <div>
@@ -224,8 +224,6 @@ function SmartDashPage() {
           </div>
         </DeliverablesBox>
       </CaseSection>
-
-      <PullQuote quote="My strongest contribution is not limited to the solutions I deliver, but lies in communication and alignment." />
 
       <KeyTakeaways
         id="takeaways"
