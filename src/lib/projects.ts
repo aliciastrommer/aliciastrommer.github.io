@@ -5,7 +5,7 @@ import smartPot from "@/assets/smart-pot.jpg.asset.json";
 export const projects = [
   {
     path: "/projects/smart-dash",
-    title: "Smart Dash",
+    title: "Designing a Driver Experience That Keeps Attention on the Road",
     period: "2023 – Present",
     role: "UX/UI Designer & Area Lead",
     image: smartDash.url,
@@ -13,7 +13,7 @@ export const projects = [
   },
   {
     path: "/projects/accessibility-guide",
-    title: "Accessibility Guide",
+    title: "Bridging the Gap Between Accessibility Standards and Everyday Design",
     period: "2022 – 2023",
     role: "UX/UI Designer",
     image: accessibility.url,
@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     path: "/projects/smart-pot",
-    title: "Smart Pot",
+    title: "Using Tangible Interaction to Inspire Sustainable Behavior",
     period: "2021",
     role: "Interaction Designer",
     image: smartPot.url,
