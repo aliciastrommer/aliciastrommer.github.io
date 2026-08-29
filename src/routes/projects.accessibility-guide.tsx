@@ -150,12 +150,14 @@ function AccessibilityPage() {
         />
       </div>
 
-      <CaseSection title="Key Learnings">
-        <ul className="list-disc pl-5 space-y-2 marker:text-primary">
-          <li>Deepened expertise in accessibility standards and their application in complex product environments.</li>
-          <li>Improved ability to turn abstract requirements into actionable design guidance.</li>
-        </ul>
-      </CaseSection>
+      <KeyTakeaways
+        id="takeaways"
+        items={[
+          "Translated complex WCAG standards into practical, actionable guidance used by internal teams, external partners and clients.",
+          "Deepened expertise in accessibility standards and their application in complex product environments.",
+          "Improved ability to turn abstract requirements into actionable design guidance.",
+        ]}
+      />
     </CaseLayout>
   );
 }
