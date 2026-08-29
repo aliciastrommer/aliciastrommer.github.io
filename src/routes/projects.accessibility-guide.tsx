@@ -8,6 +8,9 @@ import {
   FullBleedImage,
   CaseDivider,
   DeliverablesBox,
+  CaseMiniNav,
+  PullQuote,
+  KeyTakeaways,
 } from "@/components/case-study";
 
 import hero from "@/assets/accessibility-laptop1.jpg.asset.json";
@@ -69,9 +72,18 @@ function AccessibilityPage() {
         }
       />
 
+      <CaseMiniNav
+        items={[
+          { id: "challenge", label: "Challenge" },
+          { id: "contribution", label: "My Contribution" },
+          { id: "impact", label: "Deliverables & Impact" },
+          { id: "takeaways", label: "Key Takeaways" },
+        ]}
+      />
+
       <CaseDivider />
 
-      <CaseSection title="Design Challenge">
+      <CaseSection id="challenge" title="Design Challenge">
         <ChallengeList variant="lavender"
           items={[
             {
@@ -83,7 +95,7 @@ function AccessibilityPage() {
         />
       </CaseSection>
 
-      <CaseSection title="My Contribution">
+      <CaseSection id="contribution" title="My Contribution">
         <p>
           I joined the initiative after the introduction to the guide had been
           completed, at the stage where the team was developing the supporting
