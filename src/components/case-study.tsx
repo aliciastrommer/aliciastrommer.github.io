@@ -96,7 +96,7 @@ export function CaseSection({
 }) {
   if (tone === "dark") {
     return (
-      <section className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-24">
+      <section id={id} className="bg-hero-gradient min-h-screen flex items-center py-20 sm:py-24 scroll-mt-24">
         <div className="mx-auto max-w-3xl w-full px-5 sm:px-8">
           <Reveal>
             {title && (
@@ -115,7 +115,7 @@ export function CaseSection({
 
   if (tone === "dark-flat") {
     return (
-      <section className="bg-dark-flat mt-16 sm:mt-24 py-20 sm:py-24">
+      <section id={id} className="bg-dark-flat mt-16 sm:mt-24 py-20 sm:py-24 scroll-mt-24">
         <div className="container-wide">
           <Reveal>
             {title && (
@@ -134,7 +134,7 @@ export function CaseSection({
 
   if (tone === "light-tinted") {
     return (
-      <section className="bg-surface mt-16 sm:mt-24 py-20 sm:py-24">
+      <section id={id} className="bg-surface mt-16 sm:mt-24 py-20 sm:py-24 scroll-mt-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
@@ -153,7 +153,7 @@ export function CaseSection({
 
   if (tone === "lavender") {
     return (
-      <section className="bg-lavender-soft mt-16 sm:mt-24 py-20 sm:py-24">
+      <section id={id} className="bg-lavender-soft mt-16 sm:mt-24 py-20 sm:py-24 scroll-mt-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             {title && (
@@ -170,7 +170,7 @@ export function CaseSection({
     );
   }
   return (
-    <section className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24">
+    <section id={id} className="mx-auto max-w-3xl px-5 sm:px-8 mt-16 sm:mt-24 scroll-mt-24">
       <Reveal>
         {title && (
           <h2 className={`type-h2 ${centered ? "text-center" : ""}`}>
