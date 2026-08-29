@@ -73,7 +73,7 @@ function SmartDashPage() {
               </a>
             </p>
             <div className="flex items-center rounded-2xl border border-red-200 bg-red-50 p-4 type-small text-red-900">
-              This project description includes limited details and visuals due to confidentiality.
+              This project includes limited details and visuals due to confidentiality.
             </div>
           </>
         }
