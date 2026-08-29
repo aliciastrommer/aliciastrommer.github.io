@@ -245,7 +245,7 @@ export function CaseMiniNav({
   return (
     <nav
       aria-label="Case study sections"
-      className="sticky top-4 z-40 mt-4 -mb-[60px] px-5"
+      className="sticky top-4 z-40 -mb-[44px] px-5"
     >
       <div className="mx-auto w-fit max-w-full overflow-x-auto rounded-full bg-white/85 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.06] px-2 py-1.5">
         <ul className="flex items-center gap-1 whitespace-nowrap">
