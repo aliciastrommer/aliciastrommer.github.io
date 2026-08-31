@@ -518,32 +518,19 @@
    );
  }
 
- /* Cursor-following radial spotlight — emanates from wherever the cursor is,
-    spread soft and diffused across the panel. Coordinates are relative to the
-    element box, so the ::before is inset:0 to keep them aligned under the cursor. */
- .spotlight-section {
-   --spotlight-x: 50%;
-   --spotlight-y: 50%;
-   --spotlight-opacity: 0;
+  /* Project card image — subtle 3D tilt on hover for a more tactile feel. */
+  .project-card-image {
+    transform-style: preserve-3d;
+    perspective: 1200px;
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .project-card-image img {
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .project-card-image img {
+    transform: rotateY(-4deg) rotateX(2deg) scale(1.03);
+  }
 
-   &::before {
-     content: "";
-     position: absolute;
-     inset: 0;
-     pointer-events: none;
-     background: radial-gradient(
-       circle 620px at var(--spotlight-x) var(--spotlight-y),
-       oklch(0.72 0.17 315 / 0.30) 0%,
-       oklch(0.58 0.19 285 / 0.22) 30%,
-       oklch(0.82 0.12 350 / 0.10) 58%,
-       transparent 78%
-     );
-     filter: blur(55px);
-     opacity: var(--spotlight-opacity);
-     transition: opacity 450ms ease;
-     z-index: 0;
-   }
- }
 
 /* Deeper lavender section background — used for How I Work */
 @utility bg-lavender-deep {
