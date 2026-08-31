@@ -192,7 +192,7 @@ function Home() {
                 className="group relative block transition-all duration-300 ease-out"
               >
                 <article className="flex flex-col">
-                  <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                  <div className="project-card-image relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                     <img
                       src={p.image}
                       alt={p.alt}
@@ -231,7 +231,7 @@ function Home() {
                   className="group relative block transition-all duration-300 ease-out"
                 >
                   <article className="flex flex-col">
-                    <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                    <div className="project-card-image relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                       <img
                         src={p.image}
                         alt={p.alt}
