@@ -390,12 +390,12 @@ export function CaseProjectNav({ currentPath }: { currentPath: string }) {
               className="group block transition-all duration-300 ease-out"
             >
               <article className="relative">
-                <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                <div className="project-card-image relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                   <img
                     src={p.image}
                     alt={p.alt}
                     loading="lazy"
-                    className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                    className="block h-full w-full object-cover"
                   />
                   <div
                     className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

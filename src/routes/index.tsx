@@ -127,18 +127,7 @@ function Home() {
 
 
 
-        <div
-          className="relative overflow-hidden rounded-2xl bg-foreground text-background p-8 sm:p-10 spotlight-section"
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            e.currentTarget.style.setProperty("--spotlight-x", `${e.clientX - rect.left}px`);
-            e.currentTarget.style.setProperty("--spotlight-y", `${e.clientY - rect.top}px`);
-            e.currentTarget.style.setProperty("--spotlight-opacity", "1");
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.setProperty("--spotlight-opacity", "0");
-          }}
-        >
+        <div className="relative overflow-hidden rounded-2xl bg-foreground text-background p-8 sm:p-10">
           <div className="grid gap-y-8 gap-x-10 md:grid-cols-2">
             <div className="type-caption hidden md:block text-background/70">[01]</div>
 
@@ -203,12 +192,12 @@ function Home() {
                 className="group relative block transition-all duration-300 ease-out"
               >
                 <article className="flex flex-col">
-                  <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                  <div className="project-card-image relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                     <img
                       src={p.image}
                       alt={p.alt}
                       loading="lazy"
-                      className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                      className="block h-full w-full object-cover"
                     />
                     <div
                       className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -242,12 +231,12 @@ function Home() {
                   className="group relative block transition-all duration-300 ease-out"
                 >
                   <article className="flex flex-col">
-                    <div className="relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
+                    <div className="project-card-image relative min-w-0 w-full overflow-hidden rounded-2xl bg-surface aspect-[16/10]">
                       <img
                         src={p.image}
                         alt={p.alt}
                         loading="lazy"
-                        className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                        className="block h-full w-full object-cover"
                       />
                       <div
                         className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
