@@ -197,7 +197,7 @@ function Home() {
                       src={p.image}
                       alt={p.alt}
                       loading="lazy"
-                      className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                      className="block h-full w-full object-cover"
                     />
                     <div
                       className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -236,7 +236,7 @@ function Home() {
                         src={p.image}
                         alt={p.alt}
                         loading="lazy"
-                        className="block h-full w-full object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                        className="block h-full w-full object-cover"
                       />
                       <div
                         className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
