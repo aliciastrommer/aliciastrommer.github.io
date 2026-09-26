@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alicia Strömmer — Product Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens =====
+   Type scale (Plus Jakarta Sans, Regular / 400 only, per brief): 64 / 24 / 20 / 16
+   Spacing scale (4pt system): 4 8 16 24 32 40 48 64 80 96
+   One background color site-wide. One text color (#070707) site-wide,
+   except the confidentiality note (#313131).
+*/
+:root{
+  --bg:#f7f7f7;
+  --ink:#070707;
+  --ink-soft:#59574f; /* for 16/20px body copy only — headings and labels stay full --ink for hierarchy */
+  --confnote-color:#313131;
+  --line:#dedad2;
+  --white:#ffffff;
+  --max:1574px; /* wide container: nav, intro, hero image, summary/role/outcome */
+  --max-narrow:860px; /* narrower reading-width container for everything below the summary block */
+  --nav-h:80px;
+  --peek:64px; /* how much of the first project image shows before scrolling */
+
+  /* fluid type: same 5 sizes at desktop widths (≥800px), scaling down smoothly on smaller screens */
+  --fs-64:clamp(38px, 1rem + 6vw, 64px);
+  --fs-36:clamp(24px, 0.8rem + 3.5vw, 36px); /* secondary headline, used only when it pairs with a small eyebrow label above it */
+  --fs-24:clamp(18px, 0.6rem + 2vw, 24px);
+  --fs-20:clamp(16px, 0.6rem + 1.5vw, 20px);
+  --fs-16:clamp(14px, 0.6rem + 0.8vw, 16px);
+
+  --sp-4:4px; --sp-8:8px; --sp-16:16px; --sp-24:24px; --sp-32:32px;
+  --sp-40:40px; --sp-48:48px; --sp-64:64px; --sp-80:80px; --sp-96:96px;
+
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151412; --ink:#f4f2ee; --ink-soft:#b3b0a6; --confnote-color:#c9c5bd; --line:#33312c; --white:#1c1b18;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151412; --ink:#f4f2ee; --ink-soft:#b3b0a6; --confnote-color:#c9c5bd; --line:#33312c; --white:#1c1b18;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.5;font-weight:400;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;height:auto;}
+a{color:inherit;text-decoration:none;}
+/* cursor affordance: anything clickable shows a hand on hover */
+a,[data-route],[data-nav],.arrowbtn,.backbtn,button{cursor:pointer;}
+.inline-link{font-size:inherit;text-decoration:underline;text-underline-offset:3px;}
+.inline-link:hover{opacity:.75;}
+h1,h2,h3,h4,h5,h6{font-weight:400;margin:0;color:var(--ink);}
+
+/* every content container gets the same left/right gutter, at every breakpoint */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp-32);}
+.wrap-narrow{max-width:var(--max-narrow);margin:0 auto;padding:0 var(--sp-32);}
+@media (max-width:700px){.wrap,.wrap-narrow{padding:0 var(--sp-24);}}
+
+/* ===== Type scale utility classes (the only four sizes used site-wide) ===== */
+.fs-64{font-size:var(--fs-64);line-height:1.1;letter-spacing:-0.01em;}
+.fs-24{font-size:var(--fs-24);line-height:1.35;}
+.fs-20{font-size:var(--fs-20);line-height:1.5;}
+.fs-16{font-size:var(--fs-16);line-height:1.5;}
+
+h1{font-size:var(--fs-64);line-height:1.1;letter-spacing:-0.01em;max-width:880px;}
+h2{font-size:var(--fs-36);line-height:1.25;}
+
+p,li,div,a,span,dd,dt{font-size:var(--fs-20);color:var(--ink-soft);}
+p{margin:0 0 var(--sp-16);}
+
+/* ===== Icon arrow (single icon, reused via rotation so every arrow matches) =====
+   Base icon points right (→). Back buttons rotate it 180° to point left. */
+.icon-arrow{width:16px;height:16px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;transform:rotate(0deg);display:block;}
+.backbtn .icon-arrow{transform:rotate(180deg);width:14px;height:14px;stroke:var(--bg);}
+
+/* ===== NAV ===== */
+nav.topnav{position:sticky;top:0;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:50;}
+.navrow{display:flex;justify-content:space-between;align-items:center;padding:var(--sp-24) var(--sp-32);max-width:var(--max);margin:0 auto;height:calc(var(--nav-h) - var(--sp-48));font-size:var(--fs-16);}
+@media (max-width:700px){.navrow{padding:var(--sp-16) var(--sp-24);}}
+.navleft{display:flex;gap:var(--sp-24);}
+.navleft a,.navright a{opacity:.75;transition:opacity .15s;cursor:pointer;font-size:var(--fs-16);}
+.navleft a:hover,.navright a:hover{opacity:1;}
+.navright{display:flex;align-items:center;gap:var(--sp-24);}
+
+/* light/dark theme toggle: a small icon button in the nav; shows sun in light mode,
+   moon in dark mode, and flips the page's theme on click */
+.theme-toggle{background:none;border:none;padding:0;margin:0;width:20px;height:20px;color:var(--ink-soft);opacity:.75;transition:opacity .15s;display:flex;align-items:center;justify-content:center;}
+.theme-toggle:hover{opacity:1;}
+.theme-toggle svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.theme-toggle .icon-moon{display:none;}
+.theme-toggle.is-dark .icon-sun{display:none;}
+.theme-toggle.is-dark .icon-moon{display:block;}
+
+/* ===== SECTIONS ===== (single background color everywhere; no default dividers) */
+section{padding:var(--sp-64) 0;}
+.hairline{border-top:none;}
+.altbg{background:var(--bg);}
+.eyebrow{font-size:var(--fs-24);color:var(--ink);margin:0 0 var(--sp-16);}
+.meta{display:flex;flex-wrap:wrap;gap:var(--sp-24);margin-bottom:var(--sp-8);font-size:var(--fs-16);}
+.meta span{font-size:var(--fs-16);}
+
+/* ===== HOME HERO ===== */
+/* longhand padding-top/bottom only, so .wrap's left/right padding is never clobbered */
+.home-hero{min-height:calc(100vh - var(--nav-h) - var(--peek));display:flex;align-items:center;padding-top:var(--sp-40);padding-bottom:var(--sp-40);}
+.home-hero h1{max-width:none;width:100%;}
+@media (max-width:700px){.home-hero{min-height:calc(100vh - var(--nav-h) - 40px);}}
+
+/* ===== WORK LIST ===== */
+.worklist{display:flex;flex-direction:column;}
+.workitem{display:grid;grid-template-columns:1000fr 574fr;align-items:center;gap:var(--sp-48);padding-top:var(--sp-24);padding-bottom:var(--sp-24);}
+.workitem .shot{width:100%;aspect-ratio:1000/630;overflow:hidden;border-radius:2px;order:1;}
+.workitem .shot img{width:100%;height:100%;transition:transform .5s ease;object-fit:cover;}
+.workitem .txt{order:2;}
+.workitem .txt h3{font-size:var(--fs-24);line-height:1.35;margin:0 0 var(--sp-16);}
+.workitem .txt .role{margin-bottom:var(--sp-16);}
+.arrowbtn{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;transition:transform .2s ease;}
+.arrowbtn .icon-arrow{stroke:var(--bg);}
+/* alternating layout: card 1 & 3 = image right / text left, card 2 = image left / text right (default) */
+.workitem.reverse{grid-template-columns:574fr 1000fr;}
+.workitem.reverse .shot{order:2;}
+.workitem.reverse .txt{order:1;}
+@media (max-width:860px){
+  .workitem,.workitem.reverse{grid-template-columns:1fr;gap:var(--sp-16);padding-top:var(--sp-16);padding-bottom:var(--sp-16);}
+  .workitem .txt,.workitem.reverse .txt{order:2;}
+  .workitem .shot,.workitem.reverse .shot{order:1;}
+}
+
+/* ===== WHAT I BRING ===== left column = section title, right column = stacked items (title directly above its own text) */
+.bring{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-48);}
+.bring-list > div{margin-bottom:var(--sp-32);}
+.bring-list > div:last-child{margin-bottom:0;}
+.bring-list h4{font-size:var(--fs-24);margin:0 0 var(--sp-8);}
+.bring-list p{margin:0;}
+@media (max-width:700px){.bring{grid-template-columns:1fr;gap:var(--sp-24);}}
+
+/* ===== ABOUT ===== image takes ~35% of the row, pulled up so its top edge
+   sits above the row instead of aligning with the text */
+.about-grid{display:grid;grid-template-columns:1fr 35%;gap:var(--sp-48);align-items:start;}
+.about-grid .photo{margin-top:calc(-1 * var(--sp-96));}
+@media (max-width:760px){.about-grid{grid-template-columns:1fr;}.about-grid .photo{order:-1;max-width:260px;margin-top:0;}}
+
+/* ===== FOOTER (home) ===== */
+footer.home-footer{padding:var(--sp-48) 0 var(--sp-64);}
+.contactline{margin-bottom:var(--sp-4);}
+.contactline a:hover{text-decoration:underline;}
+
+/* ===== CASE STUDY ===== */
+/* top intro section: back button, h1, meta, (confnote), hero image, summary block —
+   64px between every container, per the prototype spacing */
+.case-top{padding-top:var(--sp-64);}
+.case-top .backbtn{margin-bottom:var(--sp-64);}
+.case-top h1{margin-bottom:var(--sp-64);max-width:none;width:100%;}
+.case-top .meta{margin-bottom:0;}
+/* same treatment as the index-page arrow buttons: black circle, white arrow */
+.backbtn{width:40px;height:40px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.case-spacer{margin-top:var(--sp-64);}
+/* images span full viewport width on project pages, 64px above and below */
+.full-bleed{width:100%;max-width:1728px;margin:var(--sp-64) auto;}
+.case-hero-img{width:100%;display:block;margin:0;}
+/* first image on each project page: taller */
+.hero-shot img{height:78vh;min-height:560px;max-height:900px;object-fit:cover;}
+.confnote{position:absolute;top:var(--sp-16);left:0;right:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:var(--sp-8);color:rgba(255,255,255,.85);text-align:center;padding:var(--sp-8) var(--sp-16);margin:0;font-size:var(--fs-16);background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,0));}
+.confnote .icon-info{width:15px;height:15px;flex:none;stroke:currentColor;stroke-width:1.6;fill:none;}
+/* Summary spans the full width; My role / Outcome sit side by side below it;
+   one divider under the whole block */
+.case-summary{padding-bottom:var(--sp-40);}
+.case-summary p:last-child{margin-bottom:0;}
+.case-roles{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-48);padding-bottom:var(--sp-40);border-bottom:1px solid var(--line);}
+.case-roles p:last-child{margin-bottom:0;}
+@media (max-width:760px){.case-roles{grid-template-columns:1fr;gap:var(--sp-24);}}
+.chalgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-32);margin-top:var(--sp-24);}
+@media (max-width:760px){.chalgrid{grid-template-columns:1fr;}}
+/* design-process style rows: used for Smart Dash's process AND the "What I learned"
+   sections on every project page, so they share one visual pattern */
+.process-row{display:grid;grid-template-columns:340px 1fr;gap:var(--sp-40);padding:var(--sp-24) 0;border-top:1px solid var(--line);}
+.process-row:first-of-type{border-top:none;}
+@media (max-width:760px){.process-row{grid-template-columns:1fr;gap:var(--sp-8);}}
+.process-row h4{font-size:var(--fs-24);line-height:1.35;margin:0;}
+.process-row p{font-size:var(--fs-16);margin:0;}
+/* project-page paragraphs are 16px (home page paragraphs stay at 20px) */
+#page-smart-dash p,#page-accessibility-guide p,#page-smart-components p{font-size:var(--fs-16);}
+.case-footer{padding-top:var(--sp-48);padding-bottom:var(--sp-64);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--sp-16);font-size:var(--fs-16);}
+.case-footer a{font-size:var(--fs-16);}
+.case-footer .otherlinks{display:flex;gap:var(--sp-24);}
+.case-footer a{opacity:.75;}
+.case-footer a:hover{opacity:1;text-decoration:underline;}
+
+.page{display:none;}
+.page.active{display:block;}
+
+/* ===== Scroll-reveal + hover motion (index page) ===== */
+/* name/title reveal on load: JS splits the heading into its actual visual lines and
+   wraps each one in its own clipped box, so lines animate top-to-bottom in sequence
+   instead of the whole multi-line block sliding as one piece (which read as if the
+   last line arrived first) */
+.line-mask,.line-inner,.split-word{font-size:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;font-weight:inherit;}
+.line-mask{display:block;overflow:hidden;padding-bottom:0.22em;margin-bottom:-0.22em;}
+.line-inner{display:block;padding-bottom:0.01em;}
+@media (prefers-reduced-motion: no-preference){
+  .line-inner{animation:text-reveal 1.3s cubic-bezier(.16,.6,.2,1) both;}
+  @keyframes text-reveal{
+    0%{transform:translateY(100%);opacity:0;}
+    100%{transform:translateY(0);opacity:1;}
+  }
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .worklist .workitem.reveal:nth-of-type(2){transition-delay:.08s;}
+  .worklist .workitem.reveal:nth-of-type(3){transition-delay:.16s;}
+
+  /* clickable cue: the image scales up and the arrow nudges left-right on hover */
+  @keyframes arrow-shuttle{0%,100%{transform:translateX(0);}50%{transform:translateX(6px);}}
+  .workitem:hover .shot img{transform:scale(1.06);}
+  .workitem:hover .arrowbtn{animation:arrow-shuttle 1s ease-in-out infinite;}
+
+  /* not clickable — a single, simple nudge so it doesn't read as a link */
+  .bring-list > div{transition:transform .35s ease;}
+  .bring-list > div:hover{transform:translateX(8px);}
+
+  .about-grid .photo img{transition:transform .6s cubic-bezier(.2,.7,.2,1);}
+  .about-grid .photo:hover img{transform:scale(1.03);}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="navrow">
+    <div class="navleft">
+      <a data-nav="home">Work</a>
+      <a data-nav="about">About</a>
+    </div>
+    <div class="navright">
+      <a data-nav="contact">Contact</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.4M12 18.6V21M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M3 12h2.4M18.6 12H21M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HOME -->
+<main id="page-home" class="page">
+  <div class="wrap home-hero">
+    <h1>I'm Alicia, a Stockholm based Product Designer focusing on system thinking and UX/UI design for complex systems —</h1>
+  </div>
+
+  <div class="wrap">
+    <div class="worklist">
+      <a class="workitem reverse" data-route="smart-dash">
+        <div class="shot"><img src="images/smart-dash-scania-truck-dashboard.jpg" alt="Smart Dash — Scania truck dashboard"></div>
+        <div class="txt">
+          <h3>Designing a driver experience that minimizes friction and keeps attention on the road via the platform Smart Dash</h3>
+          <div class="role">UX/UI Designer &amp; Area Lead @ Scania</div>
+          <div class="arrowbtn"><svg class="icon-arrow" viewBox="0 0 24 24"><path d="M4 12 H20 M13 5 L20 12 L13 19"/></svg></div>
+        </div>
+      </a>
+      <a class="workitem reveal" data-route="accessibility-guide">
+        <div class="shot"><img src="images/accessibility-guide-laptop.jpg" alt="Accessibility Guide laptop"></div>
+        <div class="txt">
+          <h3>Enabling accessibility through a guide that turns WCAG guidelines into practical, easy-to-adopt practices</h3>
+          <div class="role">UX/UI Designer @ Daresay by Knightec</div>
+          <div class="arrowbtn"><svg class="icon-arrow" viewBox="0 0 24 24"><path d="M4 12 H20 M13 5 L20 12 L13 19"/></svg></div>
+        </div>
+      </a>
+      <a class="workitem reverse reveal" data-route="smart-components">
+        <div class="shot"><img src="images/smart-components-in-robotstudio.jpg" alt="Smart Components in RobotStudio"></div>
+        <div class="txt">
+          <h3>Improving the usability of Smart Components in RobotStudio through redesign of a graphical programming interface</h3>
+          <div class="role">Interaction Design Master Thesis @ ABB</div>
+          <div class="arrowbtn"><svg class="icon-arrow" viewBox="0 0 24 24"><path d="M4 12 H20 M13 5 L20 12 L13 19"/></svg></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <section class="hairline">
+    <div class="wrap">
+      <div class="bring reveal">
+        <h2 class="eyebrow" style="margin-bottom:0;">What I bring —</h2>
+        <div class="bring-list">
+          <div>
+            <h4>Product Thinking</h4>
+            <p>I look beyond individual features, helping teams make strategic decisions that align user needs, business goals, and long-term product direction.</p>
+          </div>
+          <div>
+            <h4>User Research</h4>
+            <p>Through user research, I bring evidence into the design process to ensure we're solving the right problem in the right way.</p>
+          </div>
+          <div>
+            <h4>Interaction Design</h4>
+            <p>I design interactions that make complex systems understandable, usable, and effective, by drawing upon experience from different product domains and a deep understanding of human cognition.</p>
+          </div>
+          <div>
+            <h4>Design System</h4>
+            <p>I contribute to scalability, consistency and efficiency by actively consuming and contributing with patterns and frameworks to evolving design systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-section" class="hairline" style="margin-top:var(--sp-64);">
+    <div class="wrap">
+      <div class="about-grid reveal">
+        <div>
+          <h2 class="eyebrow" style="margin-bottom:var(--sp-24);">About me —</h2>
+          <p>I have always been fascinated by human thinking and how differently we can experience the world. That led me to study cognitive science. I then pursued a master's degree in interaction design to apply my theoretical foundation in a practical domain where I could also make use of my creative side.</p>
+          <p>Creativity has always been an important part of my life, from writing and photography to various personal projects. Today, I bring that creative side into my work, combining it with an understanding of people to create experiences that are useful and inclusive.</p>
+          <p>Today I live in Stockholm with my fiancé, but I am born and raised in Umeå. Whenever I get the chance, I head back north to visit my family and spend time in our summer house on the coast. It is where I find the space to recharge, reflect, and return with a fresh perspective.</p>
+        </div>
+        <div class="photo"><img src="images/portrait-of-alicia.png" alt="Portrait of Alicia"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact-section" class="home-footer hairline">
+    <div class="wrap">
+      <div class="contactline"><a href="mailto:alicia@strommer.se">alicia@strommer.se</a></div>
+      <div class="contactline">+4672-206 80 63</div>
+    </div>
+  </footer>
+</main>
+
+<!-- SMART DASH -->
+<main id="page-smart-dash" class="page">
+  <div class="wrap case-top">
+    <div class="backbtn" data-route="home"><svg class="icon-arrow" viewBox="0 0 24 24"><path d="M4 12 H20 M13 5 L20 12 L13 19"/></svg></div>
+    <h1>Designing a driver experience that minimizes friction and keeps attention on the road via the platform Smart Dash —</h1>
+    <div class="meta"><span>Jan 2023 – Present</span><span>Scania &amp; Traton</span><span>Continuous Development</span><span>UX/UI Designer &amp; Area Lead</span></div>
+  </div>
+  <div class="full-bleed hero-shot" style="position:relative;">
+    <div class="confnote"><svg class="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><circle cx="12" cy="7.5" r="0.9" fill="currentColor" stroke="none"/></svg>This case study includes limited details due to confidentiality</div>
+    <img class="case-hero-img" src="images/smart-dash-scania-truck-dashboard.jpg" alt="Scania Smart Dash cockpit">
+  </div>
+
+  <div class="wrap case-summary">
+    <h2 class="eyebrow">Summary —</h2>
+    <p>Smart Dash was developed to create a safer, smarter and more connected driving experience by bringing together the vehicle's digital functions in a common platform. As a UX/UI Designer at Scania, I work through the full design process with continuous development – from exploring user needs to designing, testing, and refining UX/UI solutions. Alongside individual features and flows, I also contribute to the design system and broader interaction patterns, helping create a more consistent and scalable experience.</p>
+  </div>
+  <div class="wrap case-roles">
+    <div>
+      <h2 class="eyebrow">My role —</h2>
+      <p>Delivering end-to-end UX design for digital interactions with vehicle functions.</p>
+      <p>Developing reusable patterns and frameworks used across the platform.</p>
+      <p>Collaborating cross-functionally in an agile, global context.</p>
+      <p>Coordinating upcoming work, guiding design explorations and supporting other designers within my domain.</p>
+    </div>
+    <div>
+      <h2 class="eyebrow">Outcome —</h2>
+      <p>Delivered, validated, and refined numerous HMI experiences now used by thousands of professional drivers every day.</p>
+      <p>Established interaction patterns, guidelines and frameworks adopted across multiple features.</p>
+      <p>Helped establish ways of working for a newly formed team, created onboarding material and supported designers in adopting established HMI workflows.</p>
+      <p>Coordinated upcoming initiatives and influenced interaction strategy within a key HMI domain, balancing immediate feature needs with long-term strategy.</p>
+    </div>
+  </div>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">The challenge —</div>
+      <h2>How might we design for complexity, without adding to it?</h2>
+      <div class="chalgrid">
+        <p>Professional truck and bus drivers operate in contexts where attention is scarce and safety is key. Every interaction must be carefully designed to minimize cognitive load and avoid distraction. This makes prioritization of information and clarity of interaction central to the design.</p>
+        <p>The domain is also complex. Designs must account for varying hardware capabilities and constraints, as well as regulatory requirements and safety standards. This requires continuous input and alignment across multiple domains and teams over time.</p>
+        <p>Designing in-vehicle interfaces for trucks and buses also means that we design across a wide range of applications with significantly different user needs and use cases. Solutions must therefore be adaptable while maintaining consistency and usability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">The design process —</div>
+      <h2>An iterative and collaborative process, shaped by the problem at hand</h2>
+      <div style="margin-top:16px;">
+        <div class="process-row"><h4>I start by making sure that I understand the problem</h4><p>The approach to reach this understanding varies depending on how well understood the problem is. Sometimes it requires in-depth user research, while in other cases it is more about alignment and benchmarking to establish a shared understanding.</p></div>
+        <div class="process-row"><h4>I explore concepts when the problem is understood – but sometimes also earlier to help discussions around the problem</h4><p>Depending on the context, the exploration phase may involve sketching, wireframing, or prototyping, with ideas iteratively refined through stakeholder feedback and design reviews.</p></div>
+        <div class="process-row"><h4>When the design direction is not clear, I use testing to identify the strongest solution</h4><p>Testing plays an important role in identifying the strongest solution. However, the level of testing depends on factors such as the novelty of the concept. When a solution builds upon familiar patterns, formal user testing may not always be required. Regardless, I make sure that solutions are evaluated – whether within the design team, with stakeholders, or with users.</p></div>
+        <div class="process-row"><h4>I progress to detailed design when the direction is set</h4><p>This phase often involves collaboration with other related roles such as technical writers, visual designers, motion designers, etcetera.</p></div>
+        <div class="process-row"><h4>I align with stakeholders throughout the whole process, but mostly prior to implementation</h4><p>This is necessary to make sure that the design is understood and so that we can address uncertainties when they arise, all to ensure a high-quality solution.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">What I learned —</div>
+      <h2>I have learned to balance multiple perspectives and challenge assumptions</h2>
+      <p style="margin-top:16px;">Working in this domain has trained me to hold multiple perspectives in mind at the same time: the user's immediate needs, the safety implications of an interaction, technical and hardware constraints, regulatory requirements, and how a solution needs to work across a much larger platform.</p>
+      <p >It has also shaped how I think about simplicity. In many digital products, complexity can be managed by adding more flexibility, functionality or information. In an in-vehicle environment, the opposite is often true. The goal is not to fit more in, but to carefully determine what deserves the driver's attention in the first place. I have therefore been repeatedly challenged to simplify, remove and refine – often going through another round of questioning rather than settling for the first solution that works. Over time, this has made prioritisation and restraint as important a part of my design process as creation itself.</p>
+    </div>
+  </section>
+
+  <div class="wrap-narrow case-footer">
+    <a data-route="home">Back home</a>
+    <div class="otherlinks">
+      <a data-route="accessibility-guide">Accessibility Guide</a>
+      <a data-route="smart-components">Smart Components</a>
+    </div>
+  </div>
+</main>
+
+<!-- ACCESSIBILITY GUIDE -->
+<main id="page-accessibility-guide" class="page">
+  <div class="wrap case-top">
+    <div class="backbtn" data-route="home"><svg class="icon-arrow" viewBox="0 0 24 24"><path d="M4 12 H20 M13 5 L20 12 L13 19"/></svg></div>
+    <h1>Enabling accessibility through a guide that turns WCAG guidelines into practical, easy-to-adopt practices —</h1>
+    <div class="meta"><span>2022 – 2023</span><span>Daresay by Knightec</span><span>Internal Initiative</span><span>UX/UI Designer</span></div>
+  </div>
+  <div class="full-bleed hero-shot"><img class="case-hero-img" src="images/accessibility-guide-laptop.jpg" alt="Accessibility guide on a laptop"></div>
+
+  <div class="wrap case-summary">
+    <h2 class="eyebrow">Summary —</h2>
+    <p>As an internal design initiative at Daresay by Knightec, I contributed to developing an accessibility guide through an end-to-end process spanning user research, benchmarking, co-design workshops, concept development, and user testing.</p>
+  </div>
+  <div class="wrap case-roles">
+    <div>
+      <h2 class="eyebrow">My role —</h2>
+      <p>Translating WCAG guidelines into practical design guidance through benchmarking, creating visual frameworks and the first concepts of the guide's "do's" and "don'ts".</p>
+      <p>Contributed to the editorial direction of the guide through UX writing, proofreading, and iterative content development.</p>
+    </div>
+    <div>
+      <h2 class="eyebrow">Outcome —</h2>
+      <p><a href="https://a11y.daresay.io" target="_blank" rel="noopener" class="inline-link">A practical resource</a> that translated complex accessibility standards into actionable guidance for day-to-day design and development.</p>
+      <p>The guide has been adopted both internally and by external partners and clients, helping establish a more consistent and accessible way of working with accessibility.</p>
+    </div>
+  </div>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">The challenge —</div>
+      <h2>How might we bridge the gap between WCAG guidelines and practical application?</h2>
+      <p style="margin-top:16px;">With new requirements increasing the need for WCAG-compliant digital solutions, we identified a gap between knowing that accessibility matters and knowing how to apply it in practice. Although WCAG provided the standards, there was limited adoption of accessibility practices and a lack of practical guidance for integrating them into the design process.</p>
+    </div>
+  </section>
+
+  <div class="full-bleed"><img class="case-hero-img" src="images/laptop-with-accessibility-guide-open-home-setting.jpg" alt="Laptop with accessibility guide open, home setting"></div>
+
+  <section class="hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">The process —</div>
+      <h2>Shifting roles and responsibilities</h2>
+      <p style="margin-top:16px;">As an internal initiative, the project had a flexible setup where roles and responsibilities shifted depending on availability and the stage of the work. My main contribution focused on translating accessibility requirements into practical guidance.</p>
+      <p >I reviewed WCAG guidelines to identify relevant requirements, benchmarked existing examples of accessibility best practices, and developed initial "do's and don'ts" to illustrate how the guidelines could be applied in practice. These drafts were later refined and developed further as the project progressed after I left the initiative.</p>
+    </div>
+  </section>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">What I learned —</div>
+      <div style="margin-top:var(--sp-16);">
+        <div class="process-row"><h4>Turning guidelines into design decisions</h4><p>I gained a much deeper understanding of WCAG by working directly with the guidelines – reviewing requirements, interpreting what they meant in practice, and finding concrete examples of how they could be applied to real interfaces.</p></div>
+        <div class="process-row"><h4>Making accessibility actionable</h4><p>One of my biggest learnings was that knowing the guidelines is only part of the challenge. To encourage adoption, accessibility needs to be translated into practical, easy-to-recognise design decisions that fit naturally into existing workflows.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap-narrow case-footer">
+    <a data-route="home">Back home</a>
+    <div class="otherlinks">
+      <a data-route="smart-dash">Smart Dash</a>
+      <a data-route="smart-components">Smart Components</a>
+    </div>
+  </div>
+</main>
+
+<!-- SMART COMPONENTS -->
+<main id="page-smart-components" class="page">
+  <div class="wrap case-top">
+    <div class="backbtn" data-route="home"><svg class="icon-arrow" viewBox="0 0 24 24"><path d="M4 12 H20 M13 5 L20 12 L13 19"/></svg></div>
+    <h1>Improving the usability of Smart Components in RobotStudio through redesign of a graphical programming interface —</h1>
+    <div class="meta"><span>Jan 2022 – June 2022</span><span>ABB</span><span>Master's Thesis in Interaction Design</span></div>
+  </div>
+  <div class="full-bleed"><img class="case-hero-img" src="images/smart-components-in-robotstudio.jpg" alt="Smart Components interface shown on an iMac"></div>
+
+  <div class="wrap case-summary">
+    <h2 class="eyebrow">Summary —</h2>
+    <p>As part of my master's thesis at ABB Robotics, I (together with my classmate) redesigned the Smart Components experience in RobotStudio to make a complex technical workflow easier and more efficient to use. Through research, iterative concept development, prototyping, and usability testing with professional robot programmers, I developed and evaluated a more cohesive way of working with Smart Components.</p>
+  </div>
+  <div class="wrap case-roles">
+    <div>
+      <h2 class="eyebrow">My role —</h2>
+      <p>User research &amp; requirements gathering with professional RobotStudio users.</p>
+      <p>UX/UI design from early concepts and low-fidelity prototypes to a high-fidelity interactive prototype.</p>
+      <p>Iterative usability evaluation throughout the design process, including a final evaluation with four expert users.</p>
+    </div>
+    <div>
+      <h2 class="eyebrow">Outcome —</h2>
+      <p>A redesigned Smart Components interface that scored 78/100 on the System Usability Scale (SUS) and was perceived by participants as a clear improvement over the existing interface.</p>
+    </div>
+  </div>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">The background —</div>
+      <h2>What are Smart Components?</h2>
+      <p style="margin-top:16px;">Smart Components are a feature in RobotStudio, a robot programming tool, used to simulate and program objects around the robot, such as sensors, motors and tools. They are built in a graphical programming interface by connecting building blocks representing a specific function or behaviour.</p>
+    </div>
+  </section>
+  <div class="full-bleed" style="padding-bottom:var(--sp-48);"><img class="case-hero-img" style="max-width:90%;margin:0 auto;" src="images/previous-smart-components-interface-in-robotstudio.png" alt="Previous Smart Components interface in RobotStudio"></div>
+
+  <section class="hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">The challenge —</div>
+      <h2>How might we make working with Smart Components more intuitive and efficient for robot programmers?</h2>
+      <p style="margin-top:16px;">Before the start of this project, Smart Components were already widely adopted and played an important role in robot programmers' workflows. However, despite their reliance on the functionality, there had been recurring feedback that working with Smart Components was difficult. This established a clear starting point for the project: the challenge was to understand what aspects of the experience made it difficult, and where there was potential to improve it.</p>
+    </div>
+  </section>
+
+  <section class="altbg hairline" style="padding-bottom:var(--sp-24);">
+    <div class="wrap-narrow">
+      <div class="eyebrow">The process —</div>
+      <h2>From framing the problem to proposing a validated solution</h2>
+    </div>
+  </section>
+  <div class="full-bleed" style="margin-top:var(--sp-24);"><img class="case-hero-img" src="images/overview-of-the-design-process-for-smart-component.jpg" alt="Overview of the design process for Smart Components, from research to prototype"></div>
+
+  <section class="hairline">
+    <div class="wrap-narrow">
+      <h4 class="fs-24" style="margin:0 0 8px;">Understanding the problem</h4>
+      <p >I began by building an understanding of both the existing interface and the context in which Smart Components were used. This included literature research, exploring RobotStudio myself, studying the existing interface and conducting user research with professional users. The research helped identify where users experienced friction and what they needed from a redesigned environment — for example, users expressed a clear need to manage many interconnected components and relationships without losing an overview of what they had built, and tools and information were distributed across four different tabs, requiring users to move between views when creating and configuring Smart Components.</p>
+    </div>
+  </section>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <h4 class="fs-24" style="margin:0 0 8px;">Exploring solutions</h4>
+      <p >I translated the findings into a set of design requirements that guided the next phase, where I explored multiple ways of improving the structure and interaction of the interface through ideation and low-fidelity prototyping. A recurring theme was the need to help users manage complexity rather than simply provide more information. This led to concepts around grouping, visual differentiation, responsive components and reducing the amount of navigation required. The concepts were repeatedly evaluated and refined before moving into high-fidelity design.</p>
+    </div>
+  </section>
+
+  <section class="hairline">
+    <div class="wrap-narrow">
+      <h4 class="fs-24" style="margin:0 0 8px;">From fragmented tabs to one workspace</h4>
+      <p >One of the central design decisions throughout exploration was to bring the functionality into one coherent design editor. Hence, the redesigned interface brought together the tools needed to create, connect and configure Smart Components while retaining the functionality users already relied on. The concept introduced grouping related components, colour-coded components, responsive components that reveal different levels of detail depending on zoom level, expandable and collapsible panels, a search function, and locking to protect components from accidental changes while keeping them visible.</p>
+    </div>
+  </section>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <h4 class="fs-24" style="margin:0 0 8px;">Evaluating the result</h4>
+      <p >The final high-fidelity prototype was evaluated with four professional RobotStudio users through a combination of the System Usability Scale and semi-structured interviews. The proposed interface received a mean SUS score of 78/100. Participants generally described the new interface as an improvement and identified several features as particularly useful. Grouping and responsive components were seen as helpful for managing complexity, while having tools available in one view was perceived as a way to make workflows more efficient.</p>
+    </div>
+  </section>
+
+  <section class="altbg hairline">
+    <div class="wrap-narrow">
+      <div class="eyebrow">What I learned —</div>
+      <div style="margin-top:var(--sp-16);">
+        <div class="process-row"><h4>Usability does not necessarily mean simplicity</h4><p>Professional users often need access to sophisticated functionality. The challenge is therefore to understand the complexity they are already working with and make it easier to navigate, rather than simply hiding or reducing it. This led to a change in perspective, from "How can I make this simpler?" to "How can I help the user manage the complexity?"</p></div>
+        <div class="process-row"><h4>There are problems that cannot be addressed by the UI alone</h4><p>The evaluation of the final design concept revealed an important limitation in the solution. While the graphical interface could make Smart Components easier to organise and navigate, some of the underlying complexity came from the low-level programming model itself: users still needed to combine many highly specific building blocks to create relatively complex behaviour. No amount of interface refinement could completely solve that underlying issue.</p></div>
+        <div class="process-row"><h4>Users are an essential source of knowledge when systems rely on domain expertise</h4><p>The project also gave me my first deeper experience of designing for highly specialised professional users. Rather than assuming that I could become an expert in their domain myself, I learned to use users and domain experts as an essential source of knowledge throughout the process. That experience has stayed with me in my later work with complex professional tools, where domain knowledge, user expertise and design expertise need to meet rather than replace one another.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap-narrow case-footer">
+    <a data-route="home">Back home</a>
+    <div class="otherlinks">
+      <a data-route="accessibility-guide">Accessibility Guide</a>
+      <a data-route="smart-dash">Smart Dash</a>
+    </div>
+  </div>
+</main>
+
+<script>
+// light/dark theme toggle: respects the visitor's system setting by default,
+// but a click sets an explicit preference that's remembered on this device
+(function(){
+  var root = document.documentElement;
+  var KEY = "theme-preference";
+  var darkMQ = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+
+  function readSaved(){
+    try{ return localStorage.getItem(KEY); }catch(e){ return null; }
+  }
+  function writeSaved(v){
+    try{ localStorage.setItem(KEY, v); }catch(e){}
+  }
+  function isDarkActive(){
+    var explicit = root.getAttribute("data-theme");
+    if(explicit === "dark") return true;
+    if(explicit === "light") return false;
+    return !!(darkMQ && darkMQ.matches);
+  }
+  function updateIcon(){
+    var btn = document.querySelector("[data-theme-toggle]");
+    if(btn) btn.classList.toggle("is-dark", isDarkActive());
+  }
+
+  var saved = readSaved();
+  if(saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  updateIcon();
+
+  document.addEventListener("click", function(e){
+    if(!e.target.closest("[data-theme-toggle]")) return;
+    var next = isDarkActive() ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    writeSaved(next);
+    updateIcon();
+  });
+
+  if(darkMQ && darkMQ.addEventListener){
+    darkMQ.addEventListener("change", function(){
+      if(!root.hasAttribute("data-theme")) updateIcon();
+    });
+  }
+})();
+
+// per-line heading reveal: splits a heading's words into visual lines (grouped by
+// their rendered offsetTop) and wraps each line in its own clipped, animated box.
+// Re-run each time a page becomes active, since a hidden page's lines can't be
+// measured until it's actually laid out.
+(function(){
+  var reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function revealHeading(h1){
+    if(!h1) return;
+    if(!h1.dataset.originalText) h1.dataset.originalText = h1.textContent;
+    var text = h1.dataset.originalText;
+    if(reduceMotion){ h1.textContent = text; return; }
+
+    var words = text.split(" ");
+    h1.innerHTML = words.map(function(w){
+      return '<span class="split-word" style="display:inline-block;">' + w + ' </span>';
+    }).join("");
+
+    var wordEls = Array.prototype.slice.call(h1.querySelectorAll(".split-word"));
+    var lines = [];
+    wordEls.forEach(function(el){
+      var top = el.offsetTop;
+      var last = lines[lines.length - 1];
+      if(last && Math.abs(last.top - top) < 2){ last.els.push(el); }
+      else{ lines.push({top: top, els: [el]}); }
+    });
+
+    h1.innerHTML = "";
+    lines.forEach(function(line, i){
+      var mask = document.createElement("span");
+      mask.className = "line-mask";
+      var inner = document.createElement("span");
+      inner.className = "line-inner";
+      inner.style.animationDelay = (i * 0.16) + "s";
+      inner.textContent = line.els.map(function(el){ return el.textContent; }).join("").trim();
+      mask.appendChild(inner);
+      h1.appendChild(mask);
+    });
+  }
+
+  window.__revealHeading = revealHeading;
+})();
+
+(function(){
+  var routes = ["home","smart-dash","accessibility-guide","smart-components"];
+  function go(route, scrollTarget){
+    if(routes.indexOf(route) === -1) route = "home";
+    document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
+    document.getElementById("page-"+route).classList.add("active");
+    location.hash = "#/"+route;
+    window.scrollTo(0,0);
+    if(window.__revealHeading){
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          window.__revealHeading(document.getElementById("page-"+route).querySelector("h1"));
+        });
+      });
+    }
+    if(scrollTarget){
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          var el = document.getElementById(scrollTarget);
+          if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+        });
+      });
+    }
+  }
+  document.addEventListener("click", function(e){
+    var el = e.target.closest("[data-route]");
+    if(el){ e.preventDefault(); go(el.getAttribute("data-route")); return; }
+    var nav = e.target.closest("[data-nav]");
+    if(nav){
+      e.preventDefault();
+      var which = nav.getAttribute("data-nav");
+      if(which === "home"){ go("home"); }
+      else if(which === "about"){ go("home","about-section"); }
+      else if(which === "contact"){ go("home","contact-section"); }
+    }
+  });
+  function initFromHash(){
+    var h = location.hash.replace("#/","");
+    go(h || "home");
+  }
+  initFromHash();
+  window.addEventListener("hashchange", initFromHash);
+})();
+
+// scroll-reveal for index page cards/sections
+(function(){
+  if(!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add("in-view");
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
