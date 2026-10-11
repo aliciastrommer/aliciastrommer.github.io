@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alicia Strömmer — Product Designer</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens =====
+   Typography (measured from the Figma export): Bricolage Grotesque headings, Inter body and labels, no tracking on text,
+   +0.055em tracking on the uppercase 16px labels.
+   Scale: 128 (WHY? marquee) / 64 (page title) / 36 (headings) / 24 (home body, links) / 20 (body) / 16 (labels, meta)
+   Spacing: 4pt system, plus larger section steps (128 / 160) for the case-study rhythm. */
+:root{
+  --bg:#F8F7F7;
+  --ink:#070707;
+  --body-ink:#3d3d3d;      /* paragraph text, a step softer than headings */
+  --ink-soft:#59574f;      /* only used for the unselected theme-toggle icon */
+  --label:#5f5f5f;         /* uppercase eyebrow labels */
+  --line:#e2e1e0;
+  --pill-bg:#f2d8d8; --pill-ink:#8c3333;
+  --max:1726px;            /* 1642px of content at the 1728 design width */
+  --max-narrow:1282px;     /* 1198px reading column used by the case-study sections */
+  --gutter:42px;
+  --nav-h:80px;
+  --peek:64px;
+
+  --fs-128:clamp(52px, 27.50px + 6.281vw, 128px);
+  --fs-64:clamp(36px, 26.98px + 2.314vw, 64px);
+  --fs-36:clamp(22px, 17.49px + 1.157vw, 36px);
+  --font-head:'Bricolage Grotesque',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --fs-body:clamp(14px, 13.26px + 0.19vw, 16px);
+  --fs-h3:clamp(20px, 16.9px + 0.8vw, 30px);
+  --fs-24:clamp(18px, 16.07px + 0.496vw, 24px);
+  --fs-20:clamp(16px, 14.71px + 0.331vw, 20px);
+  --fs-16:clamp(13px, 12.03px + 0.248vw, 16px);
+
+  --sp-4:4px; --sp-8:8px; --sp-16:16px; --sp-24:24px; --sp-32:32px;
+  --sp-40:40px; --sp-48:48px; --sp-64:64px; --sp-80:80px; --sp-96:96px; --sp-128:128px; --sp-160:160px;
+  --sec:160px;             /* vertical gap between case-study sections */
+
+  font-family:'Bricolage Grotesque',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (max-width:1100px){:root{--sec:120px;}}
+@media (max-width:700px){:root{--gutter:24px;--sec:80px;}}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151412; --ink:#f4f2ee; --body-ink:#cbc8c1; --ink-soft:#b3b0a6; --label:#b3b0a6; --line:#2b2925;
+    --pill-bg:rgba(214,110,110,.18); --pill-ink:#f0b8b8;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151412; --ink:#f4f2ee; --body-ink:#cbc8c1; --ink-soft:#b3b0a6; --label:#b3b0a6; --line:#2b2925;
+  --pill-bg:rgba(214,110,110,.18); --pill-ink:#f0b8b8;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55;font-weight:400;letter-spacing:0;-webkit-font-smoothing:antialiased;transition:background-color .2s ease,color .2s ease;}
+img{max-width:100%;display:block;height:auto;}
+a{color:inherit;text-decoration:none;}
+a,[data-route],[data-nav],button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6{font-weight:400;margin:0;color:var(--ink);}
+p,li,div,a,span{font-size:var(--fs-20);color:var(--ink);}
+html,body,h1,h2,h3,h4,a,button,nav,span,div,.why{font-family:var(--font-head);}
+p,li{font-family:var(--font-body);font-size:var(--fs-body);color:var(--body-ink);line-height:1.55;}
+p{margin:0 0 var(--sp-32);}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);}
+.wrap-narrow{max-width:var(--max-narrow);margin:0 auto;padding:0 var(--gutter);}
+
+/* ===== NAV ===== */
+/* ===== NAV ===== */
+nav.topnav{position:sticky;top:0;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:50;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
+nav.topnav.nav-hidden{transform:translateY(-100%);}
+.navrow{display:flex;justify-content:space-between;align-items:center;padding:var(--sp-32) var(--sp-32) var(--sp-24);max-width:var(--max);margin:0 auto;height:calc(var(--nav-h) - var(--sp-48));font-size:var(--fs-20);}
+@media (max-width:700px){.navrow{padding:var(--sp-24) var(--sp-24) var(--sp-16);}}
+.navleft{display:flex;gap:var(--sp-24);}
+.navleft a,.navright a{color:var(--ink-soft);transition:color .15s;cursor:pointer;font-size:var(--fs-20);}
+.navleft a:hover,.navright a:hover{color:var(--ink);}
+.navright{display:flex;align-items:center;gap:var(--sp-24);}
+.hamburger{display:none;flex:none;box-sizing:border-box;border:none;width:36px;height:36px;padding:0;margin:0;border-radius:999px;background:color-mix(in srgb, var(--ink) 5%, transparent);flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+.hamburger span{display:block;width:16px;height:2px;border-radius:1px;background:var(--ink);transition:transform .2s ease,opacity .2s ease;}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.mobile-menu{display:none;flex-direction:column;overflow:hidden;max-height:0;transition:max-height .25s ease;background:transparent;border-top:1px solid transparent;}
+.mobile-menu.open{max-height:320px;border-top-color:var(--line);}
+.mobile-menu a{padding:var(--sp-16) var(--sp-24);color:var(--ink-soft);font-size:var(--fs-20);cursor:pointer;}
+.mobile-menu a:hover{color:var(--ink);}
+.mobile-menu .theme-toggle{margin:var(--sp-8) var(--sp-24) var(--sp-16);}
+@media (max-width:700px){
+  .navleft{display:none;}
+  .navright a{display:none;}
+  .navright .theme-toggle{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu{display:flex;}
+}
+.theme-toggle{position:relative;display:flex;align-items:center;gap:2px;flex:none;box-sizing:border-box;border:none;padding:3px;margin:0;border-radius:999px;background:color-mix(in srgb, var(--ink) 5%, transparent);cursor:pointer;}
+.theme-toggle .toggle-opt{width:28px;height:28px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:transparent;transition:background-color .2s ease;}
+.theme-toggle svg{width:16px;height:16px;stroke:var(--ink-soft);stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;transition:stroke .2s ease;}
+.theme-toggle .opt-light{background:color-mix(in srgb, var(--ink) 9%, transparent);}
+.theme-toggle .opt-light svg{stroke:var(--ink);}
+.theme-toggle.is-dark .opt-light{background:transparent;}
+.theme-toggle.is-dark .opt-light svg{stroke:var(--ink-soft);}
+.theme-toggle.is-dark .opt-dark{background:color-mix(in srgb, var(--ink) 9%, transparent);}
+.theme-toggle.is-dark .opt-dark svg{stroke:var(--ink);}
+.navrow{padding-left:var(--gutter);padding-right:var(--gutter);}
+.navleft a,.navright a,.mobile-menu a{color:var(--ink);}
+.navleft{gap:var(--sp-32);}
+/* minimal controls: no filled backgrounds, no tap flash */
+*{-webkit-tap-highlight-color:transparent;}
+.hamburger{background:none;width:20px;height:32px;margin:0;align-items:flex-start;position:relative;}
+.hamburger::after{content:"";position:absolute;inset:-6px -14px -6px -10px;}
+.hamburger span{width:20px;}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.mobile-menu,.mobile-menu a,.mobile-menu .theme-toggle{background:none;}
+.theme-toggle{background:none;padding:0;gap:0;width:24px;height:24px;align-items:center;justify-content:center;color:var(--ink);}
+.theme-toggle .toggle-opt{display:none;width:24px;height:24px;background:none;}
+.theme-toggle:not(.is-dark) .opt-dark{display:flex;}
+.theme-toggle.is-dark .opt-light{display:flex;}
+.theme-toggle svg,.theme-toggle .opt-light svg,.theme-toggle.is-dark .opt-dark svg{width:20px;height:20px;stroke:var(--ink);stroke-width:1.5;}
+.mobile-menu .theme-toggle{margin:var(--sp-8) var(--sp-24) var(--sp-16) calc(var(--sp-24) - 2px);}
+
+
+/* ===== Shared type ===== */
+h1{font-size:var(--fs-64);line-height:1.27;}
+.eyebrow{font-family:var(--font-body);font-size:var(--fs-body);line-height:1.4;text-transform:uppercase;letter-spacing:.04em;font-weight:500;color:var(--label);margin:0 0 var(--sp-32);}
+.h2{font-size:var(--fs-h3);line-height:1.3;margin:0 0 var(--sp-16);}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-64);font-size:var(--fs-16);}
+.meta span{font-family:var(--font-body);font-size:var(--fs-body);line-height:1.4;text-transform:uppercase;letter-spacing:.04em;font-weight:500;color:var(--label);}
+.meta .pill{background:var(--pill-bg);color:var(--pill-ink);border-radius:8px;padding:var(--sp-12,12px) var(--sp-16);margin-left:calc(-1 * var(--sp-16) + 0px);}
+@media (max-width:700px){
+  .meta{flex-direction:column;align-items:flex-start;gap:var(--sp-4);}
+  .meta .pill{margin-left:0;margin-top:var(--sp-8);padding:var(--sp-8) var(--sp-16);}
+  .case-top.has-pill{display:flex;flex-direction:column;align-items:flex-start;gap:var(--sp-4);}
+  .has-pill .meta{display:contents;}
+  .has-pill .meta span{order:1;}
+  .has-pill .meta .pill{order:-1;margin:0 0 var(--sp-16);}
+  .has-pill h1{margin-bottom:var(--sp-24);}
+}
+.link-u{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px;}
+.link-u:hover{opacity:.7;}
+
+/* ===== HOME ===== */
+.home-hero{min-height:calc(100vh - var(--nav-h) - var(--peek));display:flex;align-items:center;padding-top:var(--sp-40);padding-bottom:var(--sp-40);}
+.home-hero h1{width:fit-content;max-width:100%;cursor:default;}
+.home-hero h1 .w{display:inline-block;position:relative;font-size:inherit;color:inherit;font-family:inherit;}
+.home-hero h1 .w::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px;}
+@media (prefers-reduced-motion: no-preference) and (hover:hover){
+  .home-hero h1 .w{transition:transform .45s cubic-bezier(.2,.8,.2,1);}
+  .home-hero h1 .w:hover{transform:translateY(-8px);transition-duration:.25s;}
+  .home-hero h1 .w:hover + .w,.home-hero h1 .w:has(+ .w:hover){transform:translateY(-3px);}
+}
+
+@media (max-width:700px){.home-hero{min-height:calc(100vh - var(--nav-h) - 40px);}}
+
+.worklist{display:flex;flex-direction:column;}
+.workitem{display:grid;grid-template-columns:1000fr 574fr;align-items:center;gap:var(--sp-24);padding-top:var(--sp-24);padding-bottom:var(--sp-24);}
+.workitem .shot{width:100%;aspect-ratio:1000/630;overflow:hidden;order:1;}
+.workitem .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.workitem .shot.contain img{object-fit:contain;padding:3.5%;box-sizing:border-box;}
+.workitem .shot{position:relative;}
+.ul{font-size:inherit;color:inherit;font-family:inherit;background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0 1px;padding-bottom:3px;}
+.navleft a,.navright a{background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0 1px;padding-bottom:3px;}
+.workitem .txt{order:2;}
+.workitem .txt h3{font-size:var(--fs-h3);line-height:1.25;margin:0 0 var(--sp-16);}
+.workitem .tags{display:flex;flex-wrap:wrap;gap:var(--sp-16);}
+.workitem .tags span{font-family:var(--font-body);font-size:var(--fs-body);line-height:1.4;text-transform:uppercase;letter-spacing:.04em;font-weight:500;color:var(--label);}
+.workitem.reverse{grid-template-columns:574fr 1000fr;}
+.workitem.reverse .shot{order:2;}
+.workitem.reverse .txt{order:1;}
+@media (max-width:860px){
+  .workitem,.workitem.reverse{grid-template-columns:1fr;gap:var(--sp-16);padding-top:var(--sp-16);padding-bottom:var(--sp-24);}
+  .workitem .txt,.workitem.reverse .txt{order:2;}
+  .workitem .shot,.workitem.reverse .shot{order:1;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));width:calc(100% + var(--gutter) * 2);}
+}
+
+.how{display:grid;grid-template-columns:32% 1fr;gap:0;}
+.how-list > div{margin-bottom:var(--sp-32);}
+.how-list > div:last-child{margin-bottom:0;}
+.how-list h3{font-size:var(--fs-h3);line-height:1.25;margin:0 0 var(--sp-8);}
+.how-list p{margin:0;}
+@media (max-width:860px){.how{grid-template-columns:1fr;}.how .eyebrow{margin-bottom:var(--sp-24);}}
+
+.about-grid{display:grid;grid-template-columns:1fr 33.7%;gap:var(--sp-24);align-items:start;}
+.about-grid .eyebrow{grid-column:1 / -1;margin-bottom:var(--sp-16);}
+.about-grid p{margin:0 0 var(--sp-32);max-width:1100px;}
+.about-grid p:last-of-type{margin-bottom:0;}
+.about-grid .photo img{width:100%;}
+@media (max-width:860px){
+  .about-grid{grid-template-columns:1fr;gap:var(--sp-24);}
+  .about-grid .photo{order:-1;margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));}
+  .about-grid .eyebrow{order:-2;margin-bottom:0;}
+}
+
+.home-section{padding-top:var(--sec);}
+footer.home-footer{padding:var(--sec) 0 var(--sp-96);}
+.contactline{font-size:var(--fs-24);line-height:1.45;margin:0 0 var(--sp-16);}
+.contactline a{font-size:inherit;}
+.credit-line{margin-top:var(--sp-64);font-size:11px;color:var(--ink-soft);opacity:.65;letter-spacing:.02em;display:flex;flex-direction:column;gap:var(--sp-4);}
+.credit-line span{display:block;font-size:inherit;color:inherit;line-height:1.5;}
+
+/* ===== CASE STUDIES ===== */
+.case-top{padding-top:var(--sp-80);}
+.case-top h1{width:100%;margin-bottom:var(--sp-24);}
+.case-image{width:100%;display:block;}
+.hero-photo{width:100%;height:clamp(380px,58.2vw,1000px);object-fit:cover;margin-top:var(--sec);}
+.hero-mock{max-width:1160px;margin:var(--sp-96) auto 0;width:100%;}
+.mock-wide{max-width:1540px;margin:var(--sp-96) auto 0;width:100%;}
+@media (max-width:700px){.hero-mock,.mock-wide{margin-top:var(--sp-48);}}
+
+.case-block{padding-top:var(--sec);}
+.case-block .lead{margin:0;line-height:1.55;}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-24);}
+.roles ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--sp-16);}
+.roles li{line-height:1.55;max-width:760px;}
+@media (max-width:760px){.roles{grid-template-columns:1fr;gap:var(--sp-48);}.roles-block{padding-top:var(--sp-48);}}
+.rule{border:none;border-top:1px solid var(--line);margin:var(--sec) 0 0;}
+
+.narrow-sec{padding-top:var(--sec);}
+.narrow-sec .h2{max-width:1100px;}
+
+.narrow-sec p{max-width:1198px;}
+.narrow-sec p:last-child{margin-bottom:0;}
+.narrow-sec .lead-img{margin-top:var(--sp-128);}
+@media (max-width:700px){.narrow-sec .lead-img{margin-top:var(--sp-64);margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));width:calc(100% + var(--gutter) * 2);max-width:none;}}
+
+.process-row{display:grid;grid-template-columns:59.3% 1fr;gap:0;margin-bottom:var(--sp-40);}
+.process-row h3{font-size:var(--fs-h3);line-height:1.33;padding-right:var(--sp-64);}
+.process-row p{margin:0;line-height:1.55;}
+.process-list{margin-top:0;}
+.process-list .process-row:last-child{margin-bottom:0;}
+@media (max-width:860px){.process-row{grid-template-columns:1fr;gap:var(--sp-8);margin-bottom:var(--sp-32);}.process-row h3{padding-right:0;}}
+
+.learn-item{margin-bottom:var(--sp-32);}
+.learn-item:last-child{margin-bottom:0;}
+.learn-item h3{font-size:var(--fs-h3);line-height:1.3;margin:0 0 var(--sp-8);}
+.learn-item p{margin:0;}
+
+.learn-row{display:grid;grid-template-columns:45.6% 1fr;gap:0;margin-bottom:var(--sp-32);}
+.learn-row h3{font-size:var(--fs-h3);line-height:1.33;padding-right:var(--sp-32);}
+.learn-row p{margin:0;}
+@media (max-width:860px){.learn-row{grid-template-columns:1fr;gap:var(--sp-8);margin-bottom:var(--sp-40);}.learn-row h3{padding-right:0;}}
+
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:var(--sp-32);row-gap:var(--sp-40);}
+.feature-grid h3{font-size:var(--fs-h3);line-height:1.3;margin:0 0 var(--sp-8);}
+.feature-grid p{margin:0;}
+@media (max-width:760px){.feature-grid{grid-template-columns:1fr;row-gap:var(--sp-32);}}
+
+.diagram{display:block;width:100%;max-width:620px;height:auto;margin:var(--sp-128) auto 0;}
+@media (max-width:700px){.diagram{margin-top:var(--sp-64);max-width:360px;}}
+
+.why{overflow:hidden;margin-top:var(--sec);font-size:var(--fs-128);line-height:1.25;white-space:pre;user-select:none;}
+.why-row{overflow:hidden;font-size:var(--fs-128);}
+.why-track{display:inline-block;white-space:pre;font-size:var(--fs-128);}
+.why-track span{font-size:inherit;color:var(--ink);}
+
+.case-footer{padding-top:var(--sec);padding-bottom:var(--sp-96);display:flex;flex-direction:column;gap:var(--sp-16);}
+.case-footer a{font-size:var(--fs-24);line-height:1.45;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px;}
+.case-footer a:hover{opacity:.7;}
+.case-footer .otherlinks{display:flex;flex-direction:column;gap:var(--sp-16);}
+
+/* ===== Mobile: keep text within a section visually connected ===== */
+@media (max-width:700px){
+  .eyebrow{margin-bottom:var(--sp-16);}
+  p{margin-bottom:var(--sp-16);}
+  .h2{margin-bottom:var(--sp-12,12px);}
+  .about-grid p{margin-bottom:var(--sp-24);}
+  .how-list > div{margin-bottom:var(--sp-24);}
+  .roles{gap:var(--sp-48);}
+  .roles ul{gap:var(--sp-12,12px);}
+  .process-row,.learn-row,.learn-item{margin-bottom:var(--sp-32);}
+  .feature-grid{row-gap:var(--sp-24);}
+  .feature-grid h3,.learn-item h3,.how-list h3{margin-bottom:var(--sp-4);}
+}
+
+/* ===== Pages + motion ===== */
+.page{display:none;}
+.page.active{display:block;}
+@media (prefers-reduced-motion: no-preference){
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .workitem .shot img{transition:transform .7s cubic-bezier(.2,.7,.2,1);}
+  .ul,.navleft a,.navright a{transition:background-size .55s cubic-bezier(.2,.7,.2,1);}
+  @media (hover:hover){
+    .workitem:hover .shot img{transform:scale(1.05);}
+    .workitem:hover .shot.contain img{transform:scale(1.03);}
+    .workitem:hover .ul,.navleft a:hover,.navright a:hover{background-size:100% 1px;}
+  }
+  .page.enter-right{animation:page-enter-right .55s cubic-bezier(.2,.7,.2,1) both;}
+  .page.enter-left{animation:page-enter-left .55s cubic-bezier(.2,.7,.2,1) both;}
+  @keyframes page-enter-right{0%{opacity:0;transform:translateX(32px);}100%{opacity:1;transform:translateX(0);}}
+  @keyframes page-enter-left{0%{opacity:0;transform:translateX(-32px);}100%{opacity:1;transform:translateX(0);}}
+  .why-track{animation:why-slide 90s linear infinite;}
+  .why-row.reverse .why-track{animation-direction:reverse;}
+  @keyframes why-slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+}
+</style>
+</head>
+<body>
+
+<nav class="topnav" data-topnav>
+  <div class="navrow">
+    <div class="navleft">
+      <a data-nav="home">Work</a>
+      <a data-nav="about">About</a>
+    </div>
+    <div class="navright">
+      <a data-nav="contact">Contact</a>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between light and dark theme" aria-pressed="false">
+        <span class="toggle-opt opt-light"><svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.4M12 18.6V21M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M3 12h2.4M18.6 12H21M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg></span>
+        <span class="toggle-opt opt-dark"><svg class="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg></span>
+      </button>
+      <button type="button" class="hamburger" data-hamburger aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" data-mobile-menu>
+    <a data-nav="home">Work</a>
+    <a data-nav="about">About</a>
+    <a data-nav="contact">Contact</a>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between light and dark theme" aria-pressed="false">
+      <span class="toggle-opt opt-light"><svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 3v2.4M12 18.6V21M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M3 12h2.4M18.6 12H21M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg></span>
+      <span class="toggle-opt opt-dark"><svg class="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= HOME ================= -->
+<main id="page-home" class="page">
+  <div class="wrap home-hero">
+    <h1 class="reveal">I'm Alicia, a Stockholm-based Product Designer connecting the dots between human thinking, complex systems, and intuitive design —</h1>
+  </div>
+
+  <div class="wrap" id="work-section">
+    <div class="worklist">
+      <a class="workitem reverse" data-route="smart-dash">
+        <div class="shot reveal"><img src="images/smart-dash-truck-cab.jpg" alt="Smart Dash — Scania truck cab with the dashboard displays"></div>
+        <div class="txt reveal">
+          <h3><span class="ul">Designing a driver experience that minimizes friction and keeps attention on the road via the platform Smart Dash</span></h3>
+          <div class="tags"><span>UX/UI Designer &amp; Area Lead</span><span>Scania</span><span>2023 – now</span></div>
+        </div>
+      </a>
+      <a class="workitem" data-route="smart-components">
+        <div class="shot contain reveal"><img src="images/smart-components-monitor.webp" alt="Smart Components interface shown on a desktop monitor"></div>
+        <div class="txt reveal">
+          <h3><span class="ul">Improving the usability of Smart Components in RobotStudio through redesign of a graphical programming interface</span></h3>
+          <div class="tags"><span>Interaction design master thesis</span><span>ABB</span><span>2022</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <section id="about-section" class="wrap home-section reveal">
+    <div class="about-grid">
+      <h2 class="eyebrow">About me</h2>
+      <div>
+        <p>I have always been fascinated by human thinking and how differently we can experience the world. That led me to study cognitive science. I then pursued a master's degree in interaction design to apply my theoretical foundation in a practical domain where I could also make use of my creative side.</p>
+        <p>Creativity has always been an important part of my life, from writing and photography to various personal projects. Today, I bring that creative side into my work, combining it with an understanding of people to create experiences that are useful and inclusive.</p>
+        <p>Today I live in Stockholm with my fiancé Max, but I am born and raised in Umeå. Whenever I get the chance, I head back north to visit my family and spend time in our summer house on the coast. It is where I find the space to recharge, reflect, and return with a fresh perspective.</p>
+      </div>
+      <div class="photo"><img src="images/alicia-portrait.jpg" alt="Portrait of Alicia"></div>
+    </div>
+  </section>
+
+  <section class="wrap home-section reveal">
+    <div class="how">
+      <h2 class="eyebrow">How I work</h2>
+      <div class="how-list">
+        <div><h3>I bring clarity</h3><p>I simplify complex systems by making sure that solutions are designed based on an understanding of how users think and act.</p></div>
+        <div><h3>I create alignment</h3><p>I connect user needs, business goals, and technical constraints.</p></div>
+        <div><h3>I drive progress</h3><p>I help teams move forward through structure, collaboration, and iterative problem solving.</p></div>
+        <div><h3>I sweat the details</h3><p>Because great products depend on thousands of thoughtful decisions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact-section" class="home-footer">
+    <div class="wrap reveal">
+      <div class="contactline"><a class="link-u" href="mailto:alicia@strommer.se">alicia@strommer.se</a></div>
+      <div class="contactline"><a class="link-u" href="tel:+46722068063">+4672-206 80 63</a></div>
+      <div class="contactline"><a class="link-u" href="https://www.linkedin.com/in/alicia-str%C3%B6mmer-45691215a" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+      <div class="credit-line"><span>Designed in Figma</span><span>Implemented with Claude</span><span>2026</span></div>
+    </div>
+  </footer>
+</main>
+
+<!-- ================= SMART DASH ================= -->
+<main id="page-smart-dash" class="page">
+  <div class="wrap case-top has-pill">
+    <h1 class="reveal">Designing a driver experience that minimizes friction and keeps attention on the road via the platform Smart Dash —</h1>
+    <div class="meta"><span>UX/UI Designer &amp; Area Lead</span><span>Scania</span><span>Jan 2023 – Now</span><span>Continuous Development</span><span class="pill">NDA restricted</span></div>
+  </div>
+
+  <img class="case-image hero-photo reveal" src="images/smart-dash-truck-cab.jpg" alt="Scania truck cab with the Smart Dash displays">
+
+  <section class="wrap case-block reveal">
+    <h2 class="eyebrow">Summary</h2>
+    <p class="lead">Smart Dash was developed to create a safer, smarter and more connected driving experience by bringing together the vehicle’s digital functions in a common platform. I have contributed to the development through all phases of the design process - from exploring user needs to designing, testing, and refining UX/UI solutions. I have also contributed to the design system and broader interaction patterns, helping create a more consistent and scalable experience.</p>
+  </section>
+
+  <section class="wrap case-block roles-block reveal">
+    <div class="roles">
+      <div>
+        <h2 class="eyebrow">My role</h2>
+        <ul>
+          <li>Delivering end-to-end UX design for digital interactions with vehicle functions</li>
+          <li>Developing reusable patterns and frameworks used across the platform</li>
+          <li>Collaborating cross-functionally in an agile, global context</li>
+          <li>Guiding design explorations and supporting other designers within my domain</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="eyebrow">Outcome</h2>
+        <ul>
+          <li>Delivered, validated, and refined numerous HMI experiences now used by thousands of professional drivers every day</li>
+          <li>Established interaction patterns, guidelines and frameworks adopted across multiple features</li>
+          <li>Helped establish ways of working for a newly formed team, created onboarding material and supported designers in adopting established HMI workflows</li>
+          <li>Coordinated upcoming initiatives and influenced interaction strategy within a key HMI domain, balancing immediate feature needs with long-term strategy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr class="rule wrap-line">
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Challenge</h2>
+    <h3 class="h2">Designing for professional drivers operating in contexts where attention is scarce and safety is key</h3>
+    <p>Every interaction must be carefully designed to minimize cognitive load and avoid distraction. This makes prioritization of information and clarity of interaction central to the design.</p>
+    <p>The domain is also complex. Designs must account for varying hardware capabilities and constraints, as well as regulatory requirements and safety standards.</p>
+    <p>Designing in-vehicle interfaces for trucks and buses also means that we design across a wide range of applications with significantly different user needs and use cases. Solutions must therefore be adaptable while maintaining consistency and usability.</p>
+  </section>
+
+  <div class="why" aria-hidden="true">
+    <div class="why-row"><div class="why-track">HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? HOW? </div></div>
+  </div>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Design process</h2>
+    <div class="process-list">
+      <div class="process-row"><h3>I start by making sure that I understand the problem</h3><p>The approach to reach this understanding varies depending on how well understood the problem is. Sometimes it requires in-depth user research, while in other cases it is more about alignment and benchmarking to establish a shared understanding.</p></div>
+      <div class="process-row"><h3>I explore concepts when the problem is understood</h3><p>Depending on the context, the exploration phase may involve sketching, wireframing, or prototyping, with ideas iteratively refined through stakeholder feedback and design reviews.</p></div>
+      <div class="process-row"><h3>I use testing to identify the strongest solution when the direction is not clear</h3><p>Testing plays an important role in identifying the strongest solution. The level of testing may however vary depending on factors such as timelines and novelty of the concept. Regardless, I make sure that solutions are evaluated - whether within the design team, with stakeholders, or with users.</p></div>
+      <div class="process-row"><h3>I progress to detailed design when the direction is set</h3><p>This phase often involves collaboration with other related design roles to further detail the design.</p></div>
+      <div class="process-row"><h3>I align cross-functionally and with stakeholders throughout the whole process</h3><p>This is necessary to make sure that the design is understood and so that we can address uncertainties when they arise, all to ensure a high-quality solution.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">What I learned</h2>
+    <div class="learn-item"><h3>Working in this domain has trained me to balance several perspectives and constraints</h3><p>I have learned to balance the user’s immediate needs, the safety implications of an interaction, technical and hardware constraints, regulatory requirements, and how a solution needs to work across a much larger platform.</p></div>
+    <div class="learn-item"><h3>I have shifted from feature-level thinking to system-level thinking</h3><p>As my role has evolved and I have taken ownership of a dedicated area, I have learned to consider how features relate to and depend on one another, and how individual decisions shape the system as a whole.</p></div>
+    <div class="learn-item"><h3>I have acquired a critical mindset to protect the user</h3><p>In an in-vehicle environment, every feature competes for the driver's limited attention, making it essential to carefully consider what deserves to be included. Rather than simply making a request work, I have learned to investigate its purpose, challenge its assumptions, and weigh its value against the complexity it introduces. This has made knowing when to say no, and being able to explain why, an increasingly important part of my design process.</p></div>
+  </section>
+
+  <div class="wrap-narrow case-footer reveal">
+    <a data-route="home">Back home</a>
+    <div class="otherlinks"><a data-route="smart-components">Smart Components</a></div>
+  </div>
+</main>
+
+<!-- ================= SMART COMPONENTS ================= -->
+<main id="page-smart-components" class="page">
+  <div class="wrap case-top">
+    <h1 class="reveal">Improving the usability of Smart Components in RobotStudio through redesign of a graphical programming interface —</h1>
+    <div class="meta"><span>Master’s Thesis in Interaction Design</span><span>ABB</span><span>Jan 2022 – June 2022</span></div>
+  </div>
+
+  <img class="case-image hero-mock reveal" src="images/smart-components-monitor.webp" alt="The redesigned Smart Components interface on a desktop monitor">
+
+  <section class="wrap case-block reveal">
+    <h2 class="eyebrow">Summary</h2>
+    <p class="lead">I did my master’s thesis at ABB Robotics together with a classmate, where we redesigned the Smart Components experience in RobotStudio to make a complex technical workflow easier and more efficient to use. Through research, iterative concept development, prototyping, and usability testing with professional robot programmers, the result was a redesigned interface that was perceived as a clear improvement over the existing one.</p>
+  </section>
+
+  <section class="wrap case-block roles-block reveal">
+    <div class="roles">
+      <div>
+        <h2 class="eyebrow">My role</h2>
+        <ul>
+          <li>User research with professional RobotStudio users</li>
+          <li>UX/UI design from early concepts and low-fidelity prototypes to a high-fidelity interactive prototype</li>
+          <li>Iterative usability evaluation throughout the design process, including a final evaluation with four expert users</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="eyebrow">Outcome</h2>
+        <ul>
+          <li>A redesigned interface to build Smart Components, that scored 78/100 on the System Usability Scale (SUS) and was perceived as a clear improvement over the existing interface</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr class="rule wrap-line">
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Background</h2>
+    <h3 class="h2">Smart Components is a feature that enables professional robot programmers to simulate behaviors in robotic stations</h3>
+    <p>The feature exists in RobotStudio, the world’s most widely used robot programming tool. To simulate behaviors with Smart Components, the user has to connect building blocks representing specific functions in a graphical programming interface.</p>
+  </section>
+
+  <img class="case-image mock-wide reveal" src="images/smart-components-mac-pro.webp" alt="Smart Components in RobotStudio shown on a monitor next to a workstation">
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Challenge</h2>
+    <h3 class="h2">The feature was perceived as difficult and cumbersome to use, but why was not clear</h3>
+    <p>Before the start of this project, Smart Components were already widely adopted and played an important role in robot programmers’ workflows. However, despite their reliance on the functionality, there had been recurring feedback that working with Smart Components was difficult. This established a clear starting point for the project: the challenge was to understand what aspects of the experience made it difficult, and where there was potential to improve it.</p>
+  </section>
+
+  <div class="why" aria-hidden="true">
+    <div class="why-row"><div class="why-track">WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? WHY? </div></div>
+  </div>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Pain points</h2>
+    <h3 class="h2">Users were forced to navigate between multiple tabs to manage interconnected components, and had no way to get an overview</h3>
+    <p>To reach this understanding, we reviewed both the existing interface and the context in which Smart Components were used. I did literature research, studied the existing interface in RobotStudio and conducted interviews with professional users to reveal where users experienced friction. We translated these insights into a set of design requirements used as a basis for the upcoming exploration phase.</p>
+    <img class="lead-img" src="images/smart-components-heuristic-evaluation.webp" alt="Heuristic evaluation of the existing interface, with problems and wishes per usability heuristic">
+  </section>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Focus of the exploration</h2>
+    <h3 class="h2">Helping users manage complexity and get an overview without removing or hiding required functionality</h3>
+    <p>The exploration took off focusing on the question above. This led to concepts around grouping, visual differentiation, responsive components and reducing the amount of navigation required. The concepts were repeatedly evaluated and refined before moving into high-fidelity design.</p>
+  </section>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Key decision</h2>
+    <h3 class="h2">Bringing all features to create and edit Smart Components into one coherent design editor</h3>
+    <p>The redesigned interface brought together the tools needed to create, connect and configure Smart Components while retaining the functionality users already relied on. Additionally, we introduced new features in the interface to even further improve the overview and flexibility.</p>
+  </section>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">New interface features</h2>
+    <div class="feature-grid">
+      <div><h3>Responsiveness</h3><p>To improve the overview when managing many interconnected components, we introduced responsive components that reveal different levels of detail depending on zoom level.</p></div>
+      <div><h3>Color-coding</h3><p>To make properties and signals associated with the components easier to distinguish in an overview, we introduced color-coding.</p></div>
+      <div><h3>Grouping</h3><p>To make it easier to organize and reuse components, we introduced a feature to group related sub components. This was also a way to reduce clutter.</p></div>
+      <div><h3>Expand and collapse</h3><p>Allowing the users to expand and collapse panels as needed was intended to give users more control over the workspace.</p></div>
+      <div><h3>Search</h3><p>To help with findability in complex components, we introduced a search function.</p></div>
+    </div>
+    
+  </section>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">Result</h2>
+    <h3 class="h2">Users rated the new interface positively, highlighting improved visibility and workflow efficiency</h3>
+    <p>The final high-fidelity prototype was evaluated with four professional RobotStudio users through the System Usability Scale (SUS) and semi-structured interviews. The interface received a mean SUS score of 78/100, and participants generally considered it an improvement over the existing interface. They particularly valued having all tools accessible in one view, while grouping and responsive components were seen as effective ways to manage complexity and support more efficient workflows.</p>
+  </section>
+
+  <section class="wrap-narrow narrow-sec reveal">
+    <h2 class="eyebrow">What I learned</h2>
+    <div class="learn-row"><h3>Usability does not necessarily mean simplicity</h3><p>Professional users often need access to sophisticated functionality. The challenge is therefore to understand the complexity they are already working with and make it easier to navigate, rather than simply hiding or reducing it. This led to a change in perspective, from: “How can I make this simpler?” to “How can I help the user manage the complexity?”</p></div>
+    <div class="learn-row"><h3>There are problems that cannot be addressed by the UI alone</h3><p>The evaluation of the final design concept revealed an important limitation in the solution. While the graphical interface could make Smart Components easier to organise and navigate, some of the underlying complexity came from the low-level programming model itself: users still needed to combine many highly specific building blocks to create relatively complex behaviour. No amount of interface refinement could completely solve that underlying issue.</p></div>
+    <div class="learn-row"><h3>Users are an essential source of knowledge when systems rely on domain expertise</h3><p>The project also gave me my first deeper experience of designing for highly specialised professional users. Rather than assuming that I could become an expert in their domain myself, I learned to use users and domain experts as an essential source of knowledge throughout the process. My role was to understand their mental models and workflows well enough to identify where design could genuinely support them. That experience has stayed with me in my later work with complex professional tools, where domain knowledge, user expertise and design expertise need to meet rather than replace one another.</p></div>
+  </section>
+
+  <div class="wrap-narrow case-footer reveal">
+    <a data-route="home">Back home</a>
+    <div class="otherlinks"><a data-route="smart-dash">Smart Dash</a></div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var KEY = "theme-preference";
+  var darkMQ = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+  function readSaved(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function writeSaved(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+  function isDarkActive(){
+    var explicit = root.getAttribute("data-theme");
+    if(explicit === "dark") return true;
+    if(explicit === "light") return false;
+    return !!(darkMQ && darkMQ.matches);
+  }
+  function updateIcon(){
+    var dark = isDarkActive();
+    document.querySelectorAll("[data-theme-toggle]").forEach(function(btn){
+      btn.classList.toggle("is-dark", dark);
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+    });
+  }
+  var saved = readSaved();
+  if(saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  updateIcon();
+  document.addEventListener("click", function(e){
+    if(!e.target.closest("[data-theme-toggle]")) return;
+    var next = isDarkActive() ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    writeSaved(next);
+    updateIcon();
+  });
+  if(darkMQ && darkMQ.addEventListener){
+    darkMQ.addEventListener("change", function(){
+      if(!root.hasAttribute("data-theme")) updateIcon();
+    });
+  }
+})();
+
+(function(){
+  var hbBtn = document.querySelector("[data-hamburger]");
+  var menu = document.querySelector("[data-mobile-menu]");
+  if(hbBtn && menu){
+    function closeMenu(){
+      menu.classList.remove("open");
+      hbBtn.setAttribute("aria-expanded","false");
+    }
+    function toggleMenu(){
+      var open = menu.classList.toggle("open");
+      hbBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    hbBtn.addEventListener("click", function(e){
+      e.stopPropagation();
+      toggleMenu();
+    });
+    menu.addEventListener("click", function(e){
+      if(e.target.closest("[data-nav]")) closeMenu();
+    });
+    document.addEventListener("click", function(e){
+      if(menu.classList.contains("open") && !e.target.closest("[data-mobile-menu]") && !e.target.closest("[data-hamburger]")){
+        closeMenu();
+      }
+    });
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape") closeMenu();
+    });
+  }
+})();
+
+(function(){
+  // auto-hide nav: visible on load, hides while scrolling down, reveals while
+  // scrolling up. Stays visible near the very top so it doesn't vanish
+  // immediately on a tiny downward nudge from rest.
+  var navEl = document.querySelector("[data-topnav]");
+  if(navEl){
+    var lastY = window.scrollY || 0;
+    var ticking = false;
+    window.addEventListener("scroll", function(){
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(function(){
+        var y = window.scrollY || 0;
+        if(y <= 80){
+          navEl.classList.remove("nav-hidden");
+        } else if(y > lastY + 2){
+          navEl.classList.add("nav-hidden");
+        } else if(y < lastY - 2){
+          navEl.classList.remove("nav-hidden");
+        }
+        lastY = y;
+        ticking = false;
+      });
+    }, {passive:true});
+  }
+})();
+
+(function(){
+  var routes = ["home","smart-dash","smart-components"];
+  var hasNavigated = false;
+  function go(route, scrollTarget){
+    if(routes.indexOf(route) === -1) route = "home";
+    var incoming = document.getElementById("page-"+route);
+    document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active","enter-left","enter-right");});
+    incoming.classList.add("active");
+    // spatial motion on actual navigation only (not the first paint): entering a
+    // project feels like moving forward/right, returning home like moving back/left
+    if(hasNavigated){
+      var enterClass = route === "home" ? "enter-left" : "enter-right";
+      incoming.classList.add(enterClass);
+      incoming.addEventListener("animationend", function handler(){
+        incoming.classList.remove(enterClass);
+        incoming.removeEventListener("animationend", handler);
+      });
+    }
+    hasNavigated = true;
+    location.hash = "#/"+route;
+    window.scrollTo(0,0);
+    if(scrollTarget){
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          var el = document.getElementById(scrollTarget);
+          if(el) el.scrollIntoView({behavior:"smooth", block:"start"});
+        });
+      });
+    }
+  }
+  document.addEventListener("click", function(e){
+    var el = e.target.closest("[data-route]");
+    if(el){ e.preventDefault(); go(el.getAttribute("data-route")); return; }
+    var nav = e.target.closest("[data-nav]");
+    if(nav){
+      e.preventDefault();
+      var which = nav.getAttribute("data-nav");
+      if(which === "home"){ go("home","work-section"); }
+      else if(which === "about"){ go("home","about-section"); }
+      else if(which === "contact"){ go("home","contact-section"); }
+    }
+  });
+  function initFromHash(){
+    var h = location.hash.replace("#/","");
+    go(h || "home");
+  }
+  initFromHash();
+  window.addEventListener("hashchange", initFromHash);
+})();
+
+// scroll-reveal across the whole site: any .reveal element fades/slides up once it's
+// ~15% into the viewport. Elements that share a parent get a small staggered delay
+// based on their order, so grouped items (project cards, process rows, quotes) cascade
+// in rather than popping in together.
+(function(){
+  if(!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add("in-view");
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){
+    var parent = el.parentElement;
+    if(parent){
+      var siblings = Array.prototype.filter.call(parent.children, function(c){ return c.classList.contains("reveal"); });
+      var idx = siblings.indexOf(el);
+      if(idx > 0) el.style.transitionDelay = (Math.min(idx,4) * 0.08) + "s";
+    }
+    io.observe(el);
+  });
+})();
+</script>
+<script>
+/* Hero headline: every word is its own element so the word under the cursor can lift (see CSS) */
+(function(){
+  var h1=document.querySelector('#page-home h1'); if(!h1) return;
+  var label=h1.textContent.replace(/\s+/g,' ').trim();
+  var walker=document.createTreeWalker(h1,NodeFilter.SHOW_TEXT), nodes=[], n;
+  while((n=walker.nextNode())) nodes.push(n);
+  nodes.forEach(function(node){
+    var parts=node.nodeValue.split(/(\s+)/), frag=document.createDocumentFragment();
+    parts.forEach(function(s){
+      if(!s) return;
+      if(/^\s+$/.test(s)) frag.appendChild(document.createTextNode(s));
+      else { var w=document.createElement('span'); w.className='w'; w.textContent=s; w.setAttribute('aria-hidden','true'); frag.appendChild(w); }
+    });
+    node.parentNode.replaceChild(frag,node);
+  });
+  h1.setAttribute('aria-label',label);
+})();
+</script>
+</body>
+</html>
